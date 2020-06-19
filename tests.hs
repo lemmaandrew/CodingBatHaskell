@@ -26,6 +26,7 @@ testFunc = mkFunction "testFunc" basicType [(basicContainer,"arg1"),(array,"arg2
 voidFunc :: Function
 voidFunc = mkFunction "voidFunc" (mkType "void") (arguments testFunc)
 
+funcStrs :: [String]
 funcStrs = [ "public Object push(T toPush) {\n}"
            , "public void foo(E pushValue) {\n}"
            , "private Integer bar(char[] oNO){"
