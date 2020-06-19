@@ -32,13 +32,13 @@ containContainer carrots ('<':xs) = (('<' :) *** id) $ containContainer (carrots
 containContainer carrots ('>':xs) = (('>' :) *** id) $ containContainer (carrots - 1) xs
 containContainer carrots (x:xs) = ((x :) *** id) $ containContainer carrots xs
 
-splitter :: Int -> String -> String -> [String]
-splitter _ current [] = [current]
-splitter 0 current (',':' ':xs) = current : splitter 0 "" xs -- splitting with space
-splitter 0 current (',':xs) = current : splitter 0 "" xs -- splitting without space
-splitter carrots current ('<':xs) = splitter (carrots + 1) (current ++ "<") xs
-splitter carrots current ('>':xs) = splitter (carrots - 1) (current ++ ">") xs
-splitter carrots current (x:xs) = splitter carrots (current ++ [x]) xs
+typeSplitter :: Int -> String -> String -> [String]
+typeSplitter _ current [] = [current]
+typeSplitter 0 current (',':' ':xs) = current : typeSplitter 0 "" xs -- splitting with space
+typeSplitter 0 current (',':xs) = current : typeSplitter 0 "" xs -- splitting without space
+typeSplitter carrots current ('<':xs) = typeSplitter (carrots + 1) (current ++ "<") xs
+typeSplitter carrots current ('>':xs) = typeSplitter (carrots - 1) (current ++ ">") xs
+typeSplitter carrots current (x:xs) = typeSplitter carrots (current ++ [x]) xs
 
 
 data DataType = Type String
@@ -70,7 +70,7 @@ javaToDataType s =
         then Type name
     else if head container == '['
         then Container "Array" [javaToDataType $ name ++ drop 2 container]
-    else Container name (map javaToDataType $ splitter 0 "" (init $ tail container))
+    else Container name (map javaToDataType $ typeSplitter 0 "" (init $ tail container))
 
 data Function = Function { funcName :: String
                          , retType :: DataType
@@ -94,12 +94,12 @@ javaToFunc funcstr = Function fn (javaToDataType rt) args where
     -- distinguishes containers in a string
     (rt,funcstr') = containContainer 0 funcstr
     (fn,args') = break (== '(') funcstr'
-    args = map (first javaToDataType . containContainer 0) $ splitter 0 "" $ init $ tail args'
+    args = map (first javaToDataType . containContainer 0) $ typeSplitter 0 "" $ init $ tail args'
 
 javaToHaskell :: String -> String
 javaToHaskell = funcToHaskell . javaToFunc
 
--- strips the "public static final protected oblong juice" prefixes and the "{ " suffixes
+-- strips the "public static final protected oblong juice" prefixes and the "{ " suffix
 -- from method declarations
 stripJava :: String -> String
 stripJava funcstr = fix body ++ ")" where
