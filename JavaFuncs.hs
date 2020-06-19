@@ -46,6 +46,7 @@ data DataType = Type String
                 deriving (Eq,Show)
 
 dataTypeToHaskell :: DataType -> String
+dataTypeToHaskell (Type "void") = "IO ()"
 dataTypeToHaskell (Type (x:xs)) = toUpper x : xs -- all types in Haskell need to start with a capital letter
 dataTypeToHaskell (Container "Array" [dt]) = "[" ++ (dataTypeToHaskell dt) ++ "]"
 dataTypeToHaskell (Container "List" [dt]) = "[" ++ (dataTypeToHaskell dt) ++ "]"
