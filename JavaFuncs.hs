@@ -5,10 +5,6 @@
 -- A java method needs to be in this format:
 -- returnType funcName(DataType1 arg1, DataType2 arg2)
 
---  TODO:
---      haskellToDataType (not necessary for my purposes but I want it for symmetry)
---      haskellToFunc (not necessary for my purposes but I want it for symmetry)
-
 module JavaFuncs
     ( DataType
     , dataTypeToHaskell
@@ -32,7 +28,6 @@ containContainer 0 (' ':xs) = ([],xs)
 containContainer carrots ('<':xs) = (('<' :) *** id) $ containContainer (carrots + 1) xs
 containContainer carrots ('>':xs) = (('>' :) *** id) $ containContainer (carrots - 1) xs
 containContainer carrots (x:xs) = ((x :) *** id) $ containContainer carrots xs
-
 
 splitter :: Int -> String -> String -> [String]
 splitter _ current [] = [current]
