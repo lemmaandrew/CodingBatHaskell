@@ -29,6 +29,9 @@ import Text.Printf
 import Text.Regex.PCRE
 
 -- utility functions for splitting declarations
+
+-- distinguishes a container from the rest of the string
+-- returns (containerString, restOfString)
 containContainer :: Int -> String -> (String,String)
 containContainer _ [] = ([],[])
 containContainer 0 (' ':xs) = ([],xs)
@@ -36,6 +39,7 @@ containContainer carrots ('<':xs) = (('<' :) *** id) $ containContainer (carrots
 containContainer carrots ('>':xs) = (('>' :) *** id) $ containContainer (carrots - 1) xs
 containContainer carrots (x:xs) = ((x :) *** id) $ containContainer carrots xs
 
+-- Handles complex containers like Map<String, Map<Integer,String>>
 typeSplitter :: Int -> String -> String -> [String]
 typeSplitter _ current [] = [current]
 typeSplitter 0 current (',':' ':xs) = current : typeSplitter 0 "" xs -- splitting with space
@@ -53,7 +57,7 @@ mkType :: String -> DataType
 mkType (x:xs) = Type $ toUpper x : xs
 
 mkContainer :: String -> [DataType] -> DataType
-mkContainer s@(_:_) dts = Container s dts 
+mkContainer s@(_:_) dts = Container s dts -- making sure Container name is at least one letter long
 
 dataTypeToHaskell :: DataType -> String
 dataTypeToHaskell (Type "void") = "IO ()"
@@ -78,17 +82,21 @@ javaToDataType :: String -> DataType
 javaToDataType s =
     let (name,container) = break (\x -> x == '[' || x == '<') s
     in if null container
-        then Type name
+        then mkType name
     else if head container == '['
-        then Container "Array" [javaToDataType $ name ++ drop 2 container]
-    else Container name (map javaToDataType $ typeSplitter 0 "" (init $ tail container))
+        then mkContainer "Array" [javaToDataType $ name ++ drop 2 container]
+    else mkContainer name (map javaToDataType $ typeSplitter 0 "" (init $ tail container))
 
 data Function = Function { funcName :: String
                          , retType :: DataType
                          , arguments :: [(DataType,String)]
                          } deriving (Eq, Show)
 
-mkFunction fn rt args | all (\x -> isAlphaNum x || x `elem` "'_") fn = Function fn rt args
+mkFunction :: String -> DataType -> [(DataType, String)] -> Function
+mkFunction fn@(_:_) rt args | all (\x -> isAlphaNum x || x `elem` "'_") fn = Function fn rt args
+-- making sure funcName is at least one letter long and limits its charset to
+-- a-zA-Z'_
+-- it's not the strictest error checking but for this project it's more than it needs
 
 -- creates a Haskell function declaration
 funcToHaskell :: Function -> String
@@ -97,13 +105,13 @@ funcToHaskell (Function fn rt args) = printf "%s :: %s\n%s %s = undefined" fn ar
     argnames = unwords $ map snd args
 
 -- creates a Java function declaration
--- not really necessary for my purposes but I like the symmetry
+-- not really necessary for this project but I like the symmetry
 funcToJava :: Function -> String
 funcToJava f = printf "%s %s(%s)" (dataTypeToJava $ retType f) (funcName f) args' where
     args' = intercalate ", " $ map (\(dt,s) -> unwords [dataTypeToJava dt,s]) $ arguments f
 
 javaToFunc :: String -> Function
-javaToFunc funcstr = Function fn (javaToDataType rt) args where
+javaToFunc funcstr = mkFunction fn (javaToDataType rt) args where
     -- distinguishes containers in a string
     (rt,funcstr') = containContainer 0 funcstr
     (fn,args') = break (== '(') funcstr'
