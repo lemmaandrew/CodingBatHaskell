@@ -7,10 +7,14 @@
 
 module JavaFuncs
     ( DataType
+    , mkType
+    , mkContainer
     , dataTypeToHaskell
     , dataTypeToJava
     , javaToDataType
-    , Function
+
+    , Function (funcName,retType,arguments)
+    , mkFunction
     , funcToHaskell
     , funcToJava
     , javaToFunc
@@ -19,7 +23,7 @@ module JavaFuncs
     ) where
 
 import Control.Arrow ((***),first)
-import Data.Char (toUpper)
+import Data.Char (toUpper,isAlphaNum)
 import Data.List (intercalate)
 import Text.Printf
 import Text.Regex.PCRE
@@ -44,6 +48,12 @@ typeSplitter carrots current (x:xs) = typeSplitter carrots (current ++ [x]) xs
 data DataType = Type String
               | Container String [DataType]
                 deriving (Eq,Show)
+
+mkType :: String -> DataType
+mkType (x:xs) = Type $ toUpper x : xs
+
+mkContainer :: String -> [DataType] -> DataType
+mkContainer s@(_:_) dts = Container s dts 
 
 dataTypeToHaskell :: DataType -> String
 dataTypeToHaskell (Type "void") = "IO ()"
@@ -78,9 +88,11 @@ data Function = Function { funcName :: String
                          , arguments :: [(DataType,String)]
                          } deriving (Eq, Show)
 
+mkFunction fn rt args | all (\x -> isAlphaNum x || x `elem` "'_") fn = Function fn rt args
+
 -- creates a Haskell function declaration
 funcToHaskell :: Function -> String
-funcToHaskell (Function fn rt args) = printf "%s :: %s\n%s %s" fn arrows fn argnames where
+funcToHaskell (Function fn rt args) = printf "%s :: %s\n%s %s = undefined" fn arrows fn argnames where
     arrows = intercalate " -> " $ map (dataTypeToHaskell . fst) args ++ [dataTypeToHaskell rt]
     argnames = unwords $ map snd args
 
@@ -98,7 +110,7 @@ javaToFunc funcstr = Function fn (javaToDataType rt) args where
     args = map (first javaToDataType . containContainer 0) $ typeSplitter 0 "" $ init $ tail args'
 
 javaToHaskell :: String -> String
-javaToHaskell = funcToHaskell . javaToFunc
+javaToHaskell = funcToHaskell . javaToFunc . stripJava
 
 -- strips the "public static final protected oblong juice" prefixes and the "{ " suffix
 -- from method declarations
