@@ -15,15 +15,18 @@ module JavaFuncs
     , funcToJava
     , javaToFunc
     , javaToHaskell
+    , stripJava
     ) where
 
 import Control.Arrow ((***),first)
 import Data.Char (toUpper)
 import Data.List (intercalate)
 import Text.Printf
+import Text.Regex.PCRE
 
 -- utility functions for splitting declarations
 containContainer :: Int -> String -> (String,String)
+containContainer _ [] = ([],[])
 containContainer 0 (' ':xs) = ([],xs)
 containContainer carrots ('<':xs) = (('<' :) *** id) $ containContainer (carrots + 1) xs
 containContainer carrots ('>':xs) = (('>' :) *** id) $ containContainer (carrots - 1) xs
@@ -95,3 +98,13 @@ javaToFunc funcstr = Function fn (javaToDataType rt) args where
 
 javaToHaskell :: String -> String
 javaToHaskell = funcToHaskell . javaToFunc
+
+-- strips the "public static final protected oblong juice" prefixes and the "{ " suffixes
+-- from method declarations
+stripJava :: String -> String
+stripJava funcstr = fix body ++ ")" where
+    (body,_) = break (== ')') funcstr
+    fix s = let (prefix,suffix) = containContainer 0 s
+        in if (suffix =~ "^\\S+\\(" :: Bool)
+            then unwords [prefix,suffix]
+        else fix suffix
