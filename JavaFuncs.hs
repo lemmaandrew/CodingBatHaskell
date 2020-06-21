@@ -155,6 +155,8 @@ formatArgs args = unwords $ map formatDict $ go 0 [] args where
     formatDict ('{':xs) = "(Map.fromList ["
                           ++ intercalate "," (map ((\[x,y] -> '(' : x ++ "," ++ y ++ ")") . splitOn ":") $ go 0 "" $ init xs)
                           ++ "])"
+    formatDict "true" = "True"
+    formatDict "false" = "False"
     formatDict xs = xs
 
 -- converts a Java method call to Haskell
