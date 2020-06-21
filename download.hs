@@ -20,6 +20,9 @@ module Download ( Check
                 , Category
                 , getCategory
                 , unpackCategory
+
+                , Site
+                , getSite
                 )where
 
 import Debug.Trace
@@ -85,7 +88,10 @@ compileProblem (Problem url name desc checks method) = (name,printf formatString
 
     formatMethod = javaToHaskell method
 
--- gets the problem through the URL and returns (problem's name, compiled problem)
+{-
+-- Gets the problem through the URL and returns (problem's name, compiled problem)
+-- Basically only for debugging purposes
+-}
 getAndCompileProblem :: URL -> IO (Name,String)
 getAndCompileProblem url = do
     page <- getProblem url
@@ -96,10 +102,21 @@ getAndCompileProblem url = do
 
 data Category = Category Name [Maybe Problem]
 
--- super messy
--- effectively returns IO (Maybe (IO (String,[Maybe Problem])))
-getCategory :: URL -> IO (Maybe (IO Category))
-getCategory url = scrapeURL url page where
+{-
+-- Returns a category page of problems
+-- getProblem is Maybe because singular problems failing is something I'd want to inspect
+-- on a case by case basis.
+-- But an entire category failing is a big enough issue to throw an error.
+-- The completed project will likely let this be an IO (Maybe Category),
+-- but for now it's safer to just let it fail.
+-}
+getCategory :: URL -> IO Category
+getCategory url = do 
+        page' <- scrapeURL url page
+        case page' of
+            Just page'' -> page''
+            Nothing -> error $ "Failed getCategory with url: " ++ url
+        where
     page :: Scraper String (IO Category)
     page = do
         name <- text $ "span" @: [hasClass "h2"]
@@ -107,11 +124,37 @@ getCategory url = scrapeURL url page where
         let problems = sequence $ map (getProblem . ("https://codingbat.com" ++)) hrefs
         return $ Category name <$> problems
 
--- Because getCategory is so ugly,
--- I'm making this function just to look inside of one
+
+{-
+-- Unpacks a Category into useful data.
+-- Returns (categoryName, [(problemName, compiledProblem)])
+-- where the snd of the above tuple is only problems that have not failed.
+-- Debug.Trace lets the user be warned of failed compilations.
+-}
 unpackCategory :: Category -> (Name, [(Name, String)])
 unpackCategory (Category name problems) = (name, processProblems) where
-    processProblems = map go problems where
+    processProblems = filter (\(x,y) -> x ++ y /= "") $ map go problems where
         go problem = case problem of
             Just x -> compileProblem x
             Nothing -> ("","")
+
+
+type Site = [Category]
+
+{-
+-- Same as getCategory, getSite failing is too big of an issue to let fall into a Maybe.
+-- I'd rather the program halt than for getSite to fail.
+-- When the project is completed this will like turn into an IO (Maybe Site).
+-- Note to future self: IO (Maybe Site) == sequence <$> (IO [Maybe Category])
+-}
+getSite :: IO Site
+getSite = do
+        site <- scrapeURL "https://codingbat.com/java" homepage
+        case site of
+            Just site' -> site'
+            Nothing -> error "Failed getSite"
+        where
+    homepage :: Scraper String (IO [Category])
+    homepage = do
+        hrefs <- attrs "href" $ "a" @: ["href" @=~ (makeRegex ("/java/" :: String) :: Regex)]
+        return $ sequence $ map (getCategory . ("https://codingbat.com" ++)) hrefs

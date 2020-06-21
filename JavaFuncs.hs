@@ -58,12 +58,14 @@ data DataType = Type String
                 deriving (Eq,Show)
 
 mkType :: String -> DataType
+mkType "" = Type ""
 mkType (x:xs) = Type $ toUpper x : xs
 
 mkContainer :: String -> [DataType] -> DataType
 mkContainer s@(_:_) dts = Container s dts -- making sure Container name is at least one letter long
 
 dataTypeToHaskell :: DataType -> String
+dataTypeToHaskell (Type "") = ""
 dataTypeToHaskell (Type "void") = "IO ()"
 dataTypeToHaskell (Type (x:xs)) = toUpper x : xs -- all types in Haskell need to start with a capital letter
 dataTypeToHaskell (Container "Array" [dt]) = "[" ++ (dataTypeToHaskell dt) ++ "]"
@@ -138,7 +140,8 @@ stripJava funcstr = fix body ++ ")" where
 -- formats the arguments of a Java method into the Haskell argument format
 -- e.g., "[1,2,3], 1, {\"a\": \"b\"}, \"hi\"" -> "[1,2,3] 1 Map.fromList [(\"a\",\"b\")]) \"hi\""
 formatArgs :: String -> String
-formatArgs = unwords . map formatDict . go 0 [] where
+formatArgs "" = ""
+formatArgs args = unwords $ map formatDict $ go 0 [] args where
     go _ current [] = [current]
     go n current (' ':xs) = go n current xs
     go 0 current (',':xs) = current : go 0 "" xs
@@ -147,6 +150,7 @@ formatArgs = unwords . map formatDict . go 0 [] where
         | x `elem` "})]" || x == '"' = go (n - 1) (current ++ [x]) xs
         | otherwise = go n (current ++ [x]) xs
 
+    formatDict "{}" = "Map.empty"
     formatDict ('{':xs) = "(Map.fromList ["
                           ++ intercalate "," (map ((\[x,y] -> '(' : x ++ "," ++ y ++ ")") . splitOn ":") $ go 0 "" $ init xs)
                           ++ "])"
