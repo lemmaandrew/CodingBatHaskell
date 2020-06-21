@@ -13,17 +13,17 @@ module Download ( Check
                 , Method
                 , Name
 
-                , Problem
+                , Problem (..)
                 , getProblem
                 , compileProblem
 
-                , Category
+                , Category (..)
                 , getCategory
                 , unpackCategory
 
-                , Site
+                , Site (..)
                 , getSite
-                )where
+                ) where
 
 import Debug.Trace
 import Data.List (isInfixOf, intercalate, groupBy)
