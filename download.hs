@@ -19,7 +19,7 @@ module Download ( Check
 
 import Control.Applicative ((<|>))
 import Debug.Trace
-import Data.List (isInfixOf, intercalate)
+import Data.List (isInfixOf, intercalate, groupBy)
 import Data.List.Split (splitOn)
 import Text.Printf
 
@@ -63,9 +63,11 @@ compileProblem (Problem _ name desc checks method) = (name,printf formatString f
 \%s"
 
     -- newline approx. every 100 characters
-    formatDesc = go 0 $ words desc where
+    -- the groupBy is a better words
+    formatDesc = go 0 $ groupBy (\x y -> (x == ' ') == (y == ' ')) desc where
         go _ [] = []
         go 0 (x:xs) = x ++ go (length x) xs
+        go n (" ":xs) = go (n + 1) xs
         go n (x:xs)
             | n >= 100 = ('\n' : x) ++ go (length x) xs
             | otherwise = (' ' : x) ++ go (n + 1 + length x) xs
@@ -76,6 +78,13 @@ compileProblem (Problem _ name desc checks method) = (name,printf formatString f
                                             (formatArgs res)) checks
 
     formatMethod = javaToHaskell method
+
+getAndCompileProblem :: String -> IO (Name,String)
+getAndCompileProblem url = do
+    page <- getProblem url
+    case page of
+        Just page' -> return $ compileProblem page'
+        Nothing -> error $ "failed getProblem with url: " ++ url
 
 
 data Category = Category Name [Problem]
