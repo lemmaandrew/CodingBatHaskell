@@ -30,6 +30,7 @@ import Data.List (intercalate)
 import Data.List.Split (splitOn)
 import Text.Printf
 
+import Text.Regex (mkRegex,subRegex)
 import Text.Regex.PCRE
 
 -- utility functions for splitting declarations
@@ -135,7 +136,7 @@ stripJava :: String -> String
 stripJava funcstr = fix body ++ ")" where
     (body,_) = break (== ')') funcstr
     fix s = let (prefix,suffix) = containContainer 0 s
-        in if (suffix =~ "^\\S+\\(" :: Bool)
+        in if (suffix =~ "^\\S+\\(" :: Bool) -- using PCRE because Text.Regex doesn't work here?
             then unwords [prefix,suffix]
         else fix suffix
 
@@ -144,7 +145,7 @@ stripJava funcstr = fix body ++ ")" where
 -- e.g., "[1,2,3], 1, {\"a\": \"b\"}, \"hi\"" -> "[1,2,3] 1 Map.fromList [(\"a\",\"b\")]) \"hi\""
 formatArgs :: String -> String
 formatArgs "" = ""
-formatArgs args = unwords $ map formatDict $ go 0 [] args where
+formatArgs args = unwords $ map formatDict $ go 0 [] $ fixBools args where
     go _ current [] = [current]
     go n current (' ':xs) = go n current xs
     go 0 current (',':xs) = current : go 0 "" xs
@@ -153,12 +154,12 @@ formatArgs args = unwords $ map formatDict $ go 0 [] args where
         | x `elem` "})]" || x == '"' = go (n - 1) (current ++ [x]) xs
         | otherwise = go n (current ++ [x]) xs
 
+    fixBools s = subRegex (mkRegex "\\btrue\\b") (subRegex (mkRegex "\\bfalse\\b") s "False") "True"
+
     formatDict "{}" = "Map.empty"
     formatDict ('{':xs) = "(Map.fromList ["
                           ++ intercalate "," (map ((\[x,y] -> '(' : x ++ "," ++ y ++ ")") . splitOn ":") $ go 0 "" $ init xs)
                           ++ "])"
-    formatDict "true" = "True"
-    formatDict "false" = "False"
     formatDict xs = xs
 
 -- converts a Java method call to Haskell
