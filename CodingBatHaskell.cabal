@@ -4,7 +4,7 @@ cabal-version:       2.4
 -- http://haskell.org/cabal/users-guide/
 
 name:                CodingBatHaskell
-version:             0.1.0.0
+version:             0.1.1.0
 synopsis:            codingbat.com/java problems in Haskell
 -- description:
 homepage:            https://github.com/peterjayandrew/CodingBatHaskell
@@ -18,17 +18,17 @@ maintainer:          peterjayandrew@gmail.com
 extra-source-files:  CHANGELOG.md
 
 library
-  exposed-modules:     JavaFuncs
+  exposed-modules:     JavaFuncs, Download
   -- other-modules:
   -- other-extensions:
-  build-depends:       base ^>=4.12.0.0, split ^>=0.2.3.3, regex-pcre-builtin ^>=0.95.1.1.8.43
+  build-depends:       base ^>=4.12.0.0, split ^>=0.2.3.3, regex-base^>=0.94.0.0, regex-compat^>=0.95.2.0, regex-pcre-builtin ^>=0.95.1.1.8.43, scalpel^>=0.6.2
   -- hs-source-dirs:
   default-language:    Haskell2010
 
 executable CodingBatHaskell
-  main-is:             download.hs
-  -- other-modules:
+  main-is:             Main.hs
+  other-modules:       JavaFuncs, Download
   -- other-extensions:
-  build-depends:       base ^>=4.12.0.0, split ^>=0.2.3.3, regex-pcre-builtin ^>=0.95.1.1.8.43
+  build-depends:       base ^>=4.12.0.0, split ^>=0.2.3.3, regex-base^>=0.94.0.0, regex-compat^>=0.95.2.0, regex-pcre-builtin ^>=0.95.1.1.8.43, scalpel^>=0.6.2
   -- hs-source-dirs:
   default-language:    Haskell2010
