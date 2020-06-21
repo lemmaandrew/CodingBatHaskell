@@ -67,6 +67,7 @@ mkContainer s@(_:_) dts = Container s dts -- making sure Container name is at le
 dataTypeToHaskell :: DataType -> String
 dataTypeToHaskell (Type "") = ""
 dataTypeToHaskell (Type "void") = "IO ()"
+dataTypeToHaskell (Type "boolean") = "Bool"
 dataTypeToHaskell (Type (x:xs)) = toUpper x : xs -- all types in Haskell need to start with a capital letter
 dataTypeToHaskell (Container "Array" [dt]) = "[" ++ (dataTypeToHaskell dt) ++ "]"
 dataTypeToHaskell (Container "List" [dt]) = "[" ++ (dataTypeToHaskell dt) ++ "]"
