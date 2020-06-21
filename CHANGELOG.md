@@ -9,3 +9,11 @@
 * Made in the wee hours of the morning while tired.  
 * Implements getCategory and unpackCategory  
 * Really ugly
+
+## 0.1.1.0 -- 2020-06-21
+
+* With a fresh brain I made getCategory not ugly and also work better
+* I also made unpackCategory not just a handler for `Category`s but also a useful tool of its own!
+* Made the first version of getSite!
+* Fixed some bugs in JavaFuncs.hs
+* Started work on Main.hs
