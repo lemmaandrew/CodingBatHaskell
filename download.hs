@@ -75,6 +75,7 @@ compileProblem (Problem url name desc checks method) = (name,printf formatString
 
     -- newline approx. every 100 characters
     -- the groupBy is a better words
+    formatDesc :: String
     formatDesc = go 0 $ groupBy (\x y -> (x == ' ') == (y == ' ')) desc where
         go _ [] = []
         go 0 (x:xs) = x ++ go (length x) xs
@@ -83,15 +84,18 @@ compileProblem (Problem url name desc checks method) = (name,printf formatString
             | n >= 100 = ('\n' : x) ++ go (length x) xs
             | otherwise = (' ' : x) ++ go (n + 1 + length x) xs
 
-    extraImport = if "Map.Map" `elem` formatMethod
+    extraImport :: String
+    extraImport = if ("Map.Map" :: String) `isInfixOf` formatMethod
         then "import qualified Data.Map.Strict as Map"
     else ""
 
+    formatChecks :: String
     formatChecks = unlines
                  $ map (\(call,res) -> printf "    assert (%s == %s) (putStrLn \"Test passed\")"
                                             (javaCallToHaskell call)
                                             (formatArgs res)) checks
 
+    formatMethod :: String
     formatMethod = javaToHaskell method
 
 
