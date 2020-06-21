@@ -2,6 +2,7 @@
 {-
 TODO:
     implement getCategory
+    MAKE GETCATEGORY NOT UGLY GO TO BED
     implement getWebsite
     implement writeProgram
 -}
@@ -15,15 +16,20 @@ module Download ( Check
                 , Problem
                 , getProblem
                 , compileProblem
+
+                , Category
+                , getCategory
+                , unpackCategory
                 )where
 
-import Control.Applicative ((<|>))
 import Debug.Trace
 import Data.List (isInfixOf, intercalate, groupBy)
 import Data.List.Split (splitOn)
 import Text.Printf
 
 import Text.HTML.Scalpel
+import Text.Regex
+import Text.Regex.Base
 
 import JavaFuncs
 
@@ -53,8 +59,8 @@ getProblem url = do
         -- last methods because head is the login form
 
 compileProblem :: Problem -> (Name,String)
-compileProblem (Problem _ name desc checks method) = (name,printf formatString formatDesc formatMethod formatChecks) where
-    formatString = "{-\n\
+compileProblem (Problem url name desc checks method) = (name,printf formatString url formatDesc formatMethod formatChecks) where
+    formatString = "{-From %s\n\
 \%s\n\
 \-}\n\
 \import Control.Exception (assert)\n\n\n\
@@ -79,7 +85,8 @@ compileProblem (Problem _ name desc checks method) = (name,printf formatString f
 
     formatMethod = javaToHaskell method
 
-getAndCompileProblem :: String -> IO (Name,String)
+-- gets the problem through the URL and returns (problem's name, compiled problem)
+getAndCompileProblem :: URL -> IO (Name,String)
 getAndCompileProblem url = do
     page <- getProblem url
     case page of
@@ -87,4 +94,24 @@ getAndCompileProblem url = do
         Nothing -> error $ "failed getProblem with url: " ++ url
 
 
-data Category = Category Name [Problem]
+data Category = Category Name [Maybe Problem]
+
+-- super messy
+-- effectively returns IO (Maybe (IO (String,[Maybe Problem])))
+getCategory :: URL -> IO (Maybe (IO Category))
+getCategory url = scrapeURL url page where
+    page :: Scraper String (IO Category)
+    page = do
+        name <- text $ "span" @: [hasClass "h2"]
+        hrefs <- attrs "href" $ "a" @: ["href" @=~ (makeRegex ("/prob/" :: String) :: Regex)]
+        let problems = sequence $ map (getProblem . ("https://codingbat.com" ++)) hrefs
+        return $ Category name <$> problems
+
+-- Because getCategory is so ugly,
+-- I'm making this function just to look inside of one
+unpackCategory :: Category -> (Name, [(Name, String)])
+unpackCategory (Category name problems) = (name, processProblems) where
+    processProblems = map go problems where
+        go problem = case problem of
+            Just x -> compileProblem x
+            Nothing -> ("","")
