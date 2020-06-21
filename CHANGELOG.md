@@ -17,3 +17,7 @@
 * Made the first version of getSite!
 * Fixed some bugs in JavaFuncs.hs
 * Started work on Main.hs
+
+## 0.1.2.0 -- 2020-06-21
+
+* Finished first version of a working build! The entire site can now be downloaded by running Main.hs
