@@ -108,7 +108,9 @@ mkFunction fn@(_:_) rt args | all (\x -> isAlphaNum x || x `elem` "'_") fn = Fun
 -- creates a Haskell function declaration
 funcToHaskell :: Function -> String
 funcToHaskell (Function fn rt args) = printf "%s :: %s\n%s %s = undefined" fn arrows fn argnames where
-    arrows = intercalate " -> " $ map (dataTypeToHaskell . fst) args ++ [dataTypeToHaskell rt]
+    arrows = intercalate " -> "
+           $ filter (not . null)
+           $ map (dataTypeToHaskell . fst) args ++ [dataTypeToHaskell rt]
     argnames = unwords $ map snd args
 
 -- creates a Java function declaration
