@@ -62,12 +62,14 @@ getProblem url = do
         -- last methods because head is the login form
 
 compileProblem :: Problem -> (Name,String)
-compileProblem (Problem url name desc checks method) = (name,printf formatString url formatDesc formatMethod formatChecks) where
+compileProblem (Problem url name desc checks method) = (name,printf formatString url formatDesc extraImport formatMethod formatChecks) where
     formatString = "{-From %s\n\
 \%s\n\
 \-}\n\
-\import Control.Exception (assert)\n\n\n\
+\import Control.Exception (assert)\n\
+\%s\n\n\n\
 \%s\n\n\
+\main :: IO ()\n\
 \main = do\n\
 \%s"
 
@@ -81,12 +83,17 @@ compileProblem (Problem url name desc checks method) = (name,printf formatString
             | n >= 100 = ('\n' : x) ++ go (length x) xs
             | otherwise = (' ' : x) ++ go (n + 1 + length x) xs
 
+    extraImport = if "Map.Map" `elem` formatMethod
+        then "import qualified Data.Map.Strict as Map"
+    else ""
+
     formatChecks = unlines
                  $ map (\(call,res) -> printf "    assert (%s == %s) (putStrLn \"Test passed\")"
                                             (javaCallToHaskell call)
                                             (formatArgs res)) checks
 
     formatMethod = javaToHaskell method
+
 
 {-
 -- Gets the problem through the URL and returns (problem's name, compiled problem)
