@@ -30,8 +30,8 @@ import Data.List (intercalate)
 import Data.List.Split (splitOn)
 import Text.Printf
 
-import Text.Regex (mkRegex,subRegex)
-import Text.Regex.PCRE
+import Text.Regex (mkRegex,mkRegexWithOpts,subRegex)
+import Text.Regex.PCRE ((=~))
 
 -- utility functions for splitting declarations
 
@@ -134,9 +134,10 @@ javaToHaskell = funcToHaskell . javaToFunc . stripJava
 -- from method declarations
 stripJava :: String -> String
 stripJava funcstr = fix body ++ ")" where
-    (body,_) = break (== ')') funcstr
+    body = subRegex (mkRegexWithOpts ") ?\\{.*" False False) funcstr "" -- removes end
     fix s = let (prefix,suffix) = containContainer 0 s
-        in if (suffix =~ "^\\S+\\(" :: Bool) -- using PCRE because Text.Regex doesn't work here?
+        -- using PCRE because Text.Regex doesn't work here?
+        in if (prefix =~ "^\\S+\\(" :: Bool) || (suffix =~ "^\\S+\\(" :: Bool)
             then unwords [prefix,suffix]
         else fix suffix
 
@@ -164,4 +165,8 @@ formatArgs args = unwords $ map formatDict $ go 0 [] $ fixBools args where
 
 -- converts a Java method call to Haskell
 javaCallToHaskell :: String -> String
-javaCallToHaskell = unwords . (\(func,args) -> [func,formatArgs $ tail args]) . break (== '(') . takeWhile (/= ')')
+javaCallToHaskell = unwords
+                  . (\(func,args) -> [func,init $ formatArgs $ tail args])
+                  . break (== '(')
+                  . stripJava
+                  . (++ " {\n") -- transforming string into a format that stripJava can work with
