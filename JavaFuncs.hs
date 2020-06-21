@@ -20,12 +20,16 @@ module JavaFuncs
     , javaToFunc
     , javaToHaskell
     , stripJava
+    , formatArgs
+    , javaCallToHaskell
     ) where
 
 import Control.Arrow ((***),first)
 import Data.Char (toUpper,isAlphaNum)
 import Data.List (intercalate)
+import Data.List.Split (splitOn)
 import Text.Printf
+
 import Text.Regex.PCRE
 
 -- utility functions for splitting declarations
@@ -129,3 +133,25 @@ stripJava funcstr = fix body ++ ")" where
         in if (suffix =~ "^\\S+\\(" :: Bool)
             then unwords [prefix,suffix]
         else fix suffix
+
+
+-- formats the arguments of a Java method into the Haskell argument format
+-- e.g., "[1,2,3], 1, {\"a\": \"b\"}, \"hi\"" -> "[1,2,3] 1 Map.fromList [(\"a\",\"b\")]) \"hi\""
+formatArgs :: String -> String
+formatArgs = unwords . map formatDict . go 0 [] where
+    go _ current [] = [current]
+    go n current (' ':xs) = go n current xs
+    go 0 current (',':xs) = current : go 0 "" xs
+    go n current (x:xs)
+        | x `elem` "{([" || x == '"' && even n = go (n + 1) (current ++ [x]) xs
+        | x `elem` "})]" || x == '"' = go (n - 1) (current ++ [x]) xs
+        | otherwise = go n (current ++ [x]) xs
+
+    formatDict ('{':xs) = "(Map.fromList ["
+                          ++ intercalate "," (map ((\[x,y] -> '(' : x ++ "," ++ y ++ ")") . splitOn ":") $ go 0 "" $ init xs)
+                          ++ "])"
+    formatDict xs = xs
+
+-- converts a Java method call to Haskell
+javaCallToHaskell :: String -> String
+javaCallToHaskell = unwords . (\(func,args) -> [func,formatArgs $ tail args]) . break (== '(') . takeWhile (/= ')')
