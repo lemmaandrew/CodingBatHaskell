@@ -5,7 +5,7 @@
 -- A java method needs to be in this format:
 -- returnType funcName(DataType1 arg1, DataType2 arg2)
 
-module JavaFuncs
+module Src.JavaFuncs
     ( DataType
     , mkType
     , mkContainer

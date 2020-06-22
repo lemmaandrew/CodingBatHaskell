@@ -34,7 +34,7 @@ import Text.HTML.Scalpel
 import Text.Regex
 import Text.Regex.Base
 
-import JavaFuncs
+import Src.JavaFuncs
 
 
 type Check = (String,String)
