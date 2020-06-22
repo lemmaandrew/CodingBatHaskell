@@ -8,6 +8,7 @@ import Control.Exception (assert)
 powerN :: Int -> Int -> Int
 powerN base n = undefined
 
+main :: IO ()
 main = do
     assert (powerN 3 1 == 3) (putStrLn "Test passed")
     assert (powerN 3 2 == 9) (putStrLn "Test passed")

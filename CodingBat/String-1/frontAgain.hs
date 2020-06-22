@@ -5,14 +5,15 @@ of the string, such as with "edited".
 import Control.Exception (assert)
 
 
-frontAgain :: String -> Boolean
+frontAgain :: String -> Bool
 frontAgain str = undefined
 
+main :: IO ()
 main = do
-    assert (frontAgain "edited" == true) (putStrLn "Test passed")
-    assert (frontAgain "edit" == false) (putStrLn "Test passed")
-    assert (frontAgain "ed" == true) (putStrLn "Test passed")
-    assert (frontAgain "edited" == true) (putStrLn "Test passed")
-    assert (frontAgain "edit" == false) (putStrLn "Test passed")
-    assert (frontAgain "ed" == true) (putStrLn "Test passed")
+    assert (frontAgain "edited" == True) (putStrLn "Test passed")
+    assert (frontAgain "edit" == False) (putStrLn "Test passed")
+    assert (frontAgain "ed" == True) (putStrLn "Test passed")
+    assert (frontAgain "edited" == True) (putStrLn "Test passed")
+    assert (frontAgain "edit" == False) (putStrLn "Test passed")
+    assert (frontAgain "ed" == True) (putStrLn "Test passed")
 

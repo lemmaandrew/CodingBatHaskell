@@ -9,6 +9,7 @@ import Control.Exception (assert)
 sum67 :: [Int] -> Int
 sum67 nums = undefined
 
+main :: IO ()
 main = do
     assert (sum67 [1,2,2] == 5) (putStrLn "Test passed")
     assert (sum67 [1,2,2,6,99,99,7] == 5) (putStrLn "Test passed")

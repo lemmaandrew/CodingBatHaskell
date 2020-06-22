@@ -8,6 +8,7 @@ import Control.Exception (assert)
 repeatSeparator :: String -> String -> Int -> String
 repeatSeparator word sep count = undefined
 
+main :: IO ()
 main = do
     assert (repeatSeparator "Word" "X" 3 == "WordXWordXWord") (putStrLn "Test passed")
     assert (repeatSeparator "This" "And" 2 == "ThisAndThis") (putStrLn "Test passed")

@@ -9,6 +9,7 @@ import Control.Exception (assert)
 luckySum :: Int -> Int -> Int -> Int
 luckySum a b c = undefined
 
+main :: IO ()
 main = do
     assert (luckySum 1 2 3 == 6) (putStrLn "Test passed")
     assert (luckySum 1 2 13 == 3) (putStrLn "Test passed")

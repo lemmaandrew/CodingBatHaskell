@@ -10,6 +10,7 @@ import Control.Exception (assert)
 matchUp :: [String] -> [String] -> Int
 matchUp a b = undefined
 
+main :: IO ()
 main = do
     assert (matchUp ["aa","bb","cc"] ["aaa","xx","bb"] == 1) (putStrLn "Test passed")
     assert (matchUp ["aa","bb","cc"] ["aaa","b","bb"] == 2) (putStrLn "Test passed")

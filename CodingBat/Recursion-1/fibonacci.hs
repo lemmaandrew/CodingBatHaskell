@@ -11,6 +11,7 @@ import Control.Exception (assert)
 fibonacci :: Int -> Int
 fibonacci n = undefined
 
+main :: IO ()
 main = do
     assert (fibonacci 0 == 0) (putStrLn "Test passed")
     assert (fibonacci 1 == 1) (putStrLn "Test passed")

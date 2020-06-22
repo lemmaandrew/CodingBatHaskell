@@ -10,6 +10,7 @@ import Control.Exception (assert)
 maxMirror :: [Int] -> Int
 maxMirror nums = undefined
 
+main :: IO ()
 main = do
     assert (maxMirror [1,2,3,8,9,3,2,1] == 3) (putStrLn "Test passed")
     assert (maxMirror [1,2,1,4] == 3) (putStrLn "Test passed")

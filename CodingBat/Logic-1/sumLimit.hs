@@ -10,6 +10,7 @@ import Control.Exception (assert)
 sumLimit :: Int -> Int -> Int
 sumLimit a b = undefined
 
+main :: IO ()
 main = do
     assert (sumLimit 2 3 == 5) (putStrLn "Test passed")
     assert (sumLimit 8 3 == 8) (putStrLn "Test passed")

@@ -10,6 +10,7 @@ import Control.Exception (assert)
 copyEndy :: [Int] -> Int -> [Int]
 copyEndy nums count = undefined
 
+main :: IO ()
 main = do
     assert (copyEndy [9,11,90,22,6] 2 == [9,90]) (putStrLn "Test passed")
     assert (copyEndy [9,11,90,22,6] 3 == [9,90,6]) (putStrLn "Test passed")

@@ -9,6 +9,7 @@ import Control.Exception (assert)
 comboString :: String -> String -> String
 comboString a b = undefined
 
+main :: IO ()
 main = do
     assert (comboString "Hello" "hi" == "hiHellohi") (putStrLn "Test passed")
     assert (comboString "hi" "Hello" == "hiHellohi") (putStrLn "Test passed")

@@ -8,6 +8,7 @@ import Control.Exception (assert)
 squareUp :: Int -> [Int]
 squareUp n = undefined
 
+main :: IO ()
 main = do
     assert (squareUp 3 == [0,0,1,0,2,1,3,2,1]) (putStrLn "Test passed")
     assert (squareUp 2 == [0,1,2,1]) (putStrLn "Test passed")

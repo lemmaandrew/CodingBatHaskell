@@ -12,6 +12,7 @@ import Control.Exception (assert)
 dateFashion :: Int -> Int -> Int
 dateFashion you date = undefined
 
+main :: IO ()
 main = do
     assert (dateFashion 5 10 == 2) (putStrLn "Test passed")
     assert (dateFashion 5 2 == 0) (putStrLn "Test passed")

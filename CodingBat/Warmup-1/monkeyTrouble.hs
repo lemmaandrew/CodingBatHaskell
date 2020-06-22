@@ -6,14 +6,15 @@ Return true if we are in trouble.
 import Control.Exception (assert)
 
 
-monkeyTrouble :: Boolean -> Boolean -> Boolean
+monkeyTrouble :: Bool -> Bool -> Bool
 monkeyTrouble aSmile bSmile = undefined
 
+main :: IO ()
 main = do
-    assert (monkeyTrouble true true == true) (putStrLn "Test passed")
-    assert (monkeyTrouble false false == true) (putStrLn "Test passed")
-    assert (monkeyTrouble true false == false) (putStrLn "Test passed")
-    assert (monkeyTrouble true true == true) (putStrLn "Test passed")
-    assert (monkeyTrouble false false == true) (putStrLn "Test passed")
-    assert (monkeyTrouble true false == false) (putStrLn "Test passed")
+    assert (monkeyTrouble True True == True) (putStrLn "Test passed")
+    assert (monkeyTrouble False False == True) (putStrLn "Test passed")
+    assert (monkeyTrouble True False == False) (putStrLn "Test passed")
+    assert (monkeyTrouble True True == True) (putStrLn "Test passed")
+    assert (monkeyTrouble False False == True) (putStrLn "Test passed")
+    assert (monkeyTrouble True False == False) (putStrLn "Test passed")
 

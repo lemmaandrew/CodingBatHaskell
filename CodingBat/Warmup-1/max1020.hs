@@ -8,6 +8,7 @@ import Control.Exception (assert)
 max1020 :: Int -> Int -> Int
 max1020 a b = undefined
 
+main :: IO ()
 main = do
     assert (max1020 11 19 == 19) (putStrLn "Test passed")
     assert (max1020 19 11 == 19) (putStrLn "Test passed")

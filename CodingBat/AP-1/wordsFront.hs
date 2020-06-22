@@ -8,6 +8,7 @@ import Control.Exception (assert)
 wordsFront :: [String] -> Int -> [String]
 wordsFront words n = undefined
 
+main :: IO ()
 main = do
     assert (wordsFront ["a","b","c","d"] 1 == ["a"]) (putStrLn "Test passed")
     assert (wordsFront ["a","b","c","d"] 2 == ["a","b"]) (putStrLn "Test passed")

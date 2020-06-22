@@ -8,6 +8,7 @@ import Control.Exception (assert)
 array667 :: [Int] -> Int
 array667 nums = undefined
 
+main :: IO ()
 main = do
     assert (array667 [6,6,2] == 1) (putStrLn "Test passed")
     assert (array667 [6,6,2,6] == 1) (putStrLn "Test passed")

@@ -6,14 +6,15 @@ such as with "badxxx" or "xbadxx" but not "xxbadxx". The string may be any lengt
 import Control.Exception (assert)
 
 
-hasBad :: String -> Boolean
+hasBad :: String -> Bool
 hasBad str = undefined
 
+main :: IO ()
 main = do
-    assert (hasBad "badxx" == true) (putStrLn "Test passed")
-    assert (hasBad "xbadxx" == true) (putStrLn "Test passed")
-    assert (hasBad "xxbadxx" == false) (putStrLn "Test passed")
-    assert (hasBad "badxx" == true) (putStrLn "Test passed")
-    assert (hasBad "xbadxx" == true) (putStrLn "Test passed")
-    assert (hasBad "xxbadxx" == false) (putStrLn "Test passed")
+    assert (hasBad "badxx" == True) (putStrLn "Test passed")
+    assert (hasBad "xbadxx" == True) (putStrLn "Test passed")
+    assert (hasBad "xxbadxx" == False) (putStrLn "Test passed")
+    assert (hasBad "badxx" == True) (putStrLn "Test passed")
+    assert (hasBad "xbadxx" == True) (putStrLn "Test passed")
+    assert (hasBad "xxbadxx" == False) (putStrLn "Test passed")
 

@@ -7,6 +7,7 @@ import Control.Exception (assert)
 firstHalf :: String -> String
 firstHalf str = undefined
 
+main :: IO ()
 main = do
     assert (firstHalf "WooHoo" == "Woo") (putStrLn "Test passed")
     assert (firstHalf "HelloThere" == "Hello") (putStrLn "Test passed")

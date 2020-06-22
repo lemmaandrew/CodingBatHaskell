@@ -8,6 +8,7 @@ import Control.Exception (assert)
 stringBits :: String -> String
 stringBits str = undefined
 
+main :: IO ()
 main = do
     assert (stringBits "Hello" == "Hlo") (putStrLn "Test passed")
     assert (stringBits "Hi" == "H") (putStrLn "Test passed")

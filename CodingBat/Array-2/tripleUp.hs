@@ -5,14 +5,15 @@ Return true if the array contains, somewhere, three increasing adjacent numbers 
 import Control.Exception (assert)
 
 
-tripleUp :: [Int] -> Boolean
+tripleUp :: [Int] -> Bool
 tripleUp nums = undefined
 
+main :: IO ()
 main = do
-    assert (tripleUp [1,4,5,6,2] == true) (putStrLn "Test passed")
-    assert (tripleUp [1,2,3] == true) (putStrLn "Test passed")
-    assert (tripleUp [1,2,4] == false) (putStrLn "Test passed")
-    assert (tripleUp [1,4,5,6,2] == true) (putStrLn "Test passed")
-    assert (tripleUp [1,2,3] == true) (putStrLn "Test passed")
-    assert (tripleUp [1,2,4] == false) (putStrLn "Test passed")
+    assert (tripleUp [1,4,5,6,2] == True) (putStrLn "Test passed")
+    assert (tripleUp [1,2,3] == True) (putStrLn "Test passed")
+    assert (tripleUp [1,2,4] == False) (putStrLn "Test passed")
+    assert (tripleUp [1,4,5,6,2] == True) (putStrLn "Test passed")
+    assert (tripleUp [1,2,3] == True) (putStrLn "Test passed")
+    assert (tripleUp [1,2,4] == False) (putStrLn "Test passed")
 

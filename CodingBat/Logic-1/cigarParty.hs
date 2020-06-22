@@ -7,14 +7,15 @@ the party with the given values is successful, or false otherwise.
 import Control.Exception (assert)
 
 
-cigarParty :: Int -> Boolean -> Boolean
+cigarParty :: Int -> Bool -> Bool
 cigarParty cigars isWeekend = undefined
 
+main :: IO ()
 main = do
-    assert (cigarParty 30 false == false) (putStrLn "Test passed")
-    assert (cigarParty 50 false == true) (putStrLn "Test passed")
-    assert (cigarParty 70 true == true) (putStrLn "Test passed")
-    assert (cigarParty 30 false == false) (putStrLn "Test passed")
-    assert (cigarParty 50 false == true) (putStrLn "Test passed")
-    assert (cigarParty 70 true == true) (putStrLn "Test passed")
+    assert (cigarParty 30 False == False) (putStrLn "Test passed")
+    assert (cigarParty 50 False == True) (putStrLn "Test passed")
+    assert (cigarParty 70 True == True) (putStrLn "Test passed")
+    assert (cigarParty 30 False == False) (putStrLn "Test passed")
+    assert (cigarParty 50 False == True) (putStrLn "Test passed")
+    assert (cigarParty 70 True == True) (putStrLn "Test passed")
 

@@ -8,6 +8,7 @@ import Control.Exception (assert)
 midThree :: [Int] -> [Int]
 midThree nums = undefined
 
+main :: IO ()
 main = do
     assert (midThree [1,2,3,4,5] == [2,3,4]) (putStrLn "Test passed")
     assert (midThree [8,6,7,5,3,0,9] == [7,5,3]) (putStrLn "Test passed")

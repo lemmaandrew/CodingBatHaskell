@@ -5,14 +5,15 @@ will be length 0, 1, or 2.
 import Control.Exception (assert)
 
 
-double23 :: [Int] -> Boolean
+double23 :: [Int] -> Bool
 double23 nums = undefined
 
+main :: IO ()
 main = do
-    assert (double23 [2,2] == true) (putStrLn "Test passed")
-    assert (double23 [3,3] == true) (putStrLn "Test passed")
-    assert (double23 [2,3] == false) (putStrLn "Test passed")
-    assert (double23 [2,2] == true) (putStrLn "Test passed")
-    assert (double23 [3,3] == true) (putStrLn "Test passed")
-    assert (double23 [2,3] == false) (putStrLn "Test passed")
+    assert (double23 [2,2] == True) (putStrLn "Test passed")
+    assert (double23 [3,3] == True) (putStrLn "Test passed")
+    assert (double23 [2,3] == False) (putStrLn "Test passed")
+    assert (double23 [2,2] == True) (putStrLn "Test passed")
+    assert (double23 [3,3] == True) (putStrLn "Test passed")
+    assert (double23 [2,3] == False) (putStrLn "Test passed")
 

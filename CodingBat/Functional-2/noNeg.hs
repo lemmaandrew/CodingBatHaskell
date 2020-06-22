@@ -8,6 +8,7 @@ import Control.Exception (assert)
 noNeg :: [Integer] -> [Integer]
 noNeg nums = undefined
 
+main :: IO ()
 main = do
     assert (noNeg [1,-2] == [1]) (putStrLn "Test passed")
     assert (noNeg [-3,-3,3,3] == [3,3]) (putStrLn "Test passed")

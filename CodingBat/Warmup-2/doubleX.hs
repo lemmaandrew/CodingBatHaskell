@@ -5,14 +5,15 @@ followed by another "x".
 import Control.Exception (assert)
 
 
-doubleX :: String -> Boolean
+doubleX :: String -> Bool
 doubleX str = undefined
 
+main :: IO ()
 main = do
-    assert (doubleX "axxbb" == true) (putStrLn "Test passed")
-    assert (doubleX "axaxax" == false) (putStrLn "Test passed")
-    assert (doubleX "xxxxx" == true) (putStrLn "Test passed")
-    assert (doubleX "axxbb" == true) (putStrLn "Test passed")
-    assert (doubleX "axaxax" == false) (putStrLn "Test passed")
-    assert (doubleX "xxxxx" == true) (putStrLn "Test passed")
+    assert (doubleX "axxbb" == True) (putStrLn "Test passed")
+    assert (doubleX "axaxax" == False) (putStrLn "Test passed")
+    assert (doubleX "xxxxx" == True) (putStrLn "Test passed")
+    assert (doubleX "axxbb" == True) (putStrLn "Test passed")
+    assert (doubleX "axaxax" == False) (putStrLn "Test passed")
+    assert (doubleX "xxxxx" == True) (putStrLn "Test passed")
 

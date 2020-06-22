@@ -8,6 +8,7 @@ import Control.Exception (assert)
 makeEnds :: [Int] -> [Int]
 makeEnds nums = undefined
 
+main :: IO ()
 main = do
     assert (makeEnds [1,2,3] == [1,3]) (putStrLn "Test passed")
     assert (makeEnds [1,2,3,4] == [1,4]) (putStrLn "Test passed")

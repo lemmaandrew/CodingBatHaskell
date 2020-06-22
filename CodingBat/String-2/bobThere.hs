@@ -5,14 +5,15 @@ can be any char.
 import Control.Exception (assert)
 
 
-bobThere :: String -> Boolean
+bobThere :: String -> Bool
 bobThere str = undefined
 
+main :: IO ()
 main = do
-    assert (bobThere "abcbob" == true) (putStrLn "Test passed")
-    assert (bobThere "b9b" == true) (putStrLn "Test passed")
-    assert (bobThere "bac" == false) (putStrLn "Test passed")
-    assert (bobThere "abcbob" == true) (putStrLn "Test passed")
-    assert (bobThere "b9b" == true) (putStrLn "Test passed")
-    assert (bobThere "bac" == false) (putStrLn "Test passed")
+    assert (bobThere "abcbob" == True) (putStrLn "Test passed")
+    assert (bobThere "b9b" == True) (putStrLn "Test passed")
+    assert (bobThere "bac" == False) (putStrLn "Test passed")
+    assert (bobThere "abcbob" == True) (putStrLn "Test passed")
+    assert (bobThere "b9b" == True) (putStrLn "Test passed")
+    assert (bobThere "bac" == False) (putStrLn "Test passed")
 

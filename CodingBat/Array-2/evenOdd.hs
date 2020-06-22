@@ -9,6 +9,7 @@ import Control.Exception (assert)
 evenOdd :: [Int] -> [Int]
 evenOdd nums = undefined
 
+main :: IO ()
 main = do
     assert (evenOdd [1,0,1,0,0,1,1] == [0,0,0,1,1,1,1]) (putStrLn "Test passed")
     assert (evenOdd [3,3,2] == [2,3,3]) (putStrLn "Test passed")

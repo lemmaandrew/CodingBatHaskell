@@ -6,14 +6,15 @@ computes the absolute value of a number.
 import Control.Exception (assert)
 
 
-love6 :: Int -> Int -> Boolean
+love6 :: Int -> Int -> Bool
 love6 a b = undefined
 
+main :: IO ()
 main = do
-    assert (love6 6 4 == true) (putStrLn "Test passed")
-    assert (love6 4 5 == false) (putStrLn "Test passed")
-    assert (love6 1 5 == true) (putStrLn "Test passed")
-    assert (love6 6 4 == true) (putStrLn "Test passed")
-    assert (love6 4 5 == false) (putStrLn "Test passed")
-    assert (love6 1 5 == true) (putStrLn "Test passed")
+    assert (love6 6 4 == True) (putStrLn "Test passed")
+    assert (love6 4 5 == False) (putStrLn "Test passed")
+    assert (love6 1 5 == True) (putStrLn "Test passed")
+    assert (love6 6 4 == True) (putStrLn "Test passed")
+    assert (love6 4 5 == False) (putStrLn "Test passed")
+    assert (love6 1 5 == True) (putStrLn "Test passed")
 

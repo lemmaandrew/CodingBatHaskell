@@ -8,6 +8,7 @@ import Control.Exception (assert)
 middleWay :: [Int] -> [Int] -> [Int]
 middleWay a b = undefined
 
+main :: IO ()
 main = do
     assert (middleWay [1,2,3] [4,5,6] == [2,5]) (putStrLn "Test passed")
     assert (middleWay [7,7,7] [3,8,0] == [7,8]) (putStrLn "Test passed")

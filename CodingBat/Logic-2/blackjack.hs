@@ -8,6 +8,7 @@ import Control.Exception (assert)
 blackjack :: Int -> Int -> Int
 blackjack a b = undefined
 
+main :: IO ()
 main = do
     assert (blackjack 19 21 == 21) (putStrLn "Test passed")
     assert (blackjack 21 19 == 21) (putStrLn "Test passed")

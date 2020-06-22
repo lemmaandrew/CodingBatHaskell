@@ -5,14 +5,15 @@ Use the % "mod" operator -- see Introduction to Mod
 import Control.Exception (assert)
 
 
-or35 :: Int -> Boolean
+or35 :: Int -> Bool
 or35 n = undefined
 
+main :: IO ()
 main = do
-    assert (or35 3 == true) (putStrLn "Test passed")
-    assert (or35 10 == true) (putStrLn "Test passed")
-    assert (or35 8 == false) (putStrLn "Test passed")
-    assert (or35 3 == true) (putStrLn "Test passed")
-    assert (or35 10 == true) (putStrLn "Test passed")
-    assert (or35 8 == false) (putStrLn "Test passed")
+    assert (or35 3 == True) (putStrLn "Test passed")
+    assert (or35 10 == True) (putStrLn "Test passed")
+    assert (or35 8 == False) (putStrLn "Test passed")
+    assert (or35 3 == True) (putStrLn "Test passed")
+    assert (or35 10 == True) (putStrLn "Test passed")
+    assert (or35 8 == False) (putStrLn "Test passed")
 

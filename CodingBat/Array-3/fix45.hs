@@ -11,6 +11,7 @@ import Control.Exception (assert)
 fix45 :: [Int] -> [Int]
 fix45 nums = undefined
 
+main :: IO ()
 main = do
     assert (fix45 [5,4,9,4,9,5] == [9,4,5,4,5,9]) (putStrLn "Test passed")
     assert (fix45 [1,4,1,5] == [1,4,5,1]) (putStrLn "Test passed")

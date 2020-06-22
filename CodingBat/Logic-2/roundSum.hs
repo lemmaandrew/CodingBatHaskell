@@ -12,6 +12,7 @@ import Control.Exception (assert)
 roundSum :: Int -> Int -> Int -> Int
 roundSum a b c = undefined
 
+main :: IO ()
 main = do
     assert (roundSum 16 17 18 == 60) (putStrLn "Test passed")
     assert (roundSum 12 13 14 == 30) (putStrLn "Test passed")

@@ -10,6 +10,7 @@ import Control.Exception (assert)
 maxMod5 :: Int -> Int -> Int
 maxMod5 a b = undefined
 
+main :: IO ()
 main = do
     assert (maxMod5 2 3 == 3) (putStrLn "Test passed")
     assert (maxMod5 6 2 == 6) (putStrLn "Test passed")

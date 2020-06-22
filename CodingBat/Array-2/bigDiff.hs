@@ -9,6 +9,7 @@ import Control.Exception (assert)
 bigDiff :: [Int] -> Int
 bigDiff nums = undefined
 
+main :: IO ()
 main = do
     assert (bigDiff [10,3,5,6] == 7) (putStrLn "Test passed")
     assert (bigDiff [7,2,10,9] == 8) (putStrLn "Test passed")

@@ -10,6 +10,7 @@ import Control.Exception (assert)
 notAlone :: [Int] -> Int -> [Int]
 notAlone nums val = undefined
 
+main :: IO ()
 main = do
     assert (notAlone [1,2,3] 2 == [1,3,3]) (putStrLn "Test passed")
     assert (notAlone [1,2,3,2,5,2] 2 == [1,3,3,5,5,2]) (putStrLn "Test passed")

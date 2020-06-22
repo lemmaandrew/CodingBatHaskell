@@ -10,6 +10,7 @@ import Control.Exception (assert)
 blueTicket :: Int -> Int -> Int -> Int
 blueTicket a b c = undefined
 
+main :: IO ()
 main = do
     assert (blueTicket 9 1 0 == 10) (putStrLn "Test passed")
     assert (blueTicket 9 2 0 == 0) (putStrLn "Test passed")

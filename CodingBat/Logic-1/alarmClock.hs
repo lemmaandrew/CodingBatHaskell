@@ -8,14 +8,15 @@ be "off".
 import Control.Exception (assert)
 
 
-alarmClock :: Int -> Boolean -> String
+alarmClock :: Int -> Bool -> String
 alarmClock day vacation = undefined
 
+main :: IO ()
 main = do
-    assert (alarmClock 1 false == "7:00") (putStrLn "Test passed")
-    assert (alarmClock 5 false == "7:00") (putStrLn "Test passed")
-    assert (alarmClock 0 false == "10:00") (putStrLn "Test passed")
-    assert (alarmClock 1 false == "7:00") (putStrLn "Test passed")
-    assert (alarmClock 5 false == "7:00") (putStrLn "Test passed")
-    assert (alarmClock 0 false == "10:00") (putStrLn "Test passed")
+    assert (alarmClock 1 False == "7:00") (putStrLn "Test passed")
+    assert (alarmClock 5 False == "7:00") (putStrLn "Test passed")
+    assert (alarmClock 0 False == "10:00") (putStrLn "Test passed")
+    assert (alarmClock 1 False == "7:00") (putStrLn "Test passed")
+    assert (alarmClock 5 False == "7:00") (putStrLn "Test passed")
+    assert (alarmClock 0 False == "10:00") (putStrLn "Test passed")
 

@@ -6,14 +6,15 @@ digit. The ints are non-negative. Note: the % "mod" operator computes the remain
 import Control.Exception (assert)
 
 
-lastDigit :: Int -> Int -> Int -> Boolean
+lastDigit :: Int -> Int -> Int -> Bool
 lastDigit a b c = undefined
 
+main :: IO ()
 main = do
-    assert (lastDigit 23 19 13 == true) (putStrLn "Test passed")
-    assert (lastDigit 23 19 12 == false) (putStrLn "Test passed")
-    assert (lastDigit 23 19 3 == true) (putStrLn "Test passed")
-    assert (lastDigit 23 19 13 == true) (putStrLn "Test passed")
-    assert (lastDigit 23 19 12 == false) (putStrLn "Test passed")
-    assert (lastDigit 23 19 3 == true) (putStrLn "Test passed")
+    assert (lastDigit 23 19 13 == True) (putStrLn "Test passed")
+    assert (lastDigit 23 19 12 == False) (putStrLn "Test passed")
+    assert (lastDigit 23 19 3 == True) (putStrLn "Test passed")
+    assert (lastDigit 23 19 13 == True) (putStrLn "Test passed")
+    assert (lastDigit 23 19 12 == False) (putStrLn "Test passed")
+    assert (lastDigit 23 19 3 == True) (putStrLn "Test passed")
 

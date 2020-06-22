@@ -9,6 +9,7 @@ import Control.Exception (assert)
 copyEvens :: [Int] -> Int -> [Int]
 copyEvens nums count = undefined
 
+main :: IO ()
 main = do
     assert (copyEvens [3,2,4,5,8] 2 == [2,4]) (putStrLn "Test passed")
     assert (copyEvens [3,2,4,5,8] 3 == [2,4,8]) (putStrLn "Test passed")

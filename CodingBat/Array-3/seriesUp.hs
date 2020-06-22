@@ -9,6 +9,7 @@ import Control.Exception (assert)
 seriesUp :: Int -> [Int]
 seriesUp n = undefined
 
+main :: IO ()
 main = do
     assert (seriesUp 3 == [1,1,2,1,2,3]) (putStrLn "Test passed")
     assert (seriesUp 4 == [1,1,2,1,2,3,1,2,3,4]) (putStrLn "Test passed")

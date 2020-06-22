@@ -8,6 +8,7 @@ import Control.Exception (assert)
 makeAbba :: String -> String -> String
 makeAbba a b = undefined
 
+main :: IO ()
 main = do
     assert (makeAbba "Hi" "Bye" == "HiByeByeHi") (putStrLn "Test passed")
     assert (makeAbba "Yo" "Alice" == "YoAliceAliceYo") (putStrLn "Test passed")

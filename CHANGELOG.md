@@ -21,3 +21,7 @@
 ## 0.1.2.0 -- 2020-06-21
 
 * Finished first version of a working build! The entire site can now be downloaded by running Main.hs
+
+## 0.1.2.1 -- 2020-06-21
+
+* Bug fixes. So many bug fixes.

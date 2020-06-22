@@ -9,6 +9,7 @@ import Control.Exception (assert)
 matchUp :: [Int] -> [Int] -> Int
 matchUp nums1 nums2 = undefined
 
+main :: IO ()
 main = do
     assert (matchUp [1,2,3] [2,3,10] == 2) (putStrLn "Test passed")
     assert (matchUp [1,2,3] [2,3,5] == 3) (putStrLn "Test passed")

@@ -8,6 +8,7 @@ import Control.Exception (assert)
 countTriple :: String -> Int
 countTriple str = undefined
 
+main :: IO ()
 main = do
     assert (countTriple "abcXXXabc" == 1) (putStrLn "Test passed")
     assert (countTriple "xxxabyyyycd" == 3) (putStrLn "Test passed")

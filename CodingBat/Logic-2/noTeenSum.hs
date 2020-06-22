@@ -12,6 +12,7 @@ import Control.Exception (assert)
 noTeenSum :: Int -> Int -> Int -> Int
 noTeenSum a b c = undefined
 
+main :: IO ()
 main = do
     assert (noTeenSum 1 2 3 == 6) (putStrLn "Test passed")
     assert (noTeenSum 2 13 1 == 3) (putStrLn "Test passed")

@@ -7,14 +7,15 @@ must not be chosen. (No loops needed.)
 import Control.Exception (assert)
 
 
-groupNoAdj :: Int -> [Int] -> Int -> Boolean
+groupNoAdj :: Int -> [Int] -> Int -> Bool
 groupNoAdj start nums target = undefined
 
+main :: IO ()
 main = do
-    assert (groupNoAdj 0 [2,5,10,4] 12 == true) (putStrLn "Test passed")
-    assert (groupNoAdj 0 [2,5,10,4] 14 == false) (putStrLn "Test passed")
-    assert (groupNoAdj 0 [2,5,10,4] 7 == false) (putStrLn "Test passed")
-    assert (groupNoAdj 0 [2,5,10,4] 12 == true) (putStrLn "Test passed")
-    assert (groupNoAdj 0 [2,5,10,4] 14 == false) (putStrLn "Test passed")
-    assert (groupNoAdj 0 [2,5,10,4] 7 == false) (putStrLn "Test passed")
+    assert (groupNoAdj 0 [2,5,10,4] 12 == True) (putStrLn "Test passed")
+    assert (groupNoAdj 0 [2,5,10,4] 14 == False) (putStrLn "Test passed")
+    assert (groupNoAdj 0 [2,5,10,4] 7 == False) (putStrLn "Test passed")
+    assert (groupNoAdj 0 [2,5,10,4] 12 == True) (putStrLn "Test passed")
+    assert (groupNoAdj 0 [2,5,10,4] 14 == False) (putStrLn "Test passed")
+    assert (groupNoAdj 0 [2,5,10,4] 7 == False) (putStrLn "Test passed")
 

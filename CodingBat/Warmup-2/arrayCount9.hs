@@ -7,6 +7,7 @@ import Control.Exception (assert)
 arrayCount9 :: [Int] -> Int
 arrayCount9 nums = undefined
 
+main :: IO ()
 main = do
     assert (arrayCount9 [1,2,9] == 1) (putStrLn "Test passed")
     assert (arrayCount9 [1,9,9] == 2) (putStrLn "Test passed")

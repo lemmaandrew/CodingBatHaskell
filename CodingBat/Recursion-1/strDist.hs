@@ -8,6 +8,7 @@ import Control.Exception (assert)
 strDist :: String -> String -> Int
 strDist str sub = undefined
 
+main :: IO ()
 main = do
     assert (strDist "catcowcat" "cat" == 9) (putStrLn "Test passed")
     assert (strDist "catcowcat" "cow" == 3) (putStrLn "Test passed")

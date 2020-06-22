@@ -8,14 +8,15 @@ day, your speed can be 5 higher in all cases.
 import Control.Exception (assert)
 
 
-caughtSpeeding :: Int -> Boolean -> Int
+caughtSpeeding :: Int -> Bool -> Int
 caughtSpeeding speed isBirthday = undefined
 
+main :: IO ()
 main = do
-    assert (caughtSpeeding 60 false == 0) (putStrLn "Test passed")
-    assert (caughtSpeeding 65 false == 1) (putStrLn "Test passed")
-    assert (caughtSpeeding 65 true == 0) (putStrLn "Test passed")
-    assert (caughtSpeeding 60 false == 0) (putStrLn "Test passed")
-    assert (caughtSpeeding 65 false == 1) (putStrLn "Test passed")
-    assert (caughtSpeeding 65 true == 0) (putStrLn "Test passed")
+    assert (caughtSpeeding 60 False == 0) (putStrLn "Test passed")
+    assert (caughtSpeeding 65 False == 1) (putStrLn "Test passed")
+    assert (caughtSpeeding 65 True == 0) (putStrLn "Test passed")
+    assert (caughtSpeeding 60 False == 0) (putStrLn "Test passed")
+    assert (caughtSpeeding 65 False == 1) (putStrLn "Test passed")
+    assert (caughtSpeeding 65 True == 0) (putStrLn "Test passed")
 

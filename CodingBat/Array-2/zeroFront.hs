@@ -10,6 +10,7 @@ import Control.Exception (assert)
 zeroFront :: [Int] -> [Int]
 zeroFront nums = undefined
 
+main :: IO ()
 main = do
     assert (zeroFront [1,0,0,1] == [0,0,1,1]) (putStrLn "Test passed")
     assert (zeroFront [0,1,1,0,1] == [0,0,1,1,1]) (putStrLn "Test passed")

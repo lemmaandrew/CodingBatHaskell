@@ -9,6 +9,7 @@ import Control.Exception (assert)
 withoutX2 :: String -> String
 withoutX2 str = undefined
 
+main :: IO ()
 main = do
     assert (withoutX2 "xHi" == "Hi") (putStrLn "Test passed")
     assert (withoutX2 "Hxi" == "Hi") (putStrLn "Test passed")

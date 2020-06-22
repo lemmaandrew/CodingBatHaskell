@@ -8,6 +8,7 @@ import Control.Exception (assert)
 countEvens :: [Int] -> Int
 countEvens nums = undefined
 
+main :: IO ()
 main = do
     assert (countEvens [2,1,2,3,4] == 3) (putStrLn "Test passed")
     assert (countEvens [2,2,0] == 3) (putStrLn "Test passed")

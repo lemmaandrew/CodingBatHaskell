@@ -6,14 +6,15 @@ is everywhere in the array.
 import Control.Exception (assert)
 
 
-isEverywhere :: [Int] -> Int -> Boolean
+isEverywhere :: [Int] -> Int -> Bool
 isEverywhere nums val = undefined
 
+main :: IO ()
 main = do
-    assert (isEverywhere [1,2,1,3] 1 == true) (putStrLn "Test passed")
-    assert (isEverywhere [1,2,1,3] 2 == false) (putStrLn "Test passed")
-    assert (isEverywhere [1,2,1,3,4] 1 == false) (putStrLn "Test passed")
-    assert (isEverywhere [1,2,1,3] 1 == true) (putStrLn "Test passed")
-    assert (isEverywhere [1,2,1,3] 2 == false) (putStrLn "Test passed")
-    assert (isEverywhere [1,2,1,3,4] 1 == false) (putStrLn "Test passed")
+    assert (isEverywhere [1,2,1,3] 1 == True) (putStrLn "Test passed")
+    assert (isEverywhere [1,2,1,3] 2 == False) (putStrLn "Test passed")
+    assert (isEverywhere [1,2,1,3,4] 1 == False) (putStrLn "Test passed")
+    assert (isEverywhere [1,2,1,3] 1 == True) (putStrLn "Test passed")
+    assert (isEverywhere [1,2,1,3] 2 == False) (putStrLn "Test passed")
+    assert (isEverywhere [1,2,1,3,4] 1 == False) (putStrLn "Test passed")
 

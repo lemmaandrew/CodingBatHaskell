@@ -8,6 +8,7 @@ import Control.Exception (assert)
 moreY :: [String] -> [String]
 moreY strings = undefined
 
+main :: IO ()
 main = do
     assert (moreY ["a","b","c"] == ["yay","yby","ycy"]) (putStrLn "Test passed")
     assert (moreY ["hello","there"] == ["yhelloy","ytherey"]) (putStrLn "Test passed")

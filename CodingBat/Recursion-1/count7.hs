@@ -9,6 +9,7 @@ import Control.Exception (assert)
 count7 :: Int -> Int
 count7 n = undefined
 
+main :: IO ()
 main = do
     assert (count7 717 == 2) (putStrLn "Test passed")
     assert (count7 7 == 1) (putStrLn "Test passed")

@@ -5,14 +5,15 @@ a 9. The array length may be less than 4.
 import Control.Exception (assert)
 
 
-arrayFront9 :: [Int] -> Boolean
+arrayFront9 :: [Int] -> Bool
 arrayFront9 nums = undefined
 
+main :: IO ()
 main = do
-    assert (arrayFront9 [1,2,9,3,4] == true) (putStrLn "Test passed")
-    assert (arrayFront9 [1,2,3,4,9] == false) (putStrLn "Test passed")
-    assert (arrayFront9 [1,2,3,4,5] == false) (putStrLn "Test passed")
-    assert (arrayFront9 [1,2,9,3,4] == true) (putStrLn "Test passed")
-    assert (arrayFront9 [1,2,3,4,9] == false) (putStrLn "Test passed")
-    assert (arrayFront9 [1,2,3,4,5] == false) (putStrLn "Test passed")
+    assert (arrayFront9 [1,2,9,3,4] == True) (putStrLn "Test passed")
+    assert (arrayFront9 [1,2,3,4,9] == False) (putStrLn "Test passed")
+    assert (arrayFront9 [1,2,3,4,5] == False) (putStrLn "Test passed")
+    assert (arrayFront9 [1,2,9,3,4] == True) (putStrLn "Test passed")
+    assert (arrayFront9 [1,2,3,4,9] == False) (putStrLn "Test passed")
+    assert (arrayFront9 [1,2,3,4,5] == False) (putStrLn "Test passed")
 

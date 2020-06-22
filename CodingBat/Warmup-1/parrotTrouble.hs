@@ -6,14 +6,15 @@ We have a loud talking parrot. The "hour" parameter is the current hour time in 
 import Control.Exception (assert)
 
 
-parrotTrouble :: Boolean -> Int -> Boolean
+parrotTrouble :: Bool -> Int -> Bool
 parrotTrouble talking hour = undefined
 
+main :: IO ()
 main = do
-    assert (parrotTrouble true 6 == true) (putStrLn "Test passed")
-    assert (parrotTrouble true 7 == false) (putStrLn "Test passed")
-    assert (parrotTrouble false 6 == false) (putStrLn "Test passed")
-    assert (parrotTrouble true 6 == true) (putStrLn "Test passed")
-    assert (parrotTrouble true 7 == false) (putStrLn "Test passed")
-    assert (parrotTrouble false 6 == false) (putStrLn "Test passed")
+    assert (parrotTrouble True 6 == True) (putStrLn "Test passed")
+    assert (parrotTrouble True 7 == False) (putStrLn "Test passed")
+    assert (parrotTrouble False 6 == False) (putStrLn "Test passed")
+    assert (parrotTrouble True 6 == True) (putStrLn "Test passed")
+    assert (parrotTrouble True 7 == False) (putStrLn "Test passed")
+    assert (parrotTrouble False 6 == False) (putStrLn "Test passed")
 

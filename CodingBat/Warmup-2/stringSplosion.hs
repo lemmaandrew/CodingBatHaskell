@@ -7,6 +7,7 @@ import Control.Exception (assert)
 stringSplosion :: String -> String
 stringSplosion str = undefined
 
+main :: IO ()
 main = do
     assert (stringSplosion "Code" == "CCoCodCode") (putStrLn "Test passed")
     assert (stringSplosion "abc" == "aababc") (putStrLn "Test passed")

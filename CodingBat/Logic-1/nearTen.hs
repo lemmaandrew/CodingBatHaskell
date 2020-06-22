@@ -6,14 +6,15 @@ to Mod
 import Control.Exception (assert)
 
 
-nearTen :: Int -> Boolean
+nearTen :: Int -> Bool
 nearTen num = undefined
 
+main :: IO ()
 main = do
-    assert (nearTen 12 == true) (putStrLn "Test passed")
-    assert (nearTen 17 == false) (putStrLn "Test passed")
-    assert (nearTen 19 == true) (putStrLn "Test passed")
-    assert (nearTen 12 == true) (putStrLn "Test passed")
-    assert (nearTen 17 == false) (putStrLn "Test passed")
-    assert (nearTen 19 == true) (putStrLn "Test passed")
+    assert (nearTen 12 == True) (putStrLn "Test passed")
+    assert (nearTen 17 == False) (putStrLn "Test passed")
+    assert (nearTen 19 == True) (putStrLn "Test passed")
+    assert (nearTen 12 == True) (putStrLn "Test passed")
+    assert (nearTen 17 == False) (putStrLn "Test passed")
+    assert (nearTen 19 == True) (putStrLn "Test passed")
 

@@ -12,6 +12,7 @@ import Control.Exception (assert)
 mergeTwo :: [String] -> [String] -> Int -> [String]
 mergeTwo a b n = undefined
 
+main :: IO ()
 main = do
     assert (mergeTwo ["a","c","z"] ["b","f","z"] 3 == ["a","b","c"]) (putStrLn "Test passed")
     assert (mergeTwo ["a","c","z"] ["c","f","z"] 3 == ["a","c","f"]) (putStrLn "Test passed")

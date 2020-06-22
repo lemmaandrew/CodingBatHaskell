@@ -6,14 +6,15 @@ true if we sleep in.
 import Control.Exception (assert)
 
 
-sleepIn :: Boolean -> Boolean -> Boolean
+sleepIn :: Bool -> Bool -> Bool
 sleepIn weekday vacation = undefined
 
+main :: IO ()
 main = do
-    assert (sleepIn false false == true) (putStrLn "Test passed")
-    assert (sleepIn true false == false) (putStrLn "Test passed")
-    assert (sleepIn false true == true) (putStrLn "Test passed")
-    assert (sleepIn false false == true) (putStrLn "Test passed")
-    assert (sleepIn true false == false) (putStrLn "Test passed")
-    assert (sleepIn false true == true) (putStrLn "Test passed")
+    assert (sleepIn False False == True) (putStrLn "Test passed")
+    assert (sleepIn True False == False) (putStrLn "Test passed")
+    assert (sleepIn False True == True) (putStrLn "Test passed")
+    assert (sleepIn False False == True) (putStrLn "Test passed")
+    assert (sleepIn True False == False) (putStrLn "Test passed")
+    assert (sleepIn False True == True) (putStrLn "Test passed")
 

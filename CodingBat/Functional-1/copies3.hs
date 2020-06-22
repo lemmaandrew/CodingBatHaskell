@@ -8,6 +8,7 @@ import Control.Exception (assert)
 copies3 :: [String] -> [String]
 copies3 strings = undefined
 
+main :: IO ()
 main = do
     assert (copies3 ["a","bb","ccc"] == ["aaa","bbbbbb","ccccccccc"]) (putStrLn "Test passed")
     assert (copies3 ["24","a",""] == ["242424","aaa",""]) (putStrLn "Test passed")

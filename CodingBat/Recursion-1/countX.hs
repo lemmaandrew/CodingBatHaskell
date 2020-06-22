@@ -8,6 +8,7 @@ import Control.Exception (assert)
 countX :: String -> Int
 countX str = undefined
 
+main :: IO ()
 main = do
     assert (countX "xxhixx" == 4) (putStrLn "Test passed")
     assert (countX "xhixhix" == 3) (putStrLn "Test passed")

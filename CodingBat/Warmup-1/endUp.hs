@@ -9,6 +9,7 @@ import Control.Exception (assert)
 endUp :: String -> String
 endUp str = undefined
 
+main :: IO ()
 main = do
     assert (endUp "Hello" == "HeLLO") (putStrLn "Test passed")
     assert (endUp "hithere" == "hithERE") (putStrLn "Test passed")

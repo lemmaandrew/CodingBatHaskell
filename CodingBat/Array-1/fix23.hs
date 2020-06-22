@@ -8,6 +8,7 @@ import Control.Exception (assert)
 fix23 :: [Int] -> [Int]
 fix23 nums = undefined
 
+main :: IO ()
 main = do
     assert (fix23 [1,2,3] == [1,2,0]) (putStrLn "Test passed")
     assert (fix23 [2,3,5] == [2,0,5]) (putStrLn "Test passed")

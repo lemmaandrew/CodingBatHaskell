@@ -8,14 +8,15 @@ rightmost digit.
 import Control.Exception (assert)
 
 
-dividesSelf :: Int -> Boolean
+dividesSelf :: Int -> Bool
 dividesSelf n = undefined
 
+main :: IO ()
 main = do
-    assert (dividesSelf 128 == true) (putStrLn "Test passed")
-    assert (dividesSelf 12 == true) (putStrLn "Test passed")
-    assert (dividesSelf 120 == false) (putStrLn "Test passed")
-    assert (dividesSelf 128 == true) (putStrLn "Test passed")
-    assert (dividesSelf 12 == true) (putStrLn "Test passed")
-    assert (dividesSelf 120 == false) (putStrLn "Test passed")
+    assert (dividesSelf 128 == True) (putStrLn "Test passed")
+    assert (dividesSelf 12 == True) (putStrLn "Test passed")
+    assert (dividesSelf 120 == False) (putStrLn "Test passed")
+    assert (dividesSelf 128 == True) (putStrLn "Test passed")
+    assert (dividesSelf 12 == True) (putStrLn "Test passed")
+    assert (dividesSelf 120 == False) (putStrLn "Test passed")
 

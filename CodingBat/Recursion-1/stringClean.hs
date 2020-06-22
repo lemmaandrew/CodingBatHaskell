@@ -8,6 +8,7 @@ import Control.Exception (assert)
 stringClean :: String -> String
 stringClean str = undefined
 
+main :: IO ()
 main = do
     assert (stringClean "yyzzza" == "yza") (putStrLn "Test passed")
     assert (stringClean "abbbcdd" == "abcd") (putStrLn "Test passed")

@@ -5,14 +5,15 @@ another 2.
 import Control.Exception (assert)
 
 
-twoTwo :: [Int] -> Boolean
+twoTwo :: [Int] -> Bool
 twoTwo nums = undefined
 
+main :: IO ()
 main = do
-    assert (twoTwo [4,2,2,3] == true) (putStrLn "Test passed")
-    assert (twoTwo [2,2,4] == true) (putStrLn "Test passed")
-    assert (twoTwo [2,2,4,2] == false) (putStrLn "Test passed")
-    assert (twoTwo [4,2,2,3] == true) (putStrLn "Test passed")
-    assert (twoTwo [2,2,4] == true) (putStrLn "Test passed")
-    assert (twoTwo [2,2,4,2] == false) (putStrLn "Test passed")
+    assert (twoTwo [4,2,2,3] == True) (putStrLn "Test passed")
+    assert (twoTwo [2,2,4] == True) (putStrLn "Test passed")
+    assert (twoTwo [2,2,4,2] == False) (putStrLn "Test passed")
+    assert (twoTwo [4,2,2,3] == True) (putStrLn "Test passed")
+    assert (twoTwo [2,2,4] == True) (putStrLn "Test passed")
+    assert (twoTwo [2,2,4,2] == False) (putStrLn "Test passed")
 

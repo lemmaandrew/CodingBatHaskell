@@ -11,6 +11,7 @@ import Control.Exception (assert)
 fizzArray :: Int -> [Int]
 fizzArray n = undefined
 
+main :: IO ()
 main = do
     assert (fizzArray 4 == [0,1,2,3]) (putStrLn "Test passed")
     assert (fizzArray 1 == [0]) (putStrLn "Test passed")

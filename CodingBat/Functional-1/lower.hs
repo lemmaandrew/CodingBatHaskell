@@ -8,6 +8,7 @@ import Control.Exception (assert)
 lower :: [String] -> [String]
 lower strings = undefined
 
+main :: IO ()
 main = do
     assert (lower ["Hello","Hi"] == ["hello","hi"]) (putStrLn "Test passed")
     assert (lower ["AAA","BBB","ccc"] == ["aaa","bbb","ccc"]) (putStrLn "Test passed")

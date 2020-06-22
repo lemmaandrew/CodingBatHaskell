@@ -7,14 +7,15 @@ pass index+1 to move down the array. The initial call will pass in index as 0.
 import Control.Exception (assert)
 
 
-array220 :: [Int] -> Int -> Boolean
+array220 :: [Int] -> Int -> Bool
 array220 nums index = undefined
 
+main :: IO ()
 main = do
-    assert (array220 [1,2,20] 0 == true) (putStrLn "Test passed")
-    assert (array220 [3,30] 0 == true) (putStrLn "Test passed")
-    assert (array220 [3] 0 == false) (putStrLn "Test passed")
-    assert (array220 [1,2,20] 0 == true) (putStrLn "Test passed")
-    assert (array220 [3,30] 0 == true) (putStrLn "Test passed")
-    assert (array220 [3] 0 == false) (putStrLn "Test passed")
+    assert (array220 [1,2,20] 0 == True) (putStrLn "Test passed")
+    assert (array220 [3,30] 0 == True) (putStrLn "Test passed")
+    assert (array220 [3] 0 == False) (putStrLn "Test passed")
+    assert (array220 [1,2,20] 0 == True) (putStrLn "Test passed")
+    assert (array220 [3,30] 0 == True) (putStrLn "Test passed")
+    assert (array220 [3] 0 == False) (putStrLn "Test passed")
 

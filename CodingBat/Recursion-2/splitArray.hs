@@ -7,14 +7,15 @@ call to your recursive helper from splitArray(). (No loops needed.)
 import Control.Exception (assert)
 
 
-splitArray :: [Int] -> Boolean
+splitArray :: [Int] -> Bool
 splitArray nums = undefined
 
+main :: IO ()
 main = do
-    assert (splitArray [2,2] == true) (putStrLn "Test passed")
-    assert (splitArray [2,3] == false) (putStrLn "Test passed")
-    assert (splitArray [5,2,3] == true) (putStrLn "Test passed")
-    assert (splitArray [2,2] == true) (putStrLn "Test passed")
-    assert (splitArray [2,3] == false) (putStrLn "Test passed")
-    assert (splitArray [5,2,3] == true) (putStrLn "Test passed")
+    assert (splitArray [2,2] == True) (putStrLn "Test passed")
+    assert (splitArray [2,3] == False) (putStrLn "Test passed")
+    assert (splitArray [5,2,3] == True) (putStrLn "Test passed")
+    assert (splitArray [2,2] == True) (putStrLn "Test passed")
+    assert (splitArray [2,3] == False) (putStrLn "Test passed")
+    assert (splitArray [5,2,3] == True) (putStrLn "Test passed")
 

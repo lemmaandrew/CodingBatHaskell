@@ -10,6 +10,7 @@ import Control.Exception (assert)
 notReplace :: String -> String
 notReplace str = undefined
 
+main :: IO ()
 main = do
     assert (notReplace "istest" == "isnottest") (putStrLn "Test passed")
     assert (notReplace "is-is" == "isnot-isnot") (putStrLn "Test passed")

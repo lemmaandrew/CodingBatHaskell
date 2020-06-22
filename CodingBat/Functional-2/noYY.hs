@@ -8,6 +8,7 @@ import Control.Exception (assert)
 noYY :: [String] -> [String]
 noYY strings = undefined
 
+main :: IO ()
 main = do
     assert (noYY ["a","b","c"] == ["ay","by","cy"]) (putStrLn "Test passed")
     assert (noYY ["a","b","cy"] == ["ay","by"]) (putStrLn "Test passed")

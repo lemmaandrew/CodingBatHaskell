@@ -8,6 +8,7 @@ import Control.Exception (assert)
 noZ :: [String] -> [String]
 noZ strings = undefined
 
+main :: IO ()
 main = do
     assert (noZ ["aaa","bbb","aza"] == ["aaa","bbb"]) (putStrLn "Test passed")
     assert (noZ ["hziz","hzello","hi"] == ["hi"]) (putStrLn "Test passed")

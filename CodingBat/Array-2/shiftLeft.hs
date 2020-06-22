@@ -8,6 +8,7 @@ import Control.Exception (assert)
 shiftLeft :: [Int] -> [Int]
 shiftLeft nums = undefined
 
+main :: IO ()
 main = do
     assert (shiftLeft [6,2,5,3] == [2,5,3,6]) (putStrLn "Test passed")
     assert (shiftLeft [1,2] == [2,1]) (putStrLn "Test passed")

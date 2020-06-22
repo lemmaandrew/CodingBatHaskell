@@ -5,14 +5,15 @@ directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.
 import Control.Exception (assert)
 
 
-xyzThere :: String -> Boolean
+xyzThere :: String -> Bool
 xyzThere str = undefined
 
+main :: IO ()
 main = do
-    assert (xyzThere "abcxyz" == true) (putStrLn "Test passed")
-    assert (xyzThere "abc.xyz" == false) (putStrLn "Test passed")
-    assert (xyzThere "xyz.abc" == true) (putStrLn "Test passed")
-    assert (xyzThere "abcxyz" == true) (putStrLn "Test passed")
-    assert (xyzThere "abc.xyz" == false) (putStrLn "Test passed")
-    assert (xyzThere "xyz.abc" == true) (putStrLn "Test passed")
+    assert (xyzThere "abcxyz" == True) (putStrLn "Test passed")
+    assert (xyzThere "abc.xyz" == False) (putStrLn "Test passed")
+    assert (xyzThere "xyz.abc" == True) (putStrLn "Test passed")
+    assert (xyzThere "abcxyz" == True) (putStrLn "Test passed")
+    assert (xyzThere "abc.xyz" == False) (putStrLn "Test passed")
+    assert (xyzThere "xyz.abc" == True) (putStrLn "Test passed")
 

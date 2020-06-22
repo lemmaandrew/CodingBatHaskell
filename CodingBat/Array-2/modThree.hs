@@ -5,14 +5,15 @@ all next to each other.
 import Control.Exception (assert)
 
 
-modThree :: [Int] -> Boolean
+modThree :: [Int] -> Bool
 modThree nums = undefined
 
+main :: IO ()
 main = do
-    assert (modThree [2,1,3,5] == true) (putStrLn "Test passed")
-    assert (modThree [2,1,2,5] == false) (putStrLn "Test passed")
-    assert (modThree [2,4,2,5] == true) (putStrLn "Test passed")
-    assert (modThree [2,1,3,5] == true) (putStrLn "Test passed")
-    assert (modThree [2,1,2,5] == false) (putStrLn "Test passed")
-    assert (modThree [2,4,2,5] == true) (putStrLn "Test passed")
+    assert (modThree [2,1,3,5] == True) (putStrLn "Test passed")
+    assert (modThree [2,1,2,5] == False) (putStrLn "Test passed")
+    assert (modThree [2,4,2,5] == True) (putStrLn "Test passed")
+    assert (modThree [2,1,3,5] == True) (putStrLn "Test passed")
+    assert (modThree [2,1,2,5] == False) (putStrLn "Test passed")
+    assert (modThree [2,4,2,5] == True) (putStrLn "Test passed")
 

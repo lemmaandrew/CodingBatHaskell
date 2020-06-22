@@ -7,14 +7,15 @@ and can be done without any loops. See also: Introduction to MakeBricks
 import Control.Exception (assert)
 
 
-makeBricks :: Int -> Int -> Int -> Boolean
+makeBricks :: Int -> Int -> Int -> Bool
 makeBricks small big goal = undefined
 
+main :: IO ()
 main = do
-    assert (makeBricks 3 1 8 == true) (putStrLn "Test passed")
-    assert (makeBricks 3 1 9 == false) (putStrLn "Test passed")
-    assert (makeBricks 3 2 10 == true) (putStrLn "Test passed")
-    assert (makeBricks 3 1 8 == true) (putStrLn "Test passed")
-    assert (makeBricks 3 1 9 == false) (putStrLn "Test passed")
-    assert (makeBricks 3 2 10 == true) (putStrLn "Test passed")
+    assert (makeBricks 3 1 8 == True) (putStrLn "Test passed")
+    assert (makeBricks 3 1 9 == False) (putStrLn "Test passed")
+    assert (makeBricks 3 2 10 == True) (putStrLn "Test passed")
+    assert (makeBricks 3 1 8 == True) (putStrLn "Test passed")
+    assert (makeBricks 3 1 9 == False) (putStrLn "Test passed")
+    assert (makeBricks 3 2 10 == True) (putStrLn "Test passed")
 

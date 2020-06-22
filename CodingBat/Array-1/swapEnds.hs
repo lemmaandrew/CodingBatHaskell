@@ -8,6 +8,7 @@ import Control.Exception (assert)
 swapEnds :: [Int] -> [Int]
 swapEnds nums = undefined
 
+main :: IO ()
 main = do
     assert (swapEnds [1,2,3,4] == [4,2,3,1]) (putStrLn "Test passed")
     assert (swapEnds [1,2,3] == [3,2,1]) (putStrLn "Test passed")

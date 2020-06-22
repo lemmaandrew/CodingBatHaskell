@@ -4,11 +4,13 @@ Modify and return the given map as follows: if the key "a" has a value, set the 
 map unchanged.
 -}
 import Control.Exception (assert)
+import qualified Data.Map.Strict as Map
 
 
 mapShare :: Map.Map String String -> Map.Map String String
 mapShare map = undefined
 
+main :: IO ()
 main = do
     assert (mapShare (Map.fromList [("a","aaa"),("b","bbb"),("c","ccc")]) == (Map.fromList [("a","aaa"),("b","aaa")])) (putStrLn "Test passed")
     assert (mapShare (Map.fromList [("b","xyz"),("c","ccc")]) == (Map.fromList [("b","xyz")])) (putStrLn "Test passed")

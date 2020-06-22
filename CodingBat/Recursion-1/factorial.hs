@@ -8,6 +8,7 @@ import Control.Exception (assert)
 factorial :: Int -> Int
 factorial n = undefined
 
+main :: IO ()
 main = do
     assert (factorial 1 == 1) (putStrLn "Test passed")
     assert (factorial 2 == 2) (putStrLn "Test passed")

@@ -8,6 +8,7 @@ import Control.Exception (assert)
 biggerTwo :: [Int] -> [Int] -> [Int]
 biggerTwo a b = undefined
 
+main :: IO ()
 main = do
     assert (biggerTwo [1,2] [3,4] == [3,4]) (putStrLn "Test passed")
     assert (biggerTwo [3,4] [1,2] == [3,4]) (putStrLn "Test passed")

@@ -9,6 +9,7 @@ import Control.Exception (assert)
 backAround :: String -> String
 backAround str = undefined
 
+main :: IO ()
 main = do
     assert (backAround "cat" == "tcatt") (putStrLn "Test passed")
     assert (backAround "Hello" == "oHelloo") (putStrLn "Test passed")

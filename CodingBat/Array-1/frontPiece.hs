@@ -8,6 +8,7 @@ import Control.Exception (assert)
 frontPiece :: [Int] -> [Int]
 frontPiece nums = undefined
 
+main :: IO ()
 main = do
     assert (frontPiece [1,2,3] == [1,2]) (putStrLn "Test passed")
     assert (frontPiece [1,2] == [1,2]) (putStrLn "Test passed")

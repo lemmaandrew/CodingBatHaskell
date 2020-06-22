@@ -10,6 +10,7 @@ import Control.Exception (assert)
 mirrorEnds :: String -> String
 mirrorEnds string = undefined
 
+main :: IO ()
 main = do
     assert (mirrorEnds "abXYZba" == "ab") (putStrLn "Test passed")
     assert (mirrorEnds "abca" == "a") (putStrLn "Test passed")

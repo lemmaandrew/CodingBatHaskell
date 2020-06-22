@@ -6,14 +6,15 @@ or equal to 10.
 import Control.Exception (assert)
 
 
-in1To10 :: Int -> Boolean -> Boolean
+in1To10 :: Int -> Bool -> Bool
 in1To10 n outsideMode = undefined
 
+main :: IO ()
 main = do
-    assert (in1To10 5 false == true) (putStrLn "Test passed")
-    assert (in1To10 11 false == false) (putStrLn "Test passed")
-    assert (in1To10 11 true == true) (putStrLn "Test passed")
-    assert (in1To10 5 false == true) (putStrLn "Test passed")
-    assert (in1To10 11 false == false) (putStrLn "Test passed")
-    assert (in1To10 11 true == true) (putStrLn "Test passed")
+    assert (in1To10 5 False == True) (putStrLn "Test passed")
+    assert (in1To10 11 False == False) (putStrLn "Test passed")
+    assert (in1To10 11 True == True) (putStrLn "Test passed")
+    assert (in1To10 5 False == True) (putStrLn "Test passed")
+    assert (in1To10 11 False == False) (putStrLn "Test passed")
+    assert (in1To10 11 True == True) (putStrLn "Test passed")
 

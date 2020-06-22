@@ -6,14 +6,15 @@ what's inside them.
 import Control.Exception (assert)
 
 
-nestParen :: String -> Boolean
+nestParen :: String -> Bool
 nestParen str = undefined
 
+main :: IO ()
 main = do
-    assert (nestParen "(( == true) (putStrLn "Test passed")
-    assert (nestParen "((( == true) (putStrLn "Test passed")
-    assert (nestParen "(((x == false) (putStrLn "Test passed")
-    assert (nestParen "(( == true) (putStrLn "Test passed")
-    assert (nestParen "((( == true) (putStrLn "Test passed")
-    assert (nestParen "(((x == false) (putStrLn "Test passed")
+    assert (nestParen "(())" == True) (putStrLn "Test passed")
+    assert (nestParen "((()))" == True) (putStrLn "Test passed")
+    assert (nestParen "(((x))" == False) (putStrLn "Test passed")
+    assert (nestParen "(())" == True) (putStrLn "Test passed")
+    assert (nestParen "((()))" == True) (putStrLn "Test passed")
+    assert (nestParen "(((x))" == False) (putStrLn "Test passed")
 

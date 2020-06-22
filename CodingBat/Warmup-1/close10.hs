@@ -8,6 +8,7 @@ import Control.Exception (assert)
 close10 :: Int -> Int -> Int
 close10 a b = undefined
 
+main :: IO ()
 main = do
     assert (close10 8 13 == 8) (putStrLn "Test passed")
     assert (close10 13 8 == 8) (putStrLn "Test passed")

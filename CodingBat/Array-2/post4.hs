@@ -9,6 +9,7 @@ import Control.Exception (assert)
 post4 :: [Int] -> [Int]
 post4 nums = undefined
 
+main :: IO ()
 main = do
     assert (post4 [2,4,1,2] == [1,2]) (putStrLn "Test passed")
     assert (post4 [4,1,4,2] == [2]) (putStrLn "Test passed")

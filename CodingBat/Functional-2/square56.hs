@@ -8,6 +8,7 @@ import Control.Exception (assert)
 square56 :: [Integer] -> [Integer]
 square56 nums = undefined
 
+main :: IO ()
 main = do
     assert (square56 [3,1,4] == [19,11]) (putStrLn "Test passed")
     assert (square56 [1] == [11]) (putStrLn "Test passed")

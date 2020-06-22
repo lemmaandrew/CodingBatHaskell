@@ -6,14 +6,15 @@ empty and that N is in the range 1..str.length().
 import Control.Exception (assert)
 
 
-prefixAgain :: String -> Int -> Boolean
+prefixAgain :: String -> Int -> Bool
 prefixAgain str n = undefined
 
+main :: IO ()
 main = do
-    assert (prefixAgain "abXYabc" 1 == true) (putStrLn "Test passed")
-    assert (prefixAgain "abXYabc" 2 == true) (putStrLn "Test passed")
-    assert (prefixAgain "abXYabc" 3 == false) (putStrLn "Test passed")
-    assert (prefixAgain "abXYabc" 1 == true) (putStrLn "Test passed")
-    assert (prefixAgain "abXYabc" 2 == true) (putStrLn "Test passed")
-    assert (prefixAgain "abXYabc" 3 == false) (putStrLn "Test passed")
+    assert (prefixAgain "abXYabc" 1 == True) (putStrLn "Test passed")
+    assert (prefixAgain "abXYabc" 2 == True) (putStrLn "Test passed")
+    assert (prefixAgain "abXYabc" 3 == False) (putStrLn "Test passed")
+    assert (prefixAgain "abXYabc" 1 == True) (putStrLn "Test passed")
+    assert (prefixAgain "abXYabc" 2 == True) (putStrLn "Test passed")
+    assert (prefixAgain "abXYabc" 3 == False) (putStrLn "Test passed")
 

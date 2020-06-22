@@ -8,6 +8,7 @@ import Control.Exception (assert)
 maxBlock :: String -> Int
 maxBlock str = undefined
 
+main :: IO ()
 main = do
     assert (maxBlock "hoopla" == 2) (putStrLn "Test passed")
     assert (maxBlock "abbCCCddBBBxx" == 3) (putStrLn "Test passed")

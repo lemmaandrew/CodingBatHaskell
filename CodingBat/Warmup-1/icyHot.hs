@@ -5,14 +5,15 @@ Given two temperatures, return true if one is less than 0 and the other is great
 import Control.Exception (assert)
 
 
-icyHot :: Int -> Int -> Boolean
+icyHot :: Int -> Int -> Bool
 icyHot temp1 temp2 = undefined
 
+main :: IO ()
 main = do
-    assert (icyHot 120 -1 == true) (putStrLn "Test passed")
-    assert (icyHot -1 120 == true) (putStrLn "Test passed")
-    assert (icyHot 2 120 == false) (putStrLn "Test passed")
-    assert (icyHot 120 -1 == true) (putStrLn "Test passed")
-    assert (icyHot -1 120 == true) (putStrLn "Test passed")
-    assert (icyHot 2 120 == false) (putStrLn "Test passed")
+    assert (icyHot 120 (-1) == True) (putStrLn "Test passed")
+    assert (icyHot (-1) 120 == True) (putStrLn "Test passed")
+    assert (icyHot 2 120 == False) (putStrLn "Test passed")
+    assert (icyHot 120 (-1) == True) (putStrLn "Test passed")
+    assert (icyHot (-1) 120 == True) (putStrLn "Test passed")
+    assert (icyHot 2 120 == False) (putStrLn "Test passed")
 

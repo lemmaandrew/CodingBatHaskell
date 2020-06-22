@@ -8,6 +8,7 @@ import Control.Exception (assert)
 strCount :: String -> String -> Int
 strCount str sub = undefined
 
+main :: IO ()
 main = do
     assert (strCount "catcowcat" "cat" == 2) (putStrLn "Test passed")
     assert (strCount "catcowcat" "cow" == 1) (putStrLn "Test passed")

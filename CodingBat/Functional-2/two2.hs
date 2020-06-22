@@ -8,6 +8,7 @@ import Control.Exception (assert)
 two2 :: [Integer] -> [Integer]
 two2 nums = undefined
 
+main :: IO ()
 main = do
     assert (two2 [1,2,3] == [4,6]) (putStrLn "Test passed")
     assert (two2 [2,6,11] == [4]) (putStrLn "Test passed")

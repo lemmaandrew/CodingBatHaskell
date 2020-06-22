@@ -6,14 +6,15 @@ One 'y' can balance multiple 'x's. Return true if the given string is xy-balance
 import Control.Exception (assert)
 
 
-xyBalance :: String -> Boolean
+xyBalance :: String -> Bool
 xyBalance str = undefined
 
+main :: IO ()
 main = do
-    assert (xyBalance "aaxbby" == true) (putStrLn "Test passed")
-    assert (xyBalance "aaxbb" == false) (putStrLn "Test passed")
-    assert (xyBalance "yaaxbb" == false) (putStrLn "Test passed")
-    assert (xyBalance "aaxbby" == true) (putStrLn "Test passed")
-    assert (xyBalance "aaxbb" == false) (putStrLn "Test passed")
-    assert (xyBalance "yaaxbb" == false) (putStrLn "Test passed")
+    assert (xyBalance "aaxbby" == True) (putStrLn "Test passed")
+    assert (xyBalance "aaxbb" == False) (putStrLn "Test passed")
+    assert (xyBalance "yaaxbb" == False) (putStrLn "Test passed")
+    assert (xyBalance "aaxbby" == True) (putStrLn "Test passed")
+    assert (xyBalance "aaxbb" == False) (putStrLn "Test passed")
+    assert (xyBalance "yaaxbb" == False) (putStrLn "Test passed")
 

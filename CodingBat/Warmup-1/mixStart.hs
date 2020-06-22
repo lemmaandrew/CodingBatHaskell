@@ -5,14 +5,15 @@ Return true if the given string begins with "mix", except the 'm' can be anythin
 import Control.Exception (assert)
 
 
-mixStart :: String -> Boolean
+mixStart :: String -> Bool
 mixStart str = undefined
 
+main :: IO ()
 main = do
-    assert (mixStart "mixsnacks" == true) (putStrLn "Test passed")
-    assert (mixStart "pixsnacks" == true) (putStrLn "Test passed")
-    assert (mixStart "pizsnacks" == false) (putStrLn "Test passed")
-    assert (mixStart "mixsnacks" == true) (putStrLn "Test passed")
-    assert (mixStart "pixsnacks" == true) (putStrLn "Test passed")
-    assert (mixStart "pizsnacks" == false) (putStrLn "Test passed")
+    assert (mixStart "mixsnacks" == True) (putStrLn "Test passed")
+    assert (mixStart "pixsnacks" == True) (putStrLn "Test passed")
+    assert (mixStart "pizsnacks" == False) (putStrLn "Test passed")
+    assert (mixStart "mixsnacks" == True) (putStrLn "Test passed")
+    assert (mixStart "pixsnacks" == True) (putStrLn "Test passed")
+    assert (mixStart "pizsnacks" == False) (putStrLn "Test passed")
 

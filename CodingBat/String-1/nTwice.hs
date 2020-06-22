@@ -8,6 +8,7 @@ import Control.Exception (assert)
 nTwice :: String -> Int -> String
 nTwice str n = undefined
 
+main :: IO ()
 main = do
     assert (nTwice "Hello" 2 == "Helo") (putStrLn "Test passed")
     assert (nTwice "Chocolate" 3 == "Choate") (putStrLn "Test passed")

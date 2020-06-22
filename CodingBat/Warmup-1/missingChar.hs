@@ -9,6 +9,7 @@ import Control.Exception (assert)
 missingChar :: String -> Int -> String
 missingChar str n = undefined
 
+main :: IO ()
 main = do
     assert (missingChar "kitten" 1 == "ktten") (putStrLn "Test passed")
     assert (missingChar "kitten" 0 == "itten") (putStrLn "Test passed")

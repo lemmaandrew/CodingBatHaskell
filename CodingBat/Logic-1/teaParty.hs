@@ -11,6 +11,7 @@ import Control.Exception (assert)
 teaParty :: Int -> Int -> Int
 teaParty tea candy = undefined
 
+main :: IO ()
 main = do
     assert (teaParty 6 8 == 1) (putStrLn "Test passed")
     assert (teaParty 3 8 == 0) (putStrLn "Test passed")

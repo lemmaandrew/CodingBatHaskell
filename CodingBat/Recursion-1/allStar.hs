@@ -8,6 +8,7 @@ import Control.Exception (assert)
 allStar :: String -> String
 allStar str = undefined
 
+main :: IO ()
 main = do
     assert (allStar "hello" == "h*e*l*l*o") (putStrLn "Test passed")
     assert (allStar "abc" == "a*b*c") (putStrLn "Test passed")

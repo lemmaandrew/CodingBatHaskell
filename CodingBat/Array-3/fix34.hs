@@ -10,6 +10,7 @@ import Control.Exception (assert)
 fix34 :: [Int] -> [Int]
 fix34 nums = undefined
 
+main :: IO ()
 main = do
     assert (fix34 [1,3,1,4] == [1,3,4,1]) (putStrLn "Test passed")
     assert (fix34 [1,3,1,4,4,3,1] == [1,3,4,1,1,3,4]) (putStrLn "Test passed")

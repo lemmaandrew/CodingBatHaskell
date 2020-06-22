@@ -6,14 +6,15 @@ asleep, you do not answer.
 import Control.Exception (assert)
 
 
-answerCell :: Boolean -> Boolean -> Boolean -> Boolean
+answerCell :: Bool -> Bool -> Bool -> Bool
 answerCell isMorning isMom isAsleep = undefined
 
+main :: IO ()
 main = do
-    assert (answerCell false false false == true) (putStrLn "Test passed")
-    assert (answerCell false false true == false) (putStrLn "Test passed")
-    assert (answerCell true false false == false) (putStrLn "Test passed")
-    assert (answerCell false false false == true) (putStrLn "Test passed")
-    assert (answerCell false false true == false) (putStrLn "Test passed")
-    assert (answerCell true false false == false) (putStrLn "Test passed")
+    assert (answerCell False False False == True) (putStrLn "Test passed")
+    assert (answerCell False False True == False) (putStrLn "Test passed")
+    assert (answerCell True False False == False) (putStrLn "Test passed")
+    assert (answerCell False False False == True) (putStrLn "Test passed")
+    assert (answerCell False False True == False) (putStrLn "Test passed")
+    assert (answerCell True False False == False) (putStrLn "Test passed")
 

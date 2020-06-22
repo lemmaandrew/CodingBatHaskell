@@ -9,6 +9,7 @@ import Control.Exception (assert)
 sumDigits :: Int -> Int
 sumDigits n = undefined
 
+main :: IO ()
 main = do
     assert (sumDigits 126 == 9) (putStrLn "Test passed")
     assert (sumDigits 49 == 13) (putStrLn "Test passed")

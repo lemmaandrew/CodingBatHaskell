@@ -9,6 +9,7 @@ import Control.Exception (assert)
 maxSpan :: [Int] -> Int
 maxSpan nums = undefined
 
+main :: IO ()
 main = do
     assert (maxSpan [1,2,1,1,3] == 4) (putStrLn "Test passed")
     assert (maxSpan [1,4,2,1,4,1,4] == 6) (putStrLn "Test passed")

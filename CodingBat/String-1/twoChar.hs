@@ -9,6 +9,7 @@ import Control.Exception (assert)
 twoChar :: String -> Int -> String
 twoChar str index = undefined
 
+main :: IO ()
 main = do
     assert (twoChar "java" 0 == "ja") (putStrLn "Test passed")
     assert (twoChar "java" 2 == "va") (putStrLn "Test passed")

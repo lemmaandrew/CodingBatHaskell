@@ -8,6 +8,7 @@ import Control.Exception (assert)
 delDel :: String -> String
 delDel str = undefined
 
+main :: IO ()
 main = do
     assert (delDel "adelbc" == "abc") (putStrLn "Test passed")
     assert (delDel "adelHello" == "aHello") (putStrLn "Test passed")

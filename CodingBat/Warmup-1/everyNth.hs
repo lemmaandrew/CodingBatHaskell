@@ -9,6 +9,7 @@ import Control.Exception (assert)
 everyNth :: String -> Int -> String
 everyNth str n = undefined
 
+main :: IO ()
 main = do
     assert (everyNth "Miracle" 2 == "Mrce") (putStrLn "Test passed")
     assert (everyNth "abcdefg" 2 == "aceg") (putStrLn "Test passed")

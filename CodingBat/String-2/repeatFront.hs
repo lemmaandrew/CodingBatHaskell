@@ -10,6 +10,7 @@ import Control.Exception (assert)
 repeatFront :: String -> Int -> String
 repeatFront str n = undefined
 
+main :: IO ()
 main = do
     assert (repeatFront "Chocolate" 4 == "ChocChoChC") (putStrLn "Test passed")
     assert (repeatFront "Chocolate" 3 == "ChoChC") (putStrLn "Test passed")

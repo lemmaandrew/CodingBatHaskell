@@ -12,6 +12,7 @@ import Control.Exception (assert)
 sumHeights2 :: [Int] -> Int -> Int -> Int
 sumHeights2 heights start end = undefined
 
+main :: IO ()
 main = do
     assert (sumHeights2 [5,3,6,7,2] 2 4 == 7) (putStrLn "Test passed")
     assert (sumHeights2 [5,3,6,7,2] 0 1 == 2) (putStrLn "Test passed")

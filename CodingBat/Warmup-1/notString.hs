@@ -9,6 +9,7 @@ import Control.Exception (assert)
 notString :: String -> String
 notString str = undefined
 
+main :: IO ()
 main = do
     assert (notString "candy" == "notcandy") (putStrLn "Test passed")
     assert (notString "x" == "notx") (putStrLn "Test passed")

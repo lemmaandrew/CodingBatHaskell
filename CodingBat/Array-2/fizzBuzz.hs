@@ -16,6 +16,7 @@ import Control.Exception (assert)
 fizzBuzz :: Int -> Int -> [String]
 fizzBuzz start end = undefined
 
+main :: IO ()
 main = do
     assert (fizzBuzz 1 6 == ["1","2","Fizz","4","Buzz"]) (putStrLn "Test passed")
     assert (fizzBuzz 1 8 == ["1","2","Fizz","4","Buzz","Fizz","7"]) (putStrLn "Test passed")

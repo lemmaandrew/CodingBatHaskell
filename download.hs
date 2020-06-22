@@ -67,7 +67,7 @@ compileProblem (Problem url name desc checks method) = (name,printf formatString
 \%s\n\
 \-}\n\
 \import Control.Exception (assert)\n\
-\%s\n\n\n\
+\%s\n\n\
 \%s\n\n\
 \main :: IO ()\n\
 \main = do\n\
@@ -86,7 +86,7 @@ compileProblem (Problem url name desc checks method) = (name,printf formatString
 
     extraImport :: String
     extraImport = if ("Map.Map" :: String) `isInfixOf` formatMethod
-        then "import qualified Data.Map.Strict as Map"
+        then "import qualified Data.Map.Strict as Map\n"
     else ""
 
     formatChecks :: String
@@ -96,7 +96,9 @@ compileProblem (Problem url name desc checks method) = (name,printf formatString
                                             (formatArgs res)) checks
 
     formatMethod :: String
-    formatMethod = javaToHaskell method
+    formatMethod = if "wordsWithoutList" `isInfixOf` method
+        then "wordsWithoutList :: [String] -> Int -> [String]\nwordsWithoutList words len = undefined"
+        else javaToHaskell method
 
 
 {-

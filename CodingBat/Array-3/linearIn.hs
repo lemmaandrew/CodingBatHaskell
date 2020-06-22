@@ -7,14 +7,15 @@ order.
 import Control.Exception (assert)
 
 
-linearIn :: [Int] -> [Int] -> Boolean
+linearIn :: [Int] -> [Int] -> Bool
 linearIn outer inner = undefined
 
+main :: IO ()
 main = do
-    assert (linearIn [1,2,4,6] [2,4] == true) (putStrLn "Test passed")
-    assert (linearIn [1,2,4,6] [2,3,4] == false) (putStrLn "Test passed")
-    assert (linearIn [1,2,4,4,6] [2,4] == true) (putStrLn "Test passed")
-    assert (linearIn [1,2,4,6] [2,4] == true) (putStrLn "Test passed")
-    assert (linearIn [1,2,4,6] [2,3,4] == false) (putStrLn "Test passed")
-    assert (linearIn [1,2,4,4,6] [2,4] == true) (putStrLn "Test passed")
+    assert (linearIn [1,2,4,6] [2,4] == True) (putStrLn "Test passed")
+    assert (linearIn [1,2,4,6] [2,3,4] == False) (putStrLn "Test passed")
+    assert (linearIn [1,2,4,4,6] [2,4] == True) (putStrLn "Test passed")
+    assert (linearIn [1,2,4,6] [2,4] == True) (putStrLn "Test passed")
+    assert (linearIn [1,2,4,6] [2,3,4] == False) (putStrLn "Test passed")
+    assert (linearIn [1,2,4,4,6] [2,4] == True) (putStrLn "Test passed")
 

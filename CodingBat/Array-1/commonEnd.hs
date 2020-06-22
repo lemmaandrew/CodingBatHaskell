@@ -5,14 +5,15 @@ they have the same last element. Both arrays will be length 1 or more.
 import Control.Exception (assert)
 
 
-commonEnd :: [Int] -> [Int] -> Boolean
+commonEnd :: [Int] -> [Int] -> Bool
 commonEnd a b = undefined
 
+main :: IO ()
 main = do
-    assert (commonEnd [1,2,3] [7,3] == true) (putStrLn "Test passed")
-    assert (commonEnd [1,2,3] [7,3,2] == false) (putStrLn "Test passed")
-    assert (commonEnd [1,2,3] [1,3] == true) (putStrLn "Test passed")
-    assert (commonEnd [1,2,3] [7,3] == true) (putStrLn "Test passed")
-    assert (commonEnd [1,2,3] [7,3,2] == false) (putStrLn "Test passed")
-    assert (commonEnd [1,2,3] [1,3] == true) (putStrLn "Test passed")
+    assert (commonEnd [1,2,3] [7,3] == True) (putStrLn "Test passed")
+    assert (commonEnd [1,2,3] [7,3,2] == False) (putStrLn "Test passed")
+    assert (commonEnd [1,2,3] [1,3] == True) (putStrLn "Test passed")
+    assert (commonEnd [1,2,3] [7,3] == True) (putStrLn "Test passed")
+    assert (commonEnd [1,2,3] [7,3,2] == False) (putStrLn "Test passed")
+    assert (commonEnd [1,2,3] [1,3] == True) (putStrLn "Test passed")
 

@@ -5,14 +5,15 @@ array somewhere.
 import Control.Exception (assert)
 
 
-array123 :: [Int] -> Boolean
+array123 :: [Int] -> Bool
 array123 nums = undefined
 
+main :: IO ()
 main = do
-    assert (array123 [1,1,2,3,1] == true) (putStrLn "Test passed")
-    assert (array123 [1,1,2,4,1] == false) (putStrLn "Test passed")
-    assert (array123 [1,1,2,1,2,3] == true) (putStrLn "Test passed")
-    assert (array123 [1,1,2,3,1] == true) (putStrLn "Test passed")
-    assert (array123 [1,1,2,4,1] == false) (putStrLn "Test passed")
-    assert (array123 [1,1,2,1,2,3] == true) (putStrLn "Test passed")
+    assert (array123 [1,1,2,3,1] == True) (putStrLn "Test passed")
+    assert (array123 [1,1,2,4,1] == False) (putStrLn "Test passed")
+    assert (array123 [1,1,2,1,2,3] == True) (putStrLn "Test passed")
+    assert (array123 [1,1,2,3,1] == True) (putStrLn "Test passed")
+    assert (array123 [1,1,2,4,1] == False) (putStrLn "Test passed")
+    assert (array123 [1,1,2,1,2,3] == True) (putStrLn "Test passed")
 

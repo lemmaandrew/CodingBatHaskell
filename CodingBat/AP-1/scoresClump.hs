@@ -6,14 +6,15 @@ or {3, 5, 5}.
 import Control.Exception (assert)
 
 
-scoresClump :: [Int] -> Boolean
+scoresClump :: [Int] -> Bool
 scoresClump scores = undefined
 
+main :: IO ()
 main = do
-    assert (scoresClump [3,4,5] == true) (putStrLn "Test passed")
-    assert (scoresClump [3,4,6] == false) (putStrLn "Test passed")
-    assert (scoresClump [1,3,5,5] == true) (putStrLn "Test passed")
-    assert (scoresClump [3,4,5] == true) (putStrLn "Test passed")
-    assert (scoresClump [3,4,6] == false) (putStrLn "Test passed")
-    assert (scoresClump [1,3,5,5] == true) (putStrLn "Test passed")
+    assert (scoresClump [3,4,5] == True) (putStrLn "Test passed")
+    assert (scoresClump [3,4,6] == False) (putStrLn "Test passed")
+    assert (scoresClump [1,3,5,5] == True) (putStrLn "Test passed")
+    assert (scoresClump [3,4,5] == True) (putStrLn "Test passed")
+    assert (scoresClump [3,4,6] == False) (putStrLn "Test passed")
+    assert (scoresClump [1,3,5,5] == True) (putStrLn "Test passed")
 

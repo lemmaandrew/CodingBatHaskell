@@ -8,6 +8,7 @@ import Control.Exception (assert)
 maxTriple :: [Int] -> Int
 maxTriple nums = undefined
 
+main :: IO ()
 main = do
     assert (maxTriple [1,2,3] == 3) (putStrLn "Test passed")
     assert (maxTriple [1,5,3] == 5) (putStrLn "Test passed")

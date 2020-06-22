@@ -6,14 +6,15 @@ constraint that all 6's must be chosen. (No loops needed.)
 import Control.Exception (assert)
 
 
-groupSum6 :: Int -> [Int] -> Int -> Boolean
+groupSum6 :: Int -> [Int] -> Int -> Bool
 groupSum6 start nums target = undefined
 
+main :: IO ()
 main = do
-    assert (groupSum6 0 [5,6,2] 8 == true) (putStrLn "Test passed")
-    assert (groupSum6 0 [5,6,2] 9 == false) (putStrLn "Test passed")
-    assert (groupSum6 0 [5,6,2] 7 == false) (putStrLn "Test passed")
-    assert (groupSum6 0 [5,6,2] 8 == true) (putStrLn "Test passed")
-    assert (groupSum6 0 [5,6,2] 9 == false) (putStrLn "Test passed")
-    assert (groupSum6 0 [5,6,2] 7 == false) (putStrLn "Test passed")
+    assert (groupSum6 0 [5,6,2] 8 == True) (putStrLn "Test passed")
+    assert (groupSum6 0 [5,6,2] 9 == False) (putStrLn "Test passed")
+    assert (groupSum6 0 [5,6,2] 7 == False) (putStrLn "Test passed")
+    assert (groupSum6 0 [5,6,2] 8 == True) (putStrLn "Test passed")
+    assert (groupSum6 0 [5,6,2] 9 == False) (putStrLn "Test passed")
+    assert (groupSum6 0 [5,6,2] 7 == False) (putStrLn "Test passed")
 

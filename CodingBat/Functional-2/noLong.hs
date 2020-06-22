@@ -8,6 +8,7 @@ import Control.Exception (assert)
 noLong :: [String] -> [String]
 noLong strings = undefined
 
+main :: IO ()
 main = do
     assert (noLong ["this","not","too","long"] == ["not","too"]) (putStrLn "Test passed")
     assert (noLong ["a","bbb","cccc"] == ["a","bbb"]) (putStrLn "Test passed")

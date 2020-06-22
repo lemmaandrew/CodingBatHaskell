@@ -8,6 +8,7 @@ import Control.Exception (assert)
 withouEnd2 :: String -> String
 withouEnd2 str = undefined
 
+main :: IO ()
 main = do
     assert (withouEnd2 "Hello" == "ell") (putStrLn "Test passed")
     assert (withouEnd2 "abc" == "b") (putStrLn "Test passed")

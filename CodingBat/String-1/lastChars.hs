@@ -9,6 +9,7 @@ import Control.Exception (assert)
 lastChars :: String -> String -> String
 lastChars a b = undefined
 
+main :: IO ()
 main = do
     assert (lastChars "last" "chars" == "ls") (putStrLn "Test passed")
     assert (lastChars "yo" "java" == "ya") (putStrLn "Test passed")

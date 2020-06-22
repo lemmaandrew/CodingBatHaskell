@@ -6,9 +6,10 @@ it uses arrays.
 import Control.Exception (assert)
 
 
-wordsWithoutList :: [String] -> Int -> List
+wordsWithoutList :: [String] -> Int -> [String]
 wordsWithoutList words len = undefined
 
+main :: IO ()
 main = do
     assert (wordsWithoutList ["a","bb","b","ccc"] 1 == ["bb","ccc"]) (putStrLn "Test passed")
     assert (wordsWithoutList ["a","bb","b","ccc"] 3 == ["a","bb","b"]) (putStrLn "Test passed")

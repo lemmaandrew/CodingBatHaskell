@@ -8,6 +8,7 @@ import Control.Exception (assert)
 makeMiddle :: [Int] -> [Int]
 makeMiddle nums = undefined
 
+main :: IO ()
 main = do
     assert (makeMiddle [1,2,3,4] == [2,3]) (putStrLn "Test passed")
     assert (makeMiddle [7,1,2,3,4,9] == [2,3]) (putStrLn "Test passed")

@@ -8,14 +8,15 @@ arguments you like, and make the initial call to your recursive helper from spli
 import Control.Exception (assert)
 
 
-splitOdd10 :: [Int] -> Boolean
+splitOdd10 :: [Int] -> Bool
 splitOdd10 nums = undefined
 
+main :: IO ()
 main = do
-    assert (splitOdd10 [5,5,5] == true) (putStrLn "Test passed")
-    assert (splitOdd10 [5,5,6] == false) (putStrLn "Test passed")
-    assert (splitOdd10 [5,5,6,1] == true) (putStrLn "Test passed")
-    assert (splitOdd10 [5,5,5] == true) (putStrLn "Test passed")
-    assert (splitOdd10 [5,5,6] == false) (putStrLn "Test passed")
-    assert (splitOdd10 [5,5,6,1] == true) (putStrLn "Test passed")
+    assert (splitOdd10 [5,5,5] == True) (putStrLn "Test passed")
+    assert (splitOdd10 [5,5,6] == False) (putStrLn "Test passed")
+    assert (splitOdd10 [5,5,6,1] == True) (putStrLn "Test passed")
+    assert (splitOdd10 [5,5,5] == True) (putStrLn "Test passed")
+    assert (splitOdd10 [5,5,6] == False) (putStrLn "Test passed")
+    assert (splitOdd10 [5,5,6,1] == True) (putStrLn "Test passed")
 

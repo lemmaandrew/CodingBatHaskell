@@ -9,11 +9,12 @@ import Control.Exception (assert)
 makeChocolate :: Int -> Int -> Int -> Int
 makeChocolate small big goal = undefined
 
+main :: IO ()
 main = do
     assert (makeChocolate 4 1 9 == 4) (putStrLn "Test passed")
-    assert (makeChocolate 4 1 10 == -1) (putStrLn "Test passed")
+    assert (makeChocolate 4 1 10 == (-1)) (putStrLn "Test passed")
     assert (makeChocolate 4 1 7 == 2) (putStrLn "Test passed")
     assert (makeChocolate 4 1 9 == 4) (putStrLn "Test passed")
-    assert (makeChocolate 4 1 10 == -1) (putStrLn "Test passed")
+    assert (makeChocolate 4 1 10 == (-1)) (putStrLn "Test passed")
     assert (makeChocolate 4 1 7 == 2) (putStrLn "Test passed")
 

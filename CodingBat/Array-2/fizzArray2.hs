@@ -10,6 +10,7 @@ import Control.Exception (assert)
 fizzArray2 :: Int -> [String]
 fizzArray2 n = undefined
 
+main :: IO ()
 main = do
     assert (fizzArray2 4 == ["0","1","2","3"]) (putStrLn "Test passed")
     assert (fizzArray2 10 == ["0","1","2","3","4","5","6","7","8","9"]) (putStrLn "Test passed")

@@ -7,6 +7,7 @@ import Control.Exception (assert)
 noX :: [String] -> [String]
 noX strings = undefined
 
+main :: IO ()
 main = do
     assert (noX ["ax","bb","cx"] == ["a","bb","c"]) (putStrLn "Test passed")
     assert (noX ["xxax","xbxbx","xxcx"] == ["a","bb","c"]) (putStrLn "Test passed")

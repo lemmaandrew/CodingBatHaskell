@@ -7,6 +7,7 @@ import Control.Exception (assert)
 doubleChar :: String -> String
 doubleChar str = undefined
 
+main :: IO ()
 main = do
     assert (doubleChar "The" == "TThhee") (putStrLn "Test passed")
     assert (doubleChar "AAbb" == "AAAAbbbb") (putStrLn "Test passed")

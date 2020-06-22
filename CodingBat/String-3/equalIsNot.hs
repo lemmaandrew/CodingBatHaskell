@@ -5,14 +5,15 @@ is equal to the number of appearances of "not" anywhere in the string (case sens
 import Control.Exception (assert)
 
 
-equalIsNot :: String -> Boolean
+equalIsNot :: String -> Bool
 equalIsNot str = undefined
 
+main :: IO ()
 main = do
-    assert (equalIsNot "Thisisnot" == false) (putStrLn "Test passed")
-    assert (equalIsNot "Thisisnotnot" == true) (putStrLn "Test passed")
-    assert (equalIsNot "noisxxnotyynotxisi" == true) (putStrLn "Test passed")
-    assert (equalIsNot "Thisisnot" == false) (putStrLn "Test passed")
-    assert (equalIsNot "Thisisnotnot" == true) (putStrLn "Test passed")
-    assert (equalIsNot "noisxxnotyynotxisi" == true) (putStrLn "Test passed")
+    assert (equalIsNot "Thisisnot" == False) (putStrLn "Test passed")
+    assert (equalIsNot "Thisisnotnot" == True) (putStrLn "Test passed")
+    assert (equalIsNot "noisxxnotyynotxisi" == True) (putStrLn "Test passed")
+    assert (equalIsNot "Thisisnot" == False) (putStrLn "Test passed")
+    assert (equalIsNot "Thisisnotnot" == True) (putStrLn "Test passed")
+    assert (equalIsNot "noisxxnotyynotxisi" == True) (putStrLn "Test passed")
 

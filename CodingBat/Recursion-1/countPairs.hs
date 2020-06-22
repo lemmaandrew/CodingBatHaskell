@@ -9,6 +9,7 @@ import Control.Exception (assert)
 countPairs :: String -> Int
 countPairs str = undefined
 
+main :: IO ()
 main = do
     assert (countPairs "axa" == 1) (putStrLn "Test passed")
     assert (countPairs "axax" == 2) (putStrLn "Test passed")

@@ -8,6 +8,7 @@ import Control.Exception (assert)
 sortaSum :: Int -> Int -> Int
 sortaSum a b = undefined
 
+main :: IO ()
 main = do
     assert (sortaSum 3 4 == 7) (putStrLn "Test passed")
     assert (sortaSum 9 4 == 20) (putStrLn "Test passed")

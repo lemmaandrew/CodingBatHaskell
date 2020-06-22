@@ -9,6 +9,7 @@ import Control.Exception (assert)
 wordsWithout :: [String] -> String -> [String]
 wordsWithout words target = undefined
 
+main :: IO ()
 main = do
     assert (wordsWithout ["a","b","c","a"] "a" == ["b","c"]) (putStrLn "Test passed")
     assert (wordsWithout ["a","b","c","a"] "b" == ["a","c","a"]) (putStrLn "Test passed")

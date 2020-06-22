@@ -9,6 +9,7 @@ import Control.Exception (assert)
 getSandwich :: String -> String
 getSandwich str = undefined
 
+main :: IO ()
 main = do
     assert (getSandwich "breadjambread" == "jam") (putStrLn "Test passed")
     assert (getSandwich "xxbreadjambreadyy" == "jam") (putStrLn "Test passed")

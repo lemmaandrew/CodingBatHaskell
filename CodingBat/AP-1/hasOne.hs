@@ -5,14 +5,15 @@ rightmost digit, and / to discard the rightmost digit.
 import Control.Exception (assert)
 
 
-hasOne :: Int -> Boolean
+hasOne :: Int -> Bool
 hasOne n = undefined
 
+main :: IO ()
 main = do
-    assert (hasOne 10 == true) (putStrLn "Test passed")
-    assert (hasOne 22 == false) (putStrLn "Test passed")
-    assert (hasOne 220 == false) (putStrLn "Test passed")
-    assert (hasOne 10 == true) (putStrLn "Test passed")
-    assert (hasOne 22 == false) (putStrLn "Test passed")
-    assert (hasOne 220 == false) (putStrLn "Test passed")
+    assert (hasOne 10 == True) (putStrLn "Test passed")
+    assert (hasOne 22 == False) (putStrLn "Test passed")
+    assert (hasOne 220 == False) (putStrLn "Test passed")
+    assert (hasOne 10 == True) (putStrLn "Test passed")
+    assert (hasOne 22 == False) (putStrLn "Test passed")
+    assert (hasOne 220 == False) (putStrLn "Test passed")
 

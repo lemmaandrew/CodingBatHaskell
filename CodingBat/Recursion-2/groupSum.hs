@@ -10,14 +10,15 @@ by passing start as 0. No loops are needed -- the recursive calls progress down 
 import Control.Exception (assert)
 
 
-groupSum :: Int -> [Int] -> Int -> Boolean
+groupSum :: Int -> [Int] -> Int -> Bool
 groupSum start nums target = undefined
 
+main :: IO ()
 main = do
-    assert (groupSum 0 [2,4,8] 10 == true) (putStrLn "Test passed")
-    assert (groupSum 0 [2,4,8] 14 == true) (putStrLn "Test passed")
-    assert (groupSum 0 [2,4,8] 9 == false) (putStrLn "Test passed")
-    assert (groupSum 0 [2,4,8] 10 == true) (putStrLn "Test passed")
-    assert (groupSum 0 [2,4,8] 14 == true) (putStrLn "Test passed")
-    assert (groupSum 0 [2,4,8] 9 == false) (putStrLn "Test passed")
+    assert (groupSum 0 [2,4,8] 10 == True) (putStrLn "Test passed")
+    assert (groupSum 0 [2,4,8] 14 == True) (putStrLn "Test passed")
+    assert (groupSum 0 [2,4,8] 9 == False) (putStrLn "Test passed")
+    assert (groupSum 0 [2,4,8] 10 == True) (putStrLn "Test passed")
+    assert (groupSum 0 [2,4,8] 14 == True) (putStrLn "Test passed")
+    assert (groupSum 0 [2,4,8] 9 == False) (putStrLn "Test passed")
 

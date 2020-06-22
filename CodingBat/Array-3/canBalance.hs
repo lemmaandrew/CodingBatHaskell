@@ -6,14 +6,15 @@ side.
 import Control.Exception (assert)
 
 
-canBalance :: [Int] -> Boolean
+canBalance :: [Int] -> Bool
 canBalance nums = undefined
 
+main :: IO ()
 main = do
-    assert (canBalance [1,1,1,2,1] == true) (putStrLn "Test passed")
-    assert (canBalance [2,1,1,2,1] == false) (putStrLn "Test passed")
-    assert (canBalance [10,10] == true) (putStrLn "Test passed")
-    assert (canBalance [1,1,1,2,1] == true) (putStrLn "Test passed")
-    assert (canBalance [2,1,1,2,1] == false) (putStrLn "Test passed")
-    assert (canBalance [10,10] == true) (putStrLn "Test passed")
+    assert (canBalance [1,1,1,2,1] == True) (putStrLn "Test passed")
+    assert (canBalance [2,1,1,2,1] == False) (putStrLn "Test passed")
+    assert (canBalance [10,10] == True) (putStrLn "Test passed")
+    assert (canBalance [1,1,1,2,1] == True) (putStrLn "Test passed")
+    assert (canBalance [2,1,1,2,1] == False) (putStrLn "Test passed")
+    assert (canBalance [10,10] == True) (putStrLn "Test passed")
 

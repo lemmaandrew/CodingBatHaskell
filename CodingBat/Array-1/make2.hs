@@ -9,6 +9,7 @@ import Control.Exception (assert)
 make2 :: [Int] -> [Int] -> [Int]
 make2 a b = undefined
 
+main :: IO ()
 main = do
     assert (make2 [4,5] [1,2,3] == [4,5]) (putStrLn "Test passed")
     assert (make2 [4] [1,2,3] == [4,1]) (putStrLn "Test passed")

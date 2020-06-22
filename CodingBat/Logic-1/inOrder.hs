@@ -6,14 +6,15 @@ than a.
 import Control.Exception (assert)
 
 
-inOrder :: Int -> Int -> Int -> Boolean -> Boolean
+inOrder :: Int -> Int -> Int -> Bool -> Bool
 inOrder a b c bOk = undefined
 
+main :: IO ()
 main = do
-    assert (inOrder 1 2 4 false == true) (putStrLn "Test passed")
-    assert (inOrder 1 2 1 false == false) (putStrLn "Test passed")
-    assert (inOrder 1 1 2 true == true) (putStrLn "Test passed")
-    assert (inOrder 1 2 4 false == true) (putStrLn "Test passed")
-    assert (inOrder 1 2 1 false == false) (putStrLn "Test passed")
-    assert (inOrder 1 1 2 true == true) (putStrLn "Test passed")
+    assert (inOrder 1 2 4 False == True) (putStrLn "Test passed")
+    assert (inOrder 1 2 1 False == False) (putStrLn "Test passed")
+    assert (inOrder 1 1 2 True == True) (putStrLn "Test passed")
+    assert (inOrder 1 2 4 False == True) (putStrLn "Test passed")
+    assert (inOrder 1 2 1 False == False) (putStrLn "Test passed")
+    assert (inOrder 1 1 2 True == True) (putStrLn "Test passed")
 

@@ -8,6 +8,7 @@ import Control.Exception (assert)
 sumDouble :: Int -> Int -> Int
 sumDouble a b = undefined
 
+main :: IO ()
 main = do
     assert (sumDouble 1 2 == 3) (putStrLn "Test passed")
     assert (sumDouble 3 2 == 5) (putStrLn "Test passed")

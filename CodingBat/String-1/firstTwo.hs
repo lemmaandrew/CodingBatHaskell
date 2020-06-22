@@ -10,6 +10,7 @@ import Control.Exception (assert)
 firstTwo :: String -> String
 firstTwo str = undefined
 
+main :: IO ()
 main = do
     assert (firstTwo "Hello" == "He") (putStrLn "Test passed")
     assert (firstTwo "abcdefg" == "ab") (putStrLn "Test passed")

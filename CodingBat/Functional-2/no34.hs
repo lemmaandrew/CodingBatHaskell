@@ -8,6 +8,7 @@ import Control.Exception (assert)
 no34 :: [String] -> [String]
 no34 strings = undefined
 
+main :: IO ()
 main = do
     assert (no34 ["a","bb","ccc"] == ["a","bb"]) (putStrLn "Test passed")
     assert (no34 ["a","bb","ccc","dddd"] == ["a","bb"]) (putStrLn "Test passed")

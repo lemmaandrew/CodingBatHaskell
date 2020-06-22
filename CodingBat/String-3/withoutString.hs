@@ -10,6 +10,7 @@ import Control.Exception (assert)
 withoutString :: String -> String -> String
 withoutString base remove = undefined
 
+main :: IO ()
 main = do
     assert (withoutString "Hellothere" "llo" == "Hethere") (putStrLn "Test passed")
     assert (withoutString "Hellothere" "e" == "Hllothr") (putStrLn "Test passed")

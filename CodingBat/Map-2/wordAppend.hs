@@ -9,6 +9,7 @@ import Control.Exception (assert)
 wordAppend :: [String] -> String
 wordAppend strings = undefined
 
+main :: IO ()
 main = do
     assert (wordAppend ["a","b","a"] == "a") (putStrLn "Test passed")
     assert (wordAppend ["a","b","a","c","a","d","a"] == "aa") (putStrLn "Test passed")

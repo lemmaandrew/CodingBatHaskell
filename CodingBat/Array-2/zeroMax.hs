@@ -9,6 +9,7 @@ import Control.Exception (assert)
 zeroMax :: [Int] -> [Int]
 zeroMax nums = undefined
 
+main :: IO ()
 main = do
     assert (zeroMax [0,5,0,3] == [5,5,3,3]) (putStrLn "Test passed")
     assert (zeroMax [0,4,0,3] == [3,4,3,3]) (putStrLn "Test passed")

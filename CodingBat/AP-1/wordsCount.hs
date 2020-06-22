@@ -7,6 +7,7 @@ import Control.Exception (assert)
 wordsCount :: [String] -> Int -> Int
 wordsCount words len = undefined
 
+main :: IO ()
 main = do
     assert (wordsCount ["a","bb","b","ccc"] 1 == 2) (putStrLn "Test passed")
     assert (wordsCount ["a","bb","b","ccc"] 3 == 1) (putStrLn "Test passed")

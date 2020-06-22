@@ -6,14 +6,15 @@ as with 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 1
 import Control.Exception (assert)
 
 
-lastDigit :: Int -> Int -> Boolean
+lastDigit :: Int -> Int -> Bool
 lastDigit a b = undefined
 
+main :: IO ()
 main = do
-    assert (lastDigit 7 17 == true) (putStrLn "Test passed")
-    assert (lastDigit 6 17 == false) (putStrLn "Test passed")
-    assert (lastDigit 3 113 == true) (putStrLn "Test passed")
-    assert (lastDigit 7 17 == true) (putStrLn "Test passed")
-    assert (lastDigit 6 17 == false) (putStrLn "Test passed")
-    assert (lastDigit 3 113 == true) (putStrLn "Test passed")
+    assert (lastDigit 7 17 == True) (putStrLn "Test passed")
+    assert (lastDigit 6 17 == False) (putStrLn "Test passed")
+    assert (lastDigit 3 113 == True) (putStrLn "Test passed")
+    assert (lastDigit 7 17 == True) (putStrLn "Test passed")
+    assert (lastDigit 6 17 == False) (putStrLn "Test passed")
+    assert (lastDigit 3 113 == True) (putStrLn "Test passed")
 

@@ -11,6 +11,7 @@ import Control.Exception (assert)
 scoresSpecial :: [Int] -> [Int] -> Int
 scoresSpecial a b = undefined
 
+main :: IO ()
 main = do
     assert (scoresSpecial [12,10,4] [2,20,30] == 40) (putStrLn "Test passed")
     assert (scoresSpecial [20,10,4] [2,20,10] == 40) (putStrLn "Test passed")

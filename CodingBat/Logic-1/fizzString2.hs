@@ -12,6 +12,7 @@ import Control.Exception (assert)
 fizzString2 :: Int -> String
 fizzString2 n = undefined
 
+main :: IO ()
 main = do
     assert (fizzString2 1 == "1!") (putStrLn "Test passed")
     assert (fizzString2 2 == "2!") (putStrLn "Test passed")

@@ -8,11 +8,12 @@ import Control.Exception (assert)
 parenBit :: String -> String
 parenBit str = undefined
 
+main :: IO ()
 main = do
-    assert (parenBit "xyz(abc == "(abc)") (putStrLn "Test passed")
-    assert (parenBit "x(hello == "(hello)") (putStrLn "Test passed")
-    assert (parenBit "(xy == "(xy)") (putStrLn "Test passed")
-    assert (parenBit "xyz(abc == "(abc)") (putStrLn "Test passed")
-    assert (parenBit "x(hello == "(hello)") (putStrLn "Test passed")
-    assert (parenBit "(xy == "(xy)") (putStrLn "Test passed")
+    assert (parenBit "xyz(abc)123" == "(abc)") (putStrLn "Test passed")
+    assert (parenBit "x(hello)" == "(hello)") (putStrLn "Test passed")
+    assert (parenBit "(xy)1" == "(xy)") (putStrLn "Test passed")
+    assert (parenBit "xyz(abc)123" == "(abc)") (putStrLn "Test passed")
+    assert (parenBit "x(hello)" == "(hello)") (putStrLn "Test passed")
+    assert (parenBit "(xy)1" == "(xy)") (putStrLn "Test passed")
 

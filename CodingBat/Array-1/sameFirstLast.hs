@@ -5,14 +5,15 @@ element and the last element are equal.
 import Control.Exception (assert)
 
 
-sameFirstLast :: [Int] -> Boolean
+sameFirstLast :: [Int] -> Bool
 sameFirstLast nums = undefined
 
+main :: IO ()
 main = do
-    assert (sameFirstLast [1,2,3] == false) (putStrLn "Test passed")
-    assert (sameFirstLast [1,2,3,1] == true) (putStrLn "Test passed")
-    assert (sameFirstLast [1,2,1] == true) (putStrLn "Test passed")
-    assert (sameFirstLast [1,2,3] == false) (putStrLn "Test passed")
-    assert (sameFirstLast [1,2,3,1] == true) (putStrLn "Test passed")
-    assert (sameFirstLast [1,2,1] == true) (putStrLn "Test passed")
+    assert (sameFirstLast [1,2,3] == False) (putStrLn "Test passed")
+    assert (sameFirstLast [1,2,3,1] == True) (putStrLn "Test passed")
+    assert (sameFirstLast [1,2,1] == True) (putStrLn "Test passed")
+    assert (sameFirstLast [1,2,3] == False) (putStrLn "Test passed")
+    assert (sameFirstLast [1,2,3,1] == True) (putStrLn "Test passed")
+    assert (sameFirstLast [1,2,1] == True) (putStrLn "Test passed")
 

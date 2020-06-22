@@ -8,6 +8,7 @@ import Control.Exception (assert)
 seeColor :: String -> String
 seeColor str = undefined
 
+main :: IO ()
 main = do
     assert (seeColor "redxx" == "red") (putStrLn "Test passed")
     assert (seeColor "xxred" == "") (putStrLn "Test passed")

@@ -6,14 +6,15 @@ one. This problem is harder than it looks.
 import Control.Exception (assert)
 
 
-xyzMiddle :: String -> Boolean
+xyzMiddle :: String -> Bool
 xyzMiddle str = undefined
 
+main :: IO ()
 main = do
-    assert (xyzMiddle "AAxyzBB" == true) (putStrLn "Test passed")
-    assert (xyzMiddle "AxyzBB" == true) (putStrLn "Test passed")
-    assert (xyzMiddle "AxyzBBB" == false) (putStrLn "Test passed")
-    assert (xyzMiddle "AAxyzBB" == true) (putStrLn "Test passed")
-    assert (xyzMiddle "AxyzBB" == true) (putStrLn "Test passed")
-    assert (xyzMiddle "AxyzBBB" == false) (putStrLn "Test passed")
+    assert (xyzMiddle "AAxyzBB" == True) (putStrLn "Test passed")
+    assert (xyzMiddle "AxyzBB" == True) (putStrLn "Test passed")
+    assert (xyzMiddle "AxyzBBB" == False) (putStrLn "Test passed")
+    assert (xyzMiddle "AAxyzBB" == True) (putStrLn "Test passed")
+    assert (xyzMiddle "AxyzBB" == True) (putStrLn "Test passed")
+    assert (xyzMiddle "AxyzBBB" == False) (putStrLn "Test passed")
 

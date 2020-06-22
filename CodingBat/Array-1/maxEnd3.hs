@@ -8,6 +8,7 @@ import Control.Exception (assert)
 maxEnd3 :: [Int] -> [Int]
 maxEnd3 nums = undefined
 
+main :: IO ()
 main = do
     assert (maxEnd3 [1,2,3] == [3,3,3]) (putStrLn "Test passed")
     assert (maxEnd3 [11,5,9] == [11,11,11]) (putStrLn "Test passed")

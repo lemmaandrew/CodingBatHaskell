@@ -8,6 +8,7 @@ import Control.Exception (assert)
 stringTimes :: String -> Int -> String
 stringTimes str n = undefined
 
+main :: IO ()
 main = do
     assert (stringTimes "Hi" 2 == "HiHi") (putStrLn "Test passed")
     assert (stringTimes "Hi" 3 == "HiHiHi") (putStrLn "Test passed")

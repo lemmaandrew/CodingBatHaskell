@@ -9,6 +9,7 @@ import Control.Exception (assert)
 triangle :: Int -> Int
 triangle rows = undefined
 
+main :: IO ()
 main = do
     assert (triangle 0 == 0) (putStrLn "Test passed")
     assert (triangle 1 == 1) (putStrLn "Test passed")

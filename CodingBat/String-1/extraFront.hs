@@ -9,6 +9,7 @@ import Control.Exception (assert)
 extraFront :: String -> String
 extraFront str = undefined
 
+main :: IO ()
 main = do
     assert (extraFront "Hello" == "HeHeHe") (putStrLn "Test passed")
     assert (extraFront "ab" == "ababab") (putStrLn "Test passed")

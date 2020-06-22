@@ -7,14 +7,15 @@ multiple of 5 is 1, it must not be chosen. (No loops needed.)
 import Control.Exception (assert)
 
 
-groupSum5 :: Int -> [Int] -> Int -> Boolean
+groupSum5 :: Int -> [Int] -> Int -> Bool
 groupSum5 start nums target = undefined
 
+main :: IO ()
 main = do
-    assert (groupSum5 0 [2,5,10,4] 19 == true) (putStrLn "Test passed")
-    assert (groupSum5 0 [2,5,10,4] 17 == true) (putStrLn "Test passed")
-    assert (groupSum5 0 [2,5,10,4] 12 == false) (putStrLn "Test passed")
-    assert (groupSum5 0 [2,5,10,4] 19 == true) (putStrLn "Test passed")
-    assert (groupSum5 0 [2,5,10,4] 17 == true) (putStrLn "Test passed")
-    assert (groupSum5 0 [2,5,10,4] 12 == false) (putStrLn "Test passed")
+    assert (groupSum5 0 [2,5,10,4] 19 == True) (putStrLn "Test passed")
+    assert (groupSum5 0 [2,5,10,4] 17 == True) (putStrLn "Test passed")
+    assert (groupSum5 0 [2,5,10,4] 12 == False) (putStrLn "Test passed")
+    assert (groupSum5 0 [2,5,10,4] 19 == True) (putStrLn "Test passed")
+    assert (groupSum5 0 [2,5,10,4] 17 == True) (putStrLn "Test passed")
+    assert (groupSum5 0 [2,5,10,4] 12 == False) (putStrLn "Test passed")
 

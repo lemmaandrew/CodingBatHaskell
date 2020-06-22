@@ -13,11 +13,12 @@ import Control.Exception (assert)
 userCompare :: String -> Int -> String -> Int -> Int
 userCompare aName aId bName bId = undefined
 
+main :: IO ()
 main = do
-    assert (userCompare "bb" 1 "zz" 2 == -1) (putStrLn "Test passed")
+    assert (userCompare "bb" 1 "zz" 2 == (-1)) (putStrLn "Test passed")
     assert (userCompare "bb" 1 "aa" 2 == 1) (putStrLn "Test passed")
     assert (userCompare "bb" 1 "bb" 1 == 0) (putStrLn "Test passed")
-    assert (userCompare "bb" 1 "zz" 2 == -1) (putStrLn "Test passed")
+    assert (userCompare "bb" 1 "zz" 2 == (-1)) (putStrLn "Test passed")
     assert (userCompare "bb" 1 "aa" 2 == 1) (putStrLn "Test passed")
     assert (userCompare "bb" 1 "bb" 1 == 0) (putStrLn "Test passed")
 

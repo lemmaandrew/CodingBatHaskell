@@ -10,6 +10,7 @@ import Control.Exception (assert)
 minCat :: String -> String -> String
 minCat a b = undefined
 
+main :: IO ()
 main = do
     assert (minCat "Hello" "Hi" == "loHi") (putStrLn "Test passed")
     assert (minCat "Hello" "java" == "ellojava") (putStrLn "Test passed")

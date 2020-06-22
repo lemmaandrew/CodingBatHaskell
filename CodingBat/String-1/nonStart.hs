@@ -8,6 +8,7 @@ import Control.Exception (assert)
 nonStart :: String -> String -> String
 nonStart a b = undefined
 
+main :: IO ()
 main = do
     assert (nonStart "Hello" "There" == "ellohere") (putStrLn "Test passed")
     assert (nonStart "java" "code" == "avaode") (putStrLn "Test passed")

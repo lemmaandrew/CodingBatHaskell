@@ -9,6 +9,7 @@ import Control.Exception (assert)
 tenRun :: [Int] -> [Int]
 tenRun nums = undefined
 
+main :: IO ()
 main = do
     assert (tenRun [2,10,3,4,20,5] == [2,10,10,10,20,20]) (putStrLn "Test passed")
     assert (tenRun [10,1,20,2] == [10,10,20,20]) (putStrLn "Test passed")

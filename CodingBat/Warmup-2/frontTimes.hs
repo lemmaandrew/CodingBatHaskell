@@ -9,6 +9,7 @@ import Control.Exception (assert)
 frontTimes :: String -> Int -> String
 frontTimes str n = undefined
 
+main :: IO ()
 main = do
     assert (frontTimes "Chocolate" 2 == "ChoCho") (putStrLn "Test passed")
     assert (frontTimes "Chocolate" 3 == "ChoChoCho") (putStrLn "Test passed")

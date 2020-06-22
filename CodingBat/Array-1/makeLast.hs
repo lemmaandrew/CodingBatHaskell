@@ -9,6 +9,7 @@ import Control.Exception (assert)
 makeLast :: [Int] -> [Int]
 makeLast nums = undefined
 
+main :: IO ()
 main = do
     assert (makeLast [4,5,6] == [0,0,0,0,0,6]) (putStrLn "Test passed")
     assert (makeLast [1,2] == [0,0,0,2]) (putStrLn "Test passed")

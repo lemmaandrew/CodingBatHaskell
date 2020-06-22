@@ -11,6 +11,7 @@ import Control.Exception (assert)
 startWord :: String -> String -> String
 startWord str word = undefined
 
+main :: IO ()
 main = do
     assert (startWord "hippo" "hi" == "hi") (putStrLn "Test passed")
     assert (startWord "hippo" "xip" == "hip") (putStrLn "Test passed")

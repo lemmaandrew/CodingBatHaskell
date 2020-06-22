@@ -7,6 +7,7 @@ import Control.Exception (assert)
 frontBack :: String -> String
 frontBack str = undefined
 
+main :: IO ()
 main = do
     assert (frontBack "code" == "eodc") (putStrLn "Test passed")
     assert (frontBack "a" == "a") (putStrLn "Test passed")

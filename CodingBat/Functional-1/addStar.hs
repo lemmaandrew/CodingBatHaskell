@@ -7,6 +7,7 @@ import Control.Exception (assert)
 addStar :: [String] -> [String]
 addStar strings = undefined
 
+main :: IO ()
 main = do
     assert (addStar ["a","bb","ccc"] == ["a*","bb*","ccc*"]) (putStrLn "Test passed")
     assert (addStar ["hello","there"] == ["hello*","there*"]) (putStrLn "Test passed")

@@ -6,14 +6,15 @@ not be "case sensitive"). Note:    str.toLowerCase() returns the lowercase versi
 import Control.Exception (assert)
 
 
-endOther :: String -> String -> Boolean
+endOther :: String -> String -> Bool
 endOther a b = undefined
 
+main :: IO ()
 main = do
-    assert (endOther "Hiabc" "abc" == true) (putStrLn "Test passed")
-    assert (endOther "AbC" "HiaBc" == true) (putStrLn "Test passed")
-    assert (endOther "abc" "abXabc" == true) (putStrLn "Test passed")
-    assert (endOther "Hiabc" "abc" == true) (putStrLn "Test passed")
-    assert (endOther "AbC" "HiaBc" == true) (putStrLn "Test passed")
-    assert (endOther "abc" "abXabc" == true) (putStrLn "Test passed")
+    assert (endOther "Hiabc" "abc" == True) (putStrLn "Test passed")
+    assert (endOther "AbC" "HiaBc" == True) (putStrLn "Test passed")
+    assert (endOther "abc" "abXabc" == True) (putStrLn "Test passed")
+    assert (endOther "Hiabc" "abc" == True) (putStrLn "Test passed")
+    assert (endOther "AbC" "HiaBc" == True) (putStrLn "Test passed")
+    assert (endOther "abc" "abXabc" == True) (putStrLn "Test passed")
 

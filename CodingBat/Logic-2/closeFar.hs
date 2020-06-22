@@ -6,14 +6,15 @@ Note: Math.abs(num) computes the absolute value of a number.
 import Control.Exception (assert)
 
 
-closeFar :: Int -> Int -> Int -> Boolean
+closeFar :: Int -> Int -> Int -> Bool
 closeFar a b c = undefined
 
+main :: IO ()
 main = do
-    assert (closeFar 1 2 10 == true) (putStrLn "Test passed")
-    assert (closeFar 1 2 3 == false) (putStrLn "Test passed")
-    assert (closeFar 4 1 3 == true) (putStrLn "Test passed")
-    assert (closeFar 1 2 10 == true) (putStrLn "Test passed")
-    assert (closeFar 1 2 3 == false) (putStrLn "Test passed")
-    assert (closeFar 4 1 3 == true) (putStrLn "Test passed")
+    assert (closeFar 1 2 10 == True) (putStrLn "Test passed")
+    assert (closeFar 1 2 3 == False) (putStrLn "Test passed")
+    assert (closeFar 4 1 3 == True) (putStrLn "Test passed")
+    assert (closeFar 1 2 10 == True) (putStrLn "Test passed")
+    assert (closeFar 1 2 3 == False) (putStrLn "Test passed")
+    assert (closeFar 4 1 3 == True) (putStrLn "Test passed")
 

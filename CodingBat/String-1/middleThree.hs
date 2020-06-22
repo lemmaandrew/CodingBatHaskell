@@ -8,6 +8,7 @@ import Control.Exception (assert)
 middleThree :: String -> String
 middleThree str = undefined
 
+main :: IO ()
 main = do
     assert (middleThree "Candy" == "and") (putStrLn "Test passed")
     assert (middleThree "and" == "and") (putStrLn "Test passed")

@@ -10,6 +10,7 @@ import Control.Exception (assert)
 array11 :: [Int] -> Int -> Int
 array11 nums index = undefined
 
+main :: IO ()
 main = do
     assert (array11 [1,2,11] 0 == 1) (putStrLn "Test passed")
     assert (array11 [11,11] 0 == 2) (putStrLn "Test passed")

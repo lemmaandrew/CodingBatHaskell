@@ -6,14 +6,15 @@ is true, equality is allowed, such as 5 5 7 or 5 5 5.
 import Control.Exception (assert)
 
 
-inOrderEqual :: Int -> Int -> Int -> Boolean -> Boolean
+inOrderEqual :: Int -> Int -> Int -> Bool -> Bool
 inOrderEqual a b c equalOk = undefined
 
+main :: IO ()
 main = do
-    assert (inOrderEqual 2 5 11 false == true) (putStrLn "Test passed")
-    assert (inOrderEqual 5 7 6 false == false) (putStrLn "Test passed")
-    assert (inOrderEqual 5 5 7 true == true) (putStrLn "Test passed")
-    assert (inOrderEqual 2 5 11 false == true) (putStrLn "Test passed")
-    assert (inOrderEqual 5 7 6 false == false) (putStrLn "Test passed")
-    assert (inOrderEqual 5 5 7 true == true) (putStrLn "Test passed")
+    assert (inOrderEqual 2 5 11 False == True) (putStrLn "Test passed")
+    assert (inOrderEqual 5 7 6 False == False) (putStrLn "Test passed")
+    assert (inOrderEqual 5 5 7 True == True) (putStrLn "Test passed")
+    assert (inOrderEqual 2 5 11 False == True) (putStrLn "Test passed")
+    assert (inOrderEqual 5 7 6 False == False) (putStrLn "Test passed")
+    assert (inOrderEqual 5 5 7 True == True) (putStrLn "Test passed")
 

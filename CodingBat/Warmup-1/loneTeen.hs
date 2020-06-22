@@ -5,14 +5,15 @@ values, return true if one or the other is teen, but not both.
 import Control.Exception (assert)
 
 
-loneTeen :: Int -> Int -> Boolean
+loneTeen :: Int -> Int -> Bool
 loneTeen a b = undefined
 
+main :: IO ()
 main = do
-    assert (loneTeen 13 99 == true) (putStrLn "Test passed")
-    assert (loneTeen 21 19 == true) (putStrLn "Test passed")
-    assert (loneTeen 13 13 == false) (putStrLn "Test passed")
-    assert (loneTeen 13 99 == true) (putStrLn "Test passed")
-    assert (loneTeen 21 19 == true) (putStrLn "Test passed")
-    assert (loneTeen 13 13 == false) (putStrLn "Test passed")
+    assert (loneTeen 13 99 == True) (putStrLn "Test passed")
+    assert (loneTeen 21 19 == True) (putStrLn "Test passed")
+    assert (loneTeen 13 13 == False) (putStrLn "Test passed")
+    assert (loneTeen 13 99 == True) (putStrLn "Test passed")
+    assert (loneTeen 21 19 == True) (putStrLn "Test passed")
+    assert (loneTeen 13 13 == False) (putStrLn "Test passed")
 

@@ -8,6 +8,7 @@ import Control.Exception (assert)
 countClumps :: [Int] -> Int
 countClumps nums = undefined
 
+main :: IO ()
 main = do
     assert (countClumps [1,2,2,3,4,4] == 2) (putStrLn "Test passed")
     assert (countClumps [1,1,2,1,1] == 2) (putStrLn "Test passed")

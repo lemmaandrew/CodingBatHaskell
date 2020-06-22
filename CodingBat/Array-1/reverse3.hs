@@ -8,6 +8,7 @@ import Control.Exception (assert)
 reverse3 :: [Int] -> [Int]
 reverse3 nums = undefined
 
+main :: IO ()
 main = do
     assert (reverse3 [1,2,3] == [3,2,1]) (putStrLn "Test passed")
     assert (reverse3 [5,11,9] == [9,11,5]) (putStrLn "Test passed")

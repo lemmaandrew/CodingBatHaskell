@@ -6,14 +6,15 @@ and false for n=1 and n=3. You may assume that n is in the range 0..nums.length 
 import Control.Exception (assert)
 
 
-sameEnds :: [Int] -> Int -> Boolean
+sameEnds :: [Int] -> Int -> Bool
 sameEnds nums len = undefined
 
+main :: IO ()
 main = do
-    assert (sameEnds [5,6,45,99,13,5,6] 1 == false) (putStrLn "Test passed")
-    assert (sameEnds [5,6,45,99,13,5,6] 2 == true) (putStrLn "Test passed")
-    assert (sameEnds [5,6,45,99,13,5,6] 3 == false) (putStrLn "Test passed")
-    assert (sameEnds [5,6,45,99,13,5,6] 1 == false) (putStrLn "Test passed")
-    assert (sameEnds [5,6,45,99,13,5,6] 2 == true) (putStrLn "Test passed")
-    assert (sameEnds [5,6,45,99,13,5,6] 3 == false) (putStrLn "Test passed")
+    assert (sameEnds [5,6,45,99,13,5,6] 1 == False) (putStrLn "Test passed")
+    assert (sameEnds [5,6,45,99,13,5,6] 2 == True) (putStrLn "Test passed")
+    assert (sameEnds [5,6,45,99,13,5,6] 3 == False) (putStrLn "Test passed")
+    assert (sameEnds [5,6,45,99,13,5,6] 1 == False) (putStrLn "Test passed")
+    assert (sameEnds [5,6,45,99,13,5,6] 2 == True) (putStrLn "Test passed")
+    assert (sameEnds [5,6,45,99,13,5,6] 3 == False) (putStrLn "Test passed")
 

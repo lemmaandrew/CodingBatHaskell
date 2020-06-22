@@ -30,7 +30,7 @@ import Data.List (intercalate)
 import Data.List.Split (splitOn)
 import Text.Printf
 
-import Text.Regex (mkRegex,mkRegexWithOpts,subRegex)
+import Text.Regex (mkRegexWithOpts,subRegex)
 import Text.Regex.PCRE ((=~))
 
 -- utility functions for splitting declarations
@@ -146,7 +146,7 @@ stripJava funcstr = fix body ++ ")" where
 -- e.g., "[1,2,3], 1, {\"a\": \"b\"}, \"hi\"" -> "[1,2,3] 1 Map.fromList [(\"a\",\"b\")]) \"hi\""
 formatArgs :: String -> String
 formatArgs "" = ""
-formatArgs args = unwords $ map formatDict $ go 0 [] $ fixBools args where
+formatArgs args = unwords $ map formatEdgeCases $ go 0 [] $ args where
     go _ current [] = [current]
     go n current (' ':xs) = go n current xs
     go 0 current (',':xs) = current : go 0 "" xs
@@ -155,18 +155,24 @@ formatArgs args = unwords $ map formatDict $ go 0 [] $ fixBools args where
         | x `elem` "})]" || x == '"' = go (n - 1) (current ++ [x]) xs
         | otherwise = go n (current ++ [x]) xs
 
-    fixBools s = subRegex (mkRegex "\\btrue\\b") (subRegex (mkRegex "\\bfalse\\b") s "False") "True"
-
-    formatDict "{}" = "Map.empty"
-    formatDict ('{':xs) = "(Map.fromList ["
-                          ++ intercalate "," (map ((\[x,y] -> '(' : x ++ "," ++ y ++ ")") . splitOn ":") $ go 0 "" $ init xs)
+    formatEdgeCases "{}" = "Map.empty"
+    formatEdgeCases ('{':xs) = "(Map.fromList ["
+                          ++ intercalate ","
+                                (map ((\[x,y] -> '(' : formatEdgeCases x ++ "," ++ formatEdgeCases y ++ ")") . splitOn ":")
+                                    $ go 0 "" $ init xs)
                           ++ "])"
-    formatDict xs = xs
+    formatEdgeCases ('-':xs) = "(-" ++ xs ++ ")" -- for negative numbers
+    formatEdgeCases "false" = "False"
+    formatEdgeCases "true" = "True"
+    formatEdgeCases xs = xs
 
 -- converts a Java method call to Haskell
 javaCallToHaskell :: String -> String
 javaCallToHaskell = unwords
-                  . (\(func,args) -> [func,init $ formatArgs $ tail args])
+                  . (\(func,args) -> filter (not . null) [func,formatArgs $ tail args])
                   . break (== '(')
-                  . stripJava
-                  . (++ " {\n") -- transforming string into a format that stripJava can work with
+                  . toLastParen where
+    toLastParen s = take (go 0 0 s) s where
+        go lastParen _ [] = lastParen
+        go _ idx (')':xs) = go idx (idx + 1) xs
+        go lastParen idx (_:xs) = go lastParen (idx + 1) xs

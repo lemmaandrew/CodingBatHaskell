@@ -8,6 +8,7 @@ import Control.Exception (assert)
 changePi :: String -> String
 changePi str = undefined
 
+main :: IO ()
 main = do
     assert (changePi "xpix" == "x3.14x") (putStrLn "Test passed")
     assert (changePi "pipi" == "3.143.14") (putStrLn "Test passed")

@@ -9,6 +9,7 @@ import Control.Exception (assert)
 plusOut :: String -> String -> String
 plusOut str word = undefined
 
+main :: IO ()
 main = do
     assert (plusOut "12xy34" "xy" == "++xy++") (putStrLn "Test passed")
     assert (plusOut "12xy34" "1" == "1+++++") (putStrLn "Test passed")

@@ -5,14 +5,15 @@ string.
 import Control.Exception (assert)
 
 
-catDog :: String -> Boolean
+catDog :: String -> Bool
 catDog str = undefined
 
+main :: IO ()
 main = do
-    assert (catDog "catdog" == true) (putStrLn "Test passed")
-    assert (catDog "catcat" == false) (putStrLn "Test passed")
-    assert (catDog "1cat1cadodog" == true) (putStrLn "Test passed")
-    assert (catDog "catdog" == true) (putStrLn "Test passed")
-    assert (catDog "catcat" == false) (putStrLn "Test passed")
-    assert (catDog "1cat1cadodog" == true) (putStrLn "Test passed")
+    assert (catDog "catdog" == True) (putStrLn "Test passed")
+    assert (catDog "catcat" == False) (putStrLn "Test passed")
+    assert (catDog "1cat1cadodog" == True) (putStrLn "Test passed")
+    assert (catDog "catdog" == True) (putStrLn "Test passed")
+    assert (catDog "catcat" == False) (putStrLn "Test passed")
+    assert (catDog "1cat1cadodog" == True) (putStrLn "Test passed")
 

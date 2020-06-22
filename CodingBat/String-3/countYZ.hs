@@ -10,6 +10,7 @@ import Control.Exception (assert)
 countYZ :: String -> Int
 countYZ str = undefined
 
+main :: IO ()
 main = do
     assert (countYZ "fezday" == 2) (putStrLn "Test passed")
     assert (countYZ "dayfez" == 2) (putStrLn "Test passed")

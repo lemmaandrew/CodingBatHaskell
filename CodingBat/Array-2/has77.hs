@@ -5,14 +5,15 @@ or there are two 7's separated by one element, such as with {7, 1, 7}.
 import Control.Exception (assert)
 
 
-has77 :: [Int] -> Boolean
+has77 :: [Int] -> Bool
 has77 nums = undefined
 
+main :: IO ()
 main = do
-    assert (has77 [1,7,7] == true) (putStrLn "Test passed")
-    assert (has77 [1,7,1,7] == true) (putStrLn "Test passed")
-    assert (has77 [1,7,1,1,7] == false) (putStrLn "Test passed")
-    assert (has77 [1,7,7] == true) (putStrLn "Test passed")
-    assert (has77 [1,7,1,7] == true) (putStrLn "Test passed")
-    assert (has77 [1,7,1,1,7] == false) (putStrLn "Test passed")
+    assert (has77 [1,7,7] == True) (putStrLn "Test passed")
+    assert (has77 [1,7,1,7] == True) (putStrLn "Test passed")
+    assert (has77 [1,7,1,1,7] == False) (putStrLn "Test passed")
+    assert (has77 [1,7,7] == True) (putStrLn "Test passed")
+    assert (has77 [1,7,1,7] == True) (putStrLn "Test passed")
+    assert (has77 [1,7,1,1,7] == False) (putStrLn "Test passed")
 

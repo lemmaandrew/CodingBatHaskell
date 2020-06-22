@@ -7,14 +7,15 @@ multiple of 5) must be in the other. (No loops needed.)
 import Control.Exception (assert)
 
 
-split53 :: [Int] -> Boolean
+split53 :: [Int] -> Bool
 split53 nums = undefined
 
+main :: IO ()
 main = do
-    assert (split53 [1,1] == true) (putStrLn "Test passed")
-    assert (split53 [1,1,1] == false) (putStrLn "Test passed")
-    assert (split53 [2,4,2] == true) (putStrLn "Test passed")
-    assert (split53 [1,1] == true) (putStrLn "Test passed")
-    assert (split53 [1,1,1] == false) (putStrLn "Test passed")
-    assert (split53 [2,4,2] == true) (putStrLn "Test passed")
+    assert (split53 [1,1] == True) (putStrLn "Test passed")
+    assert (split53 [1,1,1] == False) (putStrLn "Test passed")
+    assert (split53 [2,4,2] == True) (putStrLn "Test passed")
+    assert (split53 [1,1] == True) (putStrLn "Test passed")
+    assert (split53 [1,1,1] == False) (putStrLn "Test passed")
+    assert (split53 [2,4,2] == True) (putStrLn "Test passed")
 

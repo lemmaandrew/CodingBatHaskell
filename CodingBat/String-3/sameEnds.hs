@@ -8,6 +8,7 @@ import Control.Exception (assert)
 sameEnds :: String -> String
 sameEnds string = undefined
 
+main :: IO ()
 main = do
     assert (sameEnds "abXYab" == "ab") (putStrLn "Test passed")
     assert (sameEnds "xx" == "x") (putStrLn "Test passed")

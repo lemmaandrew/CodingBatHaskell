@@ -9,6 +9,7 @@ import Control.Exception (assert)
 makeTags :: String -> String -> String
 makeTags tag word = undefined
 
+main :: IO ()
 main = do
     assert (makeTags "i" "Yay" == "<i>Yay</i>") (putStrLn "Test passed")
     assert (makeTags "i" "Hello" == "<i>Hello</i>") (putStrLn "Test passed")

@@ -9,6 +9,7 @@ import Control.Exception (assert)
 starOut :: String -> String
 starOut str = undefined
 
+main :: IO ()
 main = do
     assert (starOut "ab*cd" == "ad") (putStrLn "Test passed")
     assert (starOut "ab**cd" == "ad") (putStrLn "Test passed")

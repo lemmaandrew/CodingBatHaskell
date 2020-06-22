@@ -11,11 +11,12 @@ import Control.Exception (assert)
 centeredAverage :: [Int] -> Int
 centeredAverage nums = undefined
 
+main :: IO ()
 main = do
     assert (centeredAverage [1,2,3,4,100] == 3) (putStrLn "Test passed")
     assert (centeredAverage [1,1,5,5,10,8,7] == 5) (putStrLn "Test passed")
-    assert (centeredAverage [-10,-4,-2,-4,-2,0] == -3) (putStrLn "Test passed")
+    assert (centeredAverage [-10,-4,-2,-4,-2,0] == (-3)) (putStrLn "Test passed")
     assert (centeredAverage [1,2,3,4,100] == 3) (putStrLn "Test passed")
     assert (centeredAverage [1,1,5,5,10,8,7] == 5) (putStrLn "Test passed")
-    assert (centeredAverage [-10,-4,-2,-4,-2,0] == -3) (putStrLn "Test passed")
+    assert (centeredAverage [-10,-4,-2,-4,-2,0] == (-3)) (putStrLn "Test passed")
 

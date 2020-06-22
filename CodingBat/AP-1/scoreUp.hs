@@ -11,6 +11,7 @@ import Control.Exception (assert)
 scoreUp :: [String] -> [String] -> Int
 scoreUp key answers = undefined
 
+main :: IO ()
 main = do
     assert (scoreUp ["a","a","b","b"] ["a","c","b","c"] == 6) (putStrLn "Test passed")
     assert (scoreUp ["a","a","b","b"] ["a","a","b","c"] == 11) (putStrLn "Test passed")

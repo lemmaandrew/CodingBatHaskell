@@ -8,6 +8,7 @@ import Control.Exception (assert)
 bunnyEars :: Int -> Int
 bunnyEars bunnies = undefined
 
+main :: IO ()
 main = do
     assert (bunnyEars 0 == 0) (putStrLn "Test passed")
     assert (bunnyEars 1 == 2) (putStrLn "Test passed")

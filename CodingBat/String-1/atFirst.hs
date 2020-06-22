@@ -8,6 +8,7 @@ import Control.Exception (assert)
 atFirst :: String -> String
 atFirst str = undefined
 
+main :: IO ()
 main = do
     assert (atFirst "hello" == "he") (putStrLn "Test passed")
     assert (atFirst "hi" == "hi") (putStrLn "Test passed")

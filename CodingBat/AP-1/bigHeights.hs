@@ -11,6 +11,7 @@ import Control.Exception (assert)
 bigHeights :: [Int] -> Int -> Int -> Int
 bigHeights heights start end = undefined
 
+main :: IO ()
 main = do
     assert (bigHeights [5,3,6,7,2] 2 4 == 1) (putStrLn "Test passed")
     assert (bigHeights [5,3,6,7,2] 0 1 == 0) (putStrLn "Test passed")

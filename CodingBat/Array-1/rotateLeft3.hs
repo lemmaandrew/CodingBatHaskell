@@ -8,6 +8,7 @@ import Control.Exception (assert)
 rotateLeft3 :: [Int] -> [Int]
 rotateLeft3 nums = undefined
 
+main :: IO ()
 main = do
     assert (rotateLeft3 [1,2,3] == [2,3,1]) (putStrLn "Test passed")
     assert (rotateLeft3 [5,11,9] == [11,9,5]) (putStrLn "Test passed")

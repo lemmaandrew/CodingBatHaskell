@@ -9,6 +9,7 @@ import Control.Exception (assert)
 greenTicket :: Int -> Int -> Int -> Int
 greenTicket a b c = undefined
 
+main :: IO ()
 main = do
     assert (greenTicket 1 2 3 == 0) (putStrLn "Test passed")
     assert (greenTicket 2 2 2 == 20) (putStrLn "Test passed")

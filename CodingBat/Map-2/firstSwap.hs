@@ -12,6 +12,7 @@ import Control.Exception (assert)
 firstSwap :: [String] -> [String]
 firstSwap strings = undefined
 
+main :: IO ()
 main = do
     assert (firstSwap ["ab","ac"] == ["ac","ab"]) (putStrLn "Test passed")
     assert (firstSwap ["ax","bx","cx","cy","by","ay","aaa","azz"] == ["ay","by","cy","cx","bx","ax","aaa","azz"]) (putStrLn "Test passed")

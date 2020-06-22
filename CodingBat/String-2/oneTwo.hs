@@ -9,6 +9,7 @@ import Control.Exception (assert)
 oneTwo :: String -> String
 oneTwo str = undefined
 
+main :: IO ()
 main = do
     assert (oneTwo "abc" == "bca") (putStrLn "Test passed")
     assert (oneTwo "tca" == "cat") (putStrLn "Test passed")

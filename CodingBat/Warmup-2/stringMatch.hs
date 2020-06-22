@@ -9,6 +9,7 @@ import Control.Exception (assert)
 stringMatch :: String -> String -> Int
 stringMatch a b = undefined
 
+main :: IO ()
 main = do
     assert (stringMatch "xxcaazz" "xxbaaz" == 3) (putStrLn "Test passed")
     assert (stringMatch "abc" "abc" == 2) (putStrLn "Test passed")

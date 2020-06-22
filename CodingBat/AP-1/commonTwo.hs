@@ -10,6 +10,7 @@ import Control.Exception (assert)
 commonTwo :: [String] -> [String] -> Int
 commonTwo a b = undefined
 
+main :: IO ()
 main = do
     assert (commonTwo ["a","c","x"] ["b","c","d","x"] == 2) (putStrLn "Test passed")
     assert (commonTwo ["a","c","x"] ["a","b","c","x","z"] == 3) (putStrLn "Test passed")

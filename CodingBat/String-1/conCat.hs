@@ -9,6 +9,7 @@ import Control.Exception (assert)
 conCat :: String -> String -> String
 conCat a b = undefined
 
+main :: IO ()
 main = do
     assert (conCat "abc" "cat" == "abcat") (putStrLn "Test passed")
     assert (conCat "dog" "cat" == "dogcat") (putStrLn "Test passed")

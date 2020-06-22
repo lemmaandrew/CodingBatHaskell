@@ -14,6 +14,7 @@ import Control.Exception (assert)
 scoresAverage :: [Int] -> Int
 scoresAverage scores = undefined
 
+main :: IO ()
 main = do
     assert (scoresAverage [2,2,4,4] == 4) (putStrLn "Test passed")
     assert (scoresAverage [4,4,4,2,2,2] == 4) (putStrLn "Test passed")

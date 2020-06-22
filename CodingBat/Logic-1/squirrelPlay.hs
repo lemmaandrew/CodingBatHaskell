@@ -7,14 +7,15 @@ if the squirrels play and false otherwise.
 import Control.Exception (assert)
 
 
-squirrelPlay :: Int -> Boolean -> Boolean
+squirrelPlay :: Int -> Bool -> Bool
 squirrelPlay temp isSummer = undefined
 
+main :: IO ()
 main = do
-    assert (squirrelPlay 70 false == true) (putStrLn "Test passed")
-    assert (squirrelPlay 95 false == false) (putStrLn "Test passed")
-    assert (squirrelPlay 95 true == true) (putStrLn "Test passed")
-    assert (squirrelPlay 70 false == true) (putStrLn "Test passed")
-    assert (squirrelPlay 95 false == false) (putStrLn "Test passed")
-    assert (squirrelPlay 95 true == true) (putStrLn "Test passed")
+    assert (squirrelPlay 70 False == True) (putStrLn "Test passed")
+    assert (squirrelPlay 95 False == False) (putStrLn "Test passed")
+    assert (squirrelPlay 95 True == True) (putStrLn "Test passed")
+    assert (squirrelPlay 70 False == True) (putStrLn "Test passed")
+    assert (squirrelPlay 95 False == False) (putStrLn "Test passed")
+    assert (squirrelPlay 95 True == True) (putStrLn "Test passed")
 

@@ -8,6 +8,7 @@ import Control.Exception (assert)
 withoutX :: String -> String
 withoutX str = undefined
 
+main :: IO ()
 main = do
     assert (withoutX "xHix" == "Hi") (putStrLn "Test passed")
     assert (withoutX "xHi" == "Hi") (putStrLn "Test passed")

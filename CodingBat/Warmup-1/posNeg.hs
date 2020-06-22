@@ -5,14 +5,15 @@ parameter "negative" is true, then return true only if both are negative.
 import Control.Exception (assert)
 
 
-posNeg :: Int -> Int -> Boolean -> Boolean
+posNeg :: Int -> Int -> Bool -> Bool
 posNeg a b negative = undefined
 
+main :: IO ()
 main = do
-    assert (posNeg 1 -1 false == true) (putStrLn "Test passed")
-    assert (posNeg -1 1 false == true) (putStrLn "Test passed")
-    assert (posNeg -4 -5 true == true) (putStrLn "Test passed")
-    assert (posNeg 1 -1 false == true) (putStrLn "Test passed")
-    assert (posNeg -1 1 false == true) (putStrLn "Test passed")
-    assert (posNeg -4 -5 true == true) (putStrLn "Test passed")
+    assert (posNeg 1 (-1) False == True) (putStrLn "Test passed")
+    assert (posNeg (-1) 1 False == True) (putStrLn "Test passed")
+    assert (posNeg (-4) (-5) True == True) (putStrLn "Test passed")
+    assert (posNeg 1 (-1) False == True) (putStrLn "Test passed")
+    assert (posNeg (-1) 1 False == True) (putStrLn "Test passed")
+    assert (posNeg (-4) (-5) True == True) (putStrLn "Test passed")
 

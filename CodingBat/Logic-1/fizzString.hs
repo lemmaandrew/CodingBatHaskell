@@ -9,6 +9,7 @@ import Control.Exception (assert)
 fizzString :: String -> String
 fizzString str = undefined
 
+main :: IO ()
 main = do
     assert (fizzString "fig" == "Fizz") (putStrLn "Test passed")
     assert (fizzString "dib" == "Buzz") (putStrLn "Test passed")

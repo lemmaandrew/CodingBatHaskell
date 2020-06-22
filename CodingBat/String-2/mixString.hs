@@ -9,6 +9,7 @@ import Control.Exception (assert)
 mixString :: String -> String -> String
 mixString a b = undefined
 
+main :: IO ()
 main = do
     assert (mixString "abc" "xyz" == "axbycz") (putStrLn "Test passed")
     assert (mixString "Hi" "There" == "HTihere") (putStrLn "Test passed")

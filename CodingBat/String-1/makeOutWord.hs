@@ -10,6 +10,7 @@ import Control.Exception (assert)
 makeOutWord :: String -> String -> String
 makeOutWord out word = undefined
 
+main :: IO ()
 main = do
     assert (makeOutWord "<<>>" "Yay" == "<<Yay>>") (putStrLn "Test passed")
     assert (makeOutWord "<<>>" "WooHoo" == "<<WooHoo>>") (putStrLn "Test passed")

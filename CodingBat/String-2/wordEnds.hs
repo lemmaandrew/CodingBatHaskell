@@ -10,6 +10,7 @@ import Control.Exception (assert)
 wordEnds :: String -> String -> String
 wordEnds str word = undefined
 
+main :: IO ()
 main = do
     assert (wordEnds "abcXY123XYijk" "XY" == "c13i") (putStrLn "Test passed")
     assert (wordEnds "XY123XY" "XY" == "13") (putStrLn "Test passed")

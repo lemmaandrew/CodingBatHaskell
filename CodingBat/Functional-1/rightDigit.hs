@@ -8,6 +8,7 @@ import Control.Exception (assert)
 rightDigit :: [Integer] -> [Integer]
 rightDigit nums = undefined
 
+main :: IO ()
 main = do
     assert (rightDigit [1,22,93] == [1,2,3]) (putStrLn "Test passed")
     assert (rightDigit [16,8,886,8,1] == [6,8,6,8,1]) (putStrLn "Test passed")

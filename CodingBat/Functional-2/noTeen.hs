@@ -8,6 +8,7 @@ import Control.Exception (assert)
 noTeen :: [Integer] -> [Integer]
 noTeen nums = undefined
 
+main :: IO ()
 main = do
     assert (noTeen [12,13,19,20] == [12,20]) (putStrLn "Test passed")
     assert (noTeen [1,14,1] == [1,1]) (putStrLn "Test passed")

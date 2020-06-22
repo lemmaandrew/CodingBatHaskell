@@ -5,14 +5,15 @@ are both in the range 40..50 inclusive.
 import Control.Exception (assert)
 
 
-in3050 :: Int -> Int -> Boolean
+in3050 :: Int -> Int -> Bool
 in3050 a b = undefined
 
+main :: IO ()
 main = do
-    assert (in3050 30 31 == true) (putStrLn "Test passed")
-    assert (in3050 30 41 == false) (putStrLn "Test passed")
-    assert (in3050 40 50 == true) (putStrLn "Test passed")
-    assert (in3050 30 31 == true) (putStrLn "Test passed")
-    assert (in3050 30 41 == false) (putStrLn "Test passed")
-    assert (in3050 40 50 == true) (putStrLn "Test passed")
+    assert (in3050 30 31 == True) (putStrLn "Test passed")
+    assert (in3050 30 41 == False) (putStrLn "Test passed")
+    assert (in3050 40 50 == True) (putStrLn "Test passed")
+    assert (in3050 30 31 == True) (putStrLn "Test passed")
+    assert (in3050 30 41 == False) (putStrLn "Test passed")
+    assert (in3050 40 50 == True) (putStrLn "Test passed")
 

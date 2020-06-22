@@ -6,14 +6,15 @@ the array.
 import Control.Exception (assert)
 
 
-unlucky1 :: [Int] -> Boolean
+unlucky1 :: [Int] -> Bool
 unlucky1 nums = undefined
 
+main :: IO ()
 main = do
-    assert (unlucky1 [1,3,4,5] == true) (putStrLn "Test passed")
-    assert (unlucky1 [2,1,3,4,5] == true) (putStrLn "Test passed")
-    assert (unlucky1 [1,1,1] == false) (putStrLn "Test passed")
-    assert (unlucky1 [1,3,4,5] == true) (putStrLn "Test passed")
-    assert (unlucky1 [2,1,3,4,5] == true) (putStrLn "Test passed")
-    assert (unlucky1 [1,1,1] == false) (putStrLn "Test passed")
+    assert (unlucky1 [1,3,4,5] == True) (putStrLn "Test passed")
+    assert (unlucky1 [2,1,3,4,5] == True) (putStrLn "Test passed")
+    assert (unlucky1 [1,1,1] == False) (putStrLn "Test passed")
+    assert (unlucky1 [1,3,4,5] == True) (putStrLn "Test passed")
+    assert (unlucky1 [2,1,3,4,5] == True) (putStrLn "Test passed")
+    assert (unlucky1 [1,1,1] == False) (putStrLn "Test passed")
 

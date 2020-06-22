@@ -5,14 +5,15 @@ values, return true if 1 or more of them are teen.
 import Control.Exception (assert)
 
 
-hasTeen :: Int -> Int -> Int -> Boolean
+hasTeen :: Int -> Int -> Int -> Bool
 hasTeen a b c = undefined
 
+main :: IO ()
 main = do
-    assert (hasTeen 13 20 10 == true) (putStrLn "Test passed")
-    assert (hasTeen 20 19 10 == true) (putStrLn "Test passed")
-    assert (hasTeen 20 10 13 == true) (putStrLn "Test passed")
-    assert (hasTeen 13 20 10 == true) (putStrLn "Test passed")
-    assert (hasTeen 20 19 10 == true) (putStrLn "Test passed")
-    assert (hasTeen 20 10 13 == true) (putStrLn "Test passed")
+    assert (hasTeen 13 20 10 == True) (putStrLn "Test passed")
+    assert (hasTeen 20 19 10 == True) (putStrLn "Test passed")
+    assert (hasTeen 20 10 13 == True) (putStrLn "Test passed")
+    assert (hasTeen 13 20 10 == True) (putStrLn "Test passed")
+    assert (hasTeen 20 19 10 == True) (putStrLn "Test passed")
+    assert (hasTeen 20 10 13 == True) (putStrLn "Test passed")
 

@@ -5,14 +5,15 @@ the absolute value of a number.
 import Control.Exception (assert)
 
 
-nearHundred :: Int -> Boolean
+nearHundred :: Int -> Bool
 nearHundred n = undefined
 
+main :: IO ()
 main = do
-    assert (nearHundred 93 == true) (putStrLn "Test passed")
-    assert (nearHundred 90 == true) (putStrLn "Test passed")
-    assert (nearHundred 89 == false) (putStrLn "Test passed")
-    assert (nearHundred 93 == true) (putStrLn "Test passed")
-    assert (nearHundred 90 == true) (putStrLn "Test passed")
-    assert (nearHundred 89 == false) (putStrLn "Test passed")
+    assert (nearHundred 93 == True) (putStrLn "Test passed")
+    assert (nearHundred 90 == True) (putStrLn "Test passed")
+    assert (nearHundred 89 == False) (putStrLn "Test passed")
+    assert (nearHundred 93 == True) (putStrLn "Test passed")
+    assert (nearHundred 90 == True) (putStrLn "Test passed")
+    assert (nearHundred 89 == False) (putStrLn "Test passed")
 

@@ -9,6 +9,7 @@ import Control.Exception (assert)
 zipZap :: String -> String
 zipZap str = undefined
 
+main :: IO ()
 main = do
     assert (zipZap "zipXzap" == "zpXzp") (putStrLn "Test passed")
     assert (zipZap "zopzop" == "zpzp") (putStrLn "Test passed")

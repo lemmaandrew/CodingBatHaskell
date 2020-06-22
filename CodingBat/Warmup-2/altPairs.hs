@@ -8,6 +8,7 @@ import Control.Exception (assert)
 altPairs :: String -> String
 altPairs str = undefined
 
+main :: IO ()
 main = do
     assert (altPairs "kitten" == "kien") (putStrLn "Test passed")
     assert (altPairs "Chocolate" == "Chole") (putStrLn "Test passed")
