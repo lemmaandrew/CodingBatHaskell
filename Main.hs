@@ -6,7 +6,7 @@ import System.Directory
 import System.IO
 import Text.Printf
 
-import Download
+import Src.Download
 
 writeProblem :: FilePath -> Problem -> IO ()
 writeProblem directory pbm =
