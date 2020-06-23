@@ -4,6 +4,7 @@
 -- If your method would not compile in real life, it will either not compile here or it will become a mess
 -- A java method needs to be in this format:
 -- returnType funcName(DataType1 arg1, DataType2 arg2)
+{-#LANGUAGE LambdaCase#-}
 
 module Src.JavaFuncs
     ( DataType
@@ -63,37 +64,43 @@ mkType "" = Type ""
 mkType (x:xs) = Type $ toUpper x : xs
 
 mkContainer :: String -> [DataType] -> DataType
-mkContainer s@(_:_) dts = Container s dts -- making sure Container name is at least one letter long
+mkContainer s@(_:_) dts = Container s dts -- Making sure Container name is at least one letter long
+
+typeToHaskell :: String -> String
+typeToHaskell = \case
+    ""        -> ""
+    "Void"    -> "IO ()"
+    "Boolean" -> "Bool"
+    (x : xs)  -> toUpper x : xs -- All Haskell types need to start with a capital letter
+
+containerToHaskell :: String -> [DataType] -> String
+containerToHaskell str dts = case (str, dts) of
+    ("Array",[dt]) -> "[" ++ (dataTypeToHaskell dt) ++ "]"
+    ("List" ,[dt]) -> "[" ++ (dataTypeToHaskell dt) ++ "]"
+    ("Map"  ,dts)  -> containerToHaskell "Map.Map" dts
+    (str    ,dts)  -> str ++ " " ++ unwords (map eval dts) where
+        -- Handles nested continers
+        eval c@(Container typ _)
+            | typ /= "Array" && typ /= "List" = "(" ++ dataTypeToHaskell c ++ ")"
+            | otherwise = dataTypeToHaskell c
+        eval dt = dataTypeToHaskell dt
 
 dataTypeToHaskell :: DataType -> String
-dataTypeToHaskell (Type "") = ""
-dataTypeToHaskell (Type "Void") = "IO ()"
-dataTypeToHaskell (Type "Boolean") = "Bool"
-dataTypeToHaskell (Type (x:xs)) = toUpper x : xs -- all types in Haskell need to start with a capital letter
-dataTypeToHaskell (Container "Array" [dt]) = "[" ++ (dataTypeToHaskell dt) ++ "]"
-dataTypeToHaskell (Container "List" [dt]) = "[" ++ (dataTypeToHaskell dt) ++ "]"
-dataTypeToHaskell (Container "Map" dts) = dataTypeToHaskell (Container "Map.Map" dts) -- qualified import
-dataTypeToHaskell (Container t dts) = t ++ " " ++ unwords (map eval dts) where
-    -- this part is a bit messy :/
-    -- all it does is handle nested Containers
-    eval c@(Container "Array" [dt]) = dataTypeToHaskell c
-    eval c@(Container "List" [dt]) = dataTypeToHaskell c
-    eval c@(Container _ _) = "(" ++ dataTypeToHaskell c ++ ")" -- nested containers need to be in parentheses
-    eval dt = dataTypeToHaskell dt
+dataTypeToHaskell (Type str) = typeToHaskell str
+dataTypeToHaskell (Container str dts) = containerToHaskell str dts
 
+-- Not necessary to this project. Should delete?
 dataTypeToJava :: DataType -> String
 dataTypeToJava (Type t) = t
 dataTypeToJava (Container "Array" [dt]) = dataTypeToJava dt ++ "[]"
 dataTypeToJava (Container t dts) = t ++ "<" ++ intercalate ", " (map dataTypeToJava dts) ++ ">"
 
 javaToDataType :: String -> DataType
-javaToDataType s =
-    let (name,container) = break (\x -> x == '[' || x == '<') s
-    in if null container
-        then mkType name
-    else if head container == '['
-        then mkContainer "Array" [javaToDataType $ name ++ drop 2 container]
-    else mkContainer name (map javaToDataType $ typeSplitter 0 "" (init $ tail container))
+javaToDataType str
+    | null container        = mkType name
+    | head container == '[' = mkContainer "Array" [javaToDataType $ name ++ drop 2 container]
+    | otherwise             = mkContainer name (map javaToDataType $ typeSplitter 0 "" (init $ tail container))
+    where (name,container) = break (`elem` "[<") str
 
 data Function = Function { funcName :: String
                          , retType :: DataType
