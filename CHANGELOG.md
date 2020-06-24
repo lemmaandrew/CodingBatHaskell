@@ -25,3 +25,10 @@
 ## 0.1.2.1 -- 2020-06-21
 
 * Bug fixes. So many bug fixes.
+
+## 0.1.3.0 -- 2020-06-24
+
+* Made a few functions in Main.hs more readable
+* Made download.hs more readable
+* Now prints out what pages are being downloaded as they are downloaded
+* Changed asserts to hspecs

@@ -3,18 +3,18 @@ Look for patterns like "zip" and "zap" in the string -- length-3, starting with 
 ending with 'p'. Return a string where for all such words, the middle letter is gone,
 so "zipXzap" yields "zpXzp".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 zipZap :: String -> String
 zipZap str = undefined
 
 main :: IO ()
-main = do
-    assert (zipZap "zipXzap" == "zpXzp") (putStrLn "Test passed")
-    assert (zipZap "zopzop" == "zpzp") (putStrLn "Test passed")
-    assert (zipZap "zzzopzop" == "zzzpzp") (putStrLn "Test passed")
-    assert (zipZap "zipXzap" == "zpXzp") (putStrLn "Test passed")
-    assert (zipZap "zopzop" == "zpzp") (putStrLn "Test passed")
-    assert (zipZap "zzzopzop" == "zzzpzp") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"zpXzp\"" $ zipZap "zipXzap" `shouldBe` "zpXzp"
+   it "\"zpzp\"" $ zipZap "zopzop" `shouldBe` "zpzp"
+   it "\"zzzpzp\"" $ zipZap "zzzopzop" `shouldBe` "zzzpzp"
+   it "\"zpXzp\"" $ zipZap "zipXzap" `shouldBe` "zpXzp"
+   it "\"zpzp\"" $ zipZap "zopzop" `shouldBe` "zpzp"
+   it "\"zzzpzp\"" $ zipZap "zzzopzop" `shouldBe` "zzzpzp"
 

@@ -5,18 +5,18 @@ Each subsequent value is the sum of the previous two values, so the whole sequen
 0, 1, 1, 2, 3, 5, 8, 13, 21 and so on. Define a recursive fibonacci(n) method that
 returns the nth fibonacci number, with n=0 representing the start of the sequence.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 fibonacci :: Int -> Int
 fibonacci n = undefined
 
 main :: IO ()
-main = do
-    assert (fibonacci 0 == 0) (putStrLn "Test passed")
-    assert (fibonacci 1 == 1) (putStrLn "Test passed")
-    assert (fibonacci 2 == 1) (putStrLn "Test passed")
-    assert (fibonacci 0 == 0) (putStrLn "Test passed")
-    assert (fibonacci 1 == 1) (putStrLn "Test passed")
-    assert (fibonacci 2 == 1) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "0" $ fibonacci 0 `shouldBe` 0
+   it "1" $ fibonacci 1 `shouldBe` 1
+   it "1" $ fibonacci 2 `shouldBe` 1
+   it "0" $ fibonacci 0 `shouldBe` 0
+   it "1" $ fibonacci 1 `shouldBe` 1
+   it "1" $ fibonacci 2 `shouldBe` 1
 

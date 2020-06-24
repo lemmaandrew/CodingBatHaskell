@@ -4,18 +4,18 @@ in the array by that value times 10. We'll use the convention of considering onl
 part of the array that begins at the given index. In this way, a recursive call can
 pass index+1 to move down the array. The initial call will pass in index as 0.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 array220 :: [Int] -> Int -> Bool
 array220 nums index = undefined
 
 main :: IO ()
-main = do
-    assert (array220 [1,2,20] 0 == True) (putStrLn "Test passed")
-    assert (array220 [3,30] 0 == True) (putStrLn "Test passed")
-    assert (array220 [3] 0 == False) (putStrLn "Test passed")
-    assert (array220 [1,2,20] 0 == True) (putStrLn "Test passed")
-    assert (array220 [3,30] 0 == True) (putStrLn "Test passed")
-    assert (array220 [3] 0 == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ array220 [1,2,20] 0 `shouldBe` True
+   it "True" $ array220 [3,30] 0 `shouldBe` True
+   it "False" $ array220 [3] 0 `shouldBe` False
+   it "True" $ array220 [1,2,20] 0 `shouldBe` True
+   it "True" $ array220 [3,30] 0 `shouldBe` True
+   it "False" $ array220 [3] 0 `shouldBe` False
 

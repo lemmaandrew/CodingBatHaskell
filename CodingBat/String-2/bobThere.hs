@@ -2,18 +2,18 @@
 Return true if the given string contains a "bob" string, but where the middle 'o' char
 can be any char.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 bobThere :: String -> Bool
 bobThere str = undefined
 
 main :: IO ()
-main = do
-    assert (bobThere "abcbob" == True) (putStrLn "Test passed")
-    assert (bobThere "b9b" == True) (putStrLn "Test passed")
-    assert (bobThere "bac" == False) (putStrLn "Test passed")
-    assert (bobThere "abcbob" == True) (putStrLn "Test passed")
-    assert (bobThere "b9b" == True) (putStrLn "Test passed")
-    assert (bobThere "bac" == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ bobThere "abcbob" `shouldBe` True
+   it "True" $ bobThere "b9b" `shouldBe` True
+   it "False" $ bobThere "bac" `shouldBe` False
+   it "True" $ bobThere "abcbob" `shouldBe` True
+   it "True" $ bobThere "b9b" `shouldBe` True
+   it "False" $ bobThere "bac" `shouldBe` False
 

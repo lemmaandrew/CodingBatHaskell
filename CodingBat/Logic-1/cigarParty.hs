@@ -4,18 +4,18 @@ successful when the number of cigars is between 40 and 60, inclusive. Unless it 
 weekend, in which case there is no upper bound on the number of cigars. Return true if
 the party with the given values is successful, or false otherwise.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 cigarParty :: Int -> Bool -> Bool
 cigarParty cigars isWeekend = undefined
 
 main :: IO ()
-main = do
-    assert (cigarParty 30 False == False) (putStrLn "Test passed")
-    assert (cigarParty 50 False == True) (putStrLn "Test passed")
-    assert (cigarParty 70 True == True) (putStrLn "Test passed")
-    assert (cigarParty 30 False == False) (putStrLn "Test passed")
-    assert (cigarParty 50 False == True) (putStrLn "Test passed")
-    assert (cigarParty 70 True == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "False" $ cigarParty 30 False `shouldBe` False
+   it "True" $ cigarParty 50 False `shouldBe` True
+   it "True" $ cigarParty 70 True `shouldBe` True
+   it "False" $ cigarParty 30 False `shouldBe` False
+   it "True" $ cigarParty 50 False `shouldBe` True
+   it "True" $ cigarParty 70 True `shouldBe` True
 

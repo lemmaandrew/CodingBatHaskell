@@ -7,18 +7,18 @@ whole array, our convention is to consider the part of the array starting at ind
 and continuing to the end of the array. The caller can specify the whole array simply
 by passing start as 0. No loops are needed -- the recursive calls progress down the array.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 groupSum :: Int -> [Int] -> Int -> Bool
 groupSum start nums target = undefined
 
 main :: IO ()
-main = do
-    assert (groupSum 0 [2,4,8] 10 == True) (putStrLn "Test passed")
-    assert (groupSum 0 [2,4,8] 14 == True) (putStrLn "Test passed")
-    assert (groupSum 0 [2,4,8] 9 == False) (putStrLn "Test passed")
-    assert (groupSum 0 [2,4,8] 10 == True) (putStrLn "Test passed")
-    assert (groupSum 0 [2,4,8] 14 == True) (putStrLn "Test passed")
-    assert (groupSum 0 [2,4,8] 9 == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ groupSum 0 [2,4,8] 10 `shouldBe` True
+   it "True" $ groupSum 0 [2,4,8] 14 `shouldBe` True
+   it "False" $ groupSum 0 [2,4,8] 9 `shouldBe` False
+   it "True" $ groupSum 0 [2,4,8] 10 `shouldBe` True
+   it "True" $ groupSum 0 [2,4,8] 14 `shouldBe` True
+   it "False" $ groupSum 0 [2,4,8] 9 `shouldBe` False
 

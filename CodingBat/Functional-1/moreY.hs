@@ -2,18 +2,18 @@
 Given a list of strings, return a list where each string has "y" added at its start
 and end.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 moreY :: [String] -> [String]
 moreY strings = undefined
 
 main :: IO ()
-main = do
-    assert (moreY ["a","b","c"] == ["yay","yby","ycy"]) (putStrLn "Test passed")
-    assert (moreY ["hello","there"] == ["yhelloy","ytherey"]) (putStrLn "Test passed")
-    assert (moreY ["yay"] == ["yyayy"]) (putStrLn "Test passed")
-    assert (moreY ["a","b","c"] == ["yay","yby","ycy"]) (putStrLn "Test passed")
-    assert (moreY ["hello","there"] == ["yhelloy","ytherey"]) (putStrLn "Test passed")
-    assert (moreY ["yay"] == ["yyayy"]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[\"yay\",\"yby\",\"ycy\"]" $ moreY ["a","b","c"] `shouldBe` ["yay","yby","ycy"]
+   it "[\"yhelloy\",\"ytherey\"]" $ moreY ["hello","there"] `shouldBe` ["yhelloy","ytherey"]
+   it "[\"yyayy\"]" $ moreY ["yay"] `shouldBe` ["yyayy"]
+   it "[\"yay\",\"yby\",\"ycy\"]" $ moreY ["a","b","c"] `shouldBe` ["yay","yby","ycy"]
+   it "[\"yhelloy\",\"ytherey\"]" $ moreY ["hello","there"] `shouldBe` ["yhelloy","ytherey"]
+   it "[\"yyayy\"]" $ moreY ["yay"] `shouldBe` ["yyayy"]
 

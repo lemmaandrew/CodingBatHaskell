@@ -2,18 +2,18 @@
 Given a string, compute recursively (no loops) the number of times lowercase "hi" appears
 in the string.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 countHi :: String -> Int
 countHi str = undefined
 
 main :: IO ()
-main = do
-    assert (countHi "xxhixx" == 1) (putStrLn "Test passed")
-    assert (countHi "xhixhix" == 2) (putStrLn "Test passed")
-    assert (countHi "hi" == 1) (putStrLn "Test passed")
-    assert (countHi "xxhixx" == 1) (putStrLn "Test passed")
-    assert (countHi "xhixhix" == 2) (putStrLn "Test passed")
-    assert (countHi "hi" == 1) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "1" $ countHi "xxhixx" `shouldBe` 1
+   it "2" $ countHi "xhixhix" `shouldBe` 2
+   it "1" $ countHi "hi" `shouldBe` 1
+   it "1" $ countHi "xxhixx" `shouldBe` 1
+   it "2" $ countHi "xhixhix" `shouldBe` 2
+   it "1" $ countHi "hi" `shouldBe` 1
 

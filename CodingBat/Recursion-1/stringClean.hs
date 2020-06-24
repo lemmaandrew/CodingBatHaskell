@@ -2,18 +2,18 @@
 Given a string, return recursively a "cleaned" string where adjacent chars that are the
 same have been reduced to a single char. So "yyzzza" yields "yza".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 stringClean :: String -> String
 stringClean str = undefined
 
 main :: IO ()
-main = do
-    assert (stringClean "yyzzza" == "yza") (putStrLn "Test passed")
-    assert (stringClean "abbbcdd" == "abcd") (putStrLn "Test passed")
-    assert (stringClean "Hello" == "Helo") (putStrLn "Test passed")
-    assert (stringClean "yyzzza" == "yza") (putStrLn "Test passed")
-    assert (stringClean "abbbcdd" == "abcd") (putStrLn "Test passed")
-    assert (stringClean "Hello" == "Helo") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"yza\"" $ stringClean "yyzzza" `shouldBe` "yza"
+   it "\"abcd\"" $ stringClean "abbbcdd" `shouldBe` "abcd"
+   it "\"Helo\"" $ stringClean "Hello" `shouldBe` "Helo"
+   it "\"yza\"" $ stringClean "yyzzza" `shouldBe` "yza"
+   it "\"abcd\"" $ stringClean "abbbcdd" `shouldBe` "abcd"
+   it "\"Helo\"" $ stringClean "Hello" `shouldBe` "Helo"
 

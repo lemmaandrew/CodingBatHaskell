@@ -5,18 +5,18 @@ and the largest special score in B. To practice decomposition, write a separate 
 method which finds the largest special score in an array. Write your helper method after
 your scoresSpecial() method in the JavaBat text area.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 scoresSpecial :: [Int] -> [Int] -> Int
 scoresSpecial a b = undefined
 
 main :: IO ()
-main = do
-    assert (scoresSpecial [12,10,4] [2,20,30] == 40) (putStrLn "Test passed")
-    assert (scoresSpecial [20,10,4] [2,20,10] == 40) (putStrLn "Test passed")
-    assert (scoresSpecial [12,11,4] [2,20,31] == 20) (putStrLn "Test passed")
-    assert (scoresSpecial [12,10,4] [2,20,30] == 40) (putStrLn "Test passed")
-    assert (scoresSpecial [20,10,4] [2,20,10] == 40) (putStrLn "Test passed")
-    assert (scoresSpecial [12,11,4] [2,20,31] == 20) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "40" $ scoresSpecial [12,10,4] [2,20,30] `shouldBe` 40
+   it "40" $ scoresSpecial [20,10,4] [2,20,10] `shouldBe` 40
+   it "20" $ scoresSpecial [12,11,4] [2,20,31] `shouldBe` 20
+   it "40" $ scoresSpecial [12,10,4] [2,20,30] `shouldBe` 40
+   it "40" $ scoresSpecial [20,10,4] [2,20,10] `shouldBe` 40
+   it "20" $ scoresSpecial [12,11,4] [2,20,31] `shouldBe` 20
 

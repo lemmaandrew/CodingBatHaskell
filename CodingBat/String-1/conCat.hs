@@ -3,18 +3,18 @@ Given two strings, append them together (known as "concatenation") and return th
 However, if the concatenation creates a double-char, then omit one of the chars, so "abc"
 and "cat" yields "abcat".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 conCat :: String -> String -> String
 conCat a b = undefined
 
 main :: IO ()
-main = do
-    assert (conCat "abc" "cat" == "abcat") (putStrLn "Test passed")
-    assert (conCat "dog" "cat" == "dogcat") (putStrLn "Test passed")
-    assert (conCat "abc" "" == "abc") (putStrLn "Test passed")
-    assert (conCat "abc" "cat" == "abcat") (putStrLn "Test passed")
-    assert (conCat "dog" "cat" == "dogcat") (putStrLn "Test passed")
-    assert (conCat "abc" "" == "abc") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"abcat\"" $ conCat "abc" "cat" `shouldBe` "abcat"
+   it "\"dogcat\"" $ conCat "dog" "cat" `shouldBe` "dogcat"
+   it "\"abc\"" $ conCat "abc" "" `shouldBe` "abc"
+   it "\"abcat\"" $ conCat "abc" "cat" `shouldBe` "abcat"
+   it "\"dogcat\"" $ conCat "dog" "cat" `shouldBe` "dogcat"
+   it "\"abc\"" $ conCat "abc" "" `shouldBe` "abc"
 

@@ -6,18 +6,18 @@ a b c, return the sum of their rounded values. To avoid code repetition, write a
 helper "public int round10(int num) {" and call it 3 times. Write the helper entirely
 below and at the same indent level as roundSum().
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 roundSum :: Int -> Int -> Int -> Int
 roundSum a b c = undefined
 
 main :: IO ()
-main = do
-    assert (roundSum 16 17 18 == 60) (putStrLn "Test passed")
-    assert (roundSum 12 13 14 == 30) (putStrLn "Test passed")
-    assert (roundSum 6 4 4 == 10) (putStrLn "Test passed")
-    assert (roundSum 16 17 18 == 60) (putStrLn "Test passed")
-    assert (roundSum 12 13 14 == 30) (putStrLn "Test passed")
-    assert (roundSum 6 4 4 == 10) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "60" $ roundSum 16 17 18 `shouldBe` 60
+   it "30" $ roundSum 12 13 14 `shouldBe` 30
+   it "10" $ roundSum 6 4 4 `shouldBe` 10
+   it "60" $ roundSum 16 17 18 `shouldBe` 60
+   it "30" $ roundSum 12 13 14 `shouldBe` 30
+   it "10" $ roundSum 6 4 4 `shouldBe` 10
 

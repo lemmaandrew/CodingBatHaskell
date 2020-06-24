@@ -1,18 +1,18 @@
 {-From https://codingbat.com/prob/p105967
 Given a list of strings, return a list where each string has all its "x" removed.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 noX :: [String] -> [String]
 noX strings = undefined
 
 main :: IO ()
-main = do
-    assert (noX ["ax","bb","cx"] == ["a","bb","c"]) (putStrLn "Test passed")
-    assert (noX ["xxax","xbxbx","xxcx"] == ["a","bb","c"]) (putStrLn "Test passed")
-    assert (noX ["x"] == [""]) (putStrLn "Test passed")
-    assert (noX ["ax","bb","cx"] == ["a","bb","c"]) (putStrLn "Test passed")
-    assert (noX ["xxax","xbxbx","xxcx"] == ["a","bb","c"]) (putStrLn "Test passed")
-    assert (noX ["x"] == [""]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[\"a\",\"bb\",\"c\"]" $ noX ["ax","bb","cx"] `shouldBe` ["a","bb","c"]
+   it "[\"a\",\"bb\",\"c\"]" $ noX ["xxax","xbxbx","xxcx"] `shouldBe` ["a","bb","c"]
+   it "[\"\"]" $ noX ["x"] `shouldBe` [""]
+   it "[\"a\",\"bb\",\"c\"]" $ noX ["ax","bb","cx"] `shouldBe` ["a","bb","c"]
+   it "[\"a\",\"bb\",\"c\"]" $ noX ["xxax","xbxbx","xxcx"] `shouldBe` ["a","bb","c"]
+   it "[\"\"]" $ noX ["x"] `shouldBe` [""]
 

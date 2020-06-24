@@ -3,18 +3,18 @@ Given a string and an index, return a string length 2 starting at the given inde
 the index is too big or too small to define a string length 2, use the first 2 chars.
 The string length will be at least 2.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 twoChar :: String -> Int -> String
 twoChar str index = undefined
 
 main :: IO ()
-main = do
-    assert (twoChar "java" 0 == "ja") (putStrLn "Test passed")
-    assert (twoChar "java" 2 == "va") (putStrLn "Test passed")
-    assert (twoChar "java" 3 == "ja") (putStrLn "Test passed")
-    assert (twoChar "java" 0 == "ja") (putStrLn "Test passed")
-    assert (twoChar "java" 2 == "va") (putStrLn "Test passed")
-    assert (twoChar "java" 3 == "ja") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"ja\"" $ twoChar "java" 0 `shouldBe` "ja"
+   it "\"va\"" $ twoChar "java" 2 `shouldBe` "va"
+   it "\"ja\"" $ twoChar "java" 3 `shouldBe` "ja"
+   it "\"ja\"" $ twoChar "java" 0 `shouldBe` "ja"
+   it "\"va\"" $ twoChar "java" 2 `shouldBe` "va"
+   it "\"ja\"" $ twoChar "java" 3 `shouldBe` "ja"
 

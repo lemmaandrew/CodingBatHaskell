@@ -3,18 +3,18 @@ Consider the leftmost and righmost appearances of some value in an array. We'll 
 the "span" is the number of elements between the two inclusive. A single value has a
 span of 1. Returns the largest span found in the given array. (Efficiency is not a priority.)
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 maxSpan :: [Int] -> Int
 maxSpan nums = undefined
 
 main :: IO ()
-main = do
-    assert (maxSpan [1,2,1,1,3] == 4) (putStrLn "Test passed")
-    assert (maxSpan [1,4,2,1,4,1,4] == 6) (putStrLn "Test passed")
-    assert (maxSpan [1,4,2,1,4,4,4] == 6) (putStrLn "Test passed")
-    assert (maxSpan [1,2,1,1,3] == 4) (putStrLn "Test passed")
-    assert (maxSpan [1,4,2,1,4,1,4] == 6) (putStrLn "Test passed")
-    assert (maxSpan [1,4,2,1,4,4,4] == 6) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "4" $ maxSpan [1,2,1,1,3] `shouldBe` 4
+   it "6" $ maxSpan [1,4,2,1,4,1,4] `shouldBe` 6
+   it "6" $ maxSpan [1,4,2,1,4,4,4] `shouldBe` 6
+   it "4" $ maxSpan [1,2,1,1,3] `shouldBe` 4
+   it "6" $ maxSpan [1,4,2,1,4,1,4] `shouldBe` 6
+   it "6" $ maxSpan [1,4,2,1,4,4,4] `shouldBe` 6
 

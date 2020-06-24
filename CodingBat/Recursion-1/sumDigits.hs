@@ -3,18 +3,18 @@ Given a non-negative int n, return the sum of its digits recursively (no loops).
 that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), while divide (/) by
 10 removes the rightmost digit (126 / 10 is 12).
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 sumDigits :: Int -> Int
 sumDigits n = undefined
 
 main :: IO ()
-main = do
-    assert (sumDigits 126 == 9) (putStrLn "Test passed")
-    assert (sumDigits 49 == 13) (putStrLn "Test passed")
-    assert (sumDigits 12 == 3) (putStrLn "Test passed")
-    assert (sumDigits 126 == 9) (putStrLn "Test passed")
-    assert (sumDigits 49 == 13) (putStrLn "Test passed")
-    assert (sumDigits 12 == 3) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "9" $ sumDigits 126 `shouldBe` 9
+   it "13" $ sumDigits 49 `shouldBe` 13
+   it "3" $ sumDigits 12 `shouldBe` 3
+   it "9" $ sumDigits 126 `shouldBe` 9
+   it "13" $ sumDigits 49 `shouldBe` 13
+   it "3" $ sumDigits 12 `shouldBe` 3
 

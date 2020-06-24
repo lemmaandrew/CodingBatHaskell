@@ -2,18 +2,18 @@
 Given a string, return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens"
 yields "kien".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 altPairs :: String -> String
 altPairs str = undefined
 
 main :: IO ()
-main = do
-    assert (altPairs "kitten" == "kien") (putStrLn "Test passed")
-    assert (altPairs "Chocolate" == "Chole") (putStrLn "Test passed")
-    assert (altPairs "CodingHorror" == "Congrr") (putStrLn "Test passed")
-    assert (altPairs "kitten" == "kien") (putStrLn "Test passed")
-    assert (altPairs "Chocolate" == "Chole") (putStrLn "Test passed")
-    assert (altPairs "CodingHorror" == "Congrr") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"kien\"" $ altPairs "kitten" `shouldBe` "kien"
+   it "\"Chole\"" $ altPairs "Chocolate" `shouldBe` "Chole"
+   it "\"Congrr\"" $ altPairs "CodingHorror" `shouldBe` "Congrr"
+   it "\"kien\"" $ altPairs "kitten" `shouldBe` "kien"
+   it "\"Chole\"" $ altPairs "Chocolate" `shouldBe` "Chole"
+   it "\"Congrr\"" $ altPairs "CodingHorror" `shouldBe` "Congrr"
 

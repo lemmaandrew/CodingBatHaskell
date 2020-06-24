@@ -2,18 +2,18 @@
 Given three ints, a b c, return true if it is possible to add two of the ints to get
 the third.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 twoAsOne :: Int -> Int -> Int -> Bool
 twoAsOne a b c = undefined
 
 main :: IO ()
-main = do
-    assert (twoAsOne 1 2 3 == True) (putStrLn "Test passed")
-    assert (twoAsOne 3 1 2 == True) (putStrLn "Test passed")
-    assert (twoAsOne 3 2 2 == False) (putStrLn "Test passed")
-    assert (twoAsOne 1 2 3 == True) (putStrLn "Test passed")
-    assert (twoAsOne 3 1 2 == True) (putStrLn "Test passed")
-    assert (twoAsOne 3 2 2 == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ twoAsOne 1 2 3 `shouldBe` True
+   it "True" $ twoAsOne 3 1 2 `shouldBe` True
+   it "False" $ twoAsOne 3 2 2 `shouldBe` False
+   it "True" $ twoAsOne 1 2 3 `shouldBe` True
+   it "True" $ twoAsOne 3 1 2 `shouldBe` True
+   it "False" $ twoAsOne 3 2 2 `shouldBe` False
 

@@ -2,18 +2,18 @@
 Return the number of times that the string "code" appears anywhere in the given string,
 except we'll accept any letter for the 'd', so "cope" and "cooe" count.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 countCode :: String -> Int
 countCode str = undefined
 
 main :: IO ()
-main = do
-    assert (countCode "aaacodebbb" == 1) (putStrLn "Test passed")
-    assert (countCode "codexxcode" == 2) (putStrLn "Test passed")
-    assert (countCode "cozexxcope" == 2) (putStrLn "Test passed")
-    assert (countCode "aaacodebbb" == 1) (putStrLn "Test passed")
-    assert (countCode "codexxcode" == 2) (putStrLn "Test passed")
-    assert (countCode "cozexxcope" == 2) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "1" $ countCode "aaacodebbb" `shouldBe` 1
+   it "2" $ countCode "codexxcode" `shouldBe` 2
+   it "2" $ countCode "cozexxcope" `shouldBe` 2
+   it "1" $ countCode "aaacodebbb" `shouldBe` 1
+   it "2" $ countCode "codexxcode" `shouldBe` 2
+   it "2" $ countCode "cozexxcope" `shouldBe` 2
 

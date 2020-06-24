@@ -8,18 +8,18 @@ Write your helper method after your scoresAverage() method in the JavaBat text a
 you would compute averages with doubles, but here we use ints so the expected results
 are exact.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 scoresAverage :: [Int] -> Int
 scoresAverage scores = undefined
 
 main :: IO ()
-main = do
-    assert (scoresAverage [2,2,4,4] == 4) (putStrLn "Test passed")
-    assert (scoresAverage [4,4,4,2,2,2] == 4) (putStrLn "Test passed")
-    assert (scoresAverage [3,4,5,1,2,3] == 4) (putStrLn "Test passed")
-    assert (scoresAverage [2,2,4,4] == 4) (putStrLn "Test passed")
-    assert (scoresAverage [4,4,4,2,2,2] == 4) (putStrLn "Test passed")
-    assert (scoresAverage [3,4,5,1,2,3] == 4) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "4" $ scoresAverage [2,2,4,4] `shouldBe` 4
+   it "4" $ scoresAverage [4,4,4,2,2,2] `shouldBe` 4
+   it "4" $ scoresAverage [3,4,5,1,2,3] `shouldBe` 4
+   it "4" $ scoresAverage [2,2,4,4] `shouldBe` 4
+   it "4" $ scoresAverage [4,4,4,2,2,2] `shouldBe` 4
+   it "4" $ scoresAverage [3,4,5,1,2,3] `shouldBe` 4
 

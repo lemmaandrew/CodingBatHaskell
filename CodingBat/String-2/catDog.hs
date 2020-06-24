@@ -2,18 +2,18 @@
 Return true if the string "cat" and "dog" appear the same number of times in the given
 string.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 catDog :: String -> Bool
 catDog str = undefined
 
 main :: IO ()
-main = do
-    assert (catDog "catdog" == True) (putStrLn "Test passed")
-    assert (catDog "catcat" == False) (putStrLn "Test passed")
-    assert (catDog "1cat1cadodog" == True) (putStrLn "Test passed")
-    assert (catDog "catdog" == True) (putStrLn "Test passed")
-    assert (catDog "catcat" == False) (putStrLn "Test passed")
-    assert (catDog "1cat1cadodog" == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ catDog "catdog" `shouldBe` True
+   it "False" $ catDog "catcat" `shouldBe` False
+   it "True" $ catDog "1cat1cadodog" `shouldBe` True
+   it "True" $ catDog "catdog" `shouldBe` True
+   it "False" $ catDog "catcat" `shouldBe` False
+   it "True" $ catDog "1cat1cadodog" `shouldBe` True
 

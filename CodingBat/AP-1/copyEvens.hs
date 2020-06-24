@@ -3,18 +3,18 @@ Given an array of positive ints, return a new array of length "count" containing
 even numbers from the original array. The original array will contain at least "count"
 even numbers.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 copyEvens :: [Int] -> Int -> [Int]
 copyEvens nums count = undefined
 
 main :: IO ()
-main = do
-    assert (copyEvens [3,2,4,5,8] 2 == [2,4]) (putStrLn "Test passed")
-    assert (copyEvens [3,2,4,5,8] 3 == [2,4,8]) (putStrLn "Test passed")
-    assert (copyEvens [6,1,2,4,5,8] 3 == [6,2,4]) (putStrLn "Test passed")
-    assert (copyEvens [3,2,4,5,8] 2 == [2,4]) (putStrLn "Test passed")
-    assert (copyEvens [3,2,4,5,8] 3 == [2,4,8]) (putStrLn "Test passed")
-    assert (copyEvens [6,1,2,4,5,8] 3 == [6,2,4]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[2,4]" $ copyEvens [3,2,4,5,8] 2 `shouldBe` [2,4]
+   it "[2,4,8]" $ copyEvens [3,2,4,5,8] 3 `shouldBe` [2,4,8]
+   it "[6,2,4]" $ copyEvens [6,1,2,4,5,8] 3 `shouldBe` [6,2,4]
+   it "[2,4]" $ copyEvens [3,2,4,5,8] 2 `shouldBe` [2,4]
+   it "[2,4,8]" $ copyEvens [3,2,4,5,8] 3 `shouldBe` [2,4,8]
+   it "[6,2,4]" $ copyEvens [6,1,2,4,5,8] 3 `shouldBe` [6,2,4]
 

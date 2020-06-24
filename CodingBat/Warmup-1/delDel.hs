@@ -2,18 +2,18 @@
 Given a string, if the string "del" appears starting at index 1, return a string where
 that "del" has been deleted. Otherwise, return the string unchanged.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 delDel :: String -> String
 delDel str = undefined
 
 main :: IO ()
-main = do
-    assert (delDel "adelbc" == "abc") (putStrLn "Test passed")
-    assert (delDel "adelHello" == "aHello") (putStrLn "Test passed")
-    assert (delDel "adedbc" == "adedbc") (putStrLn "Test passed")
-    assert (delDel "adelbc" == "abc") (putStrLn "Test passed")
-    assert (delDel "adelHello" == "aHello") (putStrLn "Test passed")
-    assert (delDel "adedbc" == "adedbc") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"abc\"" $ delDel "adelbc" `shouldBe` "abc"
+   it "\"aHello\"" $ delDel "adelHello" `shouldBe` "aHello"
+   it "\"adedbc\"" $ delDel "adedbc" `shouldBe` "adedbc"
+   it "\"abc\"" $ delDel "adelbc" `shouldBe` "abc"
+   it "\"aHello\"" $ delDel "adelHello" `shouldBe` "aHello"
+   it "\"adedbc\"" $ delDel "adedbc" `shouldBe` "adedbc"
 

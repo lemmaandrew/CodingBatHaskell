@@ -2,18 +2,18 @@
 Given a string and a non-empty substring sub, compute recursively if at least n copies
 of sub appear in the string somewhere, possibly with overlapping. N will be non-negative.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 strCopies :: String -> String -> Int -> Bool
 strCopies str sub n = undefined
 
 main :: IO ()
-main = do
-    assert (strCopies "catcowcat" "cat" 2 == True) (putStrLn "Test passed")
-    assert (strCopies "catcowcat" "cow" 2 == False) (putStrLn "Test passed")
-    assert (strCopies "catcowcat" "cow" 1 == True) (putStrLn "Test passed")
-    assert (strCopies "catcowcat" "cat" 2 == True) (putStrLn "Test passed")
-    assert (strCopies "catcowcat" "cow" 2 == False) (putStrLn "Test passed")
-    assert (strCopies "catcowcat" "cow" 1 == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ strCopies "catcowcat" "cat" 2 `shouldBe` True
+   it "False" $ strCopies "catcowcat" "cow" 2 `shouldBe` False
+   it "True" $ strCopies "catcowcat" "cow" 1 `shouldBe` True
+   it "True" $ strCopies "catcowcat" "cat" 2 `shouldBe` True
+   it "False" $ strCopies "catcowcat" "cow" 2 `shouldBe` False
+   it "True" $ strCopies "catcowcat" "cow" 1 `shouldBe` True
 

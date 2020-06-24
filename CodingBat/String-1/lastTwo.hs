@@ -2,18 +2,18 @@
 Given a string of any length, return a new string where the last 2 chars, if present,
 are swapped, so "coding" yields "codign".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 lastTwo :: String -> String
 lastTwo str = undefined
 
 main :: IO ()
-main = do
-    assert (lastTwo "coding" == "codign") (putStrLn "Test passed")
-    assert (lastTwo "cat" == "cta") (putStrLn "Test passed")
-    assert (lastTwo "ab" == "ba") (putStrLn "Test passed")
-    assert (lastTwo "coding" == "codign") (putStrLn "Test passed")
-    assert (lastTwo "cat" == "cta") (putStrLn "Test passed")
-    assert (lastTwo "ab" == "ba") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"codign\"" $ lastTwo "coding" `shouldBe` "codign"
+   it "\"cta\"" $ lastTwo "cat" `shouldBe` "cta"
+   it "\"ba\"" $ lastTwo "ab" `shouldBe` "ba"
+   it "\"codign\"" $ lastTwo "coding" `shouldBe` "codign"
+   it "\"cta\"" $ lastTwo "cat" `shouldBe` "cta"
+   it "\"ba\"" $ lastTwo "ab" `shouldBe` "ba"
 

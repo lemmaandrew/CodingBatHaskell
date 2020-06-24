@@ -1,18 +1,18 @@
 {-From https://codingbat.com/prob/p165312
 Given a string, return a string where for every char in the original, there are two chars.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 doubleChar :: String -> String
 doubleChar str = undefined
 
 main :: IO ()
-main = do
-    assert (doubleChar "The" == "TThhee") (putStrLn "Test passed")
-    assert (doubleChar "AAbb" == "AAAAbbbb") (putStrLn "Test passed")
-    assert (doubleChar "Hi-There" == "HHii--TThheerree") (putStrLn "Test passed")
-    assert (doubleChar "The" == "TThhee") (putStrLn "Test passed")
-    assert (doubleChar "AAbb" == "AAAAbbbb") (putStrLn "Test passed")
-    assert (doubleChar "Hi-There" == "HHii--TThheerree") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"TThhee\"" $ doubleChar "The" `shouldBe` "TThhee"
+   it "\"AAAAbbbb\"" $ doubleChar "AAbb" `shouldBe` "AAAAbbbb"
+   it "\"HHii--TThheerree\"" $ doubleChar "Hi-There" `shouldBe` "HHii--TThheerree"
+   it "\"TThhee\"" $ doubleChar "The" `shouldBe` "TThhee"
+   it "\"AAAAbbbb\"" $ doubleChar "AAbb" `shouldBe` "AAAAbbbb"
+   it "\"HHii--TThheerree\"" $ doubleChar "Hi-There" `shouldBe` "HHii--TThheerree"
 

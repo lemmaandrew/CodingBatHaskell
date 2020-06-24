@@ -5,18 +5,18 @@ should ring. Weekdays, the alarm should be "7:00" and on the weekend it should b
 Unless we are on vacation -- then on weekdays it should be "10:00" and weekends it should
 be "off".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 alarmClock :: Int -> Bool -> String
 alarmClock day vacation = undefined
 
 main :: IO ()
-main = do
-    assert (alarmClock 1 False == "7:00") (putStrLn "Test passed")
-    assert (alarmClock 5 False == "7:00") (putStrLn "Test passed")
-    assert (alarmClock 0 False == "10:00") (putStrLn "Test passed")
-    assert (alarmClock 1 False == "7:00") (putStrLn "Test passed")
-    assert (alarmClock 5 False == "7:00") (putStrLn "Test passed")
-    assert (alarmClock 0 False == "10:00") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"7:00\"" $ alarmClock 1 False `shouldBe` "7:00"
+   it "\"7:00\"" $ alarmClock 5 False `shouldBe` "7:00"
+   it "\"10:00\"" $ alarmClock 0 False `shouldBe` "10:00"
+   it "\"7:00\"" $ alarmClock 1 False `shouldBe` "7:00"
+   it "\"7:00\"" $ alarmClock 5 False `shouldBe` "7:00"
+   it "\"10:00\"" $ alarmClock 0 False `shouldBe` "10:00"
 

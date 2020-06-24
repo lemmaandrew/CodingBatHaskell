@@ -6,18 +6,18 @@ chosen, or none of them chosen. For example, with the array {1, 2, 2, 2, 5, 2}, 
 all three 2's in the middle must be chosen or not, all as a group. (one loop can be
 used to find the extent of the identical values).
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 groupSumClump :: Int -> [Int] -> Int -> Bool
 groupSumClump start nums target = undefined
 
 main :: IO ()
-main = do
-    assert (groupSumClump 0 [2,4,8] 10 == True) (putStrLn "Test passed")
-    assert (groupSumClump 0 [1,2,4,8,1] 14 == True) (putStrLn "Test passed")
-    assert (groupSumClump 0 [2,4,4,8] 14 == False) (putStrLn "Test passed")
-    assert (groupSumClump 0 [2,4,8] 10 == True) (putStrLn "Test passed")
-    assert (groupSumClump 0 [1,2,4,8,1] 14 == True) (putStrLn "Test passed")
-    assert (groupSumClump 0 [2,4,4,8] 14 == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ groupSumClump 0 [2,4,8] 10 `shouldBe` True
+   it "True" $ groupSumClump 0 [1,2,4,8,1] 14 `shouldBe` True
+   it "False" $ groupSumClump 0 [2,4,4,8] 14 `shouldBe` False
+   it "True" $ groupSumClump 0 [2,4,8] 10 `shouldBe` True
+   it "True" $ groupSumClump 0 [1,2,4,8,1] 14 `shouldBe` True
+   it "False" $ groupSumClump 0 [2,4,4,8] 14 `shouldBe` False
 

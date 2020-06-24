@@ -3,18 +3,18 @@ Given a string, return true if "bad" appears starting at index 0 or 1 in the str
 such as with "badxxx" or "xbadxx" but not "xxbadxx". The string may be any length, including
 0. Note: use .equals() to compare 2 strings.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 hasBad :: String -> Bool
 hasBad str = undefined
 
 main :: IO ()
-main = do
-    assert (hasBad "badxx" == True) (putStrLn "Test passed")
-    assert (hasBad "xbadxx" == True) (putStrLn "Test passed")
-    assert (hasBad "xxbadxx" == False) (putStrLn "Test passed")
-    assert (hasBad "badxx" == True) (putStrLn "Test passed")
-    assert (hasBad "xbadxx" == True) (putStrLn "Test passed")
-    assert (hasBad "xxbadxx" == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ hasBad "badxx" `shouldBe` True
+   it "True" $ hasBad "xbadxx" `shouldBe` True
+   it "False" $ hasBad "xxbadxx" `shouldBe` False
+   it "True" $ hasBad "badxx" `shouldBe` True
+   it "True" $ hasBad "xbadxx" `shouldBe` True
+   it "False" $ hasBad "xxbadxx" `shouldBe` False
 

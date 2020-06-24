@@ -2,18 +2,18 @@
 Given a string, compute recursively (no loops) a new string where all the lowercase 'x'
 chars have been changed to 'y' chars.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 changeXY :: String -> String
 changeXY str = undefined
 
 main :: IO ()
-main = do
-    assert (changeXY "codex" == "codey") (putStrLn "Test passed")
-    assert (changeXY "xxhixx" == "yyhiyy") (putStrLn "Test passed")
-    assert (changeXY "xhixhix" == "yhiyhiy") (putStrLn "Test passed")
-    assert (changeXY "codex" == "codey") (putStrLn "Test passed")
-    assert (changeXY "xxhixx" == "yyhiyy") (putStrLn "Test passed")
-    assert (changeXY "xhixhix" == "yhiyhiy") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"codey\"" $ changeXY "codex" `shouldBe` "codey"
+   it "\"yyhiyy\"" $ changeXY "xxhixx" `shouldBe` "yyhiyy"
+   it "\"yhiyhiy\"" $ changeXY "xhixhix" `shouldBe` "yhiyhiy"
+   it "\"codey\"" $ changeXY "codex" `shouldBe` "codey"
+   it "\"yyhiyy\"" $ changeXY "xxhixx" `shouldBe` "yyhiyy"
+   it "\"yhiyhiy\"" $ changeXY "xhixhix" `shouldBe` "yhiyhiy"
 

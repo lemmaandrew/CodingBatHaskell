@@ -3,18 +3,18 @@ Loop over the given array of strings to build a result string like this: when a 
 appears the 2nd, 4th, 6th, etc. time in the array, append the string to the result. Return
 the empty string if no string appears a 2nd time.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 wordAppend :: [String] -> String
 wordAppend strings = undefined
 
 main :: IO ()
-main = do
-    assert (wordAppend ["a","b","a"] == "a") (putStrLn "Test passed")
-    assert (wordAppend ["a","b","a","c","a","d","a"] == "aa") (putStrLn "Test passed")
-    assert (wordAppend ["a","","a"] == "a") (putStrLn "Test passed")
-    assert (wordAppend ["a","b","a"] == "a") (putStrLn "Test passed")
-    assert (wordAppend ["a","b","a","c","a","d","a"] == "aa") (putStrLn "Test passed")
-    assert (wordAppend ["a","","a"] == "a") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"a\"" $ wordAppend ["a","b","a"] `shouldBe` "a"
+   it "\"aa\"" $ wordAppend ["a","b","a","c","a","d","a"] `shouldBe` "aa"
+   it "\"a\"" $ wordAppend ["a","","a"] `shouldBe` "a"
+   it "\"a\"" $ wordAppend ["a","b","a"] `shouldBe` "a"
+   it "\"aa\"" $ wordAppend ["a","b","a","c","a","d","a"] `shouldBe` "aa"
+   it "\"a\"" $ wordAppend ["a","","a"] `shouldBe` "a"
 

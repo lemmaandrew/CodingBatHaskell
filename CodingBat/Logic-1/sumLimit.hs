@@ -4,18 +4,18 @@ number of digits as a. If the sum has more digits than a, just return a without 
 (Note: one way to compute the number of digits of a non-negative int n is to convert
 it to a string with String.valueOf(n) and then check the length of the string.)
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 sumLimit :: Int -> Int -> Int
 sumLimit a b = undefined
 
 main :: IO ()
-main = do
-    assert (sumLimit 2 3 == 5) (putStrLn "Test passed")
-    assert (sumLimit 8 3 == 8) (putStrLn "Test passed")
-    assert (sumLimit 8 1 == 9) (putStrLn "Test passed")
-    assert (sumLimit 2 3 == 5) (putStrLn "Test passed")
-    assert (sumLimit 8 3 == 8) (putStrLn "Test passed")
-    assert (sumLimit 8 1 == 9) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "5" $ sumLimit 2 3 `shouldBe` 5
+   it "8" $ sumLimit 8 3 `shouldBe` 8
+   it "9" $ sumLimit 8 1 `shouldBe` 9
+   it "5" $ sumLimit 2 3 `shouldBe` 5
+   it "8" $ sumLimit 8 3 `shouldBe` 8
+   it "9" $ sumLimit 8 1 `shouldBe` 9
 

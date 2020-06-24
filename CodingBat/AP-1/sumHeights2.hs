@@ -6,18 +6,18 @@ however increases in height count double. For example, with the heights {5, 3, 6
 and start=2, end=4 yields a sum of 1*2 + 5 = 7. The start end end index will both
 be valid indexes into the array with start <= end.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 sumHeights2 :: [Int] -> Int -> Int -> Int
 sumHeights2 heights start end = undefined
 
 main :: IO ()
-main = do
-    assert (sumHeights2 [5,3,6,7,2] 2 4 == 7) (putStrLn "Test passed")
-    assert (sumHeights2 [5,3,6,7,2] 0 1 == 2) (putStrLn "Test passed")
-    assert (sumHeights2 [5,3,6,7,2] 0 4 == 15) (putStrLn "Test passed")
-    assert (sumHeights2 [5,3,6,7,2] 2 4 == 7) (putStrLn "Test passed")
-    assert (sumHeights2 [5,3,6,7,2] 0 1 == 2) (putStrLn "Test passed")
-    assert (sumHeights2 [5,3,6,7,2] 0 4 == 15) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "7" $ sumHeights2 [5,3,6,7,2] 2 4 `shouldBe` 7
+   it "2" $ sumHeights2 [5,3,6,7,2] 0 1 `shouldBe` 2
+   it "15" $ sumHeights2 [5,3,6,7,2] 0 4 `shouldBe` 15
+   it "7" $ sumHeights2 [5,3,6,7,2] 2 4 `shouldBe` 7
+   it "2" $ sumHeights2 [5,3,6,7,2] 0 1 `shouldBe` 2
+   it "15" $ sumHeights2 [5,3,6,7,2] 0 4 `shouldBe` 15
 

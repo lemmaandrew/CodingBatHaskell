@@ -3,18 +3,18 @@ Given a string, return a new string made of 3 copies of the first 2 chars of the
 string. The string may be any length. If there are fewer than 2 chars, use whatever is
 there.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 extraFront :: String -> String
 extraFront str = undefined
 
 main :: IO ()
-main = do
-    assert (extraFront "Hello" == "HeHeHe") (putStrLn "Test passed")
-    assert (extraFront "ab" == "ababab") (putStrLn "Test passed")
-    assert (extraFront "H" == "HHH") (putStrLn "Test passed")
-    assert (extraFront "Hello" == "HeHeHe") (putStrLn "Test passed")
-    assert (extraFront "ab" == "ababab") (putStrLn "Test passed")
-    assert (extraFront "H" == "HHH") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"HeHeHe\"" $ extraFront "Hello" `shouldBe` "HeHeHe"
+   it "\"ababab\"" $ extraFront "ab" `shouldBe` "ababab"
+   it "\"HHH\"" $ extraFront "H" `shouldBe` "HHH"
+   it "\"HeHeHe\"" $ extraFront "Hello" `shouldBe` "HeHeHe"
+   it "\"ababab\"" $ extraFront "ab" `shouldBe` "ababab"
+   it "\"HHH\"" $ extraFront "H" `shouldBe` "HHH"
 

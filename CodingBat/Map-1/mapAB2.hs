@@ -2,7 +2,7 @@
 Modify and return the given map as follows: if the keys "a" and "b" are both in the
 map and have equal values, remove them both.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 import qualified Data.Map.Strict as Map
 
 
@@ -10,11 +10,11 @@ mapAB2 :: Map.Map String String -> Map.Map String String
 mapAB2 map = undefined
 
 main :: IO ()
-main = do
-    assert (mapAB2 (Map.fromList [("a","aaa"),("b","aaa"),("c","cake")]) == (Map.fromList [("c","cake")])) (putStrLn "Test passed")
-    assert (mapAB2 (Map.fromList [("a","aaa"),("b","bbb")]) == (Map.fromList [("a","aaa"),("b","bbb")])) (putStrLn "Test passed")
-    assert (mapAB2 (Map.fromList [("a","aaa"),("b","bbb"),("c","aaa")]) == (Map.fromList [("a","aaa"),("b","bbb"),("c","aaa")])) (putStrLn "Test passed")
-    assert (mapAB2 (Map.fromList [("a","aaa"),("b","aaa"),("c","cake")]) == (Map.fromList [("c","cake")])) (putStrLn "Test passed")
-    assert (mapAB2 (Map.fromList [("a","aaa"),("b","bbb")]) == (Map.fromList [("a","aaa"),("b","bbb")])) (putStrLn "Test passed")
-    assert (mapAB2 (Map.fromList [("a","aaa"),("b","bbb"),("c","aaa")]) == (Map.fromList [("a","aaa"),("b","bbb"),("c","aaa")])) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "(Map.fromList [(\"c\",\"cake\")])" $ mapAB2 (Map.fromList [("a","aaa"),("b","aaa"),("c","cake")]) `shouldBe` (Map.fromList [("c","cake")])
+   it "(Map.fromList [(\"a\",\"aaa\"),(\"b\",\"bbb\")])" $ mapAB2 (Map.fromList [("a","aaa"),("b","bbb")]) `shouldBe` (Map.fromList [("a","aaa"),("b","bbb")])
+   it "(Map.fromList [(\"a\",\"aaa\"),(\"b\",\"bbb\"),(\"c\",\"aaa\")])" $ mapAB2 (Map.fromList [("a","aaa"),("b","bbb"),("c","aaa")]) `shouldBe` (Map.fromList [("a","aaa"),("b","bbb"),("c","aaa")])
+   it "(Map.fromList [(\"c\",\"cake\")])" $ mapAB2 (Map.fromList [("a","aaa"),("b","aaa"),("c","cake")]) `shouldBe` (Map.fromList [("c","cake")])
+   it "(Map.fromList [(\"a\",\"aaa\"),(\"b\",\"bbb\")])" $ mapAB2 (Map.fromList [("a","aaa"),("b","bbb")]) `shouldBe` (Map.fromList [("a","aaa"),("b","bbb")])
+   it "(Map.fromList [(\"a\",\"aaa\"),(\"b\",\"bbb\"),(\"c\",\"aaa\")])" $ mapAB2 (Map.fromList [("a","aaa"),("b","bbb"),("c","aaa")]) `shouldBe` (Map.fromList [("a","aaa"),("b","bbb"),("c","aaa")])
 

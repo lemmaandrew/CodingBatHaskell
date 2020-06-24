@@ -4,18 +4,18 @@ Given a number n, create and return a new string array of length n, containing t
 Note: String.valueOf(xxx) will make the String form of most types. The syntax to make a
 new string array is: new String[desired_length] ÿ(See also: FizzBuzz Code)
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 fizzArray2 :: Int -> [String]
 fizzArray2 n = undefined
 
 main :: IO ()
-main = do
-    assert (fizzArray2 4 == ["0","1","2","3"]) (putStrLn "Test passed")
-    assert (fizzArray2 10 == ["0","1","2","3","4","5","6","7","8","9"]) (putStrLn "Test passed")
-    assert (fizzArray2 2 == ["0","1"]) (putStrLn "Test passed")
-    assert (fizzArray2 4 == ["0","1","2","3"]) (putStrLn "Test passed")
-    assert (fizzArray2 10 == ["0","1","2","3","4","5","6","7","8","9"]) (putStrLn "Test passed")
-    assert (fizzArray2 2 == ["0","1"]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[\"0\",\"1\",\"2\",\"3\"]" $ fizzArray2 4 `shouldBe` ["0","1","2","3"]
+   it "[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\"]" $ fizzArray2 10 `shouldBe` ["0","1","2","3","4","5","6","7","8","9"]
+   it "[\"0\",\"1\"]" $ fizzArray2 2 `shouldBe` ["0","1"]
+   it "[\"0\",\"1\",\"2\",\"3\"]" $ fizzArray2 4 `shouldBe` ["0","1","2","3"]
+   it "[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\"]" $ fizzArray2 10 `shouldBe` ["0","1","2","3","4","5","6","7","8","9"]
+   it "[\"0\",\"1\"]" $ fizzArray2 2 `shouldBe` ["0","1"]
 

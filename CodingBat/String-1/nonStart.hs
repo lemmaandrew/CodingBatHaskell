@@ -2,18 +2,18 @@
 Given 2 strings, return their concatenation, except omit the first char of each. The strings
 will be at least length 1.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 nonStart :: String -> String -> String
 nonStart a b = undefined
 
 main :: IO ()
-main = do
-    assert (nonStart "Hello" "There" == "ellohere") (putStrLn "Test passed")
-    assert (nonStart "java" "code" == "avaode") (putStrLn "Test passed")
-    assert (nonStart "shotl" "java" == "hotlava") (putStrLn "Test passed")
-    assert (nonStart "Hello" "There" == "ellohere") (putStrLn "Test passed")
-    assert (nonStart "java" "code" == "avaode") (putStrLn "Test passed")
-    assert (nonStart "shotl" "java" == "hotlava") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"ellohere\"" $ nonStart "Hello" "There" `shouldBe` "ellohere"
+   it "\"avaode\"" $ nonStart "java" "code" `shouldBe` "avaode"
+   it "\"hotlava\"" $ nonStart "shotl" "java" `shouldBe` "hotlava"
+   it "\"ellohere\"" $ nonStart "Hello" "There" `shouldBe` "ellohere"
+   it "\"avaode\"" $ nonStart "java" "code" `shouldBe` "avaode"
+   it "\"hotlava\"" $ nonStart "shotl" "java" `shouldBe` "hotlava"
 

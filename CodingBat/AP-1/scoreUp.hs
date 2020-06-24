@@ -5,18 +5,18 @@ left blank. The two arrays are not empty and are the same length. Return the sco
 this array of answers, giving +4 for each correct answer, -1 for each incorrect answer,
 and +0 for each blank answer.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 scoreUp :: [String] -> [String] -> Int
 scoreUp key answers = undefined
 
 main :: IO ()
-main = do
-    assert (scoreUp ["a","a","b","b"] ["a","c","b","c"] == 6) (putStrLn "Test passed")
-    assert (scoreUp ["a","a","b","b"] ["a","a","b","c"] == 11) (putStrLn "Test passed")
-    assert (scoreUp ["a","a","b","b"] ["a","a","b","b"] == 16) (putStrLn "Test passed")
-    assert (scoreUp ["a","a","b","b"] ["a","c","b","c"] == 6) (putStrLn "Test passed")
-    assert (scoreUp ["a","a","b","b"] ["a","a","b","c"] == 11) (putStrLn "Test passed")
-    assert (scoreUp ["a","a","b","b"] ["a","a","b","b"] == 16) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "6" $ scoreUp ["a","a","b","b"] ["a","c","b","c"] `shouldBe` 6
+   it "11" $ scoreUp ["a","a","b","b"] ["a","a","b","c"] `shouldBe` 11
+   it "16" $ scoreUp ["a","a","b","b"] ["a","a","b","b"] `shouldBe` 16
+   it "6" $ scoreUp ["a","a","b","b"] ["a","c","b","c"] `shouldBe` 6
+   it "11" $ scoreUp ["a","a","b","b"] ["a","a","b","c"] `shouldBe` 11
+   it "16" $ scoreUp ["a","a","b","b"] ["a","a","b","b"] `shouldBe` 16
 

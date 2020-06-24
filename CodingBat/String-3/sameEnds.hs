@@ -2,18 +2,18 @@
 Given a string, return the longest substring that appears at both the beginning and end
 of the string without overlapping. For example, sameEnds("abXab") is "ab".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 sameEnds :: String -> String
 sameEnds string = undefined
 
 main :: IO ()
-main = do
-    assert (sameEnds "abXYab" == "ab") (putStrLn "Test passed")
-    assert (sameEnds "xx" == "x") (putStrLn "Test passed")
-    assert (sameEnds "xxx" == "x") (putStrLn "Test passed")
-    assert (sameEnds "abXYab" == "ab") (putStrLn "Test passed")
-    assert (sameEnds "xx" == "x") (putStrLn "Test passed")
-    assert (sameEnds "xxx" == "x") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"ab\"" $ sameEnds "abXYab" `shouldBe` "ab"
+   it "\"x\"" $ sameEnds "xx" `shouldBe` "x"
+   it "\"x\"" $ sameEnds "xxx" `shouldBe` "x"
+   it "\"ab\"" $ sameEnds "abXYab" `shouldBe` "ab"
+   it "\"x\"" $ sameEnds "xx" `shouldBe` "x"
+   it "\"x\"" $ sameEnds "xxx" `shouldBe` "x"
 

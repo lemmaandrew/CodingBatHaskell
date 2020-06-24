@@ -5,18 +5,18 @@ the number evenly. So for example 128 divides itself since 1, 2, and 8 all divid
 a 0 digit divides itself. Note: use % to get the rightmost digit, and / to discard the
 rightmost digit.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 dividesSelf :: Int -> Bool
 dividesSelf n = undefined
 
 main :: IO ()
-main = do
-    assert (dividesSelf 128 == True) (putStrLn "Test passed")
-    assert (dividesSelf 12 == True) (putStrLn "Test passed")
-    assert (dividesSelf 120 == False) (putStrLn "Test passed")
-    assert (dividesSelf 128 == True) (putStrLn "Test passed")
-    assert (dividesSelf 12 == True) (putStrLn "Test passed")
-    assert (dividesSelf 120 == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ dividesSelf 128 `shouldBe` True
+   it "True" $ dividesSelf 12 `shouldBe` True
+   it "False" $ dividesSelf 120 `shouldBe` False
+   it "True" $ dividesSelf 128 `shouldBe` True
+   it "True" $ dividesSelf 12 `shouldBe` True
+   it "False" $ dividesSelf 120 `shouldBe` False
 

@@ -5,18 +5,18 @@ You do not need a separate if-statement for the length-0 case; the for-loop shou
 execute 0 times in that case, so it just works. The syntax to make a new int array
 is: new int[desired_length]    ÿ (See also: FizzBuzz Code)
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 fizzArray :: Int -> [Int]
 fizzArray n = undefined
 
 main :: IO ()
-main = do
-    assert (fizzArray 4 == [0,1,2,3]) (putStrLn "Test passed")
-    assert (fizzArray 1 == [0]) (putStrLn "Test passed")
-    assert (fizzArray 10 == [0,1,2,3,4,5,6,7,8,9]) (putStrLn "Test passed")
-    assert (fizzArray 4 == [0,1,2,3]) (putStrLn "Test passed")
-    assert (fizzArray 1 == [0]) (putStrLn "Test passed")
-    assert (fizzArray 10 == [0,1,2,3,4,5,6,7,8,9]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[0,1,2,3]" $ fizzArray 4 `shouldBe` [0,1,2,3]
+   it "[0]" $ fizzArray 1 `shouldBe` [0]
+   it "[0,1,2,3,4,5,6,7,8,9]" $ fizzArray 10 `shouldBe` [0,1,2,3,4,5,6,7,8,9]
+   it "[0,1,2,3]" $ fizzArray 4 `shouldBe` [0,1,2,3]
+   it "[0]" $ fizzArray 1 `shouldBe` [0]
+   it "[0,1,2,3,4,5,6,7,8,9]" $ fizzArray 10 `shouldBe` [0,1,2,3,4,5,6,7,8,9]
 

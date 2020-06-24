@@ -6,18 +6,18 @@ B will both have a length which is N or more. The best "linear" solution makes a
 pass over A and B, taking advantage of the fact that they are in alphabetical order,
 copying elements directly to the new array.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 mergeTwo :: [String] -> [String] -> Int -> [String]
 mergeTwo a b n = undefined
 
 main :: IO ()
-main = do
-    assert (mergeTwo ["a","c","z"] ["b","f","z"] 3 == ["a","b","c"]) (putStrLn "Test passed")
-    assert (mergeTwo ["a","c","z"] ["c","f","z"] 3 == ["a","c","f"]) (putStrLn "Test passed")
-    assert (mergeTwo ["f","g","z"] ["c","f","g"] 3 == ["c","f","g"]) (putStrLn "Test passed")
-    assert (mergeTwo ["a","c","z"] ["b","f","z"] 3 == ["a","b","c"]) (putStrLn "Test passed")
-    assert (mergeTwo ["a","c","z"] ["c","f","z"] 3 == ["a","c","f"]) (putStrLn "Test passed")
-    assert (mergeTwo ["f","g","z"] ["c","f","g"] 3 == ["c","f","g"]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[\"a\",\"b\",\"c\"]" $ mergeTwo ["a","c","z"] ["b","f","z"] 3 `shouldBe` ["a","b","c"]
+   it "[\"a\",\"c\",\"f\"]" $ mergeTwo ["a","c","z"] ["c","f","z"] 3 `shouldBe` ["a","c","f"]
+   it "[\"c\",\"f\",\"g\"]" $ mergeTwo ["f","g","z"] ["c","f","g"] 3 `shouldBe` ["c","f","g"]
+   it "[\"a\",\"b\",\"c\"]" $ mergeTwo ["a","c","z"] ["b","f","z"] 3 `shouldBe` ["a","b","c"]
+   it "[\"a\",\"c\",\"f\"]" $ mergeTwo ["a","c","z"] ["c","f","z"] 3 `shouldBe` ["a","c","f"]
+   it "[\"c\",\"f\",\"g\"]" $ mergeTwo ["f","g","z"] ["c","f","g"] 3 `shouldBe` ["c","f","g"]
 

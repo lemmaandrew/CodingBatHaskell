@@ -3,18 +3,18 @@ Given arrays nums1 and nums2 of the same length, for every element in nums1, con
 the corresponding element in nums2 (at the same index). Return the count of the number
 of times that the two elements differ by 2 or less, but are not equal.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 matchUp :: [Int] -> [Int] -> Int
 matchUp nums1 nums2 = undefined
 
 main :: IO ()
-main = do
-    assert (matchUp [1,2,3] [2,3,10] == 2) (putStrLn "Test passed")
-    assert (matchUp [1,2,3] [2,3,5] == 3) (putStrLn "Test passed")
-    assert (matchUp [1,2,3] [2,3,3] == 2) (putStrLn "Test passed")
-    assert (matchUp [1,2,3] [2,3,10] == 2) (putStrLn "Test passed")
-    assert (matchUp [1,2,3] [2,3,5] == 3) (putStrLn "Test passed")
-    assert (matchUp [1,2,3] [2,3,3] == 2) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "2" $ matchUp [1,2,3] [2,3,10] `shouldBe` 2
+   it "3" $ matchUp [1,2,3] [2,3,5] `shouldBe` 3
+   it "2" $ matchUp [1,2,3] [2,3,3] `shouldBe` 2
+   it "2" $ matchUp [1,2,3] [2,3,10] `shouldBe` 2
+   it "3" $ matchUp [1,2,3] [2,3,5] `shouldBe` 3
+   it "2" $ matchUp [1,2,3] [2,3,3] `shouldBe` 2
 

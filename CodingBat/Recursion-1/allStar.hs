@@ -2,18 +2,18 @@
 Given a string, compute recursively a new string where all the adjacent chars are now
 separated by a "*".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 allStar :: String -> String
 allStar str = undefined
 
 main :: IO ()
-main = do
-    assert (allStar "hello" == "h*e*l*l*o") (putStrLn "Test passed")
-    assert (allStar "abc" == "a*b*c") (putStrLn "Test passed")
-    assert (allStar "ab" == "a*b") (putStrLn "Test passed")
-    assert (allStar "hello" == "h*e*l*l*o") (putStrLn "Test passed")
-    assert (allStar "abc" == "a*b*c") (putStrLn "Test passed")
-    assert (allStar "ab" == "a*b") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"h*e*l*l*o\"" $ allStar "hello" `shouldBe` "h*e*l*l*o"
+   it "\"a*b*c\"" $ allStar "abc" `shouldBe` "a*b*c"
+   it "\"a*b\"" $ allStar "ab" `shouldBe` "a*b"
+   it "\"h*e*l*l*o\"" $ allStar "hello" `shouldBe` "h*e*l*l*o"
+   it "\"a*b*c\"" $ allStar "abc" `shouldBe` "a*b*c"
+   it "\"a*b\"" $ allStar "ab" `shouldBe` "a*b"
 

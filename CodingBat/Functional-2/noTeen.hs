@@ -2,18 +2,18 @@
 Given a list of integers, return a list of those numbers, omitting any that are between
 13 and 19 inclusive.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 noTeen :: [Integer] -> [Integer]
 noTeen nums = undefined
 
 main :: IO ()
-main = do
-    assert (noTeen [12,13,19,20] == [12,20]) (putStrLn "Test passed")
-    assert (noTeen [1,14,1] == [1,1]) (putStrLn "Test passed")
-    assert (noTeen [15] == []) (putStrLn "Test passed")
-    assert (noTeen [12,13,19,20] == [12,20]) (putStrLn "Test passed")
-    assert (noTeen [1,14,1] == [1,1]) (putStrLn "Test passed")
-    assert (noTeen [15] == []) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[12,20]" $ noTeen [12,13,19,20] `shouldBe` [12,20]
+   it "[1,1]" $ noTeen [1,14,1] `shouldBe` [1,1]
+   it "[]" $ noTeen [15] `shouldBe` []
+   it "[12,20]" $ noTeen [12,13,19,20] `shouldBe` [12,20]
+   it "[1,1]" $ noTeen [1,14,1] `shouldBe` [1,1]
+   it "[]" $ noTeen [15] `shouldBe` []
 

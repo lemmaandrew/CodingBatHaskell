@@ -20,9 +20,7 @@ writeProblem directory pbm =
         hClose handle
 
 writeCategory :: FilePath -> Category -> IO ()
-writeCategory directory (Category name problems) = mapM_ go problems where
-    go (Just pbm) = writeProblem (directory ++ "/" ++ name) pbm
-    go (Nothing) = trace ("Failed to write problem in category " ++ name) (return ())
+writeCategory directory (Category name problems) = mapM_ (writeProblem (directory ++ "/" ++ name)) problems
 
 main :: IO ()
 main = do

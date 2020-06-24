@@ -2,18 +2,18 @@
 Return the number of even ints in the given array. Note: the % "mod" operator computes
 the remainder, e.g. 5 % 2 is 1.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 countEvens :: [Int] -> Int
 countEvens nums = undefined
 
 main :: IO ()
-main = do
-    assert (countEvens [2,1,2,3,4] == 3) (putStrLn "Test passed")
-    assert (countEvens [2,2,0] == 3) (putStrLn "Test passed")
-    assert (countEvens [1,3,5] == 0) (putStrLn "Test passed")
-    assert (countEvens [2,1,2,3,4] == 3) (putStrLn "Test passed")
-    assert (countEvens [2,2,0] == 3) (putStrLn "Test passed")
-    assert (countEvens [1,3,5] == 0) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "3" $ countEvens [2,1,2,3,4] `shouldBe` 3
+   it "3" $ countEvens [2,2,0] `shouldBe` 3
+   it "0" $ countEvens [1,3,5] `shouldBe` 0
+   it "3" $ countEvens [2,1,2,3,4] `shouldBe` 3
+   it "3" $ countEvens [2,2,0] `shouldBe` 3
+   it "0" $ countEvens [1,3,5] `shouldBe` 0
 

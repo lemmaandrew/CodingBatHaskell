@@ -4,18 +4,18 @@ sum of the two groups is the same, with these constraints: all the values that a
 of 5 must be in one group, and all the values that are a multiple of 3 (and not a
 multiple of 5) must be in the other. (No loops needed.)
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 split53 :: [Int] -> Bool
 split53 nums = undefined
 
 main :: IO ()
-main = do
-    assert (split53 [1,1] == True) (putStrLn "Test passed")
-    assert (split53 [1,1,1] == False) (putStrLn "Test passed")
-    assert (split53 [2,4,2] == True) (putStrLn "Test passed")
-    assert (split53 [1,1] == True) (putStrLn "Test passed")
-    assert (split53 [1,1,1] == False) (putStrLn "Test passed")
-    assert (split53 [2,4,2] == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ split53 [1,1] `shouldBe` True
+   it "False" $ split53 [1,1,1] `shouldBe` False
+   it "True" $ split53 [2,4,2] `shouldBe` True
+   it "True" $ split53 [1,1] `shouldBe` True
+   it "False" $ split53 [1,1,1] `shouldBe` False
+   it "True" $ split53 [2,4,2] `shouldBe` True
 

@@ -3,7 +3,7 @@ Modify and return the given map as follows: if the keys "a" and "b" have values 
 have different lengths, then set "c" to have the longer value. If the values exist and
 have the same length, change them both to the empty string in the map.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 import qualified Data.Map.Strict as Map
 
 
@@ -11,11 +11,11 @@ mapAB4 :: Map.Map String String -> Map.Map String String
 mapAB4 map = undefined
 
 main :: IO ()
-main = do
-    assert (mapAB4 (Map.fromList [("a","aaa"),("b","bb"),("c","cake")]) == (Map.fromList [("a","aaa"),("b","bb"),("c","aaa")])) (putStrLn "Test passed")
-    assert (mapAB4 (Map.fromList [("a","aa"),("b","bbb"),("c","cake")]) == (Map.fromList [("a","aa"),("b","bbb"),("c","bbb")])) (putStrLn "Test passed")
-    assert (mapAB4 (Map.fromList [("a","aa"),("b","bbb")]) == (Map.fromList [("a","aa"),("b","bbb"),("c","bbb")])) (putStrLn "Test passed")
-    assert (mapAB4 (Map.fromList [("a","aaa"),("b","bb"),("c","cake")]) == (Map.fromList [("a","aaa"),("b","bb"),("c","aaa")])) (putStrLn "Test passed")
-    assert (mapAB4 (Map.fromList [("a","aa"),("b","bbb"),("c","cake")]) == (Map.fromList [("a","aa"),("b","bbb"),("c","bbb")])) (putStrLn "Test passed")
-    assert (mapAB4 (Map.fromList [("a","aa"),("b","bbb")]) == (Map.fromList [("a","aa"),("b","bbb"),("c","bbb")])) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "(Map.fromList [(\"a\",\"aaa\"),(\"b\",\"bb\"),(\"c\",\"aaa\")])" $ mapAB4 (Map.fromList [("a","aaa"),("b","bb"),("c","cake")]) `shouldBe` (Map.fromList [("a","aaa"),("b","bb"),("c","aaa")])
+   it "(Map.fromList [(\"a\",\"aa\"),(\"b\",\"bbb\"),(\"c\",\"bbb\")])" $ mapAB4 (Map.fromList [("a","aa"),("b","bbb"),("c","cake")]) `shouldBe` (Map.fromList [("a","aa"),("b","bbb"),("c","bbb")])
+   it "(Map.fromList [(\"a\",\"aa\"),(\"b\",\"bbb\"),(\"c\",\"bbb\")])" $ mapAB4 (Map.fromList [("a","aa"),("b","bbb")]) `shouldBe` (Map.fromList [("a","aa"),("b","bbb"),("c","bbb")])
+   it "(Map.fromList [(\"a\",\"aaa\"),(\"b\",\"bb\"),(\"c\",\"aaa\")])" $ mapAB4 (Map.fromList [("a","aaa"),("b","bb"),("c","cake")]) `shouldBe` (Map.fromList [("a","aaa"),("b","bb"),("c","aaa")])
+   it "(Map.fromList [(\"a\",\"aa\"),(\"b\",\"bbb\"),(\"c\",\"bbb\")])" $ mapAB4 (Map.fromList [("a","aa"),("b","bbb"),("c","cake")]) `shouldBe` (Map.fromList [("a","aa"),("b","bbb"),("c","bbb")])
+   it "(Map.fromList [(\"a\",\"aa\"),(\"b\",\"bbb\"),(\"c\",\"bbb\")])" $ mapAB4 (Map.fromList [("a","aa"),("b","bbb")]) `shouldBe` (Map.fromList [("a","aa"),("b","bbb"),("c","bbb")])
 

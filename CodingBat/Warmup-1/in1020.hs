@@ -1,18 +1,18 @@
 {-From https://codingbat.com/prob/p144535
 Given 2 int values, return true if either of them is in the range 10..20 inclusive.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 in1020 :: Int -> Int -> Bool
 in1020 a b = undefined
 
 main :: IO ()
-main = do
-    assert (in1020 12 99 == True) (putStrLn "Test passed")
-    assert (in1020 21 12 == True) (putStrLn "Test passed")
-    assert (in1020 8 99 == False) (putStrLn "Test passed")
-    assert (in1020 12 99 == True) (putStrLn "Test passed")
-    assert (in1020 21 12 == True) (putStrLn "Test passed")
-    assert (in1020 8 99 == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ in1020 12 99 `shouldBe` True
+   it "True" $ in1020 21 12 `shouldBe` True
+   it "False" $ in1020 8 99 `shouldBe` False
+   it "True" $ in1020 12 99 `shouldBe` True
+   it "True" $ in1020 21 12 `shouldBe` True
+   it "False" $ in1020 8 99 `shouldBe` False
 

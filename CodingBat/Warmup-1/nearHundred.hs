@@ -2,18 +2,18 @@
 Given an int n, return true if it is within 10 of 100 or 200. Note: Math.abs(num) computes
 the absolute value of a number.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 nearHundred :: Int -> Bool
 nearHundred n = undefined
 
 main :: IO ()
-main = do
-    assert (nearHundred 93 == True) (putStrLn "Test passed")
-    assert (nearHundred 90 == True) (putStrLn "Test passed")
-    assert (nearHundred 89 == False) (putStrLn "Test passed")
-    assert (nearHundred 93 == True) (putStrLn "Test passed")
-    assert (nearHundred 90 == True) (putStrLn "Test passed")
-    assert (nearHundred 89 == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ nearHundred 93 `shouldBe` True
+   it "True" $ nearHundred 90 `shouldBe` True
+   it "False" $ nearHundred 89 `shouldBe` False
+   it "True" $ nearHundred 93 `shouldBe` True
+   it "True" $ nearHundred 90 `shouldBe` True
+   it "False" $ nearHundred 89 `shouldBe` False
 

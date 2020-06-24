@@ -5,18 +5,18 @@ is 60 or less, the result is 0. If speed is between 61 and 80 inclusive, the res
 is 1. If speed is 81 or more, the result is 2. Unless it is your birthday -- on that
 day, your speed can be 5 higher in all cases.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 caughtSpeeding :: Int -> Bool -> Int
 caughtSpeeding speed isBirthday = undefined
 
 main :: IO ()
-main = do
-    assert (caughtSpeeding 60 False == 0) (putStrLn "Test passed")
-    assert (caughtSpeeding 65 False == 1) (putStrLn "Test passed")
-    assert (caughtSpeeding 65 True == 0) (putStrLn "Test passed")
-    assert (caughtSpeeding 60 False == 0) (putStrLn "Test passed")
-    assert (caughtSpeeding 65 False == 1) (putStrLn "Test passed")
-    assert (caughtSpeeding 65 True == 0) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "0" $ caughtSpeeding 60 False `shouldBe` 0
+   it "1" $ caughtSpeeding 65 False `shouldBe` 1
+   it "0" $ caughtSpeeding 65 True `shouldBe` 0
+   it "0" $ caughtSpeeding 60 False `shouldBe` 0
+   it "1" $ caughtSpeeding 65 False `shouldBe` 1
+   it "0" $ caughtSpeeding 65 True `shouldBe` 0
 

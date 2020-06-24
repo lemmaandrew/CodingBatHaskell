@@ -3,18 +3,18 @@ Given a non-empty string and an int N, return the string made starting with char
 then every Nth char of the string. So if N is 3, use char 0, 3, 6, ... and so on.
 N is 1 or more.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 everyNth :: String -> Int -> String
 everyNth str n = undefined
 
 main :: IO ()
-main = do
-    assert (everyNth "Miracle" 2 == "Mrce") (putStrLn "Test passed")
-    assert (everyNth "abcdefg" 2 == "aceg") (putStrLn "Test passed")
-    assert (everyNth "abcdefg" 3 == "adg") (putStrLn "Test passed")
-    assert (everyNth "Miracle" 2 == "Mrce") (putStrLn "Test passed")
-    assert (everyNth "abcdefg" 2 == "aceg") (putStrLn "Test passed")
-    assert (everyNth "abcdefg" 3 == "adg") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"Mrce\"" $ everyNth "Miracle" 2 `shouldBe` "Mrce"
+   it "\"aceg\"" $ everyNth "abcdefg" 2 `shouldBe` "aceg"
+   it "\"adg\"" $ everyNth "abcdefg" 3 `shouldBe` "adg"
+   it "\"Mrce\"" $ everyNth "Miracle" 2 `shouldBe` "Mrce"
+   it "\"aceg\"" $ everyNth "abcdefg" 2 `shouldBe` "aceg"
+   it "\"adg\"" $ everyNth "abcdefg" 3 `shouldBe` "adg"
 

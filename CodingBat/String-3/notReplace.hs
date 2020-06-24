@@ -4,18 +4,18 @@ been replaced with "is not". The word "is" should not be immediately preceeded o
 by a letter -- so for example the "is" in "this" does not count. (Note: Character.isLetter(char)
 tests if a char is a letter.)
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 notReplace :: String -> String
 notReplace str = undefined
 
 main :: IO ()
-main = do
-    assert (notReplace "istest" == "isnottest") (putStrLn "Test passed")
-    assert (notReplace "is-is" == "isnot-isnot") (putStrLn "Test passed")
-    assert (notReplace "Thisisright" == "Thisisnotright") (putStrLn "Test passed")
-    assert (notReplace "istest" == "isnottest") (putStrLn "Test passed")
-    assert (notReplace "is-is" == "isnot-isnot") (putStrLn "Test passed")
-    assert (notReplace "Thisisright" == "Thisisnotright") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"isnottest\"" $ notReplace "istest" `shouldBe` "isnottest"
+   it "\"isnot-isnot\"" $ notReplace "is-is" `shouldBe` "isnot-isnot"
+   it "\"Thisisnotright\"" $ notReplace "Thisisright" `shouldBe` "Thisisnotright"
+   it "\"isnottest\"" $ notReplace "istest" `shouldBe` "isnottest"
+   it "\"isnot-isnot\"" $ notReplace "is-is" `shouldBe` "isnot-isnot"
+   it "\"Thisisnotright\"" $ notReplace "Thisisright" `shouldBe` "Thisisnotright"
 

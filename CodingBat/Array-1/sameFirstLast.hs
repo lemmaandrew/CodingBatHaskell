@@ -2,18 +2,18 @@
 Given an array of ints, return true if the array is length 1 or more, and the first
 element and the last element are equal.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 sameFirstLast :: [Int] -> Bool
 sameFirstLast nums = undefined
 
 main :: IO ()
-main = do
-    assert (sameFirstLast [1,2,3] == False) (putStrLn "Test passed")
-    assert (sameFirstLast [1,2,3,1] == True) (putStrLn "Test passed")
-    assert (sameFirstLast [1,2,1] == True) (putStrLn "Test passed")
-    assert (sameFirstLast [1,2,3] == False) (putStrLn "Test passed")
-    assert (sameFirstLast [1,2,3,1] == True) (putStrLn "Test passed")
-    assert (sameFirstLast [1,2,1] == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "False" $ sameFirstLast [1,2,3] `shouldBe` False
+   it "True" $ sameFirstLast [1,2,3,1] `shouldBe` True
+   it "True" $ sameFirstLast [1,2,1] `shouldBe` True
+   it "False" $ sameFirstLast [1,2,3] `shouldBe` False
+   it "True" $ sameFirstLast [1,2,3,1] `shouldBe` True
+   it "True" $ sameFirstLast [1,2,1] `shouldBe` True
 

@@ -5,18 +5,18 @@ at least 5. However, if either tea or candy is at least double the amount of the
 one, the party is great (2). However, in all cases, if either tea or candy is less than
 5, the party is always bad (0).
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 teaParty :: Int -> Int -> Int
 teaParty tea candy = undefined
 
 main :: IO ()
-main = do
-    assert (teaParty 6 8 == 1) (putStrLn "Test passed")
-    assert (teaParty 3 8 == 0) (putStrLn "Test passed")
-    assert (teaParty 20 6 == 2) (putStrLn "Test passed")
-    assert (teaParty 6 8 == 1) (putStrLn "Test passed")
-    assert (teaParty 3 8 == 0) (putStrLn "Test passed")
-    assert (teaParty 20 6 == 2) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "1" $ teaParty 6 8 `shouldBe` 1
+   it "0" $ teaParty 3 8 `shouldBe` 0
+   it "2" $ teaParty 20 6 `shouldBe` 2
+   it "1" $ teaParty 6 8 `shouldBe` 1
+   it "0" $ teaParty 3 8 `shouldBe` 0
+   it "2" $ teaParty 20 6 `shouldBe` 2
 

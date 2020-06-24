@@ -3,18 +3,18 @@ Given two strings, return true if either of the strings appears at the very end 
 other string, ignoring upper/lower case differences (in other words, the computation should
 not be "case sensitive"). Note:    str.toLowerCase() returns the lowercase version of a string.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 endOther :: String -> String -> Bool
 endOther a b = undefined
 
 main :: IO ()
-main = do
-    assert (endOther "Hiabc" "abc" == True) (putStrLn "Test passed")
-    assert (endOther "AbC" "HiaBc" == True) (putStrLn "Test passed")
-    assert (endOther "abc" "abXabc" == True) (putStrLn "Test passed")
-    assert (endOther "Hiabc" "abc" == True) (putStrLn "Test passed")
-    assert (endOther "AbC" "HiaBc" == True) (putStrLn "Test passed")
-    assert (endOther "abc" "abXabc" == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ endOther "Hiabc" "abc" `shouldBe` True
+   it "True" $ endOther "AbC" "HiaBc" `shouldBe` True
+   it "True" $ endOther "abc" "abXabc" `shouldBe` True
+   it "True" $ endOther "Hiabc" "abc" `shouldBe` True
+   it "True" $ endOther "AbC" "HiaBc" `shouldBe` True
+   it "True" $ endOther "abc" "abXabc" `shouldBe` True
 

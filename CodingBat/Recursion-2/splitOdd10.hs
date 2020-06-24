@@ -5,18 +5,18 @@ int must be in one group or the other. Write a recursive helper method that take
 arguments you like, and make the initial call to your recursive helper from splitOdd10().
 (No loops needed.)
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 splitOdd10 :: [Int] -> Bool
 splitOdd10 nums = undefined
 
 main :: IO ()
-main = do
-    assert (splitOdd10 [5,5,5] == True) (putStrLn "Test passed")
-    assert (splitOdd10 [5,5,6] == False) (putStrLn "Test passed")
-    assert (splitOdd10 [5,5,6,1] == True) (putStrLn "Test passed")
-    assert (splitOdd10 [5,5,5] == True) (putStrLn "Test passed")
-    assert (splitOdd10 [5,5,6] == False) (putStrLn "Test passed")
-    assert (splitOdd10 [5,5,6,1] == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ splitOdd10 [5,5,5] `shouldBe` True
+   it "False" $ splitOdd10 [5,5,6] `shouldBe` False
+   it "True" $ splitOdd10 [5,5,6,1] `shouldBe` True
+   it "True" $ splitOdd10 [5,5,5] `shouldBe` True
+   it "False" $ splitOdd10 [5,5,6] `shouldBe` False
+   it "True" $ splitOdd10 [5,5,6,1] `shouldBe` True
 

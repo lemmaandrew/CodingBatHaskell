@@ -4,18 +4,18 @@ of 8 as a digit, except that an 8 with another 8 immediately to its left counts 
 so 8818 yields 4. Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6),
 while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 count8 :: Int -> Int
 count8 n = undefined
 
 main :: IO ()
-main = do
-    assert (count8 8 == 1) (putStrLn "Test passed")
-    assert (count8 818 == 2) (putStrLn "Test passed")
-    assert (count8 8818 == 4) (putStrLn "Test passed")
-    assert (count8 8 == 1) (putStrLn "Test passed")
-    assert (count8 818 == 2) (putStrLn "Test passed")
-    assert (count8 8818 == 4) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "1" $ count8 8 `shouldBe` 1
+   it "2" $ count8 818 `shouldBe` 2
+   it "4" $ count8 8818 `shouldBe` 4
+   it "1" $ count8 8 `shouldBe` 1
+   it "2" $ count8 818 `shouldBe` 2
+   it "4" $ count8 8818 `shouldBe` 4
 

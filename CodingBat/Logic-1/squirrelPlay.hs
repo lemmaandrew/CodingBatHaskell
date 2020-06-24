@@ -4,18 +4,18 @@ the temperature is between 60 and 90 (inclusive). Unless it is summer, then the 
 limit is 100 instead of 90. Given an int temperature and a boolean isSummer, return true
 if the squirrels play and false otherwise.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 squirrelPlay :: Int -> Bool -> Bool
 squirrelPlay temp isSummer = undefined
 
 main :: IO ()
-main = do
-    assert (squirrelPlay 70 False == True) (putStrLn "Test passed")
-    assert (squirrelPlay 95 False == False) (putStrLn "Test passed")
-    assert (squirrelPlay 95 True == True) (putStrLn "Test passed")
-    assert (squirrelPlay 70 False == True) (putStrLn "Test passed")
-    assert (squirrelPlay 95 False == False) (putStrLn "Test passed")
-    assert (squirrelPlay 95 True == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ squirrelPlay 70 False `shouldBe` True
+   it "False" $ squirrelPlay 95 False `shouldBe` False
+   it "True" $ squirrelPlay 95 True `shouldBe` True
+   it "True" $ squirrelPlay 70 False `shouldBe` True
+   it "False" $ squirrelPlay 95 False `shouldBe` False
+   it "True" $ squirrelPlay 95 True `shouldBe` True
 

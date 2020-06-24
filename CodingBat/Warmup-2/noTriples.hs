@@ -2,18 +2,18 @@
 Given an array of ints, we'll say that a triple is a value appearing 3 times in a row
 in the array. Return true if the array does not contain any triples.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 noTriples :: [Int] -> Bool
 noTriples nums = undefined
 
 main :: IO ()
-main = do
-    assert (noTriples [1,1,2,2,1] == True) (putStrLn "Test passed")
-    assert (noTriples [1,1,2,2,2,1] == False) (putStrLn "Test passed")
-    assert (noTriples [1,1,1,2,2,2,1] == False) (putStrLn "Test passed")
-    assert (noTriples [1,1,2,2,1] == True) (putStrLn "Test passed")
-    assert (noTriples [1,1,2,2,2,1] == False) (putStrLn "Test passed")
-    assert (noTriples [1,1,1,2,2,2,1] == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ noTriples [1,1,2,2,1] `shouldBe` True
+   it "False" $ noTriples [1,1,2,2,2,1] `shouldBe` False
+   it "False" $ noTriples [1,1,1,2,2,2,1] `shouldBe` False
+   it "True" $ noTriples [1,1,2,2,1] `shouldBe` True
+   it "False" $ noTriples [1,1,2,2,2,1] `shouldBe` False
+   it "False" $ noTriples [1,1,1,2,2,2,1] `shouldBe` False
 

@@ -4,18 +4,18 @@ in the array. We'll use the convention of considering only the part of the array
 begins at the given index. In this way, a recursive call can pass index+1 to move down
 the array. The initial call will pass in index as 0.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 array11 :: [Int] -> Int -> Int
 array11 nums index = undefined
 
 main :: IO ()
-main = do
-    assert (array11 [1,2,11] 0 == 1) (putStrLn "Test passed")
-    assert (array11 [11,11] 0 == 2) (putStrLn "Test passed")
-    assert (array11 [1,2,3,4] 0 == 0) (putStrLn "Test passed")
-    assert (array11 [1,2,11] 0 == 1) (putStrLn "Test passed")
-    assert (array11 [11,11] 0 == 2) (putStrLn "Test passed")
-    assert (array11 [1,2,3,4] 0 == 0) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "1" $ array11 [1,2,11] 0 `shouldBe` 1
+   it "2" $ array11 [11,11] 0 `shouldBe` 2
+   it "0" $ array11 [1,2,3,4] 0 `shouldBe` 0
+   it "1" $ array11 [1,2,11] 0 `shouldBe` 1
+   it "2" $ array11 [11,11] 0 `shouldBe` 2
+   it "0" $ array11 [1,2,3,4] 0 `shouldBe` 0
 

@@ -4,18 +4,18 @@ so that all the zeros are grouped at the start of the array. The order of the no
 numbers does not matter. So {1, 0, 0, 1} becomes {0 ,0, 1, 1}. You may modify and return
 the given array or make a new array.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 zeroFront :: [Int] -> [Int]
 zeroFront nums = undefined
 
 main :: IO ()
-main = do
-    assert (zeroFront [1,0,0,1] == [0,0,1,1]) (putStrLn "Test passed")
-    assert (zeroFront [0,1,1,0,1] == [0,0,1,1,1]) (putStrLn "Test passed")
-    assert (zeroFront [1,0] == [0,1]) (putStrLn "Test passed")
-    assert (zeroFront [1,0,0,1] == [0,0,1,1]) (putStrLn "Test passed")
-    assert (zeroFront [0,1,1,0,1] == [0,0,1,1,1]) (putStrLn "Test passed")
-    assert (zeroFront [1,0] == [0,1]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[0,0,1,1]" $ zeroFront [1,0,0,1] `shouldBe` [0,0,1,1]
+   it "[0,0,1,1,1]" $ zeroFront [0,1,1,0,1] `shouldBe` [0,0,1,1,1]
+   it "[0,1]" $ zeroFront [1,0] `shouldBe` [0,1]
+   it "[0,0,1,1]" $ zeroFront [1,0,0,1] `shouldBe` [0,0,1,1]
+   it "[0,0,1,1,1]" $ zeroFront [0,1,1,0,1] `shouldBe` [0,0,1,1,1]
+   it "[0,1]" $ zeroFront [1,0] `shouldBe` [0,1]
 

@@ -2,18 +2,18 @@
 Given a list of integers, return a list of those numbers squared and the product added
 to 10, omitting any of the resulting numbers that end in 5 or 6.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 square56 :: [Integer] -> [Integer]
 square56 nums = undefined
 
 main :: IO ()
-main = do
-    assert (square56 [3,1,4] == [19,11]) (putStrLn "Test passed")
-    assert (square56 [1] == [11]) (putStrLn "Test passed")
-    assert (square56 [2] == [14]) (putStrLn "Test passed")
-    assert (square56 [3,1,4] == [19,11]) (putStrLn "Test passed")
-    assert (square56 [1] == [11]) (putStrLn "Test passed")
-    assert (square56 [2] == [14]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[19,11]" $ square56 [3,1,4] `shouldBe` [19,11]
+   it "[11]" $ square56 [1] `shouldBe` [11]
+   it "[14]" $ square56 [2] `shouldBe` [14]
+   it "[19,11]" $ square56 [3,1,4] `shouldBe` [19,11]
+   it "[11]" $ square56 [1] `shouldBe` [11]
+   it "[14]" $ square56 [2] `shouldBe` [14]
 

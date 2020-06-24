@@ -3,18 +3,18 @@ Return a version of the given string, where for every star (*) in the string the
 and the chars immediately to its left and right are gone. So "ab*cd" yields "ad" and
 "ab**cd" also yields "ad".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 starOut :: String -> String
 starOut str = undefined
 
 main :: IO ()
-main = do
-    assert (starOut "ab*cd" == "ad") (putStrLn "Test passed")
-    assert (starOut "ab**cd" == "ad") (putStrLn "Test passed")
-    assert (starOut "sm*eilly" == "silly") (putStrLn "Test passed")
-    assert (starOut "ab*cd" == "ad") (putStrLn "Test passed")
-    assert (starOut "ab**cd" == "ad") (putStrLn "Test passed")
-    assert (starOut "sm*eilly" == "silly") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"ad\"" $ starOut "ab*cd" `shouldBe` "ad"
+   it "\"ad\"" $ starOut "ab**cd" `shouldBe` "ad"
+   it "\"silly\"" $ starOut "sm*eilly" `shouldBe` "silly"
+   it "\"ad\"" $ starOut "ab*cd" `shouldBe` "ad"
+   it "\"ad\"" $ starOut "ab**cd" `shouldBe` "ad"
+   it "\"silly\"" $ starOut "sm*eilly" `shouldBe` "silly"
 

@@ -2,18 +2,18 @@
 Given a string, return a version without the first and last char, so "Hello" yields "ell".
 The string length will be at least 2.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 withoutEnd :: String -> String
 withoutEnd str = undefined
 
 main :: IO ()
-main = do
-    assert (withoutEnd "Hello" == "ell") (putStrLn "Test passed")
-    assert (withoutEnd "java" == "av") (putStrLn "Test passed")
-    assert (withoutEnd "coding" == "odin") (putStrLn "Test passed")
-    assert (withoutEnd "Hello" == "ell") (putStrLn "Test passed")
-    assert (withoutEnd "java" == "av") (putStrLn "Test passed")
-    assert (withoutEnd "coding" == "odin") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"ell\"" $ withoutEnd "Hello" `shouldBe` "ell"
+   it "\"av\"" $ withoutEnd "java" `shouldBe` "av"
+   it "\"odin\"" $ withoutEnd "coding" `shouldBe` "odin"
+   it "\"ell\"" $ withoutEnd "Hello" `shouldBe` "ell"
+   it "\"av\"" $ withoutEnd "java" `shouldBe` "av"
+   it "\"odin\"" $ withoutEnd "coding" `shouldBe` "odin"
 

@@ -2,18 +2,18 @@
 Given a list of strings, return a list of the strings, omitting any string length 4 or
 more.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 noLong :: [String] -> [String]
 noLong strings = undefined
 
 main :: IO ()
-main = do
-    assert (noLong ["this","not","too","long"] == ["not","too"]) (putStrLn "Test passed")
-    assert (noLong ["a","bbb","cccc"] == ["a","bbb"]) (putStrLn "Test passed")
-    assert (noLong ["cccc","cccc","cccc"] == []) (putStrLn "Test passed")
-    assert (noLong ["this","not","too","long"] == ["not","too"]) (putStrLn "Test passed")
-    assert (noLong ["a","bbb","cccc"] == ["a","bbb"]) (putStrLn "Test passed")
-    assert (noLong ["cccc","cccc","cccc"] == []) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[\"not\",\"too\"]" $ noLong ["this","not","too","long"] `shouldBe` ["not","too"]
+   it "[\"a\",\"bbb\"]" $ noLong ["a","bbb","cccc"] `shouldBe` ["a","bbb"]
+   it "[]" $ noLong ["cccc","cccc","cccc"] `shouldBe` []
+   it "[\"not\",\"too\"]" $ noLong ["this","not","too","long"] `shouldBe` ["not","too"]
+   it "[\"a\",\"bbb\"]" $ noLong ["a","bbb","cccc"] `shouldBe` ["a","bbb"]
+   it "[]" $ noLong ["cccc","cccc","cccc"] `shouldBe` []
 

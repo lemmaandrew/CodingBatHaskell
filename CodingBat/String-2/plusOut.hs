@@ -3,18 +3,18 @@ Given a string and a non-empty word string, return a version of the original Str
 all chars have been replaced by pluses ("+"), except for appearances of the word string
 which are preserved unchanged.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 plusOut :: String -> String -> String
 plusOut str word = undefined
 
 main :: IO ()
-main = do
-    assert (plusOut "12xy34" "xy" == "++xy++") (putStrLn "Test passed")
-    assert (plusOut "12xy34" "1" == "1+++++") (putStrLn "Test passed")
-    assert (plusOut "12xy34xyabcxy" "xy" == "++xy++xy+++xy") (putStrLn "Test passed")
-    assert (plusOut "12xy34" "xy" == "++xy++") (putStrLn "Test passed")
-    assert (plusOut "12xy34" "1" == "1+++++") (putStrLn "Test passed")
-    assert (plusOut "12xy34xyabcxy" "xy" == "++xy++xy+++xy") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"++xy++\"" $ plusOut "12xy34" "xy" `shouldBe` "++xy++"
+   it "\"1+++++\"" $ plusOut "12xy34" "1" `shouldBe` "1+++++"
+   it "\"++xy++xy+++xy\"" $ plusOut "12xy34xyabcxy" "xy" `shouldBe` "++xy++xy+++xy"
+   it "\"++xy++\"" $ plusOut "12xy34" "xy" `shouldBe` "++xy++"
+   it "\"1+++++\"" $ plusOut "12xy34" "1" `shouldBe` "1+++++"
+   it "\"++xy++xy+++xy\"" $ plusOut "12xy34xyabcxy" "xy" `shouldBe` "++xy++xy+++xy"
 

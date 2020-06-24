@@ -2,18 +2,18 @@
 Given two temperatures, return true if one is less than 0 and the other is greater than
 100.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 icyHot :: Int -> Int -> Bool
 icyHot temp1 temp2 = undefined
 
 main :: IO ()
-main = do
-    assert (icyHot 120 (-1) == True) (putStrLn "Test passed")
-    assert (icyHot (-1) 120 == True) (putStrLn "Test passed")
-    assert (icyHot 2 120 == False) (putStrLn "Test passed")
-    assert (icyHot 120 (-1) == True) (putStrLn "Test passed")
-    assert (icyHot (-1) 120 == True) (putStrLn "Test passed")
-    assert (icyHot 2 120 == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ icyHot 120 (-1) `shouldBe` True
+   it "True" $ icyHot (-1) 120 `shouldBe` True
+   it "False" $ icyHot 2 120 `shouldBe` False
+   it "True" $ icyHot 120 (-1) `shouldBe` True
+   it "True" $ icyHot (-1) 120 `shouldBe` True
+   it "False" $ icyHot 2 120 `shouldBe` False
 

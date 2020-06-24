@@ -3,18 +3,18 @@ Given a string, return a version without the first 2 chars. Except keep the firs
 if it is 'a' and keep the second char if it is 'b'. The string may be any length.
 Harder than it looks.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 deFront :: String -> String
 deFront str = undefined
 
 main :: IO ()
-main = do
-    assert (deFront "Hello" == "llo") (putStrLn "Test passed")
-    assert (deFront "java" == "va") (putStrLn "Test passed")
-    assert (deFront "away" == "aay") (putStrLn "Test passed")
-    assert (deFront "Hello" == "llo") (putStrLn "Test passed")
-    assert (deFront "java" == "va") (putStrLn "Test passed")
-    assert (deFront "away" == "aay") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"llo\"" $ deFront "Hello" `shouldBe` "llo"
+   it "\"va\"" $ deFront "java" `shouldBe` "va"
+   it "\"aay\"" $ deFront "away" `shouldBe` "aay"
+   it "\"llo\"" $ deFront "Hello" `shouldBe` "llo"
+   it "\"va\"" $ deFront "java" `shouldBe` "va"
+   it "\"aay\"" $ deFront "away" `shouldBe` "aay"
 

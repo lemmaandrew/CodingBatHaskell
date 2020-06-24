@@ -4,18 +4,18 @@ convention of considering only the part of the array that begins at the given in
 this way, a recursive call can pass index+1 to move down the array. The initial call
 will pass in index as 0.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 array6 :: [Int] -> Int -> Bool
 array6 nums index = undefined
 
 main :: IO ()
-main = do
-    assert (array6 [1,6,4] 0 == True) (putStrLn "Test passed")
-    assert (array6 [1,4] 0 == False) (putStrLn "Test passed")
-    assert (array6 [6] 0 == True) (putStrLn "Test passed")
-    assert (array6 [1,6,4] 0 == True) (putStrLn "Test passed")
-    assert (array6 [1,4] 0 == False) (putStrLn "Test passed")
-    assert (array6 [6] 0 == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ array6 [1,6,4] 0 `shouldBe` True
+   it "False" $ array6 [1,4] 0 `shouldBe` False
+   it "True" $ array6 [6] 0 `shouldBe` True
+   it "True" $ array6 [1,6,4] 0 `shouldBe` True
+   it "False" $ array6 [1,4] 0 `shouldBe` False
+   it "True" $ array6 [6] 0 `shouldBe` True
 

@@ -19,7 +19,6 @@ module Src.Download ( Check
 
                     , Category (..)
                     , getCategory
-                    , unpackCategory
 
                     , Site (..)
                     , getSite
@@ -28,6 +27,7 @@ module Src.Download ( Check
 import Debug.Trace
 import Data.List (isInfixOf, intercalate, groupBy)
 import Data.List.Split (splitOn)
+import Data.Maybe (catMaybes)
 import Text.Printf
 
 import Text.HTML.Scalpel
@@ -46,6 +46,7 @@ data Problem = Problem URL Name Description [Check] Method deriving (Eq,Show)
 
 getProblem :: URL -> IO (Maybe Problem)
 getProblem url = do
+        putStrLn $ "Downloading: " ++ url
         page <- scrapeURL url getPage
         case page of
             Just page' -> return $ Just page'
@@ -66,11 +67,11 @@ compileProblem (Problem url name desc checks method) = (name,printf formatString
     formatString = "{-From %s\n\
 \%s\n\
 \-}\n\
-\import Control.Exception (assert)\n\
+\import Test.Hspec\n\
 \%s\n\n\
 \%s\n\n\
 \main :: IO ()\n\
-\main = do\n\
+\main = hspec $ describe \"Tests:\" $ do\n\
 \%s"
 
     -- newline approx. every 100 characters
@@ -91,14 +92,15 @@ compileProblem (Problem url name desc checks method) = (name,printf formatString
 
     formatChecks :: String
     formatChecks = unlines
-                 $ map (\(call,res) -> printf "    assert (%s == %s) (putStrLn \"Test passed\")"
+                 $ map (\(call,res) -> printf "   it %s $ %s `shouldBe` %s"
+                                            (show $ formatArgs res)
                                             (javaCallToHaskell call)
                                             (formatArgs res)) checks
 
     formatMethod :: String
-    formatMethod = if "wordsWithoutList" `isInfixOf` method
-        then "wordsWithoutList :: [String] -> Int -> [String]\nwordsWithoutList words len = undefined"
-        else javaToHaskell method
+    formatMethod
+        | "wordsWithoutList" `isInfixOf` method = "wordsWithoutList :: [String] -> Int -> [String]\nwordsWithoutList words len = undefined"
+        | otherwise = javaToHaskell method
 
 
 {-
@@ -113,7 +115,7 @@ getAndCompileProblem url = do
         Nothing -> error $ "failed getProblem with url: " ++ url
 
 
-data Category = Category Name [Maybe Problem]
+data Category = Category Name [Problem]
 
 {-
 -- Returns a category page of problems
@@ -123,51 +125,33 @@ data Category = Category Name [Maybe Problem]
 -- The completed project will likely let this be an IO (Maybe Category),
 -- but for now it's safer to just let it fail.
 -}
-getCategory :: URL -> IO Category
-getCategory url = do 
+getCategory :: URL -> IO (Maybe Category)
+getCategory url = do
+        putStrLn $ "Downloading problems from: " ++ url
         page' <- scrapeURL url page
         case page' of
-            Just page'' -> page''
-            Nothing -> error $ "Failed getCategory with url: " ++ url
-        where
+            Just page'' -> Just <$> page''
+            Nothing -> return $ trace ("Failed getCategory with url: " ++ url) Nothing
+    where
     page :: Scraper String (IO Category)
     page = do
         name <- text $ "span" @: [hasClass "h2"]
         hrefs <- attrs "href" $ "a" @: ["href" @=~ (makeRegex ("/prob/" :: String) :: Regex)]
         let problems = sequence $ map (getProblem . ("https://codingbat.com" ++)) hrefs
-        return $ Category name <$> problems
-
-
-{-
--- Unpacks a Category into useful data.
--- Returns (categoryName, [(problemName, compiledProblem)])
--- where the snd of the above tuple is only problems that have not failed.
--- Debug.Trace lets the user be warned of failed compilations.
--}
-unpackCategory :: Category -> (Name, [(Name, String)])
-unpackCategory (Category name problems) = (name, processProblems) where
-    processProblems = filter (\(x,y) -> x ++ y /= "") $ map go problems where
-        go problem = case problem of
-            Just x -> compileProblem x
-            Nothing -> ("","")
+        return $ Category name <$> catMaybes <$> problems -- filtering Nothings from problems
 
 
 type Site = [Category]
 
-{-
--- Same as getCategory, getSite failing is too big of an issue to let fall into a Maybe.
--- I'd rather the program halt than for getSite to fail.
--- When the project is completed this will like turn into an IO (Maybe Site).
--- Note to future self: IO (Maybe Site) == sequence <$> (IO [Maybe Category])
--}
 getSite :: IO Site
 getSite = do
         site <- scrapeURL "https://codingbat.com/java" homepage
         case site of
             Just site' -> site'
-            Nothing -> error "Failed getSite"
+            Nothing -> error "Failed to download https://codingbat.com/java"
         where
     homepage :: Scraper String (IO [Category])
     homepage = do
         hrefs <- attrs "href" $ "a" @: ["href" @=~ (makeRegex ("/java/" :: String) :: Regex)]
-        return $ sequence $ map (getCategory . ("https://codingbat.com" ++)) hrefs
+        let cats = sequence $ map (getCategory . ("https://codingbat.com" ++)) hrefs
+        return $ catMaybes <$> cats

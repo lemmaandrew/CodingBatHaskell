@@ -2,18 +2,18 @@
 Given an array of strings, return a new array containing the first N strings. N will
 be in the range 1..length.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 wordsFront :: [String] -> Int -> [String]
 wordsFront words n = undefined
 
 main :: IO ()
-main = do
-    assert (wordsFront ["a","b","c","d"] 1 == ["a"]) (putStrLn "Test passed")
-    assert (wordsFront ["a","b","c","d"] 2 == ["a","b"]) (putStrLn "Test passed")
-    assert (wordsFront ["a","b","c","d"] 3 == ["a","b","c"]) (putStrLn "Test passed")
-    assert (wordsFront ["a","b","c","d"] 1 == ["a"]) (putStrLn "Test passed")
-    assert (wordsFront ["a","b","c","d"] 2 == ["a","b"]) (putStrLn "Test passed")
-    assert (wordsFront ["a","b","c","d"] 3 == ["a","b","c"]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[\"a\"]" $ wordsFront ["a","b","c","d"] 1 `shouldBe` ["a"]
+   it "[\"a\",\"b\"]" $ wordsFront ["a","b","c","d"] 2 `shouldBe` ["a","b"]
+   it "[\"a\",\"b\",\"c\"]" $ wordsFront ["a","b","c","d"] 3 `shouldBe` ["a","b","c"]
+   it "[\"a\"]" $ wordsFront ["a","b","c","d"] 1 `shouldBe` ["a"]
+   it "[\"a\",\"b\"]" $ wordsFront ["a","b","c","d"] 2 `shouldBe` ["a","b"]
+   it "[\"a\",\"b\",\"c\"]" $ wordsFront ["a","b","c","d"] 3 `shouldBe` ["a","b","c"]
 

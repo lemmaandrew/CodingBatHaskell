@@ -3,18 +3,18 @@ Given a string, consider the prefix string made of the first N chars of the stri
 that prefix string appear somewhere else in the string? Assume that the string is not
 empty and that N is in the range 1..str.length().
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 prefixAgain :: String -> Int -> Bool
 prefixAgain str n = undefined
 
 main :: IO ()
-main = do
-    assert (prefixAgain "abXYabc" 1 == True) (putStrLn "Test passed")
-    assert (prefixAgain "abXYabc" 2 == True) (putStrLn "Test passed")
-    assert (prefixAgain "abXYabc" 3 == False) (putStrLn "Test passed")
-    assert (prefixAgain "abXYabc" 1 == True) (putStrLn "Test passed")
-    assert (prefixAgain "abXYabc" 2 == True) (putStrLn "Test passed")
-    assert (prefixAgain "abXYabc" 3 == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ prefixAgain "abXYabc" 1 `shouldBe` True
+   it "True" $ prefixAgain "abXYabc" 2 `shouldBe` True
+   it "False" $ prefixAgain "abXYabc" 3 `shouldBe` False
+   it "True" $ prefixAgain "abXYabc" 1 `shouldBe` True
+   it "True" $ prefixAgain "abXYabc" 2 `shouldBe` True
+   it "False" $ prefixAgain "abXYabc" 3 `shouldBe` False
 

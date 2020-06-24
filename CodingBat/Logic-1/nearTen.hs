@@ -3,18 +3,18 @@ Given a non-negative number "num", return true if num is within 2 of a multiple 
 Note: (a % b) is the remainder of dividing a by b, so (7 % 5) is 2. See also: Introduction
 to Mod
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 nearTen :: Int -> Bool
 nearTen num = undefined
 
 main :: IO ()
-main = do
-    assert (nearTen 12 == True) (putStrLn "Test passed")
-    assert (nearTen 17 == False) (putStrLn "Test passed")
-    assert (nearTen 19 == True) (putStrLn "Test passed")
-    assert (nearTen 12 == True) (putStrLn "Test passed")
-    assert (nearTen 17 == False) (putStrLn "Test passed")
-    assert (nearTen 19 == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ nearTen 12 `shouldBe` True
+   it "False" $ nearTen 17 `shouldBe` False
+   it "True" $ nearTen 19 `shouldBe` True
+   it "True" $ nearTen 12 `shouldBe` True
+   it "False" $ nearTen 17 `shouldBe` False
+   it "True" $ nearTen 19 `shouldBe` True
 

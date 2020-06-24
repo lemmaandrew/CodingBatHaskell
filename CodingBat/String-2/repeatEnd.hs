@@ -2,18 +2,18 @@
 Given a string and an int n, return a string made of n repetitions of the last n characters
 of the string. You may assume that n is between 0 and the length of the string, inclusive.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 repeatEnd :: String -> Int -> String
 repeatEnd str n = undefined
 
 main :: IO ()
-main = do
-    assert (repeatEnd "Hello" 3 == "llollollo") (putStrLn "Test passed")
-    assert (repeatEnd "Hello" 2 == "lolo") (putStrLn "Test passed")
-    assert (repeatEnd "Hello" 1 == "o") (putStrLn "Test passed")
-    assert (repeatEnd "Hello" 3 == "llollollo") (putStrLn "Test passed")
-    assert (repeatEnd "Hello" 2 == "lolo") (putStrLn "Test passed")
-    assert (repeatEnd "Hello" 1 == "o") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"llollollo\"" $ repeatEnd "Hello" 3 `shouldBe` "llollollo"
+   it "\"lolo\"" $ repeatEnd "Hello" 2 `shouldBe` "lolo"
+   it "\"o\"" $ repeatEnd "Hello" 1 `shouldBe` "o"
+   it "\"llollollo\"" $ repeatEnd "Hello" 3 `shouldBe` "llollollo"
+   it "\"lolo\"" $ repeatEnd "Hello" 2 `shouldBe` "lolo"
+   it "\"o\"" $ repeatEnd "Hello" 1 `shouldBe` "o"
 

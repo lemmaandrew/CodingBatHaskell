@@ -4,18 +4,18 @@ You have a red lottery ticket showing ints a, b, and c, each of which is 0, 1, o
 the result is 5. Otherwise so long as both b and c are different from a, the result
 is 1. Otherwise the result is 0.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 redTicket :: Int -> Int -> Int -> Int
 redTicket a b c = undefined
 
 main :: IO ()
-main = do
-    assert (redTicket 2 2 2 == 10) (putStrLn "Test passed")
-    assert (redTicket 2 2 1 == 0) (putStrLn "Test passed")
-    assert (redTicket 0 0 0 == 5) (putStrLn "Test passed")
-    assert (redTicket 2 2 2 == 10) (putStrLn "Test passed")
-    assert (redTicket 2 2 1 == 0) (putStrLn "Test passed")
-    assert (redTicket 0 0 0 == 5) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "10" $ redTicket 2 2 2 `shouldBe` 10
+   it "0" $ redTicket 2 2 1 `shouldBe` 0
+   it "5" $ redTicket 0 0 0 `shouldBe` 5
+   it "10" $ redTicket 2 2 2 `shouldBe` 10
+   it "0" $ redTicket 2 2 1 `shouldBe` 0
+   it "5" $ redTicket 0 0 0 `shouldBe` 5
 

@@ -4,18 +4,18 @@ of the remove string have been removed (not case sensitive). You may assume that
 string is length 1 or more. Remove only non-overlapping instances, so with "xxx" removing
 "xx" leaves "x".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 withoutString :: String -> String -> String
 withoutString base remove = undefined
 
 main :: IO ()
-main = do
-    assert (withoutString "Hellothere" "llo" == "Hethere") (putStrLn "Test passed")
-    assert (withoutString "Hellothere" "e" == "Hllothr") (putStrLn "Test passed")
-    assert (withoutString "Hellothere" "x" == "Hellothere") (putStrLn "Test passed")
-    assert (withoutString "Hellothere" "llo" == "Hethere") (putStrLn "Test passed")
-    assert (withoutString "Hellothere" "e" == "Hllothr") (putStrLn "Test passed")
-    assert (withoutString "Hellothere" "x" == "Hellothere") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"Hethere\"" $ withoutString "Hellothere" "llo" `shouldBe` "Hethere"
+   it "\"Hllothr\"" $ withoutString "Hellothere" "e" `shouldBe` "Hllothr"
+   it "\"Hellothere\"" $ withoutString "Hellothere" "x" `shouldBe` "Hellothere"
+   it "\"Hethere\"" $ withoutString "Hellothere" "llo" `shouldBe` "Hethere"
+   it "\"Hllothr\"" $ withoutString "Hellothere" "e" `shouldBe` "Hllothr"
+   it "\"Hellothere\"" $ withoutString "Hellothere" "x" `shouldBe` "Hellothere"
 

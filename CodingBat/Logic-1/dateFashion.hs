@@ -6,18 +6,18 @@ your date's clothes. The result getting the table is encoded as an int value wit
 With the exception that if either of you has style of 2 or less, then the result is
 0 (no). Otherwise the result is 1 (maybe).
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 dateFashion :: Int -> Int -> Int
 dateFashion you date = undefined
 
 main :: IO ()
-main = do
-    assert (dateFashion 5 10 == 2) (putStrLn "Test passed")
-    assert (dateFashion 5 2 == 0) (putStrLn "Test passed")
-    assert (dateFashion 5 5 == 1) (putStrLn "Test passed")
-    assert (dateFashion 5 10 == 2) (putStrLn "Test passed")
-    assert (dateFashion 5 2 == 0) (putStrLn "Test passed")
-    assert (dateFashion 5 5 == 1) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "2" $ dateFashion 5 10 `shouldBe` 2
+   it "0" $ dateFashion 5 2 `shouldBe` 0
+   it "1" $ dateFashion 5 5 `shouldBe` 1
+   it "2" $ dateFashion 5 10 `shouldBe` 2
+   it "0" $ dateFashion 5 2 `shouldBe` 0
+   it "1" $ dateFashion 5 5 `shouldBe` 1
 

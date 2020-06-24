@@ -2,18 +2,18 @@
 Given an array of ints, return true if the value 3 appears in the array exactly 3 times,
 and no 3's are next to each other.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 haveThree :: [Int] -> Bool
 haveThree nums = undefined
 
 main :: IO ()
-main = do
-    assert (haveThree [3,1,3,1,3] == True) (putStrLn "Test passed")
-    assert (haveThree [3,1,3,3] == False) (putStrLn "Test passed")
-    assert (haveThree [3,4,3,3,4] == False) (putStrLn "Test passed")
-    assert (haveThree [3,1,3,1,3] == True) (putStrLn "Test passed")
-    assert (haveThree [3,1,3,3] == False) (putStrLn "Test passed")
-    assert (haveThree [3,4,3,3,4] == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ haveThree [3,1,3,1,3] `shouldBe` True
+   it "False" $ haveThree [3,1,3,3] `shouldBe` False
+   it "False" $ haveThree [3,4,3,3,4] `shouldBe` False
+   it "True" $ haveThree [3,1,3,1,3] `shouldBe` True
+   it "False" $ haveThree [3,1,3,3] `shouldBe` False
+   it "False" $ haveThree [3,4,3,3,4] `shouldBe` False
 

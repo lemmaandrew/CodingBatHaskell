@@ -7,18 +7,18 @@ int value which is negative/0/positive to indicate how str1 is ordered to str2 (
 is not limited to -1/0/1). (On the AP, there would be two User objects, but here the
 code simply takes the two strings and two ints directly. The code logic is the same.)
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 userCompare :: String -> Int -> String -> Int -> Int
 userCompare aName aId bName bId = undefined
 
 main :: IO ()
-main = do
-    assert (userCompare "bb" 1 "zz" 2 == (-1)) (putStrLn "Test passed")
-    assert (userCompare "bb" 1 "aa" 2 == 1) (putStrLn "Test passed")
-    assert (userCompare "bb" 1 "bb" 1 == 0) (putStrLn "Test passed")
-    assert (userCompare "bb" 1 "zz" 2 == (-1)) (putStrLn "Test passed")
-    assert (userCompare "bb" 1 "aa" 2 == 1) (putStrLn "Test passed")
-    assert (userCompare "bb" 1 "bb" 1 == 0) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "(-1)" $ userCompare "bb" 1 "zz" 2 `shouldBe` (-1)
+   it "1" $ userCompare "bb" 1 "aa" 2 `shouldBe` 1
+   it "0" $ userCompare "bb" 1 "bb" 1 `shouldBe` 0
+   it "(-1)" $ userCompare "bb" 1 "zz" 2 `shouldBe` (-1)
+   it "1" $ userCompare "bb" 1 "aa" 2 `shouldBe` 1
+   it "0" $ userCompare "bb" 1 "bb" 1 `shouldBe` 0
 

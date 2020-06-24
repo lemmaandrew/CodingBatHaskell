@@ -4,18 +4,18 @@ the word is in the middle of the out string, e.g. "<<word>>". Note: use str.subs
 j) to extract the String starting at index i and going up to but not including index
 j.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 makeOutWord :: String -> String -> String
 makeOutWord out word = undefined
 
 main :: IO ()
-main = do
-    assert (makeOutWord "<<>>" "Yay" == "<<Yay>>") (putStrLn "Test passed")
-    assert (makeOutWord "<<>>" "WooHoo" == "<<WooHoo>>") (putStrLn "Test passed")
-    assert (makeOutWord "[[]]" "word" == "[[word]]") (putStrLn "Test passed")
-    assert (makeOutWord "<<>>" "Yay" == "<<Yay>>") (putStrLn "Test passed")
-    assert (makeOutWord "<<>>" "WooHoo" == "<<WooHoo>>") (putStrLn "Test passed")
-    assert (makeOutWord "[[]]" "word" == "[[word]]") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"<<Yay>>\"" $ makeOutWord "<<>>" "Yay" `shouldBe` "<<Yay>>"
+   it "\"<<WooHoo>>\"" $ makeOutWord "<<>>" "WooHoo" `shouldBe` "<<WooHoo>>"
+   it "\"[[word]]\"" $ makeOutWord "[[]]" "word" `shouldBe` "[[word]]"
+   it "\"<<Yay>>\"" $ makeOutWord "<<>>" "Yay" `shouldBe` "<<Yay>>"
+   it "\"<<WooHoo>>\"" $ makeOutWord "<<>>" "WooHoo" `shouldBe` "<<WooHoo>>"
+   it "\"[[word]]\"" $ makeOutWord "[[]]" "word" `shouldBe` "[[word]]"
 

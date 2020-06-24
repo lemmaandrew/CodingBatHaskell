@@ -22,6 +22,7 @@ library
   other-modules:      JavaFuncs, Download
   -- other-extensions:
   build-depends:       base               ^>=4.12.0.0
+                     , hspec              ^>=2.7.1
                      , regex-base         ^>=0.94.0.0
                      , regex-compat       ^>=0.95.2.0
                      , regex-pcre-builtin ^>=0.95.1.1.8.43

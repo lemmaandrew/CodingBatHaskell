@@ -6,18 +6,18 @@ in an int value and returns that value fixed for the teen rule. In this way, you
 repeating the teen code 3 times (i.e. "decomposition"). Define the helper below and at
 the same indent level as the main noTeenSum().
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 noTeenSum :: Int -> Int -> Int -> Int
 noTeenSum a b c = undefined
 
 main :: IO ()
-main = do
-    assert (noTeenSum 1 2 3 == 6) (putStrLn "Test passed")
-    assert (noTeenSum 2 13 1 == 3) (putStrLn "Test passed")
-    assert (noTeenSum 2 1 14 == 3) (putStrLn "Test passed")
-    assert (noTeenSum 1 2 3 == 6) (putStrLn "Test passed")
-    assert (noTeenSum 2 13 1 == 3) (putStrLn "Test passed")
-    assert (noTeenSum 2 1 14 == 3) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "6" $ noTeenSum 1 2 3 `shouldBe` 6
+   it "3" $ noTeenSum 2 13 1 `shouldBe` 3
+   it "3" $ noTeenSum 2 1 14 `shouldBe` 3
+   it "6" $ noTeenSum 1 2 3 `shouldBe` 6
+   it "3" $ noTeenSum 2 13 1 `shouldBe` 3
+   it "3" $ noTeenSum 2 1 14 `shouldBe` 3
 

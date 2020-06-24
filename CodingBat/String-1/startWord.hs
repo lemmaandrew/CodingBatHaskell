@@ -5,18 +5,18 @@ exactly. On a match, return the front of the string, or otherwise return the emp
 So, so with the string "hippo" the word "hi" returns "hi" and "xip" returns "hip". The
 word will be at least length 1.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 startWord :: String -> String -> String
 startWord str word = undefined
 
 main :: IO ()
-main = do
-    assert (startWord "hippo" "hi" == "hi") (putStrLn "Test passed")
-    assert (startWord "hippo" "xip" == "hip") (putStrLn "Test passed")
-    assert (startWord "hippo" "i" == "h") (putStrLn "Test passed")
-    assert (startWord "hippo" "hi" == "hi") (putStrLn "Test passed")
-    assert (startWord "hippo" "xip" == "hip") (putStrLn "Test passed")
-    assert (startWord "hippo" "i" == "h") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"hi\"" $ startWord "hippo" "hi" `shouldBe` "hi"
+   it "\"hip\"" $ startWord "hippo" "xip" `shouldBe` "hip"
+   it "\"h\"" $ startWord "hippo" "i" `shouldBe` "h"
+   it "\"hi\"" $ startWord "hippo" "hi" `shouldBe` "hi"
+   it "\"hip\"" $ startWord "hippo" "xip" `shouldBe` "hip"
+   it "\"h\"" $ startWord "hippo" "i" `shouldBe` "h"
 

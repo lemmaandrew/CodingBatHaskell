@@ -3,18 +3,18 @@ Given a string, we'll say that the front is the first 3 chars of the string. If 
 string length is less than 3, the front is whatever is there. Return a new string which
 is 3 copies of the front.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 front3 :: String -> String
 front3 str = undefined
 
 main :: IO ()
-main = do
-    assert (front3 "Java" == "JavJavJav") (putStrLn "Test passed")
-    assert (front3 "Chocolate" == "ChoChoCho") (putStrLn "Test passed")
-    assert (front3 "abc" == "abcabcabc") (putStrLn "Test passed")
-    assert (front3 "Java" == "JavJavJav") (putStrLn "Test passed")
-    assert (front3 "Chocolate" == "ChoChoCho") (putStrLn "Test passed")
-    assert (front3 "abc" == "abcabcabc") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"JavJavJav\"" $ front3 "Java" `shouldBe` "JavJavJav"
+   it "\"ChoChoCho\"" $ front3 "Chocolate" `shouldBe` "ChoChoCho"
+   it "\"abcabcabc\"" $ front3 "abc" `shouldBe` "abcabcabc"
+   it "\"JavJavJav\"" $ front3 "Java" `shouldBe` "JavJavJav"
+   it "\"ChoChoCho\"" $ front3 "Chocolate" `shouldBe` "ChoChoCho"
+   it "\"abcabcabc\"" $ front3 "abc" `shouldBe` "abcabcabc"
 

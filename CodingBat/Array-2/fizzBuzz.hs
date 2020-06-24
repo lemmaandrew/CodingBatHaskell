@@ -10,18 +10,18 @@ is a little more complicated than the usual version since you have to allocate a
 into an array instead of just printing, and we vary the start/end instead of just always
 doing 1..100.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 fizzBuzz :: Int -> Int -> [String]
 fizzBuzz start end = undefined
 
 main :: IO ()
-main = do
-    assert (fizzBuzz 1 6 == ["1","2","Fizz","4","Buzz"]) (putStrLn "Test passed")
-    assert (fizzBuzz 1 8 == ["1","2","Fizz","4","Buzz","Fizz","7"]) (putStrLn "Test passed")
-    assert (fizzBuzz 1 11 == ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz"]) (putStrLn "Test passed")
-    assert (fizzBuzz 1 6 == ["1","2","Fizz","4","Buzz"]) (putStrLn "Test passed")
-    assert (fizzBuzz 1 8 == ["1","2","Fizz","4","Buzz","Fizz","7"]) (putStrLn "Test passed")
-    assert (fizzBuzz 1 11 == ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz"]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\"]" $ fizzBuzz 1 6 `shouldBe` ["1","2","Fizz","4","Buzz"]
+   it "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\",\"Fizz\",\"7\"]" $ fizzBuzz 1 8 `shouldBe` ["1","2","Fizz","4","Buzz","Fizz","7"]
+   it "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\",\"Fizz\",\"7\",\"8\",\"Fizz\",\"Buzz\"]" $ fizzBuzz 1 11 `shouldBe` ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz"]
+   it "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\"]" $ fizzBuzz 1 6 `shouldBe` ["1","2","Fizz","4","Buzz"]
+   it "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\",\"Fizz\",\"7\"]" $ fizzBuzz 1 8 `shouldBe` ["1","2","Fizz","4","Buzz","Fizz","7"]
+   it "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\",\"Fizz\",\"7\",\"8\",\"Fizz\",\"Buzz\"]" $ fizzBuzz 1 11 `shouldBe` ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz"]
 

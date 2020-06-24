@@ -2,18 +2,18 @@
 Given a string and a non-negative int n, return a larger string that is n copies of
 the original string.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 stringTimes :: String -> Int -> String
 stringTimes str n = undefined
 
 main :: IO ()
-main = do
-    assert (stringTimes "Hi" 2 == "HiHi") (putStrLn "Test passed")
-    assert (stringTimes "Hi" 3 == "HiHiHi") (putStrLn "Test passed")
-    assert (stringTimes "Hi" 1 == "Hi") (putStrLn "Test passed")
-    assert (stringTimes "Hi" 2 == "HiHi") (putStrLn "Test passed")
-    assert (stringTimes "Hi" 3 == "HiHiHi") (putStrLn "Test passed")
-    assert (stringTimes "Hi" 1 == "Hi") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"HiHi\"" $ stringTimes "Hi" 2 `shouldBe` "HiHi"
+   it "\"HiHiHi\"" $ stringTimes "Hi" 3 `shouldBe` "HiHiHi"
+   it "\"Hi\"" $ stringTimes "Hi" 1 `shouldBe` "Hi"
+   it "\"HiHi\"" $ stringTimes "Hi" 2 `shouldBe` "HiHi"
+   it "\"HiHiHi\"" $ stringTimes "Hi" 3 `shouldBe` "HiHiHi"
+   it "\"Hi\"" $ stringTimes "Hi" 1 `shouldBe` "Hi"
 

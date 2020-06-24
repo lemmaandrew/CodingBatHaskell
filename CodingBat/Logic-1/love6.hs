@@ -3,18 +3,18 @@ The number 6 is a truly great number. Given two int values, a and b, return true
 either one is 6. Or if their sum or difference is 6. Note: the function Math.abs(num)
 computes the absolute value of a number.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 love6 :: Int -> Int -> Bool
 love6 a b = undefined
 
 main :: IO ()
-main = do
-    assert (love6 6 4 == True) (putStrLn "Test passed")
-    assert (love6 4 5 == False) (putStrLn "Test passed")
-    assert (love6 1 5 == True) (putStrLn "Test passed")
-    assert (love6 6 4 == True) (putStrLn "Test passed")
-    assert (love6 4 5 == False) (putStrLn "Test passed")
-    assert (love6 1 5 == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ love6 6 4 `shouldBe` True
+   it "False" $ love6 4 5 `shouldBe` False
+   it "True" $ love6 1 5 `shouldBe` True
+   it "True" $ love6 6 4 `shouldBe` True
+   it "False" $ love6 4 5 `shouldBe` False
+   it "True" $ love6 1 5 `shouldBe` True
 

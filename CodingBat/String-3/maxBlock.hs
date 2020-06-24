@@ -2,18 +2,18 @@
 Given a string, return the length of the largest "block" in the string. A block is a
 run of adjacent chars that are the same.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 maxBlock :: String -> Int
 maxBlock str = undefined
 
 main :: IO ()
-main = do
-    assert (maxBlock "hoopla" == 2) (putStrLn "Test passed")
-    assert (maxBlock "abbCCCddBBBxx" == 3) (putStrLn "Test passed")
-    assert (maxBlock "" == 0) (putStrLn "Test passed")
-    assert (maxBlock "hoopla" == 2) (putStrLn "Test passed")
-    assert (maxBlock "abbCCCddBBBxx" == 3) (putStrLn "Test passed")
-    assert (maxBlock "" == 0) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "2" $ maxBlock "hoopla" `shouldBe` 2
+   it "3" $ maxBlock "abbCCCddBBBxx" `shouldBe` 3
+   it "0" $ maxBlock "" `shouldBe` 0
+   it "2" $ maxBlock "hoopla" `shouldBe` 2
+   it "3" $ maxBlock "abbCCCddBBBxx" `shouldBe` 3
+   it "0" $ maxBlock "" `shouldBe` 0
 

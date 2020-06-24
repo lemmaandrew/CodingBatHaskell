@@ -4,18 +4,18 @@ of the given string. In other words, zero or more characters at the very beginin
 the given string, and at the very end of the string in reverse order (possibly overlapping).
 For example, the string "abXYZba" has the mirror end "ab".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 mirrorEnds :: String -> String
 mirrorEnds string = undefined
 
 main :: IO ()
-main = do
-    assert (mirrorEnds "abXYZba" == "ab") (putStrLn "Test passed")
-    assert (mirrorEnds "abca" == "a") (putStrLn "Test passed")
-    assert (mirrorEnds "aba" == "aba") (putStrLn "Test passed")
-    assert (mirrorEnds "abXYZba" == "ab") (putStrLn "Test passed")
-    assert (mirrorEnds "abca" == "a") (putStrLn "Test passed")
-    assert (mirrorEnds "aba" == "aba") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"ab\"" $ mirrorEnds "abXYZba" `shouldBe` "ab"
+   it "\"a\"" $ mirrorEnds "abca" `shouldBe` "a"
+   it "\"aba\"" $ mirrorEnds "aba" `shouldBe` "aba"
+   it "\"ab\"" $ mirrorEnds "abXYZba" `shouldBe` "ab"
+   it "\"a\"" $ mirrorEnds "abca" `shouldBe` "a"
+   it "\"aba\"" $ mirrorEnds "aba" `shouldBe` "aba"
 

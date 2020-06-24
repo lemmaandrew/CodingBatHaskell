@@ -4,18 +4,18 @@ elements should shift left towards the start of the array as needed, and the emp
 a the end of the array should be 0. So {1, 10, 10, 2} yields {1, 2, 0, 0}. You may
 modify and return the given array or make a new array.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 withoutTen :: [Int] -> [Int]
 withoutTen nums = undefined
 
 main :: IO ()
-main = do
-    assert (withoutTen [1,10,10,2] == [1,2,0,0]) (putStrLn "Test passed")
-    assert (withoutTen [10,2,10] == [2,0,0]) (putStrLn "Test passed")
-    assert (withoutTen [1,99,10] == [1,99,0]) (putStrLn "Test passed")
-    assert (withoutTen [1,10,10,2] == [1,2,0,0]) (putStrLn "Test passed")
-    assert (withoutTen [10,2,10] == [2,0,0]) (putStrLn "Test passed")
-    assert (withoutTen [1,99,10] == [1,99,0]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[1,2,0,0]" $ withoutTen [1,10,10,2] `shouldBe` [1,2,0,0]
+   it "[2,0,0]" $ withoutTen [10,2,10] `shouldBe` [2,0,0]
+   it "[1,99,0]" $ withoutTen [1,99,10] `shouldBe` [1,99,0]
+   it "[1,2,0,0]" $ withoutTen [1,10,10,2] `shouldBe` [1,2,0,0]
+   it "[2,0,0]" $ withoutTen [10,2,10] `shouldBe` [2,0,0]
+   it "[1,99,0]" $ withoutTen [1,99,10] `shouldBe` [1,99,0]
 

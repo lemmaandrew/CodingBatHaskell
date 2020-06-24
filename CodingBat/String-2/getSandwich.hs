@@ -3,18 +3,18 @@ A sandwich is two pieces of bread with something in between. Return the string t
 between the first and last appearance of "bread" in the given string, or return the empty
 string "" if there are not two pieces of bread.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 getSandwich :: String -> String
 getSandwich str = undefined
 
 main :: IO ()
-main = do
-    assert (getSandwich "breadjambread" == "jam") (putStrLn "Test passed")
-    assert (getSandwich "xxbreadjambreadyy" == "jam") (putStrLn "Test passed")
-    assert (getSandwich "xxbreadyy" == "") (putStrLn "Test passed")
-    assert (getSandwich "breadjambread" == "jam") (putStrLn "Test passed")
-    assert (getSandwich "xxbreadjambreadyy" == "jam") (putStrLn "Test passed")
-    assert (getSandwich "xxbreadyy" == "") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"jam\"" $ getSandwich "breadjambread" `shouldBe` "jam"
+   it "\"jam\"" $ getSandwich "xxbreadjambreadyy" `shouldBe` "jam"
+   it "\"\"" $ getSandwich "xxbreadyy" `shouldBe` ""
+   it "\"jam\"" $ getSandwich "breadjambread" `shouldBe` "jam"
+   it "\"jam\"" $ getSandwich "xxbreadjambreadyy" `shouldBe` "jam"
+   it "\"\"" $ getSandwich "xxbreadyy" `shouldBe` ""
 

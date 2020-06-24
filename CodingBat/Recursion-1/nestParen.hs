@@ -3,18 +3,18 @@ Given a string, return true if it is a nesting of zero or more pairs of parenthe
 like "(())" or "((()))". Suggestion: check the first and last chars, and then recur on
 what's inside them.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 nestParen :: String -> Bool
 nestParen str = undefined
 
 main :: IO ()
-main = do
-    assert (nestParen "(())" == True) (putStrLn "Test passed")
-    assert (nestParen "((()))" == True) (putStrLn "Test passed")
-    assert (nestParen "(((x))" == False) (putStrLn "Test passed")
-    assert (nestParen "(())" == True) (putStrLn "Test passed")
-    assert (nestParen "((()))" == True) (putStrLn "Test passed")
-    assert (nestParen "(((x))" == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ nestParen "(())" `shouldBe` True
+   it "True" $ nestParen "((()))" `shouldBe` True
+   it "False" $ nestParen "(((x))" `shouldBe` False
+   it "True" $ nestParen "(())" `shouldBe` True
+   it "True" $ nestParen "((()))" `shouldBe` True
+   it "False" $ nestParen "(((x))" `shouldBe` False
 

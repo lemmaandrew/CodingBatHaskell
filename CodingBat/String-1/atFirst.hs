@@ -2,18 +2,18 @@
 Given a string, return a string length 2 made of its first 2 chars. If the string length
 is less than 2, use '@' for the missing chars.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 atFirst :: String -> String
 atFirst str = undefined
 
 main :: IO ()
-main = do
-    assert (atFirst "hello" == "he") (putStrLn "Test passed")
-    assert (atFirst "hi" == "hi") (putStrLn "Test passed")
-    assert (atFirst "h" == "h@") (putStrLn "Test passed")
-    assert (atFirst "hello" == "he") (putStrLn "Test passed")
-    assert (atFirst "hi" == "hi") (putStrLn "Test passed")
-    assert (atFirst "h" == "h@") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"he\"" $ atFirst "hello" `shouldBe` "he"
+   it "\"hi\"" $ atFirst "hi" `shouldBe` "hi"
+   it "\"h@\"" $ atFirst "h" `shouldBe` "h@"
+   it "\"he\"" $ atFirst "hello" `shouldBe` "he"
+   it "\"hi\"" $ atFirst "hi" `shouldBe` "hi"
+   it "\"h@\"" $ atFirst "h" `shouldBe` "h@"
 

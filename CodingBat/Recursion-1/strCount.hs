@@ -2,18 +2,18 @@
 Given a string and a non-empty substring sub, compute recursively the number of times that
 sub appears in the string, without the sub strings overlapping.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 strCount :: String -> String -> Int
 strCount str sub = undefined
 
 main :: IO ()
-main = do
-    assert (strCount "catcowcat" "cat" == 2) (putStrLn "Test passed")
-    assert (strCount "catcowcat" "cow" == 1) (putStrLn "Test passed")
-    assert (strCount "catcowcat" "dog" == 0) (putStrLn "Test passed")
-    assert (strCount "catcowcat" "cat" == 2) (putStrLn "Test passed")
-    assert (strCount "catcowcat" "cow" == 1) (putStrLn "Test passed")
-    assert (strCount "catcowcat" "dog" == 0) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "2" $ strCount "catcowcat" "cat" `shouldBe` 2
+   it "1" $ strCount "catcowcat" "cow" `shouldBe` 1
+   it "0" $ strCount "catcowcat" "dog" `shouldBe` 0
+   it "2" $ strCount "catcowcat" "cat" `shouldBe` 2
+   it "1" $ strCount "catcowcat" "cow" `shouldBe` 1
+   it "0" $ strCount "catcowcat" "dog" `shouldBe` 0
 

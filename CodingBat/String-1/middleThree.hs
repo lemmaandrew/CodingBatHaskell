@@ -2,18 +2,18 @@
 Given a string of odd length, return the string length 3 from its middle, so "Candy"
 yields "and". The string length will be at least 3.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 middleThree :: String -> String
 middleThree str = undefined
 
 main :: IO ()
-main = do
-    assert (middleThree "Candy" == "and") (putStrLn "Test passed")
-    assert (middleThree "and" == "and") (putStrLn "Test passed")
-    assert (middleThree "solving" == "lvi") (putStrLn "Test passed")
-    assert (middleThree "Candy" == "and") (putStrLn "Test passed")
-    assert (middleThree "and" == "and") (putStrLn "Test passed")
-    assert (middleThree "solving" == "lvi") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"and\"" $ middleThree "Candy" `shouldBe` "and"
+   it "\"and\"" $ middleThree "and" `shouldBe` "and"
+   it "\"lvi\"" $ middleThree "solving" `shouldBe` "lvi"
+   it "\"and\"" $ middleThree "Candy" `shouldBe` "and"
+   it "\"and\"" $ middleThree "and" `shouldBe` "and"
+   it "\"lvi\"" $ middleThree "solving" `shouldBe` "lvi"
 

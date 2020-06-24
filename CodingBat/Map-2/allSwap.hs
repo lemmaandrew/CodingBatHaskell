@@ -5,18 +5,18 @@ string matches an earlier string in the array, swap the 2 strings in the array. 
 a position in the array has been swapped, it no longer matches anything. Using a map,
 this can be solved making just one pass over the array. More difficult than it looks.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 allSwap :: [String] -> [String]
 allSwap strings = undefined
 
 main :: IO ()
-main = do
-    assert (allSwap ["ab","ac"] == ["ac","ab"]) (putStrLn "Test passed")
-    assert (allSwap ["ax","bx","cx","cy","by","ay","aaa","azz"] == ["ay","by","cy","cx","bx","ax","azz","aaa"]) (putStrLn "Test passed")
-    assert (allSwap ["ax","bx","ay","by","ai","aj","bx","by"] == ["ay","by","ax","bx","aj","ai","by","bx"]) (putStrLn "Test passed")
-    assert (allSwap ["ab","ac"] == ["ac","ab"]) (putStrLn "Test passed")
-    assert (allSwap ["ax","bx","cx","cy","by","ay","aaa","azz"] == ["ay","by","cy","cx","bx","ax","azz","aaa"]) (putStrLn "Test passed")
-    assert (allSwap ["ax","bx","ay","by","ai","aj","bx","by"] == ["ay","by","ax","bx","aj","ai","by","bx"]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[\"ac\",\"ab\"]" $ allSwap ["ab","ac"] `shouldBe` ["ac","ab"]
+   it "[\"ay\",\"by\",\"cy\",\"cx\",\"bx\",\"ax\",\"azz\",\"aaa\"]" $ allSwap ["ax","bx","cx","cy","by","ay","aaa","azz"] `shouldBe` ["ay","by","cy","cx","bx","ax","azz","aaa"]
+   it "[\"ay\",\"by\",\"ax\",\"bx\",\"aj\",\"ai\",\"by\",\"bx\"]" $ allSwap ["ax","bx","ay","by","ai","aj","bx","by"] `shouldBe` ["ay","by","ax","bx","aj","ai","by","bx"]
+   it "[\"ac\",\"ab\"]" $ allSwap ["ab","ac"] `shouldBe` ["ac","ab"]
+   it "[\"ay\",\"by\",\"cy\",\"cx\",\"bx\",\"ax\",\"azz\",\"aaa\"]" $ allSwap ["ax","bx","cx","cy","by","ay","aaa","azz"] `shouldBe` ["ay","by","cy","cx","bx","ax","azz","aaa"]
+   it "[\"ay\",\"by\",\"ax\",\"bx\",\"aj\",\"ai\",\"by\",\"bx\"]" $ allSwap ["ax","bx","ay","by","ai","aj","bx","by"] `shouldBe` ["ay","by","ax","bx","aj","ai","by","bx"]
 

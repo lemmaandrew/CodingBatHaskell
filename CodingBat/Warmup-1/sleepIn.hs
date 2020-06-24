@@ -3,18 +3,18 @@ The parameter weekday is true if it is a weekday, and the parameter vacation is 
 if we are on vacation. We sleep in if it is not a weekday or we're on vacation. Return
 true if we sleep in.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 sleepIn :: Bool -> Bool -> Bool
 sleepIn weekday vacation = undefined
 
 main :: IO ()
-main = do
-    assert (sleepIn False False == True) (putStrLn "Test passed")
-    assert (sleepIn True False == False) (putStrLn "Test passed")
-    assert (sleepIn False True == True) (putStrLn "Test passed")
-    assert (sleepIn False False == True) (putStrLn "Test passed")
-    assert (sleepIn True False == False) (putStrLn "Test passed")
-    assert (sleepIn False True == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ sleepIn False False `shouldBe` True
+   it "False" $ sleepIn True False `shouldBe` False
+   it "True" $ sleepIn False True `shouldBe` True
+   it "True" $ sleepIn False False `shouldBe` True
+   it "False" $ sleepIn True False `shouldBe` False
+   it "True" $ sleepIn False True `shouldBe` True
 

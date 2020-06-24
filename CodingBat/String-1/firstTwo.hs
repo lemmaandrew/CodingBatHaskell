@@ -4,18 +4,18 @@ yields "He". If the string is shorter than length 2, return whatever there is, s
 yields "X", and the empty string "" yields the empty string "". Note that str.length()
 returns the length of a string.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 firstTwo :: String -> String
 firstTwo str = undefined
 
 main :: IO ()
-main = do
-    assert (firstTwo "Hello" == "He") (putStrLn "Test passed")
-    assert (firstTwo "abcdefg" == "ab") (putStrLn "Test passed")
-    assert (firstTwo "ab" == "ab") (putStrLn "Test passed")
-    assert (firstTwo "Hello" == "He") (putStrLn "Test passed")
-    assert (firstTwo "abcdefg" == "ab") (putStrLn "Test passed")
-    assert (firstTwo "ab" == "ab") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"He\"" $ firstTwo "Hello" `shouldBe` "He"
+   it "\"ab\"" $ firstTwo "abcdefg" `shouldBe` "ab"
+   it "\"ab\"" $ firstTwo "ab" `shouldBe` "ab"
+   it "\"He\"" $ firstTwo "Hello" `shouldBe` "He"
+   it "\"ab\"" $ firstTwo "abcdefg" `shouldBe` "ab"
+   it "\"ab\"" $ firstTwo "ab" `shouldBe` "ab"
 

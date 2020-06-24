@@ -1,18 +1,18 @@
 {-From https://codingbat.com/prob/p170181
 Given a list of strings, return a list where each string has "*" added at its end.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 addStar :: [String] -> [String]
 addStar strings = undefined
 
 main :: IO ()
-main = do
-    assert (addStar ["a","bb","ccc"] == ["a*","bb*","ccc*"]) (putStrLn "Test passed")
-    assert (addStar ["hello","there"] == ["hello*","there*"]) (putStrLn "Test passed")
-    assert (addStar ["*"] == ["**"]) (putStrLn "Test passed")
-    assert (addStar ["a","bb","ccc"] == ["a*","bb*","ccc*"]) (putStrLn "Test passed")
-    assert (addStar ["hello","there"] == ["hello*","there*"]) (putStrLn "Test passed")
-    assert (addStar ["*"] == ["**"]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[\"a*\",\"bb*\",\"ccc*\"]" $ addStar ["a","bb","ccc"] `shouldBe` ["a*","bb*","ccc*"]
+   it "[\"hello*\",\"there*\"]" $ addStar ["hello","there"] `shouldBe` ["hello*","there*"]
+   it "[\"**\"]" $ addStar ["*"] `shouldBe` ["**"]
+   it "[\"a*\",\"bb*\",\"ccc*\"]" $ addStar ["a","bb","ccc"] `shouldBe` ["a*","bb*","ccc*"]
+   it "[\"hello*\",\"there*\"]" $ addStar ["hello","there"] `shouldBe` ["hello*","there*"]
+   it "[\"**\"]" $ addStar ["*"] `shouldBe` ["**"]
 

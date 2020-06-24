@@ -3,18 +3,18 @@ Given an array of ints, return the sum of the first 2 elements in the array. If 
 array length is less than 2, just sum up the elements that exist, returning 0 if the
 array is length 0.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 sum2 :: [Int] -> Int
 sum2 nums = undefined
 
 main :: IO ()
-main = do
-    assert (sum2 [1,2,3] == 3) (putStrLn "Test passed")
-    assert (sum2 [1,1] == 2) (putStrLn "Test passed")
-    assert (sum2 [1,1,1,1] == 2) (putStrLn "Test passed")
-    assert (sum2 [1,2,3] == 3) (putStrLn "Test passed")
-    assert (sum2 [1,1] == 2) (putStrLn "Test passed")
-    assert (sum2 [1,1,1,1] == 2) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "3" $ sum2 [1,2,3] `shouldBe` 3
+   it "2" $ sum2 [1,1] `shouldBe` 2
+   it "2" $ sum2 [1,1,1,1] `shouldBe` 2
+   it "3" $ sum2 [1,2,3] `shouldBe` 3
+   it "2" $ sum2 [1,1] `shouldBe` 2
+   it "2" $ sum2 [1,1,1,1] `shouldBe` 2
 

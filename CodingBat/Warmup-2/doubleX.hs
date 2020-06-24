@@ -2,18 +2,18 @@
 Given a string, return true if the first instance of "x" in the string is immediately
 followed by another "x".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 doubleX :: String -> Bool
 doubleX str = undefined
 
 main :: IO ()
-main = do
-    assert (doubleX "axxbb" == True) (putStrLn "Test passed")
-    assert (doubleX "axaxax" == False) (putStrLn "Test passed")
-    assert (doubleX "xxxxx" == True) (putStrLn "Test passed")
-    assert (doubleX "axxbb" == True) (putStrLn "Test passed")
-    assert (doubleX "axaxax" == False) (putStrLn "Test passed")
-    assert (doubleX "xxxxx" == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ doubleX "axxbb" `shouldBe` True
+   it "False" $ doubleX "axaxax" `shouldBe` False
+   it "True" $ doubleX "xxxxx" `shouldBe` True
+   it "True" $ doubleX "axxbb" `shouldBe` True
+   it "False" $ doubleX "axaxax" `shouldBe` False
+   it "True" $ doubleX "xxxxx" `shouldBe` True
 

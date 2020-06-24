@@ -6,18 +6,18 @@ and if the number is divisible by 5 use "Buzz", and if divisible by both 3 and 5
 yields 3. What will the remainder be when one number divides evenly into another? (See
 also: FizzBuzz Code and Introduction to Mod)
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 fizzString2 :: Int -> String
 fizzString2 n = undefined
 
 main :: IO ()
-main = do
-    assert (fizzString2 1 == "1!") (putStrLn "Test passed")
-    assert (fizzString2 2 == "2!") (putStrLn "Test passed")
-    assert (fizzString2 3 == "Fizz!") (putStrLn "Test passed")
-    assert (fizzString2 1 == "1!") (putStrLn "Test passed")
-    assert (fizzString2 2 == "2!") (putStrLn "Test passed")
-    assert (fizzString2 3 == "Fizz!") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"1!\"" $ fizzString2 1 `shouldBe` "1!"
+   it "\"2!\"" $ fizzString2 2 `shouldBe` "2!"
+   it "\"Fizz!\"" $ fizzString2 3 `shouldBe` "Fizz!"
+   it "\"1!\"" $ fizzString2 1 `shouldBe` "1!"
+   it "\"2!\"" $ fizzString2 2 `shouldBe` "2!"
+   it "\"Fizz!\"" $ fizzString2 3 `shouldBe` "Fizz!"
 

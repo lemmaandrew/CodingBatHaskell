@@ -4,18 +4,18 @@ and just after every appearance of the word in the string. Ignore cases where th
 no char before or after the word, and a char may be included twice if it is between
 two words.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 wordEnds :: String -> String -> String
 wordEnds str word = undefined
 
 main :: IO ()
-main = do
-    assert (wordEnds "abcXY123XYijk" "XY" == "c13i") (putStrLn "Test passed")
-    assert (wordEnds "XY123XY" "XY" == "13") (putStrLn "Test passed")
-    assert (wordEnds "XY1XY" "XY" == "11") (putStrLn "Test passed")
-    assert (wordEnds "abcXY123XYijk" "XY" == "c13i") (putStrLn "Test passed")
-    assert (wordEnds "XY123XY" "XY" == "13") (putStrLn "Test passed")
-    assert (wordEnds "XY1XY" "XY" == "11") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"c13i\"" $ wordEnds "abcXY123XYijk" "XY" `shouldBe` "c13i"
+   it "\"13\"" $ wordEnds "XY123XY" "XY" `shouldBe` "13"
+   it "\"11\"" $ wordEnds "XY1XY" "XY" `shouldBe` "11"
+   it "\"c13i\"" $ wordEnds "abcXY123XYijk" "XY" `shouldBe` "c13i"
+   it "\"13\"" $ wordEnds "XY123XY" "XY" `shouldBe` "13"
+   it "\"11\"" $ wordEnds "XY1XY" "XY" `shouldBe` "11"
 

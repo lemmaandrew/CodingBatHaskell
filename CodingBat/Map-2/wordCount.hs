@@ -3,7 +3,7 @@ The classic word-count algorithm: given an array of strings, return a Map<String
 with a key for each different string, with the value the number of times that string
 appears in the array.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 import qualified Data.Map.Strict as Map
 
 
@@ -11,11 +11,11 @@ wordCount :: [String] -> Map.Map String Integer
 wordCount strings = undefined
 
 main :: IO ()
-main = do
-    assert (wordCount ["a","b","a","c","b"] == (Map.fromList [("a",2),("b",2),("c",1)])) (putStrLn "Test passed")
-    assert (wordCount ["c","b","a"] == (Map.fromList [("a",1),("b",1),("c",1)])) (putStrLn "Test passed")
-    assert (wordCount ["c","c","c","c"] == (Map.fromList [("c",4)])) (putStrLn "Test passed")
-    assert (wordCount ["a","b","a","c","b"] == (Map.fromList [("a",2),("b",2),("c",1)])) (putStrLn "Test passed")
-    assert (wordCount ["c","b","a"] == (Map.fromList [("a",1),("b",1),("c",1)])) (putStrLn "Test passed")
-    assert (wordCount ["c","c","c","c"] == (Map.fromList [("c",4)])) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "(Map.fromList [(\"a\",2),(\"b\",2),(\"c\",1)])" $ wordCount ["a","b","a","c","b"] `shouldBe` (Map.fromList [("a",2),("b",2),("c",1)])
+   it "(Map.fromList [(\"a\",1),(\"b\",1),(\"c\",1)])" $ wordCount ["c","b","a"] `shouldBe` (Map.fromList [("a",1),("b",1),("c",1)])
+   it "(Map.fromList [(\"c\",4)])" $ wordCount ["c","c","c","c"] `shouldBe` (Map.fromList [("c",4)])
+   it "(Map.fromList [(\"a\",2),(\"b\",2),(\"c\",1)])" $ wordCount ["a","b","a","c","b"] `shouldBe` (Map.fromList [("a",2),("b",2),("c",1)])
+   it "(Map.fromList [(\"a\",1),(\"b\",1),(\"c\",1)])" $ wordCount ["c","b","a"] `shouldBe` (Map.fromList [("a",1),("b",1),("c",1)])
+   it "(Map.fromList [(\"c\",4)])" $ wordCount ["c","c","c","c"] `shouldBe` (Map.fromList [("c",4)])
 

@@ -4,18 +4,18 @@ sums of the two groups are the same. Every int must be in one group or the other
 a recursive helper method that takes whatever arguments you like, and make the initial
 call to your recursive helper from splitArray(). (No loops needed.)
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 splitArray :: [Int] -> Bool
 splitArray nums = undefined
 
 main :: IO ()
-main = do
-    assert (splitArray [2,2] == True) (putStrLn "Test passed")
-    assert (splitArray [2,3] == False) (putStrLn "Test passed")
-    assert (splitArray [5,2,3] == True) (putStrLn "Test passed")
-    assert (splitArray [2,2] == True) (putStrLn "Test passed")
-    assert (splitArray [2,3] == False) (putStrLn "Test passed")
-    assert (splitArray [5,2,3] == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ splitArray [2,2] `shouldBe` True
+   it "False" $ splitArray [2,3] `shouldBe` False
+   it "True" $ splitArray [5,2,3] `shouldBe` True
+   it "True" $ splitArray [2,2] `shouldBe` True
+   it "False" $ splitArray [2,3] `shouldBe` False
+   it "True" $ splitArray [5,2,3] `shouldBe` True
 

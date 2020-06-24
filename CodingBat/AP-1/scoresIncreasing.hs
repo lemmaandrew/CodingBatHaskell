@@ -2,18 +2,18 @@
 Given an array of scores, return true if each score is equal or greater than the one
 before. The array will be length 2 or more.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 scoresIncreasing :: [Int] -> Bool
 scoresIncreasing scores = undefined
 
 main :: IO ()
-main = do
-    assert (scoresIncreasing [1,3,4] == True) (putStrLn "Test passed")
-    assert (scoresIncreasing [1,3,2] == False) (putStrLn "Test passed")
-    assert (scoresIncreasing [1,1,4] == True) (putStrLn "Test passed")
-    assert (scoresIncreasing [1,3,4] == True) (putStrLn "Test passed")
-    assert (scoresIncreasing [1,3,2] == False) (putStrLn "Test passed")
-    assert (scoresIncreasing [1,1,4] == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ scoresIncreasing [1,3,4] `shouldBe` True
+   it "False" $ scoresIncreasing [1,3,2] `shouldBe` False
+   it "True" $ scoresIncreasing [1,1,4] `shouldBe` True
+   it "True" $ scoresIncreasing [1,3,4] `shouldBe` True
+   it "False" $ scoresIncreasing [1,3,2] `shouldBe` False
+   it "True" $ scoresIncreasing [1,1,4] `shouldBe` True
 

@@ -3,18 +3,18 @@ Given 2 strings, a and b, return a string of the form short+long+short, with the
 string on the outside and the longer string on the inside. The strings will not be the
 same length, but they may be empty (length 0).
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 comboString :: String -> String -> String
 comboString a b = undefined
 
 main :: IO ()
-main = do
-    assert (comboString "Hello" "hi" == "hiHellohi") (putStrLn "Test passed")
-    assert (comboString "hi" "Hello" == "hiHellohi") (putStrLn "Test passed")
-    assert (comboString "aaa" "b" == "baaab") (putStrLn "Test passed")
-    assert (comboString "Hello" "hi" == "hiHellohi") (putStrLn "Test passed")
-    assert (comboString "hi" "Hello" == "hiHellohi") (putStrLn "Test passed")
-    assert (comboString "aaa" "b" == "baaab") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"hiHellohi\"" $ comboString "Hello" "hi" `shouldBe` "hiHellohi"
+   it "\"hiHellohi\"" $ comboString "hi" "Hello" `shouldBe` "hiHellohi"
+   it "\"baaab\"" $ comboString "aaa" "b" `shouldBe` "baaab"
+   it "\"hiHellohi\"" $ comboString "Hello" "hi" `shouldBe` "hiHellohi"
+   it "\"hiHellohi\"" $ comboString "hi" "Hello" `shouldBe` "hiHellohi"
+   it "\"baaab\"" $ comboString "aaa" "b" `shouldBe` "baaab"
 

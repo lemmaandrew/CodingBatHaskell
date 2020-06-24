@@ -3,18 +3,18 @@ Given a non-empty string and an int n, return a new string where the char at ind
 has been removed. The value of n will be a valid index of a char in the original string
 (i.e. n will be in the range 0..str.length()-1 inclusive).
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 missingChar :: String -> Int -> String
 missingChar str n = undefined
 
 main :: IO ()
-main = do
-    assert (missingChar "kitten" 1 == "ktten") (putStrLn "Test passed")
-    assert (missingChar "kitten" 0 == "itten") (putStrLn "Test passed")
-    assert (missingChar "kitten" 4 == "kittn") (putStrLn "Test passed")
-    assert (missingChar "kitten" 1 == "ktten") (putStrLn "Test passed")
-    assert (missingChar "kitten" 0 == "itten") (putStrLn "Test passed")
-    assert (missingChar "kitten" 4 == "kittn") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"ktten\"" $ missingChar "kitten" 1 `shouldBe` "ktten"
+   it "\"itten\"" $ missingChar "kitten" 0 `shouldBe` "itten"
+   it "\"kittn\"" $ missingChar "kitten" 4 `shouldBe` "kittn"
+   it "\"ktten\"" $ missingChar "kitten" 1 `shouldBe` "ktten"
+   it "\"itten\"" $ missingChar "kitten" 0 `shouldBe` "itten"
+   it "\"kittn\"" $ missingChar "kitten" 4 `shouldBe` "kittn"
 

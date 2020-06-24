@@ -6,18 +6,18 @@ first char can only cause 1 swap, so once a char has caused a swap, its later sw
 are disabled. Using a map, this can be solved making just one pass over the array. More
 difficult than it looks.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 firstSwap :: [String] -> [String]
 firstSwap strings = undefined
 
 main :: IO ()
-main = do
-    assert (firstSwap ["ab","ac"] == ["ac","ab"]) (putStrLn "Test passed")
-    assert (firstSwap ["ax","bx","cx","cy","by","ay","aaa","azz"] == ["ay","by","cy","cx","bx","ax","aaa","azz"]) (putStrLn "Test passed")
-    assert (firstSwap ["ax","bx","ay","by","ai","aj","bx","by"] == ["ay","by","ax","bx","ai","aj","bx","by"]) (putStrLn "Test passed")
-    assert (firstSwap ["ab","ac"] == ["ac","ab"]) (putStrLn "Test passed")
-    assert (firstSwap ["ax","bx","cx","cy","by","ay","aaa","azz"] == ["ay","by","cy","cx","bx","ax","aaa","azz"]) (putStrLn "Test passed")
-    assert (firstSwap ["ax","bx","ay","by","ai","aj","bx","by"] == ["ay","by","ax","bx","ai","aj","bx","by"]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[\"ac\",\"ab\"]" $ firstSwap ["ab","ac"] `shouldBe` ["ac","ab"]
+   it "[\"ay\",\"by\",\"cy\",\"cx\",\"bx\",\"ax\",\"aaa\",\"azz\"]" $ firstSwap ["ax","bx","cx","cy","by","ay","aaa","azz"] `shouldBe` ["ay","by","cy","cx","bx","ax","aaa","azz"]
+   it "[\"ay\",\"by\",\"ax\",\"bx\",\"ai\",\"aj\",\"bx\",\"by\"]" $ firstSwap ["ax","bx","ay","by","ai","aj","bx","by"] `shouldBe` ["ay","by","ax","bx","ai","aj","bx","by"]
+   it "[\"ac\",\"ab\"]" $ firstSwap ["ab","ac"] `shouldBe` ["ac","ab"]
+   it "[\"ay\",\"by\",\"cy\",\"cx\",\"bx\",\"ax\",\"aaa\",\"azz\"]" $ firstSwap ["ax","bx","cx","cy","by","ay","aaa","azz"] `shouldBe` ["ay","by","cy","cx","bx","ax","aaa","azz"]
+   it "[\"ay\",\"by\",\"ax\",\"bx\",\"ai\",\"aj\",\"bx\",\"by\"]" $ firstSwap ["ax","bx","ay","by","ai","aj","bx","by"] `shouldBe` ["ay","by","ax","bx","ai","aj","bx","by"]
 

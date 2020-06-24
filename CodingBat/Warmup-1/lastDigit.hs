@@ -3,18 +3,18 @@ Given two non-negative int values, return true if they have the same last digit,
 as with 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 10 is
 7.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 lastDigit :: Int -> Int -> Bool
 lastDigit a b = undefined
 
 main :: IO ()
-main = do
-    assert (lastDigit 7 17 == True) (putStrLn "Test passed")
-    assert (lastDigit 6 17 == False) (putStrLn "Test passed")
-    assert (lastDigit 3 113 == True) (putStrLn "Test passed")
-    assert (lastDigit 7 17 == True) (putStrLn "Test passed")
-    assert (lastDigit 6 17 == False) (putStrLn "Test passed")
-    assert (lastDigit 3 113 == True) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ lastDigit 7 17 `shouldBe` True
+   it "False" $ lastDigit 6 17 `shouldBe` False
+   it "True" $ lastDigit 3 113 `shouldBe` True
+   it "True" $ lastDigit 7 17 `shouldBe` True
+   it "False" $ lastDigit 6 17 `shouldBe` False
+   it "True" $ lastDigit 3 113 `shouldBe` True
 

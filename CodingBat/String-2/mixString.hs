@@ -3,18 +3,18 @@ Given two strings, a and b, create a bigger string made of the first char of a, 
 first char of b, the second char of a, the second char of b, and so on. Any leftover
 chars go at the end of the result.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 mixString :: String -> String -> String
 mixString a b = undefined
 
 main :: IO ()
-main = do
-    assert (mixString "abc" "xyz" == "axbycz") (putStrLn "Test passed")
-    assert (mixString "Hi" "There" == "HTihere") (putStrLn "Test passed")
-    assert (mixString "xxxx" "There" == "xTxhxexre") (putStrLn "Test passed")
-    assert (mixString "abc" "xyz" == "axbycz") (putStrLn "Test passed")
-    assert (mixString "Hi" "There" == "HTihere") (putStrLn "Test passed")
-    assert (mixString "xxxx" "There" == "xTxhxexre") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"axbycz\"" $ mixString "abc" "xyz" `shouldBe` "axbycz"
+   it "\"HTihere\"" $ mixString "Hi" "There" `shouldBe` "HTihere"
+   it "\"xTxhxexre\"" $ mixString "xxxx" "There" `shouldBe` "xTxhxexre"
+   it "\"axbycz\"" $ mixString "abc" "xyz" `shouldBe` "axbycz"
+   it "\"HTihere\"" $ mixString "Hi" "There" `shouldBe` "HTihere"
+   it "\"xTxhxexre\"" $ mixString "xxxx" "There" `shouldBe` "xTxhxexre"
 

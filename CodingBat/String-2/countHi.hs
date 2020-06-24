@@ -1,18 +1,18 @@
 {-From https://codingbat.com/prob/p147448
 Return the number of times that the string "hi" appears anywhere in the given string.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 countHi :: String -> Int
 countHi str = undefined
 
 main :: IO ()
-main = do
-    assert (countHi "abchiho" == 1) (putStrLn "Test passed")
-    assert (countHi "ABChihi" == 2) (putStrLn "Test passed")
-    assert (countHi "hihi" == 2) (putStrLn "Test passed")
-    assert (countHi "abchiho" == 1) (putStrLn "Test passed")
-    assert (countHi "ABChihi" == 2) (putStrLn "Test passed")
-    assert (countHi "hihi" == 2) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "1" $ countHi "abchiho" `shouldBe` 1
+   it "2" $ countHi "ABChihi" `shouldBe` 2
+   it "2" $ countHi "hihi" `shouldBe` 2
+   it "1" $ countHi "abchiho" `shouldBe` 1
+   it "2" $ countHi "ABChihi" `shouldBe` 2
+   it "2" $ countHi "hihi" `shouldBe` 2
 

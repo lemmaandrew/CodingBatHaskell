@@ -2,18 +2,18 @@
 Given a list of strings, return a list of the strings, omitting any string that contains
 a "z". (Note: the str.contains(x) method returns a boolean)
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 noZ :: [String] -> [String]
 noZ strings = undefined
 
 main :: IO ()
-main = do
-    assert (noZ ["aaa","bbb","aza"] == ["aaa","bbb"]) (putStrLn "Test passed")
-    assert (noZ ["hziz","hzello","hi"] == ["hi"]) (putStrLn "Test passed")
-    assert (noZ ["hello","howz","are","youz"] == ["hello","are"]) (putStrLn "Test passed")
-    assert (noZ ["aaa","bbb","aza"] == ["aaa","bbb"]) (putStrLn "Test passed")
-    assert (noZ ["hziz","hzello","hi"] == ["hi"]) (putStrLn "Test passed")
-    assert (noZ ["hello","howz","are","youz"] == ["hello","are"]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[\"aaa\",\"bbb\"]" $ noZ ["aaa","bbb","aza"] `shouldBe` ["aaa","bbb"]
+   it "[\"hi\"]" $ noZ ["hziz","hzello","hi"] `shouldBe` ["hi"]
+   it "[\"hello\",\"are\"]" $ noZ ["hello","howz","are","youz"] `shouldBe` ["hello","are"]
+   it "[\"aaa\",\"bbb\"]" $ noZ ["aaa","bbb","aza"] `shouldBe` ["aaa","bbb"]
+   it "[\"hi\"]" $ noZ ["hziz","hzello","hi"] `shouldBe` ["hi"]
+   it "[\"hello\",\"are\"]" $ noZ ["hello","howz","are","youz"] `shouldBe` ["hello","are"]
 

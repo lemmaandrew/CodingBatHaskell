@@ -2,18 +2,18 @@
 Given a string, compute recursively a new string where identical chars that are adjacent
 in the original string are separated from each other by a "*".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 pairStar :: String -> String
 pairStar str = undefined
 
 main :: IO ()
-main = do
-    assert (pairStar "hello" == "hel*lo") (putStrLn "Test passed")
-    assert (pairStar "xxyy" == "x*xy*y") (putStrLn "Test passed")
-    assert (pairStar "aaaa" == "a*a*a*a") (putStrLn "Test passed")
-    assert (pairStar "hello" == "hel*lo") (putStrLn "Test passed")
-    assert (pairStar "xxyy" == "x*xy*y") (putStrLn "Test passed")
-    assert (pairStar "aaaa" == "a*a*a*a") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"hel*lo\"" $ pairStar "hello" `shouldBe` "hel*lo"
+   it "\"x*xy*y\"" $ pairStar "xxyy" `shouldBe` "x*xy*y"
+   it "\"a*a*a*a\"" $ pairStar "aaaa" `shouldBe` "a*a*a*a"
+   it "\"hel*lo\"" $ pairStar "hello" `shouldBe` "hel*lo"
+   it "\"x*xy*y\"" $ pairStar "xxyy" `shouldBe` "x*xy*y"
+   it "\"a*a*a*a\"" $ pairStar "aaaa" `shouldBe` "a*a*a*a"
 

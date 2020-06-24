@@ -4,18 +4,18 @@ that the group sums to the given target with this additional constraint: If a va
 the array is chosen to be in the group, the value immediately following it in the array
 must not be chosen. (No loops needed.)
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 groupNoAdj :: Int -> [Int] -> Int -> Bool
 groupNoAdj start nums target = undefined
 
 main :: IO ()
-main = do
-    assert (groupNoAdj 0 [2,5,10,4] 12 == True) (putStrLn "Test passed")
-    assert (groupNoAdj 0 [2,5,10,4] 14 == False) (putStrLn "Test passed")
-    assert (groupNoAdj 0 [2,5,10,4] 7 == False) (putStrLn "Test passed")
-    assert (groupNoAdj 0 [2,5,10,4] 12 == True) (putStrLn "Test passed")
-    assert (groupNoAdj 0 [2,5,10,4] 14 == False) (putStrLn "Test passed")
-    assert (groupNoAdj 0 [2,5,10,4] 7 == False) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "True" $ groupNoAdj 0 [2,5,10,4] 12 `shouldBe` True
+   it "False" $ groupNoAdj 0 [2,5,10,4] 14 `shouldBe` False
+   it "False" $ groupNoAdj 0 [2,5,10,4] 7 `shouldBe` False
+   it "True" $ groupNoAdj 0 [2,5,10,4] 12 `shouldBe` True
+   it "False" $ groupNoAdj 0 [2,5,10,4] 14 `shouldBe` False
+   it "False" $ groupNoAdj 0 [2,5,10,4] 7 `shouldBe` False
 

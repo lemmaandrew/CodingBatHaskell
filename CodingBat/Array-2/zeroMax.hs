@@ -3,18 +3,18 @@ Return a version of the given array where each zero value in the array is replac
 the largest odd value to the right of the zero in the array. If there is no odd value
 to the right of the zero, leave the zero as a zero.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 zeroMax :: [Int] -> [Int]
 zeroMax nums = undefined
 
 main :: IO ()
-main = do
-    assert (zeroMax [0,5,0,3] == [5,5,3,3]) (putStrLn "Test passed")
-    assert (zeroMax [0,4,0,3] == [3,4,3,3]) (putStrLn "Test passed")
-    assert (zeroMax [0,1,0] == [1,1,0]) (putStrLn "Test passed")
-    assert (zeroMax [0,5,0,3] == [5,5,3,3]) (putStrLn "Test passed")
-    assert (zeroMax [0,4,0,3] == [3,4,3,3]) (putStrLn "Test passed")
-    assert (zeroMax [0,1,0] == [1,1,0]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[5,5,3,3]" $ zeroMax [0,5,0,3] `shouldBe` [5,5,3,3]
+   it "[3,4,3,3]" $ zeroMax [0,4,0,3] `shouldBe` [3,4,3,3]
+   it "[1,1,0]" $ zeroMax [0,1,0] `shouldBe` [1,1,0]
+   it "[5,5,3,3]" $ zeroMax [0,5,0,3] `shouldBe` [5,5,3,3]
+   it "[3,4,3,3]" $ zeroMax [0,4,0,3] `shouldBe` [3,4,3,3]
+   it "[1,1,0]" $ zeroMax [0,1,0] `shouldBe` [1,1,0]
 

@@ -2,18 +2,18 @@
 Given a list of non-negative integers, return a list of those numbers multiplied by 2,
 omitting any of the resulting numbers that end in 2.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 two2 :: [Integer] -> [Integer]
 two2 nums = undefined
 
 main :: IO ()
-main = do
-    assert (two2 [1,2,3] == [4,6]) (putStrLn "Test passed")
-    assert (two2 [2,6,11] == [4]) (putStrLn "Test passed")
-    assert (two2 [0] == [0]) (putStrLn "Test passed")
-    assert (two2 [1,2,3] == [4,6]) (putStrLn "Test passed")
-    assert (two2 [2,6,11] == [4]) (putStrLn "Test passed")
-    assert (two2 [0] == [0]) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "[4,6]" $ two2 [1,2,3] `shouldBe` [4,6]
+   it "[4]" $ two2 [2,6,11] `shouldBe` [4]
+   it "[0]" $ two2 [0] `shouldBe` [0]
+   it "[4,6]" $ two2 [1,2,3] `shouldBe` [4,6]
+   it "[4]" $ two2 [2,6,11] `shouldBe` [4]
+   it "[0]" $ two2 [0] `shouldBe` [0]
 

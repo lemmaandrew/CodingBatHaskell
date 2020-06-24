@@ -2,18 +2,18 @@
 Given n of 1 or more, return the factorial of n, which is n * (n-1) * (n-2) ... 1.
 Compute the result recursively (without loops).
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 factorial :: Int -> Int
 factorial n = undefined
 
 main :: IO ()
-main = do
-    assert (factorial 1 == 1) (putStrLn "Test passed")
-    assert (factorial 2 == 2) (putStrLn "Test passed")
-    assert (factorial 3 == 6) (putStrLn "Test passed")
-    assert (factorial 1 == 1) (putStrLn "Test passed")
-    assert (factorial 2 == 2) (putStrLn "Test passed")
-    assert (factorial 3 == 6) (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "1" $ factorial 1 `shouldBe` 1
+   it "2" $ factorial 2 `shouldBe` 2
+   it "6" $ factorial 3 `shouldBe` 6
+   it "1" $ factorial 1 `shouldBe` 1
+   it "2" $ factorial 2 `shouldBe` 2
+   it "6" $ factorial 3 `shouldBe` 6
 

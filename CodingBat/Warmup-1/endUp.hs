@@ -3,18 +3,18 @@ Given a string, return a new string where the last 3 chars are now in upper case
 the string has less than 3 chars, uppercase whatever is there. Note that str.toUpperCase()
 returns the uppercase version of a string.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 endUp :: String -> String
 endUp str = undefined
 
 main :: IO ()
-main = do
-    assert (endUp "Hello" == "HeLLO") (putStrLn "Test passed")
-    assert (endUp "hithere" == "hithERE") (putStrLn "Test passed")
-    assert (endUp "hi" == "HI") (putStrLn "Test passed")
-    assert (endUp "Hello" == "HeLLO") (putStrLn "Test passed")
-    assert (endUp "hithere" == "hithERE") (putStrLn "Test passed")
-    assert (endUp "hi" == "HI") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"HeLLO\"" $ endUp "Hello" `shouldBe` "HeLLO"
+   it "\"hithERE\"" $ endUp "hithere" `shouldBe` "hithERE"
+   it "\"HI\"" $ endUp "hi" `shouldBe` "HI"
+   it "\"HeLLO\"" $ endUp "Hello" `shouldBe` "HeLLO"
+   it "\"hithERE\"" $ endUp "hithere" `shouldBe` "hithERE"
+   it "\"HI\"" $ endUp "hi" `shouldBe` "HI"
 

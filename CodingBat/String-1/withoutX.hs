@@ -2,18 +2,18 @@
 Given a string, if the first or last chars are 'x', return the string without those 'x'
 chars, and otherwise return the string unchanged.
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 withoutX :: String -> String
 withoutX str = undefined
 
 main :: IO ()
-main = do
-    assert (withoutX "xHix" == "Hi") (putStrLn "Test passed")
-    assert (withoutX "xHi" == "Hi") (putStrLn "Test passed")
-    assert (withoutX "Hxix" == "Hxi") (putStrLn "Test passed")
-    assert (withoutX "xHix" == "Hi") (putStrLn "Test passed")
-    assert (withoutX "xHi" == "Hi") (putStrLn "Test passed")
-    assert (withoutX "Hxix" == "Hxi") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"Hi\"" $ withoutX "xHix" `shouldBe` "Hi"
+   it "\"Hi\"" $ withoutX "xHi" `shouldBe` "Hi"
+   it "\"Hxi\"" $ withoutX "Hxix" `shouldBe` "Hxi"
+   it "\"Hi\"" $ withoutX "xHix" `shouldBe` "Hi"
+   it "\"Hi\"" $ withoutX "xHi" `shouldBe` "Hi"
+   it "\"Hxi\"" $ withoutX "Hxix" `shouldBe` "Hxi"
 

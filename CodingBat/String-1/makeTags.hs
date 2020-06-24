@@ -3,18 +3,18 @@ The web is built with HTML strings like "<i>Yay</i>" which draws Yay as italic t
 this example, the "i" tag makes <i> and </i> which surround the word "Yay". Given tag
 and word strings, create the HTML string with tags around the word, e.g. "<i>Yay</i>".
 -}
-import Control.Exception (assert)
+import Test.Hspec
 
 
 makeTags :: String -> String -> String
 makeTags tag word = undefined
 
 main :: IO ()
-main = do
-    assert (makeTags "i" "Yay" == "<i>Yay</i>") (putStrLn "Test passed")
-    assert (makeTags "i" "Hello" == "<i>Hello</i>") (putStrLn "Test passed")
-    assert (makeTags "cite" "Yay" == "<cite>Yay</cite>") (putStrLn "Test passed")
-    assert (makeTags "i" "Yay" == "<i>Yay</i>") (putStrLn "Test passed")
-    assert (makeTags "i" "Hello" == "<i>Hello</i>") (putStrLn "Test passed")
-    assert (makeTags "cite" "Yay" == "<cite>Yay</cite>") (putStrLn "Test passed")
+main = hspec $ describe "Tests:" $ do
+   it "\"<i>Yay</i>\"" $ makeTags "i" "Yay" `shouldBe` "<i>Yay</i>"
+   it "\"<i>Hello</i>\"" $ makeTags "i" "Hello" `shouldBe` "<i>Hello</i>"
+   it "\"<cite>Yay</cite>\"" $ makeTags "cite" "Yay" `shouldBe` "<cite>Yay</cite>"
+   it "\"<i>Yay</i>\"" $ makeTags "i" "Yay" `shouldBe` "<i>Yay</i>"
+   it "\"<i>Hello</i>\"" $ makeTags "i" "Hello" `shouldBe` "<i>Hello</i>"
+   it "\"<cite>Yay</cite>\"" $ makeTags "cite" "Yay" `shouldBe` "<cite>Yay</cite>"
 
