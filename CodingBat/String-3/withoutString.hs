@@ -12,7 +12,7 @@ withoutString base remove = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "\"Hethere\"" $ withoutString "Hellothere" "llo" `shouldBe` "Hethere"
-   it "\"Hllothr\"" $ withoutString "Hellothere" "e" `shouldBe` "Hllothr"
-   it "\"Hellothere\"" $ withoutString "Hellothere" "x" `shouldBe` "Hellothere"
+   it "\"He there\"" $ withoutString "Hello there" "llo" `shouldBe` "He there"
+   it "\"Hllo thr\"" $ withoutString "Hello there" "e" `shouldBe` "Hllo thr"
+   it "\"Hello there\"" $ withoutString "Hello there" "x" `shouldBe` "Hello there"
 

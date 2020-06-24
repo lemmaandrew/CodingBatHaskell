@@ -10,7 +10,7 @@ equalIsNot str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "False" $ equalIsNot "Thisisnot" `shouldBe` False
-   it "True" $ equalIsNot "Thisisnotnot" `shouldBe` True
+   it "False" $ equalIsNot "This is not" `shouldBe` False
+   it "True" $ equalIsNot "This is notnot" `shouldBe` True
    it "True" $ equalIsNot "noisxxnotyynotxisi" `shouldBe` True
 

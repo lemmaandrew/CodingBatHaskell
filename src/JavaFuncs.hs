@@ -153,20 +153,24 @@ stripJava funcstr = fix body ++ ")" where
 -- e.g., "[1,2,3], 1, {\"a\": \"b\"}, \"hi\"" -> "[1,2,3] 1 Map.fromList [(\"a\",\"b\")]) \"hi\""
 formatArgs :: String -> String
 formatArgs "" = ""
-formatArgs args = unwords $ map formatEdgeCases $ go 0 [] $ args where
-    go _ current [] = [current]
-    go n current (' ':xs) = go n current xs
-    go 0 current (',':xs) = current : go 0 "" xs
-    go n current (x:xs)
-        | x `elem` "{([" || x == '"' && even n = go (n + 1) (current ++ [x]) xs
-        | x `elem` "})]" || x == '"' = go (n - 1) (current ++ [x]) xs
-        | otherwise = go n (current ++ [x]) xs
+formatArgs args = unwords $ map formatEdgeCases $ go 0 0 [] $ args where
+    go _ _ current [] = [current]
+    go quotes braces current (x:xs)
+        | x `elem` "{([" && even quotes = go quotes (braces + 1) (current ++ [x]) xs
+        | x `elem` "})]" && even quotes = go quotes (braces - 1) (current ++ [x]) xs
+        | x == '"' && even quotes       = go (quotes + 1) braces (current ++ [x]) xs
+        | x == '"' && odd quotes        = go (quotes - 1) braces (current ++ [x]) xs
+        | x == ','
+        , quotes == 0
+        , braces == 0                   = current : go 0 0 "" xs
+        | x == ' ' && quotes == 0       = go quotes braces current xs
+        | otherwise                     = go quotes braces (current ++ [x]) xs
 
     formatEdgeCases "{}" = "Map.empty"
     formatEdgeCases ('{':xs) = "(Map.fromList ["
                           ++ intercalate ","
-                                (map ((\[x,y] -> '(' : formatEdgeCases x ++ "," ++ formatEdgeCases y ++ ")") . splitOn ":")
-                                    $ go 0 "" $ init xs)
+                                (map ((\[x,y] -> '(' : formatArgs x ++ "," ++ formatArgs y ++ ")") . splitOn ":")
+                                    $ go 0 0 "" $ init xs)
                           ++ "])"
     formatEdgeCases ('-':xs) = "(-" ++ xs ++ ")" -- for negative numbers
     formatEdgeCases "false" = "False"

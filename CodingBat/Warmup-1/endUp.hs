@@ -12,6 +12,6 @@ endUp str = undefined
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
    it "\"HeLLO\"" $ endUp "Hello" `shouldBe` "HeLLO"
-   it "\"hithERE\"" $ endUp "hithere" `shouldBe` "hithERE"
+   it "\"hi thERE\"" $ endUp "hi there" `shouldBe` "hi thERE"
    it "\"HI\"" $ endUp "hi" `shouldBe` "HI"
 

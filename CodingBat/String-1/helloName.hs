@@ -9,7 +9,7 @@ helloName name = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "\"HelloBob!\"" $ helloName "Bob" `shouldBe` "HelloBob!"
-   it "\"HelloAlice!\"" $ helloName "Alice" `shouldBe` "HelloAlice!"
-   it "\"HelloX!\"" $ helloName "X" `shouldBe` "HelloX!"
+   it "\"Hello Bob!\"" $ helloName "Bob" `shouldBe` "Hello Bob!"
+   it "\"Hello Alice!\"" $ helloName "Alice" `shouldBe` "Hello Alice!"
+   it "\"Hello X!\"" $ helloName "X" `shouldBe` "Hello X!"
 

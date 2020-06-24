@@ -11,7 +11,7 @@ notString str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "\"notcandy\"" $ notString "candy" `shouldBe` "notcandy"
-   it "\"notx\"" $ notString "x" `shouldBe` "notx"
-   it "\"notbad\"" $ notString "notbad" `shouldBe` "notbad"
+   it "\"not candy\"" $ notString "candy" `shouldBe` "not candy"
+   it "\"not x\"" $ notString "x" `shouldBe` "not x"
+   it "\"not bad\"" $ notString "not bad" `shouldBe` "not bad"
 

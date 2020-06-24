@@ -12,7 +12,7 @@ countYZ str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "2" $ countYZ "fezday" `shouldBe` 2
-   it "2" $ countYZ "dayfez" `shouldBe` 2
-   it "2" $ countYZ "dayfyyyz" `shouldBe` 2
+   it "2" $ countYZ "fez day" `shouldBe` 2
+   it "2" $ countYZ "day fez" `shouldBe` 2
+   it "2" $ countYZ "day fyyyz" `shouldBe` 2
 

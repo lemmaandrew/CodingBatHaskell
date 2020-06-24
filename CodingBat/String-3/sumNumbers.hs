@@ -14,5 +14,5 @@ main :: IO ()
 main = hspec $ describe "Tests:" $ do
    it "123" $ sumNumbers "abc123xyz" `shouldBe` 123
    it "44" $ sumNumbers "aa11b33" `shouldBe` 44
-   it "18" $ sumNumbers "711" `shouldBe` 18
+   it "18" $ sumNumbers "7 11" `shouldBe` 18
 

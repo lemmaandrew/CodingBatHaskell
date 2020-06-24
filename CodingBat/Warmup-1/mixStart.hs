@@ -10,7 +10,7 @@ mixStart str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ mixStart "mixsnacks" `shouldBe` True
-   it "True" $ mixStart "pixsnacks" `shouldBe` True
-   it "False" $ mixStart "pizsnacks" `shouldBe` False
+   it "True" $ mixStart "mix snacks" `shouldBe` True
+   it "True" $ mixStart "pix snacks" `shouldBe` True
+   it "False" $ mixStart "piz snacks" `shouldBe` False
 

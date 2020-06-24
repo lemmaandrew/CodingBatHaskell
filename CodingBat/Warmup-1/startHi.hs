@@ -9,7 +9,7 @@ startHi str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ startHi "hithere" `shouldBe` True
+   it "True" $ startHi "hi there" `shouldBe` True
    it "True" $ startHi "hi" `shouldBe` True
-   it "False" $ startHi "hellohi" `shouldBe` False
+   it "False" $ startHi "hello hi" `shouldBe` False
 

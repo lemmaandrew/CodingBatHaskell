@@ -14,5 +14,5 @@ main :: IO ()
 main = hspec $ describe "Tests:" $ do
    it "\"ChocChoChC\"" $ repeatFront "Chocolate" 4 `shouldBe` "ChocChoChC"
    it "\"ChoChC\"" $ repeatFront "Chocolate" 3 `shouldBe` "ChoChC"
-   it "\"IcI\"" $ repeatFront "IceCream" 2 `shouldBe` "IcI"
+   it "\"IcI\"" $ repeatFront "Ice Cream" 2 `shouldBe` "IcI"
 

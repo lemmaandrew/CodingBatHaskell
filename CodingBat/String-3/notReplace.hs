@@ -12,7 +12,7 @@ notReplace str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "\"isnottest\"" $ notReplace "istest" `shouldBe` "isnottest"
-   it "\"isnot-isnot\"" $ notReplace "is-is" `shouldBe` "isnot-isnot"
-   it "\"Thisisnotright\"" $ notReplace "Thisisright" `shouldBe` "Thisisnotright"
+   it "\"is not test\"" $ notReplace "is test" `shouldBe` "is not test"
+   it "\"is not-is not\"" $ notReplace "is-is" `shouldBe` "is not-is not"
+   it "\"This is not right\"" $ notReplace "This is right" `shouldBe` "This is not right"
 

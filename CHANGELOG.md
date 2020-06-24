@@ -36,3 +36,7 @@
 ## 0.1.3.1 -- 2020-06-24
 
 * Nubbed duplicate tests
+
+## 0.1.3.2 -- 2020-06-24
+
+* Fixed formatArgs deleting spaces in strings
