@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ noTriples [1,1,2,2,1] `shouldBe` True
    it "False" $ noTriples [1,1,2,2,2,1] `shouldBe` False
    it "False" $ noTriples [1,1,1,2,2,2,1] `shouldBe` False
-   it "True" $ noTriples [1,1,2,2,1] `shouldBe` True
-   it "False" $ noTriples [1,1,2,2,2,1] `shouldBe` False
-   it "False" $ noTriples [1,1,1,2,2,2,1] `shouldBe` False
 

@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ or35 3 `shouldBe` True
    it "True" $ or35 10 `shouldBe` True
    it "False" $ or35 8 `shouldBe` False
-   it "True" $ or35 3 `shouldBe` True
-   it "True" $ or35 10 `shouldBe` True
-   it "False" $ or35 8 `shouldBe` False
 

@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "0" $ triangle 0 `shouldBe` 0
    it "1" $ triangle 1 `shouldBe` 1
    it "3" $ triangle 2 `shouldBe` 3
-   it "0" $ triangle 0 `shouldBe` 0
-   it "1" $ triangle 1 `shouldBe` 1
-   it "3" $ triangle 2 `shouldBe` 3
 

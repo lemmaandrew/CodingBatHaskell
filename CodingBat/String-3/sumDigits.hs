@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "6" $ sumDigits "aa1bc2d3" `shouldBe` 6
    it "8" $ sumDigits "aa11b33" `shouldBe` 8
    it "0" $ sumDigits "Chocolate" `shouldBe` 0
-   it "6" $ sumDigits "aa1bc2d3" `shouldBe` 6
-   it "8" $ sumDigits "aa11b33" `shouldBe` 8
-   it "0" $ sumDigits "Chocolate" `shouldBe` 0
 

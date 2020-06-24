@@ -12,7 +12,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ has23 [2,5] `shouldBe` True
    it "True" $ has23 [4,3] `shouldBe` True
    it "False" $ has23 [4,5] `shouldBe` False
-   it "True" $ has23 [2,5] `shouldBe` True
-   it "True" $ has23 [4,3] `shouldBe` True
-   it "False" $ has23 [4,5] `shouldBe` False
 

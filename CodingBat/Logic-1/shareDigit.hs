@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ shareDigit 12 23 `shouldBe` True
    it "False" $ shareDigit 12 43 `shouldBe` False
    it "False" $ shareDigit 12 44 `shouldBe` False
-   it "True" $ shareDigit 12 23 `shouldBe` True
-   it "False" $ shareDigit 12 43 `shouldBe` False
-   it "False" $ shareDigit 12 44 `shouldBe` False
 

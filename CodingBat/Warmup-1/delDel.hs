@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"abc\"" $ delDel "adelbc" `shouldBe` "abc"
    it "\"aHello\"" $ delDel "adelHello" `shouldBe` "aHello"
    it "\"adedbc\"" $ delDel "adedbc" `shouldBe` "adedbc"
-   it "\"abc\"" $ delDel "adelbc" `shouldBe` "abc"
-   it "\"aHello\"" $ delDel "adelHello" `shouldBe` "aHello"
-   it "\"adedbc\"" $ delDel "adedbc" `shouldBe` "adedbc"
 

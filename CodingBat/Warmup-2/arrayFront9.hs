@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ arrayFront9 [1,2,9,3,4] `shouldBe` True
    it "False" $ arrayFront9 [1,2,3,4,9] `shouldBe` False
    it "False" $ arrayFront9 [1,2,3,4,5] `shouldBe` False
-   it "True" $ arrayFront9 [1,2,9,3,4] `shouldBe` True
-   it "False" $ arrayFront9 [1,2,3,4,9] `shouldBe` False
-   it "False" $ arrayFront9 [1,2,3,4,5] `shouldBe` False
 

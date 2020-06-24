@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "2" $ count7 717 `shouldBe` 2
    it "1" $ count7 7 `shouldBe` 1
    it "0" $ count7 123 `shouldBe` 0
-   it "2" $ count7 717 `shouldBe` 2
-   it "1" $ count7 7 `shouldBe` 1
-   it "0" $ count7 123 `shouldBe` 0
 

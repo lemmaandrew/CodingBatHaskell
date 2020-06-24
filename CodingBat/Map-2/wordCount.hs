@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "(Map.fromList [(\"a\",2),(\"b\",2),(\"c\",1)])" $ wordCount ["a","b","a","c","b"] `shouldBe` (Map.fromList [("a",2),("b",2),("c",1)])
    it "(Map.fromList [(\"a\",1),(\"b\",1),(\"c\",1)])" $ wordCount ["c","b","a"] `shouldBe` (Map.fromList [("a",1),("b",1),("c",1)])
    it "(Map.fromList [(\"c\",4)])" $ wordCount ["c","c","c","c"] `shouldBe` (Map.fromList [("c",4)])
-   it "(Map.fromList [(\"a\",2),(\"b\",2),(\"c\",1)])" $ wordCount ["a","b","a","c","b"] `shouldBe` (Map.fromList [("a",2),("b",2),("c",1)])
-   it "(Map.fromList [(\"a\",1),(\"b\",1),(\"c\",1)])" $ wordCount ["c","b","a"] `shouldBe` (Map.fromList [("a",1),("b",1),("c",1)])
-   it "(Map.fromList [(\"c\",4)])" $ wordCount ["c","c","c","c"] `shouldBe` (Map.fromList [("c",4)])
 

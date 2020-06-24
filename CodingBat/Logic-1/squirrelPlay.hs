@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ squirrelPlay 70 False `shouldBe` True
    it "False" $ squirrelPlay 95 False `shouldBe` False
    it "True" $ squirrelPlay 95 True `shouldBe` True
-   it "True" $ squirrelPlay 70 False `shouldBe` True
-   it "False" $ squirrelPlay 95 False `shouldBe` False
-   it "True" $ squirrelPlay 95 True `shouldBe` True
 

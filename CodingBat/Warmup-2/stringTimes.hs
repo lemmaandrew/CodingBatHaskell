@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"HiHi\"" $ stringTimes "Hi" 2 `shouldBe` "HiHi"
    it "\"HiHiHi\"" $ stringTimes "Hi" 3 `shouldBe` "HiHiHi"
    it "\"Hi\"" $ stringTimes "Hi" 1 `shouldBe` "Hi"
-   it "\"HiHi\"" $ stringTimes "Hi" 2 `shouldBe` "HiHi"
-   it "\"HiHiHi\"" $ stringTimes "Hi" 3 `shouldBe` "HiHiHi"
-   it "\"Hi\"" $ stringTimes "Hi" 1 `shouldBe` "Hi"
 

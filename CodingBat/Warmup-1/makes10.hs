@@ -12,7 +12,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ makes10 9 10 `shouldBe` True
    it "False" $ makes10 9 9 `shouldBe` False
    it "True" $ makes10 1 9 `shouldBe` True
-   it "True" $ makes10 9 10 `shouldBe` True
-   it "False" $ makes10 9 9 `shouldBe` False
-   it "True" $ makes10 1 9 `shouldBe` True
 

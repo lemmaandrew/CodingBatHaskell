@@ -17,7 +17,4 @@ main = hspec $ describe "Tests:" $ do
    it "6" $ noTeenSum 1 2 3 `shouldBe` 6
    it "3" $ noTeenSum 2 13 1 `shouldBe` 3
    it "3" $ noTeenSum 2 1 14 `shouldBe` 3
-   it "6" $ noTeenSum 1 2 3 `shouldBe` 6
-   it "3" $ noTeenSum 2 13 1 `shouldBe` 3
-   it "3" $ noTeenSum 2 1 14 `shouldBe` 3
 

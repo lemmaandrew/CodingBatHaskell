@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"c13i\"" $ wordEnds "abcXY123XYijk" "XY" `shouldBe` "c13i"
    it "\"13\"" $ wordEnds "XY123XY" "XY" `shouldBe` "13"
    it "\"11\"" $ wordEnds "XY1XY" "XY" `shouldBe` "11"
-   it "\"c13i\"" $ wordEnds "abcXY123XYijk" "XY" `shouldBe` "c13i"
-   it "\"13\"" $ wordEnds "XY123XY" "XY" `shouldBe` "13"
-   it "\"11\"" $ wordEnds "XY1XY" "XY" `shouldBe` "11"
 

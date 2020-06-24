@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "[\"b\",\"c\"]" $ wordsWithout ["a","b","c","a"] "a" `shouldBe` ["b","c"]
    it "[\"a\",\"c\",\"a\"]" $ wordsWithout ["a","b","c","a"] "b" `shouldBe` ["a","c","a"]
    it "[\"a\",\"b\",\"a\"]" $ wordsWithout ["a","b","c","a"] "c" `shouldBe` ["a","b","a"]
-   it "[\"b\",\"c\"]" $ wordsWithout ["a","b","c","a"] "a" `shouldBe` ["b","c"]
-   it "[\"a\",\"c\",\"a\"]" $ wordsWithout ["a","b","c","a"] "b" `shouldBe` ["a","c","a"]
-   it "[\"a\",\"b\",\"a\"]" $ wordsWithout ["a","b","c","a"] "c" `shouldBe` ["a","b","a"]
 

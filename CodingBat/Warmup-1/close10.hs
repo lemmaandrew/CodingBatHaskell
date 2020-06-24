@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "8" $ close10 8 13 `shouldBe` 8
    it "8" $ close10 13 8 `shouldBe` 8
    it "0" $ close10 13 7 `shouldBe` 0
-   it "8" $ close10 8 13 `shouldBe` 8
-   it "8" $ close10 13 8 `shouldBe` 8
-   it "0" $ close10 13 7 `shouldBe` 0
 

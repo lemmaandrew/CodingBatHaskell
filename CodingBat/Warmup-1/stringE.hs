@@ -12,7 +12,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ stringE "Hello" `shouldBe` True
    it "True" $ stringE "Heelle" `shouldBe` True
    it "False" $ stringE "Heelele" `shouldBe` False
-   it "True" $ stringE "Hello" `shouldBe` True
-   it "True" $ stringE "Heelle" `shouldBe` True
-   it "False" $ stringE "Heelele" `shouldBe` False
 

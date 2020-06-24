@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "3" $ maxMod5 2 3 `shouldBe` 3
    it "6" $ maxMod5 6 2 `shouldBe` 6
    it "3" $ maxMod5 3 2 `shouldBe` 3
-   it "3" $ maxMod5 2 3 `shouldBe` 3
-   it "6" $ maxMod5 6 2 `shouldBe` 6
-   it "3" $ maxMod5 3 2 `shouldBe` 3
 

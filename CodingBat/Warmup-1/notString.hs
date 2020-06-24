@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"notcandy\"" $ notString "candy" `shouldBe` "notcandy"
    it "\"notx\"" $ notString "x" `shouldBe` "notx"
    it "\"notbad\"" $ notString "notbad" `shouldBe` "notbad"
-   it "\"notcandy\"" $ notString "candy" `shouldBe` "notcandy"
-   it "\"notx\"" $ notString "x" `shouldBe` "notx"
-   it "\"notbad\"" $ notString "notbad" `shouldBe` "notbad"
 

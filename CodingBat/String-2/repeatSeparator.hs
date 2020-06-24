@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"WordXWordXWord\"" $ repeatSeparator "Word" "X" 3 `shouldBe` "WordXWordXWord"
    it "\"ThisAndThis\"" $ repeatSeparator "This" "And" 2 `shouldBe` "ThisAndThis"
    it "\"This\"" $ repeatSeparator "This" "And" 1 `shouldBe` "This"
-   it "\"WordXWordXWord\"" $ repeatSeparator "Word" "X" 3 `shouldBe` "WordXWordXWord"
-   it "\"ThisAndThis\"" $ repeatSeparator "This" "And" 2 `shouldBe` "ThisAndThis"
-   it "\"This\"" $ repeatSeparator "This" "And" 1 `shouldBe` "This"
 

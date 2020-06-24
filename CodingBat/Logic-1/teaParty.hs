@@ -16,7 +16,4 @@ main = hspec $ describe "Tests:" $ do
    it "1" $ teaParty 6 8 `shouldBe` 1
    it "0" $ teaParty 3 8 `shouldBe` 0
    it "2" $ teaParty 20 6 `shouldBe` 2
-   it "1" $ teaParty 6 8 `shouldBe` 1
-   it "0" $ teaParty 3 8 `shouldBe` 0
-   it "2" $ teaParty 20 6 `shouldBe` 2
 

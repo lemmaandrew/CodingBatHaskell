@@ -12,7 +12,4 @@ main = hspec $ describe "Tests:" $ do
    it "3" $ intMax 1 2 3 `shouldBe` 3
    it "3" $ intMax 1 3 2 `shouldBe` 3
    it "3" $ intMax 3 2 1 `shouldBe` 3
-   it "3" $ intMax 1 2 3 `shouldBe` 3
-   it "3" $ intMax 1 3 2 `shouldBe` 3
-   it "3" $ intMax 3 2 1 `shouldBe` 3
 

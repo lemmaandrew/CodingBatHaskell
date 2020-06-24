@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ canBalance [1,1,1,2,1] `shouldBe` True
    it "False" $ canBalance [2,1,1,2,1] `shouldBe` False
    it "True" $ canBalance [10,10] `shouldBe` True
-   it "True" $ canBalance [1,1,1,2,1] `shouldBe` True
-   it "False" $ canBalance [2,1,1,2,1] `shouldBe` False
-   it "True" $ canBalance [10,10] `shouldBe` True
 

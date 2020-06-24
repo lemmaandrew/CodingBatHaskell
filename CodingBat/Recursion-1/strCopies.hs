@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ strCopies "catcowcat" "cat" 2 `shouldBe` True
    it "False" $ strCopies "catcowcat" "cow" 2 `shouldBe` False
    it "True" $ strCopies "catcowcat" "cow" 1 `shouldBe` True
-   it "True" $ strCopies "catcowcat" "cat" 2 `shouldBe` True
-   it "False" $ strCopies "catcowcat" "cow" 2 `shouldBe` False
-   it "True" $ strCopies "catcowcat" "cow" 1 `shouldBe` True
 

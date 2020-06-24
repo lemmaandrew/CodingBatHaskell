@@ -16,7 +16,4 @@ main = hspec $ describe "Tests:" $ do
    it "3" $ centeredAverage [1,2,3,4,100] `shouldBe` 3
    it "5" $ centeredAverage [1,1,5,5,10,8,7] `shouldBe` 5
    it "(-3)" $ centeredAverage [-10,-4,-2,-4,-2,0] `shouldBe` (-3)
-   it "3" $ centeredAverage [1,2,3,4,100] `shouldBe` 3
-   it "5" $ centeredAverage [1,1,5,5,10,8,7] `shouldBe` 5
-   it "(-3)" $ centeredAverage [-10,-4,-2,-4,-2,0] `shouldBe` (-3)
 

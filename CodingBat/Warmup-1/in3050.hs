@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ in3050 30 31 `shouldBe` True
    it "False" $ in3050 30 41 `shouldBe` False
    it "True" $ in3050 40 50 `shouldBe` True
-   it "True" $ in3050 30 31 `shouldBe` True
-   it "False" $ in3050 30 41 `shouldBe` False
-   it "True" $ in3050 40 50 `shouldBe` True
 

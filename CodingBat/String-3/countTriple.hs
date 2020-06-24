@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "1" $ countTriple "abcXXXabc" `shouldBe` 1
    it "3" $ countTriple "xxxabyyyycd" `shouldBe` 3
    it "0" $ countTriple "a" `shouldBe` 0
-   it "1" $ countTriple "abcXXXabc" `shouldBe` 1
-   it "3" $ countTriple "xxxabyyyycd" `shouldBe` 3
-   it "0" $ countTriple "a" `shouldBe` 0
 

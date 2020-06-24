@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "[2,5,3,6]" $ shiftLeft [6,2,5,3] `shouldBe` [2,5,3,6]
    it "[2,1]" $ shiftLeft [1,2] `shouldBe` [2,1]
    it "[1]" $ shiftLeft [1] `shouldBe` [1]
-   it "[2,5,3,6]" $ shiftLeft [6,2,5,3] `shouldBe` [2,5,3,6]
-   it "[2,1]" $ shiftLeft [1,2] `shouldBe` [2,1]
-   it "[1]" $ shiftLeft [1] `shouldBe` [1]
 

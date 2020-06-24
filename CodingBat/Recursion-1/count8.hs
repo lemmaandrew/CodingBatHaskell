@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "1" $ count8 8 `shouldBe` 1
    it "2" $ count8 818 `shouldBe` 2
    it "4" $ count8 8818 `shouldBe` 4
-   it "1" $ count8 8 `shouldBe` 1
-   it "2" $ count8 818 `shouldBe` 2
-   it "4" $ count8 8818 `shouldBe` 4
 

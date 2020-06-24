@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "9" $ strDist "catcowcat" "cat" `shouldBe` 9
    it "3" $ strDist "catcowcat" "cow" `shouldBe` 3
    it "9" $ strDist "cccatcowcatxx" "cat" `shouldBe` 9
-   it "9" $ strDist "catcowcat" "cat" `shouldBe` 9
-   it "3" $ strDist "catcowcat" "cow" `shouldBe` 3
-   it "9" $ strDist "cccatcowcatxx" "cat" `shouldBe` 9
 

@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"h*e*l*l*o\"" $ allStar "hello" `shouldBe` "h*e*l*l*o"
    it "\"a*b*c\"" $ allStar "abc" `shouldBe` "a*b*c"
    it "\"a*b\"" $ allStar "ab" `shouldBe` "a*b"
-   it "\"h*e*l*l*o\"" $ allStar "hello" `shouldBe` "h*e*l*l*o"
-   it "\"a*b*c\"" $ allStar "abc" `shouldBe` "a*b*c"
-   it "\"a*b\"" $ allStar "ab" `shouldBe` "a*b"
 

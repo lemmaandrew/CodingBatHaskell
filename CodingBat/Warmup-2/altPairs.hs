@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"kien\"" $ altPairs "kitten" `shouldBe` "kien"
    it "\"Chole\"" $ altPairs "Chocolate" `shouldBe` "Chole"
    it "\"Congrr\"" $ altPairs "CodingHorror" `shouldBe` "Congrr"
-   it "\"kien\"" $ altPairs "kitten" `shouldBe` "kien"
-   it "\"Chole\"" $ altPairs "Chocolate" `shouldBe` "Chole"
-   it "\"Congrr\"" $ altPairs "CodingHorror" `shouldBe` "Congrr"
 

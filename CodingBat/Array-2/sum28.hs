@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ sum28 [2,3,2,2,4,2] `shouldBe` True
    it "False" $ sum28 [2,3,2,2,4,2,2] `shouldBe` False
    it "False" $ sum28 [1,2,3,4] `shouldBe` False
-   it "True" $ sum28 [2,3,2,2,4,2] `shouldBe` True
-   it "False" $ sum28 [2,3,2,2,4,2,2] `shouldBe` False
-   it "False" $ sum28 [1,2,3,4] `shouldBe` False
 

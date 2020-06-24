@@ -16,7 +16,4 @@ main = hspec $ describe "Tests:" $ do
    it "(Map.fromList [(\"a\",0),(\"b\",0)])" $ word0 ["a","b","a","b"] `shouldBe` (Map.fromList [("a",0),("b",0)])
    it "(Map.fromList [(\"a\",0),(\"b\",0),(\"c\",0)])" $ word0 ["a","b","a","c","b"] `shouldBe` (Map.fromList [("a",0),("b",0),("c",0)])
    it "(Map.fromList [(\"a\",0),(\"b\",0),(\"c\",0)])" $ word0 ["c","b","a"] `shouldBe` (Map.fromList [("a",0),("b",0),("c",0)])
-   it "(Map.fromList [(\"a\",0),(\"b\",0)])" $ word0 ["a","b","a","b"] `shouldBe` (Map.fromList [("a",0),("b",0)])
-   it "(Map.fromList [(\"a\",0),(\"b\",0),(\"c\",0)])" $ word0 ["a","b","a","c","b"] `shouldBe` (Map.fromList [("a",0),("b",0),("c",0)])
-   it "(Map.fromList [(\"a\",0),(\"b\",0),(\"c\",0)])" $ word0 ["c","b","a"] `shouldBe` (Map.fromList [("a",0),("b",0),("c",0)])
 

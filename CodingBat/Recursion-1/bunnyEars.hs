@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "0" $ bunnyEars 0 `shouldBe` 0
    it "2" $ bunnyEars 1 `shouldBe` 2
    it "4" $ bunnyEars 2 `shouldBe` 4
-   it "0" $ bunnyEars 0 `shouldBe` 0
-   it "2" $ bunnyEars 1 `shouldBe` 2
-   it "4" $ bunnyEars 2 `shouldBe` 4
 

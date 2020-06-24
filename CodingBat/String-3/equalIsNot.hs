@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "False" $ equalIsNot "Thisisnot" `shouldBe` False
    it "True" $ equalIsNot "Thisisnotnot" `shouldBe` True
    it "True" $ equalIsNot "noisxxnotyynotxisi" `shouldBe` True
-   it "False" $ equalIsNot "Thisisnot" `shouldBe` False
-   it "True" $ equalIsNot "Thisisnotnot" `shouldBe` True
-   it "True" $ equalIsNot "noisxxnotyynotxisi" `shouldBe` True
 

@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ parrotTrouble True 6 `shouldBe` True
    it "False" $ parrotTrouble True 7 `shouldBe` False
    it "False" $ parrotTrouble False 6 `shouldBe` False
-   it "True" $ parrotTrouble True 6 `shouldBe` True
-   it "False" $ parrotTrouble True 7 `shouldBe` False
-   it "False" $ parrotTrouble False 6 `shouldBe` False
 

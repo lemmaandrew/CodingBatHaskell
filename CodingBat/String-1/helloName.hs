@@ -12,7 +12,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"HelloBob!\"" $ helloName "Bob" `shouldBe` "HelloBob!"
    it "\"HelloAlice!\"" $ helloName "Alice" `shouldBe` "HelloAlice!"
    it "\"HelloX!\"" $ helloName "X" `shouldBe` "HelloX!"
-   it "\"HelloBob!\"" $ helloName "Bob" `shouldBe` "HelloBob!"
-   it "\"HelloAlice!\"" $ helloName "Alice" `shouldBe` "HelloAlice!"
-   it "\"HelloX!\"" $ helloName "X" `shouldBe` "HelloX!"
 

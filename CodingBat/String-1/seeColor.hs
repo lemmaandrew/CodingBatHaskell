@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"red\"" $ seeColor "redxx" `shouldBe` "red"
    it "\"\"" $ seeColor "xxred" `shouldBe` ""
    it "\"blue\"" $ seeColor "blueTimes" `shouldBe` "blue"
-   it "\"red\"" $ seeColor "redxx" `shouldBe` "red"
-   it "\"\"" $ seeColor "xxred" `shouldBe` ""
-   it "\"blue\"" $ seeColor "blueTimes" `shouldBe` "blue"
 

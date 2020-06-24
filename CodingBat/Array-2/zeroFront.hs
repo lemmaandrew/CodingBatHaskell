@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "[0,0,1,1]" $ zeroFront [1,0,0,1] `shouldBe` [0,0,1,1]
    it "[0,0,1,1,1]" $ zeroFront [0,1,1,0,1] `shouldBe` [0,0,1,1,1]
    it "[0,1]" $ zeroFront [1,0] `shouldBe` [0,1]
-   it "[0,0,1,1]" $ zeroFront [1,0,0,1] `shouldBe` [0,0,1,1]
-   it "[0,0,1,1,1]" $ zeroFront [0,1,1,0,1] `shouldBe` [0,0,1,1,1]
-   it "[0,1]" $ zeroFront [1,0] `shouldBe` [0,1]
 

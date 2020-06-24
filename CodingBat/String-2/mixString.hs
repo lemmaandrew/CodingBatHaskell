@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"axbycz\"" $ mixString "abc" "xyz" `shouldBe` "axbycz"
    it "\"HTihere\"" $ mixString "Hi" "There" `shouldBe` "HTihere"
    it "\"xTxhxexre\"" $ mixString "xxxx" "There" `shouldBe` "xTxhxexre"
-   it "\"axbycz\"" $ mixString "abc" "xyz" `shouldBe` "axbycz"
-   it "\"HTihere\"" $ mixString "Hi" "There" `shouldBe` "HTihere"
-   it "\"xTxhxexre\"" $ mixString "xxxx" "There" `shouldBe` "xTxhxexre"
 

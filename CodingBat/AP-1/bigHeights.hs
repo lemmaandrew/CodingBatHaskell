@@ -16,7 +16,4 @@ main = hspec $ describe "Tests:" $ do
    it "1" $ bigHeights [5,3,6,7,2] 2 4 `shouldBe` 1
    it "0" $ bigHeights [5,3,6,7,2] 0 1 `shouldBe` 0
    it "1" $ bigHeights [5,3,6,7,2] 0 4 `shouldBe` 1
-   it "1" $ bigHeights [5,3,6,7,2] 2 4 `shouldBe` 1
-   it "0" $ bigHeights [5,3,6,7,2] 0 1 `shouldBe` 0
-   it "1" $ bigHeights [5,3,6,7,2] 0 4 `shouldBe` 1
 

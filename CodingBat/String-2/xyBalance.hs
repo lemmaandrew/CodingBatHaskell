@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ xyBalance "aaxbby" `shouldBe` True
    it "False" $ xyBalance "aaxbb" `shouldBe` False
    it "False" $ xyBalance "yaaxbb" `shouldBe` False
-   it "True" $ xyBalance "aaxbby" `shouldBe` True
-   it "False" $ xyBalance "aaxbb" `shouldBe` False
-   it "False" $ xyBalance "yaaxbb" `shouldBe` False
 

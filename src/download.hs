@@ -25,7 +25,7 @@ module Src.Download ( Check
                     ) where
 
 import Debug.Trace
-import Data.List (isInfixOf, intercalate, groupBy)
+import Data.List (isInfixOf, intercalate, groupBy, nub)
 import Data.List.Split (splitOn)
 import Data.Maybe (catMaybes)
 import Text.Printf
@@ -52,7 +52,7 @@ getProblem url = do
             Just page' -> return $ Just page'
             Nothing -> trace ("Failed getProblem with url: " ++ url) (return Nothing)
         where
-    getChecks = map ((\[x,y] -> (x,y)) . splitOn " \8594 ") . filter (isInfixOf "\8594")
+    getChecks = nub . map ((\[x,y] -> (x,y)) . splitOn " \8594 ") . filter (isInfixOf "\8594")
     getPage = do
         names <- texts $ "span" @: [hasClass "h2"]
         desc <- text $ "div" @: [hasClass "minh"]

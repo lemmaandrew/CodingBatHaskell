@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"ls\"" $ lastChars "last" "chars" `shouldBe` "ls"
    it "\"ya\"" $ lastChars "yo" "java" `shouldBe` "ya"
    it "\"h@\"" $ lastChars "hi" "" `shouldBe` "h@"
-   it "\"ls\"" $ lastChars "last" "chars" `shouldBe` "ls"
-   it "\"ya\"" $ lastChars "yo" "java" `shouldBe` "ya"
-   it "\"h@\"" $ lastChars "hi" "" `shouldBe` "h@"
 

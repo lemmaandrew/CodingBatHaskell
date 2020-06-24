@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "(Map.fromList [(\"a\",True),(\"b\",True),(\"c\",False)])" $ wordMultiple ["a","b","a","c","b"] `shouldBe` (Map.fromList [("a",True),("b",True),("c",False)])
    it "(Map.fromList [(\"a\",False),(\"b\",False),(\"c\",False)])" $ wordMultiple ["c","b","a"] `shouldBe` (Map.fromList [("a",False),("b",False),("c",False)])
    it "(Map.fromList [(\"c\",True)])" $ wordMultiple ["c","c","c","c"] `shouldBe` (Map.fromList [("c",True)])
-   it "(Map.fromList [(\"a\",True),(\"b\",True),(\"c\",False)])" $ wordMultiple ["a","b","a","c","b"] `shouldBe` (Map.fromList [("a",True),("b",True),("c",False)])
-   it "(Map.fromList [(\"a\",False),(\"b\",False),(\"c\",False)])" $ wordMultiple ["c","b","a"] `shouldBe` (Map.fromList [("a",False),("b",False),("c",False)])
-   it "(Map.fromList [(\"c\",True)])" $ wordMultiple ["c","c","c","c"] `shouldBe` (Map.fromList [("c",True)])
 

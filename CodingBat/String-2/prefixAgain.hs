@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ prefixAgain "abXYabc" 1 `shouldBe` True
    it "True" $ prefixAgain "abXYabc" 2 `shouldBe` True
    it "False" $ prefixAgain "abXYabc" 3 `shouldBe` False
-   it "True" $ prefixAgain "abXYabc" 1 `shouldBe` True
-   it "True" $ prefixAgain "abXYabc" 2 `shouldBe` True
-   it "False" $ prefixAgain "abXYabc" 3 `shouldBe` False
 

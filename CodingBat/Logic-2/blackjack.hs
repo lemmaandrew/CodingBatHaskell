@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "21" $ blackjack 19 21 `shouldBe` 21
    it "21" $ blackjack 21 19 `shouldBe` 21
    it "19" $ blackjack 19 22 `shouldBe` 19
-   it "21" $ blackjack 19 21 `shouldBe` 21
-   it "21" $ blackjack 21 19 `shouldBe` 21
-   it "19" $ blackjack 19 22 `shouldBe` 19
 

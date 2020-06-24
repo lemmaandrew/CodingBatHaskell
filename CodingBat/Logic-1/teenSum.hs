@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "7" $ teenSum 3 4 `shouldBe` 7
    it "19" $ teenSum 10 13 `shouldBe` 19
    it "19" $ teenSum 13 2 `shouldBe` 19
-   it "7" $ teenSum 3 4 `shouldBe` 7
-   it "19" $ teenSum 10 13 `shouldBe` 19
-   it "19" $ teenSum 13 2 `shouldBe` 19
 

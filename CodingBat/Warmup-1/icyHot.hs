@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ icyHot 120 (-1) `shouldBe` True
    it "True" $ icyHot (-1) 120 `shouldBe` True
    it "False" $ icyHot 2 120 `shouldBe` False
-   it "True" $ icyHot 120 (-1) `shouldBe` True
-   it "True" $ icyHot (-1) 120 `shouldBe` True
-   it "False" $ icyHot 2 120 `shouldBe` False
 

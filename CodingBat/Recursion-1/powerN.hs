@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "3" $ powerN 3 1 `shouldBe` 3
    it "9" $ powerN 3 2 `shouldBe` 9
    it "27" $ powerN 3 3 `shouldBe` 27
-   it "3" $ powerN 3 1 `shouldBe` 3
-   it "9" $ powerN 3 2 `shouldBe` 9
-   it "27" $ powerN 3 3 `shouldBe` 27
 

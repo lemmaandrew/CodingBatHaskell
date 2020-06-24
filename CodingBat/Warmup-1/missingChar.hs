@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"ktten\"" $ missingChar "kitten" 1 `shouldBe` "ktten"
    it "\"itten\"" $ missingChar "kitten" 0 `shouldBe` "itten"
    it "\"kittn\"" $ missingChar "kitten" 4 `shouldBe` "kittn"
-   it "\"ktten\"" $ missingChar "kitten" 1 `shouldBe` "ktten"
-   it "\"itten\"" $ missingChar "kitten" 0 `shouldBe` "itten"
-   it "\"kittn\"" $ missingChar "kitten" 4 `shouldBe` "kittn"
 

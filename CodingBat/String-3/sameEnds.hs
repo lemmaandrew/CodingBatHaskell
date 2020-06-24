@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"ab\"" $ sameEnds "abXYab" `shouldBe` "ab"
    it "\"x\"" $ sameEnds "xx" `shouldBe` "x"
    it "\"x\"" $ sameEnds "xxx" `shouldBe` "x"
-   it "\"ab\"" $ sameEnds "abXYab" `shouldBe` "ab"
-   it "\"x\"" $ sameEnds "xx" `shouldBe` "x"
-   it "\"x\"" $ sameEnds "xxx" `shouldBe` "x"
 

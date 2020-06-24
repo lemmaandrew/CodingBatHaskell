@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"yza\"" $ stringClean "yyzzza" `shouldBe` "yza"
    it "\"abcd\"" $ stringClean "abbbcdd" `shouldBe` "abcd"
    it "\"Helo\"" $ stringClean "Hello" `shouldBe` "Helo"
-   it "\"yza\"" $ stringClean "yyzzza" `shouldBe` "yza"
-   it "\"abcd\"" $ stringClean "abbbcdd" `shouldBe` "abcd"
-   it "\"Helo\"" $ stringClean "Hello" `shouldBe` "Helo"
 

@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ closeFar 1 2 10 `shouldBe` True
    it "False" $ closeFar 1 2 3 `shouldBe` False
    it "True" $ closeFar 4 1 3 `shouldBe` True
-   it "True" $ closeFar 1 2 10 `shouldBe` True
-   it "False" $ closeFar 1 2 3 `shouldBe` False
-   it "True" $ closeFar 4 1 3 `shouldBe` True
 

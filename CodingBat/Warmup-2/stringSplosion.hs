@@ -12,7 +12,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"CCoCodCode\"" $ stringSplosion "Code" `shouldBe` "CCoCodCode"
    it "\"aababc\"" $ stringSplosion "abc" `shouldBe` "aababc"
    it "\"aab\"" $ stringSplosion "ab" `shouldBe` "aab"
-   it "\"CCoCodCode\"" $ stringSplosion "Code" `shouldBe` "CCoCodCode"
-   it "\"aababc\"" $ stringSplosion "abc" `shouldBe` "aababc"
-   it "\"aab\"" $ stringSplosion "ab" `shouldBe` "aab"
 

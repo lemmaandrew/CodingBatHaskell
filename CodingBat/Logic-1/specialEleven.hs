@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ specialEleven 22 `shouldBe` True
    it "True" $ specialEleven 23 `shouldBe` True
    it "False" $ specialEleven 24 `shouldBe` False
-   it "True" $ specialEleven 22 `shouldBe` True
-   it "True" $ specialEleven 23 `shouldBe` True
-   it "False" $ specialEleven 24 `shouldBe` False
 

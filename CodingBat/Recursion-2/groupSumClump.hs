@@ -17,7 +17,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ groupSumClump 0 [2,4,8] 10 `shouldBe` True
    it "True" $ groupSumClump 0 [1,2,4,8,1] 14 `shouldBe` True
    it "False" $ groupSumClump 0 [2,4,4,8] 14 `shouldBe` False
-   it "True" $ groupSumClump 0 [2,4,8] 10 `shouldBe` True
-   it "True" $ groupSumClump 0 [1,2,4,8,1] 14 `shouldBe` True
-   it "False" $ groupSumClump 0 [2,4,4,8] 14 `shouldBe` False
 

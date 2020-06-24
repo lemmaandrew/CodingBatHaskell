@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ scores100 [1,100,100] `shouldBe` True
    it "False" $ scores100 [1,100,99,100] `shouldBe` False
    it "True" $ scores100 [100,1,100,100] `shouldBe` True
-   it "True" $ scores100 [1,100,100] `shouldBe` True
-   it "False" $ scores100 [1,100,99,100] `shouldBe` False
-   it "True" $ scores100 [100,1,100,100] `shouldBe` True
 

@@ -12,7 +12,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"TThhee\"" $ doubleChar "The" `shouldBe` "TThhee"
    it "\"AAAAbbbb\"" $ doubleChar "AAbb" `shouldBe` "AAAAbbbb"
    it "\"HHii--TThheerree\"" $ doubleChar "Hi-There" `shouldBe` "HHii--TThheerree"
-   it "\"TThhee\"" $ doubleChar "The" `shouldBe` "TThhee"
-   it "\"AAAAbbbb\"" $ doubleChar "AAbb" `shouldBe` "AAAAbbbb"
-   it "\"HHii--TThheerree\"" $ doubleChar "Hi-There" `shouldBe` "HHii--TThheerree"
 

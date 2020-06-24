@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "[\"not\",\"too\"]" $ noLong ["this","not","too","long"] `shouldBe` ["not","too"]
    it "[\"a\",\"bbb\"]" $ noLong ["a","bbb","cccc"] `shouldBe` ["a","bbb"]
    it "[]" $ noLong ["cccc","cccc","cccc"] `shouldBe` []
-   it "[\"not\",\"too\"]" $ noLong ["this","not","too","long"] `shouldBe` ["not","too"]
-   it "[\"a\",\"bbb\"]" $ noLong ["a","bbb","cccc"] `shouldBe` ["a","bbb"]
-   it "[]" $ noLong ["cccc","cccc","cccc"] `shouldBe` []
 

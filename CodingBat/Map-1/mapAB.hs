@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "(Map.fromList [(\"a\",\"Hi\"),(\"ab\",\"HiThere\"),(\"b\",\"There\")])" $ mapAB (Map.fromList [("a","Hi"),("b","There")]) `shouldBe` (Map.fromList [("a","Hi"),("ab","HiThere"),("b","There")])
    it "(Map.fromList [(\"a\",\"Hi\")])" $ mapAB (Map.fromList [("a","Hi")]) `shouldBe` (Map.fromList [("a","Hi")])
    it "(Map.fromList [(\"b\",\"There\")])" $ mapAB (Map.fromList [("b","There")]) `shouldBe` (Map.fromList [("b","There")])
-   it "(Map.fromList [(\"a\",\"Hi\"),(\"ab\",\"HiThere\"),(\"b\",\"There\")])" $ mapAB (Map.fromList [("a","Hi"),("b","There")]) `shouldBe` (Map.fromList [("a","Hi"),("ab","HiThere"),("b","There")])
-   it "(Map.fromList [(\"a\",\"Hi\")])" $ mapAB (Map.fromList [("a","Hi")]) `shouldBe` (Map.fromList [("a","Hi")])
-   it "(Map.fromList [(\"b\",\"There\")])" $ mapAB (Map.fromList [("b","There")]) `shouldBe` (Map.fromList [("b","There")])
 

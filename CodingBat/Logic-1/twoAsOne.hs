@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ twoAsOne 1 2 3 `shouldBe` True
    it "True" $ twoAsOne 3 1 2 `shouldBe` True
    it "False" $ twoAsOne 3 2 2 `shouldBe` False
-   it "True" $ twoAsOne 1 2 3 `shouldBe` True
-   it "True" $ twoAsOne 3 1 2 `shouldBe` True
-   it "False" $ twoAsOne 3 2 2 `shouldBe` False
 

@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"llollollo\"" $ repeatEnd "Hello" 3 `shouldBe` "llollollo"
    it "\"lolo\"" $ repeatEnd "Hello" 2 `shouldBe` "lolo"
    it "\"o\"" $ repeatEnd "Hello" 1 `shouldBe` "o"
-   it "\"llollollo\"" $ repeatEnd "Hello" 3 `shouldBe` "llollollo"
-   it "\"lolo\"" $ repeatEnd "Hello" 2 `shouldBe` "lolo"
-   it "\"o\"" $ repeatEnd "Hello" 1 `shouldBe` "o"
 

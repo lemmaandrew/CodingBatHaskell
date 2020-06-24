@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"rexx\"" $ endX "xxre" `shouldBe` "rexx"
    it "\"hixxxx\"" $ endX "xxhixx" `shouldBe` "hixxxx"
    it "\"hihixxx\"" $ endX "xhixhix" `shouldBe` "hihixxx"
-   it "\"rexx\"" $ endX "xxre" `shouldBe` "rexx"
-   it "\"hixxxx\"" $ endX "xxhixx" `shouldBe` "hixxxx"
-   it "\"hihixxx\"" $ endX "xhixhix" `shouldBe` "hihixxx"
 

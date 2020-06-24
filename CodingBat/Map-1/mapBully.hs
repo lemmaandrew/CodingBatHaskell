@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "(Map.fromList [(\"a\",\"\"),(\"b\",\"candy\")])" $ mapBully (Map.fromList [("a","candy"),("b","dirt")]) `shouldBe` (Map.fromList [("a",""),("b","candy")])
    it "(Map.fromList [(\"a\",\"\"),(\"b\",\"candy\")])" $ mapBully (Map.fromList [("a","candy")]) `shouldBe` (Map.fromList [("a",""),("b","candy")])
    it "(Map.fromList [(\"a\",\"\"),(\"b\",\"candy\"),(\"c\",\"meh\")])" $ mapBully (Map.fromList [("a","candy"),("b","carrot"),("c","meh")]) `shouldBe` (Map.fromList [("a",""),("b","candy"),("c","meh")])
-   it "(Map.fromList [(\"a\",\"\"),(\"b\",\"candy\")])" $ mapBully (Map.fromList [("a","candy"),("b","dirt")]) `shouldBe` (Map.fromList [("a",""),("b","candy")])
-   it "(Map.fromList [(\"a\",\"\"),(\"b\",\"candy\")])" $ mapBully (Map.fromList [("a","candy")]) `shouldBe` (Map.fromList [("a",""),("b","candy")])
-   it "(Map.fromList [(\"a\",\"\"),(\"b\",\"candy\"),(\"c\",\"meh\")])" $ mapBully (Map.fromList [("a","candy"),("b","carrot"),("c","meh")]) `shouldBe` (Map.fromList [("a",""),("b","candy"),("c","meh")])
 

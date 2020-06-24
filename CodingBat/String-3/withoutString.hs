@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"Hethere\"" $ withoutString "Hellothere" "llo" `shouldBe` "Hethere"
    it "\"Hllothr\"" $ withoutString "Hellothere" "e" `shouldBe` "Hllothr"
    it "\"Hellothere\"" $ withoutString "Hellothere" "x" `shouldBe` "Hellothere"
-   it "\"Hethere\"" $ withoutString "Hellothere" "llo" `shouldBe` "Hethere"
-   it "\"Hllothr\"" $ withoutString "Hellothere" "e" `shouldBe` "Hllothr"
-   it "\"Hellothere\"" $ withoutString "Hellothere" "x" `shouldBe` "Hellothere"
 

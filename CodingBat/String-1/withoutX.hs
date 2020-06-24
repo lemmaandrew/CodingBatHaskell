@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"Hi\"" $ withoutX "xHix" `shouldBe` "Hi"
    it "\"Hi\"" $ withoutX "xHi" `shouldBe` "Hi"
    it "\"Hxi\"" $ withoutX "Hxix" `shouldBe` "Hxi"
-   it "\"Hi\"" $ withoutX "xHix" `shouldBe` "Hi"
-   it "\"Hi\"" $ withoutX "xHi" `shouldBe` "Hi"
-   it "\"Hxi\"" $ withoutX "Hxix" `shouldBe` "Hxi"
 

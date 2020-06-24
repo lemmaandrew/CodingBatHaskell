@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ less20 18 `shouldBe` True
    it "True" $ less20 19 `shouldBe` True
    it "False" $ less20 20 `shouldBe` False
-   it "True" $ less20 18 `shouldBe` True
-   it "True" $ less20 19 `shouldBe` True
-   it "False" $ less20 20 `shouldBe` False
 

@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "[4,5]" $ make2 [4,5] [1,2,3] `shouldBe` [4,5]
    it "[4,1]" $ make2 [4] [1,2,3] `shouldBe` [4,1]
    it "[1,2]" $ make2 [] [1,2] `shouldBe` [1,2]
-   it "[4,5]" $ make2 [4,5] [1,2,3] `shouldBe` [4,5]
-   it "[4,1]" $ make2 [4] [1,2,3] `shouldBe` [4,1]
-   it "[1,2]" $ make2 [] [1,2] `shouldBe` [1,2]
 

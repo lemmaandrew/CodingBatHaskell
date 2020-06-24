@@ -12,7 +12,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"eodc\"" $ frontBack "code" `shouldBe` "eodc"
    it "\"a\"" $ frontBack "a" `shouldBe` "a"
    it "\"ba\"" $ frontBack "ab" `shouldBe` "ba"
-   it "\"eodc\"" $ frontBack "code" `shouldBe` "eodc"
-   it "\"a\"" $ frontBack "a" `shouldBe` "a"
-   it "\"ba\"" $ frontBack "ab" `shouldBe` "ba"
 

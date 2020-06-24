@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ sameStarChar "xy*yzz" `shouldBe` True
    it "False" $ sameStarChar "xy*zzz" `shouldBe` False
    it "True" $ sameStarChar "*xa*az" `shouldBe` True
-   it "True" $ sameStarChar "xy*yzz" `shouldBe` True
-   it "False" $ sameStarChar "xy*zzz" `shouldBe` False
-   it "True" $ sameStarChar "*xa*az" `shouldBe` True
 

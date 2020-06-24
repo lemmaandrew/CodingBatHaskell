@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ mixStart "mixsnacks" `shouldBe` True
    it "True" $ mixStart "pixsnacks" `shouldBe` True
    it "False" $ mixStart "pizsnacks" `shouldBe` False
-   it "True" $ mixStart "mixsnacks" `shouldBe` True
-   it "True" $ mixStart "pixsnacks" `shouldBe` True
-   it "False" $ mixStart "pizsnacks" `shouldBe` False
 

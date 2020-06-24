@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"zpXzp\"" $ zipZap "zipXzap" `shouldBe` "zpXzp"
    it "\"zpzp\"" $ zipZap "zopzop" `shouldBe` "zpzp"
    it "\"zzzpzp\"" $ zipZap "zzzopzop" `shouldBe` "zzzpzp"
-   it "\"zpXzp\"" $ zipZap "zipXzap" `shouldBe` "zpXzp"
-   it "\"zpzp\"" $ zipZap "zopzop" `shouldBe` "zpzp"
-   it "\"zzzpzp\"" $ zipZap "zzzopzop" `shouldBe` "zzzpzp"
 

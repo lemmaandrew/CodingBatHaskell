@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"<<Yay>>\"" $ makeOutWord "<<>>" "Yay" `shouldBe` "<<Yay>>"
    it "\"<<WooHoo>>\"" $ makeOutWord "<<>>" "WooHoo" `shouldBe` "<<WooHoo>>"
    it "\"[[word]]\"" $ makeOutWord "[[]]" "word" `shouldBe` "[[word]]"
-   it "\"<<Yay>>\"" $ makeOutWord "<<>>" "Yay" `shouldBe` "<<Yay>>"
-   it "\"<<WooHoo>>\"" $ makeOutWord "<<>>" "WooHoo" `shouldBe` "<<WooHoo>>"
-   it "\"[[word]]\"" $ makeOutWord "[[]]" "word" `shouldBe` "[[word]]"
 

@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"he\"" $ atFirst "hello" `shouldBe` "he"
    it "\"hi\"" $ atFirst "hi" `shouldBe` "hi"
    it "\"h@\"" $ atFirst "h" `shouldBe` "h@"
-   it "\"he\"" $ atFirst "hello" `shouldBe` "he"
-   it "\"hi\"" $ atFirst "hi" `shouldBe` "hi"
-   it "\"h@\"" $ atFirst "h" `shouldBe` "h@"
 

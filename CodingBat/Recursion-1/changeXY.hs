@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"codey\"" $ changeXY "codex" `shouldBe` "codey"
    it "\"yyhiyy\"" $ changeXY "xxhixx" `shouldBe` "yyhiyy"
    it "\"yhiyhiy\"" $ changeXY "xhixhix" `shouldBe` "yhiyhiy"
-   it "\"codey\"" $ changeXY "codex" `shouldBe` "codey"
-   it "\"yyhiyy\"" $ changeXY "xxhixx" `shouldBe` "yyhiyy"
-   it "\"yhiyhiy\"" $ changeXY "xhixhix" `shouldBe` "yhiyhiy"
 

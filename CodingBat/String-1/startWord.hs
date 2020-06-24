@@ -16,7 +16,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"hi\"" $ startWord "hippo" "hi" `shouldBe` "hi"
    it "\"hip\"" $ startWord "hippo" "xip" `shouldBe` "hip"
    it "\"h\"" $ startWord "hippo" "i" `shouldBe` "h"
-   it "\"hi\"" $ startWord "hippo" "hi" `shouldBe` "hi"
-   it "\"hip\"" $ startWord "hippo" "xip" `shouldBe` "hip"
-   it "\"h\"" $ startWord "hippo" "i" `shouldBe` "h"
 

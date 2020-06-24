@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"Mrce\"" $ everyNth "Miracle" 2 `shouldBe` "Mrce"
    it "\"aceg\"" $ everyNth "abcdefg" 2 `shouldBe` "aceg"
    it "\"adg\"" $ everyNth "abcdefg" 3 `shouldBe` "adg"
-   it "\"Mrce\"" $ everyNth "Miracle" 2 `shouldBe` "Mrce"
-   it "\"aceg\"" $ everyNth "abcdefg" 2 `shouldBe` "aceg"
-   it "\"adg\"" $ everyNth "abcdefg" 3 `shouldBe` "adg"
 

@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "2" $ start1 [1,2,3] [1,3] `shouldBe` 2
    it "1" $ start1 [7,2,3] [1] `shouldBe` 1
    it "1" $ start1 [1,2] [] `shouldBe` 1
-   it "2" $ start1 [1,2,3] [1,3] `shouldBe` 2
-   it "1" $ start1 [7,2,3] [1] `shouldBe` 1
-   it "1" $ start1 [1,2] [] `shouldBe` 1
 

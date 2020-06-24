@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ frontAgain "edited" `shouldBe` True
    it "False" $ frontAgain "edit" `shouldBe` False
    it "True" $ frontAgain "ed" `shouldBe` True
-   it "True" $ frontAgain "edited" `shouldBe` True
-   it "False" $ frontAgain "edit" `shouldBe` False
-   it "True" $ frontAgain "ed" `shouldBe` True
 

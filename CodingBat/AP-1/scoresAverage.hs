@@ -19,7 +19,4 @@ main = hspec $ describe "Tests:" $ do
    it "4" $ scoresAverage [2,2,4,4] `shouldBe` 4
    it "4" $ scoresAverage [4,4,4,2,2,2] `shouldBe` 4
    it "4" $ scoresAverage [3,4,5,1,2,3] `shouldBe` 4
-   it "4" $ scoresAverage [2,2,4,4] `shouldBe` 4
-   it "4" $ scoresAverage [4,4,4,2,2,2] `shouldBe` 4
-   it "4" $ scoresAverage [3,4,5,1,2,3] `shouldBe` 4
 

@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "[9,90]" $ copyEndy [9,11,90,22,6] 2 `shouldBe` [9,90]
    it "[9,90,6]" $ copyEndy [9,11,90,22,6] 3 `shouldBe` [9,90,6]
    it "[1,1]" $ copyEndy [12,1,1,13,0,20] 2 `shouldBe` [1,1]
-   it "[9,90]" $ copyEndy [9,11,90,22,6] 2 `shouldBe` [9,90]
-   it "[9,90,6]" $ copyEndy [9,11,90,22,6] 3 `shouldBe` [9,90,6]
-   it "[1,1]" $ copyEndy [12,1,1,13,0,20] 2 `shouldBe` [1,1]
 

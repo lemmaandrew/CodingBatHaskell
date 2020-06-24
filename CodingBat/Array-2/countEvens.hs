@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "3" $ countEvens [2,1,2,3,4] `shouldBe` 3
    it "3" $ countEvens [2,2,0] `shouldBe` 3
    it "0" $ countEvens [1,3,5] `shouldBe` 0
-   it "3" $ countEvens [2,1,2,3,4] `shouldBe` 3
-   it "3" $ countEvens [2,2,0] `shouldBe` 3
-   it "0" $ countEvens [1,3,5] `shouldBe` 0
 

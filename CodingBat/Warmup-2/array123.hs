@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ array123 [1,1,2,3,1] `shouldBe` True
    it "False" $ array123 [1,1,2,4,1] `shouldBe` False
    it "True" $ array123 [1,1,2,1,2,3] `shouldBe` True
-   it "True" $ array123 [1,1,2,3,1] `shouldBe` True
-   it "False" $ array123 [1,1,2,4,1] `shouldBe` False
-   it "True" $ array123 [1,1,2,1,2,3] `shouldBe` True
 

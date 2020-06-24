@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "2" $ strCount "catcowcat" "cat" `shouldBe` 2
    it "1" $ strCount "catcowcat" "cow" `shouldBe` 1
    it "0" $ strCount "catcowcat" "dog" `shouldBe` 0
-   it "2" $ strCount "catcowcat" "cat" `shouldBe` 2
-   it "1" $ strCount "catcowcat" "cow" `shouldBe` 1
-   it "0" $ strCount "catcowcat" "dog" `shouldBe` 0
 

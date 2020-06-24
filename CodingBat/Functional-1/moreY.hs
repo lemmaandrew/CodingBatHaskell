@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "[\"yay\",\"yby\",\"ycy\"]" $ moreY ["a","b","c"] `shouldBe` ["yay","yby","ycy"]
    it "[\"yhelloy\",\"ytherey\"]" $ moreY ["hello","there"] `shouldBe` ["yhelloy","ytherey"]
    it "[\"yyayy\"]" $ moreY ["yay"] `shouldBe` ["yyayy"]
-   it "[\"yay\",\"yby\",\"ycy\"]" $ moreY ["a","b","c"] `shouldBe` ["yay","yby","ycy"]
-   it "[\"yhelloy\",\"ytherey\"]" $ moreY ["hello","there"] `shouldBe` ["yhelloy","ytherey"]
-   it "[\"yyayy\"]" $ moreY ["yay"] `shouldBe` ["yyayy"]
 

@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"bca\"" $ oneTwo "abc" `shouldBe` "bca"
    it "\"cat\"" $ oneTwo "tca" `shouldBe` "cat"
    it "\"catdog\"" $ oneTwo "tcagdo" `shouldBe` "catdog"
-   it "\"bca\"" $ oneTwo "abc" `shouldBe` "bca"
-   it "\"cat\"" $ oneTwo "tca" `shouldBe` "cat"
-   it "\"catdog\"" $ oneTwo "tcagdo" `shouldBe` "catdog"
 

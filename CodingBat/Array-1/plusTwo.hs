@@ -12,7 +12,4 @@ main = hspec $ describe "Tests:" $ do
    it "[1,2,3,4]" $ plusTwo [1,2] [3,4] `shouldBe` [1,2,3,4]
    it "[4,4,2,2]" $ plusTwo [4,4] [2,2] `shouldBe` [4,4,2,2]
    it "[9,2,3,4]" $ plusTwo [9,2] [3,4] `shouldBe` [9,2,3,4]
-   it "[1,2,3,4]" $ plusTwo [1,2] [3,4] `shouldBe` [1,2,3,4]
-   it "[4,4,2,2]" $ plusTwo [4,4] [2,2] `shouldBe` [4,4,2,2]
-   it "[9,2,3,4]" $ plusTwo [9,2] [3,4] `shouldBe` [9,2,3,4]
 

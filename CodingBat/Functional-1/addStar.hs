@@ -12,7 +12,4 @@ main = hspec $ describe "Tests:" $ do
    it "[\"a*\",\"bb*\",\"ccc*\"]" $ addStar ["a","bb","ccc"] `shouldBe` ["a*","bb*","ccc*"]
    it "[\"hello*\",\"there*\"]" $ addStar ["hello","there"] `shouldBe` ["hello*","there*"]
    it "[\"**\"]" $ addStar ["*"] `shouldBe` ["**"]
-   it "[\"a*\",\"bb*\",\"ccc*\"]" $ addStar ["a","bb","ccc"] `shouldBe` ["a*","bb*","ccc*"]
-   it "[\"hello*\",\"there*\"]" $ addStar ["hello","there"] `shouldBe` ["hello*","there*"]
-   it "[\"**\"]" $ addStar ["*"] `shouldBe` ["**"]
 

@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ splitArray [2,2] `shouldBe` True
    it "False" $ splitArray [2,3] `shouldBe` False
    it "True" $ splitArray [5,2,3] `shouldBe` True
-   it "True" $ splitArray [2,2] `shouldBe` True
-   it "False" $ splitArray [2,3] `shouldBe` False
-   it "True" $ splitArray [5,2,3] `shouldBe` True
 

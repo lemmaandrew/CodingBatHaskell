@@ -32,3 +32,7 @@
 * Made download.hs more readable
 * Now prints out what pages are being downloaded as they are downloaded
 * Changed asserts to hspecs
+
+## 0.1.3.1 -- 2020-06-24
+
+* Nubbed duplicate tests

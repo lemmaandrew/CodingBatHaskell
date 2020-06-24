@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "7" $ sortaSum 3 4 `shouldBe` 7
    it "20" $ sortaSum 9 4 `shouldBe` 20
    it "21" $ sortaSum 10 11 `shouldBe` 21
-   it "7" $ sortaSum 3 4 `shouldBe` 7
-   it "20" $ sortaSum 9 4 `shouldBe` 20
-   it "21" $ sortaSum 10 11 `shouldBe` 21
 

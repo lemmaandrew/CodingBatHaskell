@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"hiHellohi\"" $ comboString "Hello" "hi" `shouldBe` "hiHellohi"
    it "\"hiHellohi\"" $ comboString "hi" "Hello" `shouldBe` "hiHellohi"
    it "\"baaab\"" $ comboString "aaa" "b" `shouldBe` "baaab"
-   it "\"hiHellohi\"" $ comboString "Hello" "hi" `shouldBe` "hiHellohi"
-   it "\"hiHellohi\"" $ comboString "hi" "Hello" `shouldBe` "hiHellohi"
-   it "\"baaab\"" $ comboString "aaa" "b" `shouldBe` "baaab"
 

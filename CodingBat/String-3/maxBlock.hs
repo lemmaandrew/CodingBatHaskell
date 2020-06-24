@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "2" $ maxBlock "hoopla" `shouldBe` 2
    it "3" $ maxBlock "abbCCCddBBBxx" `shouldBe` 3
    it "0" $ maxBlock "" `shouldBe` 0
-   it "2" $ maxBlock "hoopla" `shouldBe` 2
-   it "3" $ maxBlock "abbCCCddBBBxx" `shouldBe` 3
-   it "0" $ maxBlock "" `shouldBe` 0
 

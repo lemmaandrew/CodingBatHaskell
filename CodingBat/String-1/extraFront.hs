@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"HeHeHe\"" $ extraFront "Hello" `shouldBe` "HeHeHe"
    it "\"ababab\"" $ extraFront "ab" `shouldBe` "ababab"
    it "\"HHH\"" $ extraFront "H" `shouldBe` "HHH"
-   it "\"HeHeHe\"" $ extraFront "Hello" `shouldBe` "HeHeHe"
-   it "\"ababab\"" $ extraFront "ab" `shouldBe` "ababab"
-   it "\"HHH\"" $ extraFront "H" `shouldBe` "HHH"
 

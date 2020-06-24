@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"pak\"" $ stringYak "yakpak" `shouldBe` "pak"
    it "\"pak\"" $ stringYak "pakyak" `shouldBe` "pak"
    it "\"123ya\"" $ stringYak "yak123ya" `shouldBe` "123ya"
-   it "\"pak\"" $ stringYak "yakpak" `shouldBe` "pak"
-   it "\"pak\"" $ stringYak "pakyak" `shouldBe` "pak"
-   it "\"123ya\"" $ stringYak "yak123ya" `shouldBe` "123ya"
 

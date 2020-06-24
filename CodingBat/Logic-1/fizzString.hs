@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"Fizz\"" $ fizzString "fig" `shouldBe` "Fizz"
    it "\"Buzz\"" $ fizzString "dib" `shouldBe` "Buzz"
    it "\"FizzBuzz\"" $ fizzString "fib" `shouldBe` "FizzBuzz"
-   it "\"Fizz\"" $ fizzString "fig" `shouldBe` "Fizz"
-   it "\"Buzz\"" $ fizzString "dib" `shouldBe` "Buzz"
-   it "\"FizzBuzz\"" $ fizzString "fib" `shouldBe` "FizzBuzz"
 

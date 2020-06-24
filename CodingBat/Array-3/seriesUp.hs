@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "[1,1,2,1,2,3]" $ seriesUp 3 `shouldBe` [1,1,2,1,2,3]
    it "[1,1,2,1,2,3,1,2,3,4]" $ seriesUp 4 `shouldBe` [1,1,2,1,2,3,1,2,3,4]
    it "[1,1,2]" $ seriesUp 2 `shouldBe` [1,1,2]
-   it "[1,1,2,1,2,3]" $ seriesUp 3 `shouldBe` [1,1,2,1,2,3]
-   it "[1,1,2,1,2,3,1,2,3,4]" $ seriesUp 4 `shouldBe` [1,1,2,1,2,3,1,2,3,4]
-   it "[1,1,2]" $ seriesUp 2 `shouldBe` [1,1,2]
 

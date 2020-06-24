@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ hasTeen 13 20 10 `shouldBe` True
    it "True" $ hasTeen 20 19 10 `shouldBe` True
    it "True" $ hasTeen 20 10 13 `shouldBe` True
-   it "True" $ hasTeen 13 20 10 `shouldBe` True
-   it "True" $ hasTeen 20 19 10 `shouldBe` True
-   it "True" $ hasTeen 20 10 13 `shouldBe` True
 

@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "False" $ sameEnds [5,6,45,99,13,5,6] 1 `shouldBe` False
    it "True" $ sameEnds [5,6,45,99,13,5,6] 2 `shouldBe` True
    it "False" $ sameEnds [5,6,45,99,13,5,6] 3 `shouldBe` False
-   it "False" $ sameEnds [5,6,45,99,13,5,6] 1 `shouldBe` False
-   it "True" $ sameEnds [5,6,45,99,13,5,6] 2 `shouldBe` True
-   it "False" $ sameEnds [5,6,45,99,13,5,6] 3 `shouldBe` False
 

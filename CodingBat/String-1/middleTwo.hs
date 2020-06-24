@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"ri\"" $ middleTwo "string" `shouldBe` "ri"
    it "\"od\"" $ middleTwo "code" `shouldBe` "od"
    it "\"ct\"" $ middleTwo "Practice" `shouldBe` "ct"
-   it "\"ri\"" $ middleTwo "string" `shouldBe` "ri"
-   it "\"od\"" $ middleTwo "code" `shouldBe` "od"
-   it "\"ct\"" $ middleTwo "Practice" `shouldBe` "ct"
 

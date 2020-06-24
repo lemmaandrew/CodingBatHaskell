@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ nearHundred 93 `shouldBe` True
    it "True" $ nearHundred 90 `shouldBe` True
    it "False" $ nearHundred 89 `shouldBe` False
-   it "True" $ nearHundred 93 `shouldBe` True
-   it "True" $ nearHundred 90 `shouldBe` True
-   it "False" $ nearHundred 89 `shouldBe` False
 

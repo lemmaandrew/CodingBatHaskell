@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"hel*lo\"" $ pairStar "hello" `shouldBe` "hel*lo"
    it "\"x*xy*y\"" $ pairStar "xxyy" `shouldBe` "x*xy*y"
    it "\"a*a*a*a\"" $ pairStar "aaaa" `shouldBe` "a*a*a*a"
-   it "\"hel*lo\"" $ pairStar "hello" `shouldBe` "hel*lo"
-   it "\"x*xy*y\"" $ pairStar "xxyy" `shouldBe` "x*xy*y"
-   it "\"a*a*a*a\"" $ pairStar "aaaa" `shouldBe` "a*a*a*a"
 

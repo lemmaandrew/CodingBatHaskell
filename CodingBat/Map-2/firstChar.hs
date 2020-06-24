@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "(Map.fromList [(\"s\",\"saltsoda\"),(\"t\",\"teatoast\")])" $ firstChar ["salt","tea","soda","toast"] `shouldBe` (Map.fromList [("s","saltsoda"),("t","teatoast")])
    it "(Map.fromList [(\"a\",\"aaaAA\"),(\"b\",\"bb\"),(\"c\",\"cccCC\"),(\"d\",\"d\")])" $ firstChar ["aa","bb","cc","aAA","cCC","d"] `shouldBe` (Map.fromList [("a","aaaAA"),("b","bb"),("c","cccCC"),("d","d")])
    it "Map.empty" $ firstChar [] `shouldBe` Map.empty
-   it "(Map.fromList [(\"s\",\"saltsoda\"),(\"t\",\"teatoast\")])" $ firstChar ["salt","tea","soda","toast"] `shouldBe` (Map.fromList [("s","saltsoda"),("t","teatoast")])
-   it "(Map.fromList [(\"a\",\"aaaAA\"),(\"b\",\"bb\"),(\"c\",\"cccCC\"),(\"d\",\"d\")])" $ firstChar ["aa","bb","cc","aAA","cCC","d"] `shouldBe` (Map.fromList [("a","aaaAA"),("b","bb"),("c","cccCC"),("d","d")])
-   it "Map.empty" $ firstChar [] `shouldBe` Map.empty
 

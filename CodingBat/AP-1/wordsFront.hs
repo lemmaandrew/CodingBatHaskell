@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "[\"a\"]" $ wordsFront ["a","b","c","d"] 1 `shouldBe` ["a"]
    it "[\"a\",\"b\"]" $ wordsFront ["a","b","c","d"] 2 `shouldBe` ["a","b"]
    it "[\"a\",\"b\",\"c\"]" $ wordsFront ["a","b","c","d"] 3 `shouldBe` ["a","b","c"]
-   it "[\"a\"]" $ wordsFront ["a","b","c","d"] 1 `shouldBe` ["a"]
-   it "[\"a\",\"b\"]" $ wordsFront ["a","b","c","d"] 2 `shouldBe` ["a","b"]
-   it "[\"a\",\"b\",\"c\"]" $ wordsFront ["a","b","c","d"] 3 `shouldBe` ["a","b","c"]
 

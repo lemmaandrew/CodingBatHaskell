@@ -16,7 +16,4 @@ main = hspec $ describe "Tests:" $ do
    it "0" $ caughtSpeeding 60 False `shouldBe` 0
    it "1" $ caughtSpeeding 65 False `shouldBe` 1
    it "0" $ caughtSpeeding 65 True `shouldBe` 0
-   it "0" $ caughtSpeeding 60 False `shouldBe` 0
-   it "1" $ caughtSpeeding 65 False `shouldBe` 1
-   it "0" $ caughtSpeeding 65 True `shouldBe` 0
 

@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "1" $ array667 [6,6,2] `shouldBe` 1
    it "1" $ array667 [6,6,2,6] `shouldBe` 1
    it "1" $ array667 [6,7,2,6] `shouldBe` 1
-   it "1" $ array667 [6,6,2] `shouldBe` 1
-   it "1" $ array667 [6,6,2,6] `shouldBe` 1
-   it "1" $ array667 [6,7,2,6] `shouldBe` 1
 

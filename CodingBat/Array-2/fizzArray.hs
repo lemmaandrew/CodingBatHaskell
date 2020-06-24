@@ -16,7 +16,4 @@ main = hspec $ describe "Tests:" $ do
    it "[0,1,2,3]" $ fizzArray 4 `shouldBe` [0,1,2,3]
    it "[0]" $ fizzArray 1 `shouldBe` [0]
    it "[0,1,2,3,4,5,6,7,8,9]" $ fizzArray 10 `shouldBe` [0,1,2,3,4,5,6,7,8,9]
-   it "[0,1,2,3]" $ fizzArray 4 `shouldBe` [0,1,2,3]
-   it "[0]" $ fizzArray 1 `shouldBe` [0]
-   it "[0,1,2,3,4,5,6,7,8,9]" $ fizzArray 10 `shouldBe` [0,1,2,3,4,5,6,7,8,9]
 

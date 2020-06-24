@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"ellohere\"" $ nonStart "Hello" "There" `shouldBe` "ellohere"
    it "\"avaode\"" $ nonStart "java" "code" `shouldBe` "avaode"
    it "\"hotlava\"" $ nonStart "shotl" "java" `shouldBe` "hotlava"
-   it "\"ellohere\"" $ nonStart "Hello" "There" `shouldBe` "ellohere"
-   it "\"avaode\"" $ nonStart "java" "code" `shouldBe` "avaode"
-   it "\"hotlava\"" $ nonStart "shotl" "java" `shouldBe` "hotlava"
 

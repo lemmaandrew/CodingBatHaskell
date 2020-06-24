@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "(Map.fromList [(\"potato\",\"ketchup\"),(\"fries\",\"ketchup\")])" $ topping3 (Map.fromList [("potato","ketchup")]) `shouldBe` (Map.fromList [("potato","ketchup"),("fries","ketchup")])
    it "(Map.fromList [(\"potato\",\"butter\"),(\"fries\",\"butter\")])" $ topping3 (Map.fromList [("potato","butter")]) `shouldBe` (Map.fromList [("potato","butter"),("fries","butter")])
    it "(Map.fromList [(\"spinach\",\"oil\"),(\"salad\",\"oil\"),(\"potato\",\"ketchup\"),(\"fries\",\"ketchup\")])" $ topping3 (Map.fromList [("salad","oil"),("potato","ketchup")]) `shouldBe` (Map.fromList [("spinach","oil"),("salad","oil"),("potato","ketchup"),("fries","ketchup")])
-   it "(Map.fromList [(\"potato\",\"ketchup\"),(\"fries\",\"ketchup\")])" $ topping3 (Map.fromList [("potato","ketchup")]) `shouldBe` (Map.fromList [("potato","ketchup"),("fries","ketchup")])
-   it "(Map.fromList [(\"potato\",\"butter\"),(\"fries\",\"butter\")])" $ topping3 (Map.fromList [("potato","butter")]) `shouldBe` (Map.fromList [("potato","butter"),("fries","butter")])
-   it "(Map.fromList [(\"spinach\",\"oil\"),(\"salad\",\"oil\"),(\"potato\",\"ketchup\"),(\"fries\",\"ketchup\")])" $ topping3 (Map.fromList [("salad","oil"),("potato","ketchup")]) `shouldBe` (Map.fromList [("spinach","oil"),("salad","oil"),("potato","ketchup"),("fries","ketchup")])
 

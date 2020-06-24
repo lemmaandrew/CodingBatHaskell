@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"isnottest\"" $ notReplace "istest" `shouldBe` "isnottest"
    it "\"isnot-isnot\"" $ notReplace "is-is" `shouldBe` "isnot-isnot"
    it "\"Thisisnotright\"" $ notReplace "Thisisright" `shouldBe` "Thisisnotright"
-   it "\"isnottest\"" $ notReplace "istest" `shouldBe` "isnottest"
-   it "\"isnot-isnot\"" $ notReplace "is-is" `shouldBe` "isnot-isnot"
-   it "\"Thisisnotright\"" $ notReplace "Thisisright" `shouldBe` "Thisisnotright"
 

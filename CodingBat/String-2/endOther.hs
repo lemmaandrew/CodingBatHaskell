@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ endOther "Hiabc" "abc" `shouldBe` True
    it "True" $ endOther "AbC" "HiaBc" `shouldBe` True
    it "True" $ endOther "abc" "abXabc" `shouldBe` True
-   it "True" $ endOther "Hiabc" "abc" `shouldBe` True
-   it "True" $ endOther "AbC" "HiaBc" `shouldBe` True
-   it "True" $ endOther "abc" "abXabc" `shouldBe` True
 

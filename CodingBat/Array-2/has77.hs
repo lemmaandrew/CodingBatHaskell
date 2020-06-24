@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ has77 [1,7,7] `shouldBe` True
    it "True" $ has77 [1,7,1,7] `shouldBe` True
    it "False" $ has77 [1,7,1,1,7] `shouldBe` False
-   it "True" $ has77 [1,7,7] `shouldBe` True
-   it "True" $ has77 [1,7,1,7] `shouldBe` True
-   it "False" $ has77 [1,7,1,1,7] `shouldBe` False
 

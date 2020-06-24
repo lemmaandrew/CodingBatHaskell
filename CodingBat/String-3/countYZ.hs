@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "2" $ countYZ "fezday" `shouldBe` 2
    it "2" $ countYZ "dayfez" `shouldBe` 2
    it "2" $ countYZ "dayfyyyz" `shouldBe` 2
-   it "2" $ countYZ "fezday" `shouldBe` 2
-   it "2" $ countYZ "dayfez" `shouldBe` 2
-   it "2" $ countYZ "dayfyyyz" `shouldBe` 2
 

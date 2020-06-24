@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ monkeyTrouble True True `shouldBe` True
    it "True" $ monkeyTrouble False False `shouldBe` True
    it "False" $ monkeyTrouble True False `shouldBe` False
-   it "True" $ monkeyTrouble True True `shouldBe` True
-   it "True" $ monkeyTrouble False False `shouldBe` True
-   it "False" $ monkeyTrouble True False `shouldBe` False
 

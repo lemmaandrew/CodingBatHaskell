@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ doubleX "axxbb" `shouldBe` True
    it "False" $ doubleX "axaxax" `shouldBe` False
    it "True" $ doubleX "xxxxx" `shouldBe` True
-   it "True" $ doubleX "axxbb" `shouldBe` True
-   it "False" $ doubleX "axaxax" `shouldBe` False
-   it "True" $ doubleX "xxxxx" `shouldBe` True
 

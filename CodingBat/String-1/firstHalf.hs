@@ -12,7 +12,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"Woo\"" $ firstHalf "WooHoo" `shouldBe` "Woo"
    it "\"Hello\"" $ firstHalf "HelloThere" `shouldBe` "Hello"
    it "\"abc\"" $ firstHalf "abcdef" `shouldBe` "abc"
-   it "\"Woo\"" $ firstHalf "WooHoo" `shouldBe` "Woo"
-   it "\"Hello\"" $ firstHalf "HelloThere" `shouldBe` "Hello"
-   it "\"abc\"" $ firstHalf "abcdef" `shouldBe` "abc"
 

@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"(abc)\"" $ parenBit "xyz(abc)123" `shouldBe` "(abc)"
    it "\"(hello)\"" $ parenBit "x(hello)" `shouldBe` "(hello)"
    it "\"(xy)\"" $ parenBit "(xy)1" `shouldBe` "(xy)"
-   it "\"(abc)\"" $ parenBit "xyz(abc)123" `shouldBe` "(abc)"
-   it "\"(hello)\"" $ parenBit "x(hello)" `shouldBe` "(hello)"
-   it "\"(xy)\"" $ parenBit "(xy)1" `shouldBe` "(xy)"
 

@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "(Map.fromList [(\"bread\",\"butter\"),(\"icecream\",\"cherry\")])" $ topping1 (Map.fromList [("icecream","peanuts")]) `shouldBe` (Map.fromList [("bread","butter"),("icecream","cherry")])
    it "(Map.fromList [(\"bread\",\"butter\")])" $ topping1 Map.empty `shouldBe` (Map.fromList [("bread","butter")])
    it "(Map.fromList [(\"bread\",\"butter\"),(\"pancake\",\"syrup\")])" $ topping1 (Map.fromList [("pancake","syrup")]) `shouldBe` (Map.fromList [("bread","butter"),("pancake","syrup")])
-   it "(Map.fromList [(\"bread\",\"butter\"),(\"icecream\",\"cherry\")])" $ topping1 (Map.fromList [("icecream","peanuts")]) `shouldBe` (Map.fromList [("bread","butter"),("icecream","cherry")])
-   it "(Map.fromList [(\"bread\",\"butter\")])" $ topping1 Map.empty `shouldBe` (Map.fromList [("bread","butter")])
-   it "(Map.fromList [(\"bread\",\"butter\"),(\"pancake\",\"syrup\")])" $ topping1 (Map.fromList [("pancake","syrup")]) `shouldBe` (Map.fromList [("bread","butter"),("pancake","syrup")])
 

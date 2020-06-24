@@ -16,7 +16,4 @@ main = hspec $ describe "Tests:" $ do
    it "0" $ fibonacci 0 `shouldBe` 0
    it "1" $ fibonacci 1 `shouldBe` 1
    it "1" $ fibonacci 2 `shouldBe` 1
-   it "0" $ fibonacci 0 `shouldBe` 0
-   it "1" $ fibonacci 1 `shouldBe` 1
-   it "1" $ fibonacci 2 `shouldBe` 1
 

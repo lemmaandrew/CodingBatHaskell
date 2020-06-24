@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ posNeg 1 (-1) False `shouldBe` True
    it "True" $ posNeg (-1) 1 False `shouldBe` True
    it "True" $ posNeg (-4) (-5) True `shouldBe` True
-   it "True" $ posNeg 1 (-1) False `shouldBe` True
-   it "True" $ posNeg (-1) 1 False `shouldBe` True
-   it "True" $ posNeg (-4) (-5) True `shouldBe` True
 

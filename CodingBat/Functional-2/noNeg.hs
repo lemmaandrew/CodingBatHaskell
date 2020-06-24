@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "[1]" $ noNeg [1,-2] `shouldBe` [1]
    it "[3,3]" $ noNeg [-3,-3,3,3] `shouldBe` [3,3]
    it "[]" $ noNeg [-1,-1,-1] `shouldBe` []
-   it "[1]" $ noNeg [1,-2] `shouldBe` [1]
-   it "[3,3]" $ noNeg [-3,-3,3,3] `shouldBe` [3,3]
-   it "[]" $ noNeg [-1,-1,-1] `shouldBe` []
 

@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ xyzMiddle "AAxyzBB" `shouldBe` True
    it "True" $ xyzMiddle "AxyzBB" `shouldBe` True
    it "False" $ xyzMiddle "AxyzBBB" `shouldBe` False
-   it "True" $ xyzMiddle "AAxyzBB" `shouldBe` True
-   it "True" $ xyzMiddle "AxyzBB" `shouldBe` True
-   it "False" $ xyzMiddle "AxyzBBB" `shouldBe` False
 

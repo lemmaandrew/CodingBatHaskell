@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ makeBricks 3 1 8 `shouldBe` True
    it "False" $ makeBricks 3 1 9 `shouldBe` False
    it "True" $ makeBricks 3 2 10 `shouldBe` True
-   it "True" $ makeBricks 3 1 8 `shouldBe` True
-   it "False" $ makeBricks 3 1 9 `shouldBe` False
-   it "True" $ makeBricks 3 2 10 `shouldBe` True
 

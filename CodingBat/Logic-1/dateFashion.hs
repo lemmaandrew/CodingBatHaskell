@@ -17,7 +17,4 @@ main = hspec $ describe "Tests:" $ do
    it "2" $ dateFashion 5 10 `shouldBe` 2
    it "0" $ dateFashion 5 2 `shouldBe` 0
    it "1" $ dateFashion 5 5 `shouldBe` 1
-   it "2" $ dateFashion 5 10 `shouldBe` 2
-   it "0" $ dateFashion 5 2 `shouldBe` 0
-   it "1" $ dateFashion 5 5 `shouldBe` 1
 

@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"x3.14x\"" $ changePi "xpix" `shouldBe` "x3.14x"
    it "\"3.143.14\"" $ changePi "pipi" `shouldBe` "3.143.14"
    it "\"3.14p\"" $ changePi "pip" `shouldBe` "3.14p"
-   it "\"x3.14x\"" $ changePi "xpix" `shouldBe` "x3.14x"
-   it "\"3.143.14\"" $ changePi "pipi" `shouldBe` "3.143.14"
-   it "\"3.14p\"" $ changePi "pip" `shouldBe` "3.14p"
 

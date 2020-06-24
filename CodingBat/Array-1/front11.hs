@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "[1,7]" $ front11 [1,2,3] [7,9,8] `shouldBe` [1,7]
    it "[1,2]" $ front11 [1] [2] `shouldBe` [1,2]
    it "[1]" $ front11 [1,7] [] `shouldBe` [1]
-   it "[1,7]" $ front11 [1,2,3] [7,9,8] `shouldBe` [1,7]
-   it "[1,2]" $ front11 [1] [2] `shouldBe` [1,2]
-   it "[1]" $ front11 [1,7] [] `shouldBe` [1]
 

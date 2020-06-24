@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ nestParen "(())" `shouldBe` True
    it "True" $ nestParen "((()))" `shouldBe` True
    it "False" $ nestParen "(((x))" `shouldBe` False
-   it "True" $ nestParen "(())" `shouldBe` True
-   it "True" $ nestParen "((()))" `shouldBe` True
-   it "False" $ nestParen "(((x))" `shouldBe` False
 

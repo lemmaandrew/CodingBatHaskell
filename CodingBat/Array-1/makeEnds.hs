@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "[1,3]" $ makeEnds [1,2,3] `shouldBe` [1,3]
    it "[1,4]" $ makeEnds [1,2,3,4] `shouldBe` [1,4]
    it "[7,2]" $ makeEnds [7,4,6,2] `shouldBe` [7,2]
-   it "[1,3]" $ makeEnds [1,2,3] `shouldBe` [1,3]
-   it "[1,4]" $ makeEnds [1,2,3,4] `shouldBe` [1,4]
-   it "[7,2]" $ makeEnds [7,4,6,2] `shouldBe` [7,2]
 

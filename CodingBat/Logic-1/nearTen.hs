@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ nearTen 12 `shouldBe` True
    it "False" $ nearTen 17 `shouldBe` False
    it "True" $ nearTen 19 `shouldBe` True
-   it "True" $ nearTen 12 `shouldBe` True
-   it "False" $ nearTen 17 `shouldBe` False
-   it "True" $ nearTen 19 `shouldBe` True
 

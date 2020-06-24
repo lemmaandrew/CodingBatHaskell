@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "19" $ max1020 11 19 `shouldBe` 19
    it "19" $ max1020 19 11 `shouldBe` 19
    it "11" $ max1020 11 9 `shouldBe` 11
-   it "19" $ max1020 11 19 `shouldBe` 19
-   it "19" $ max1020 19 11 `shouldBe` 19
-   it "11" $ max1020 11 9 `shouldBe` 11
 

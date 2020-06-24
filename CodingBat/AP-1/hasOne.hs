@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ hasOne 10 `shouldBe` True
    it "False" $ hasOne 22 `shouldBe` False
    it "False" $ hasOne 220 `shouldBe` False
-   it "True" $ hasOne 10 `shouldBe` True
-   it "False" $ hasOne 22 `shouldBe` False
-   it "False" $ hasOne 220 `shouldBe` False
 

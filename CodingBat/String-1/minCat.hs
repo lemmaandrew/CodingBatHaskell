@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"loHi\"" $ minCat "Hello" "Hi" `shouldBe` "loHi"
    it "\"ellojava\"" $ minCat "Hello" "java" `shouldBe` "ellojava"
    it "\"javaello\"" $ minCat "java" "Hello" `shouldBe` "javaello"
-   it "\"loHi\"" $ minCat "Hello" "Hi" `shouldBe` "loHi"
-   it "\"ellojava\"" $ minCat "Hello" "java" `shouldBe` "ellojava"
-   it "\"javaello\"" $ minCat "java" "Hello" `shouldBe` "javaello"
 

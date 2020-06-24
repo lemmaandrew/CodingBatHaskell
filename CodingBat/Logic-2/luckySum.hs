@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "6" $ luckySum 1 2 3 `shouldBe` 6
    it "3" $ luckySum 1 2 13 `shouldBe` 3
    it "1" $ luckySum 1 13 3 `shouldBe` 1
-   it "6" $ luckySum 1 2 3 `shouldBe` 6
-   it "3" $ luckySum 1 2 13 `shouldBe` 3
-   it "1" $ luckySum 1 13 3 `shouldBe` 1
 

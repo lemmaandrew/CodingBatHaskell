@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ scoresClump [3,4,5] `shouldBe` True
    it "False" $ scoresClump [3,4,6] `shouldBe` False
    it "True" $ scoresClump [1,3,5,5] `shouldBe` True
-   it "True" $ scoresClump [3,4,5] `shouldBe` True
-   it "False" $ scoresClump [3,4,6] `shouldBe` False
-   it "True" $ scoresClump [1,3,5,5] `shouldBe` True
 

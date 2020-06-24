@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ split53 [1,1] `shouldBe` True
    it "False" $ split53 [1,1,1] `shouldBe` False
    it "True" $ split53 [2,4,2] `shouldBe` True
-   it "True" $ split53 [1,1] `shouldBe` True
-   it "False" $ split53 [1,1,1] `shouldBe` False
-   it "True" $ split53 [2,4,2] `shouldBe` True
 

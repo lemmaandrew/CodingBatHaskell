@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "[5,5,3,3]" $ zeroMax [0,5,0,3] `shouldBe` [5,5,3,3]
    it "[3,4,3,3]" $ zeroMax [0,4,0,3] `shouldBe` [3,4,3,3]
    it "[1,1,0]" $ zeroMax [0,1,0] `shouldBe` [1,1,0]
-   it "[5,5,3,3]" $ zeroMax [0,5,0,3] `shouldBe` [5,5,3,3]
-   it "[3,4,3,3]" $ zeroMax [0,4,0,3] `shouldBe` [3,4,3,3]
-   it "[1,1,0]" $ zeroMax [0,1,0] `shouldBe` [1,1,0]
 

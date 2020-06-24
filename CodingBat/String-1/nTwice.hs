@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"Helo\"" $ nTwice "Hello" 2 `shouldBe` "Helo"
    it "\"Choate\"" $ nTwice "Chocolate" 3 `shouldBe` "Choate"
    it "\"Ce\"" $ nTwice "Chocolate" 1 `shouldBe` "Ce"
-   it "\"Helo\"" $ nTwice "Hello" 2 `shouldBe` "Helo"
-   it "\"Choate\"" $ nTwice "Chocolate" 3 `shouldBe` "Choate"
-   it "\"Ce\"" $ nTwice "Chocolate" 1 `shouldBe` "Ce"
 

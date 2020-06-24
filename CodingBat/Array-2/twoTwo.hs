@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ twoTwo [4,2,2,3] `shouldBe` True
    it "True" $ twoTwo [2,2,4] `shouldBe` True
    it "False" $ twoTwo [2,2,4,2] `shouldBe` False
-   it "True" $ twoTwo [4,2,2,3] `shouldBe` True
-   it "True" $ twoTwo [2,2,4] `shouldBe` True
-   it "False" $ twoTwo [2,2,4,2] `shouldBe` False
 

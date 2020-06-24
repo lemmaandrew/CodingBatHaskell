@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"ad\"" $ starOut "ab*cd" `shouldBe` "ad"
    it "\"ad\"" $ starOut "ab**cd" `shouldBe` "ad"
    it "\"silly\"" $ starOut "sm*eilly" `shouldBe` "silly"
-   it "\"ad\"" $ starOut "ab*cd" `shouldBe` "ad"
-   it "\"ad\"" $ starOut "ab**cd" `shouldBe` "ad"
-   it "\"silly\"" $ starOut "sm*eilly" `shouldBe` "silly"
 

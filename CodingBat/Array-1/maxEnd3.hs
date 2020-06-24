@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "[3,3,3]" $ maxEnd3 [1,2,3] `shouldBe` [3,3,3]
    it "[11,11,11]" $ maxEnd3 [11,5,9] `shouldBe` [11,11,11]
    it "[3,3,3]" $ maxEnd3 [2,11,3] `shouldBe` [3,3,3]
-   it "[3,3,3]" $ maxEnd3 [1,2,3] `shouldBe` [3,3,3]
-   it "[11,11,11]" $ maxEnd3 [11,5,9] `shouldBe` [11,11,11]
-   it "[3,3,3]" $ maxEnd3 [2,11,3] `shouldBe` [3,3,3]
 

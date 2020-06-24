@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ hasBad "badxx" `shouldBe` True
    it "True" $ hasBad "xbadxx" `shouldBe` True
    it "False" $ hasBad "xxbadxx" `shouldBe` False
-   it "True" $ hasBad "badxx" `shouldBe` True
-   it "True" $ hasBad "xbadxx" `shouldBe` True
-   it "False" $ hasBad "xxbadxx" `shouldBe` False
 

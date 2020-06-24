@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "5" $ withoutDoubles 2 3 True `shouldBe` 5
    it "7" $ withoutDoubles 3 3 True `shouldBe` 7
    it "6" $ withoutDoubles 3 3 False `shouldBe` 6
-   it "5" $ withoutDoubles 2 3 True `shouldBe` 5
-   it "7" $ withoutDoubles 3 3 True `shouldBe` 7
-   it "6" $ withoutDoubles 3 3 False `shouldBe` 6
 

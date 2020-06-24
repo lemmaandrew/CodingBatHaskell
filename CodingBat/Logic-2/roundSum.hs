@@ -17,7 +17,4 @@ main = hspec $ describe "Tests:" $ do
    it "60" $ roundSum 16 17 18 `shouldBe` 60
    it "30" $ roundSum 12 13 14 `shouldBe` 30
    it "10" $ roundSum 6 4 4 `shouldBe` 10
-   it "60" $ roundSum 16 17 18 `shouldBe` 60
-   it "30" $ roundSum 12 13 14 `shouldBe` 30
-   it "10" $ roundSum 6 4 4 `shouldBe` 10
 

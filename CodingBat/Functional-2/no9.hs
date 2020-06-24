@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "[1,2]" $ no9 [1,2,19] `shouldBe` [1,2]
    it "[3]" $ no9 [9,19,29,3] `shouldBe` [3]
    it "[1,2,3]" $ no9 [1,2,3] `shouldBe` [1,2,3]
-   it "[1,2]" $ no9 [1,2,19] `shouldBe` [1,2]
-   it "[3]" $ no9 [9,19,29,3] `shouldBe` [3]
-   it "[1,2,3]" $ no9 [1,2,3] `shouldBe` [1,2,3]
 

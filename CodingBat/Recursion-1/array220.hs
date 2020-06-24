@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ array220 [1,2,20] 0 `shouldBe` True
    it "True" $ array220 [3,30] 0 `shouldBe` True
    it "False" $ array220 [3] 0 `shouldBe` False
-   it "True" $ array220 [1,2,20] 0 `shouldBe` True
-   it "True" $ array220 [3,30] 0 `shouldBe` True
-   it "False" $ array220 [3] 0 `shouldBe` False
 

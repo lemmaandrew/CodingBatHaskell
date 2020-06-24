@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ groupNoAdj 0 [2,5,10,4] 12 `shouldBe` True
    it "False" $ groupNoAdj 0 [2,5,10,4] 14 `shouldBe` False
    it "False" $ groupNoAdj 0 [2,5,10,4] 7 `shouldBe` False
-   it "True" $ groupNoAdj 0 [2,5,10,4] 12 `shouldBe` True
-   it "False" $ groupNoAdj 0 [2,5,10,4] 14 `shouldBe` False
-   it "False" $ groupNoAdj 0 [2,5,10,4] 7 `shouldBe` False
 

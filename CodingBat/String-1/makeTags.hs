@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"<i>Yay</i>\"" $ makeTags "i" "Yay" `shouldBe` "<i>Yay</i>"
    it "\"<i>Hello</i>\"" $ makeTags "i" "Hello" `shouldBe` "<i>Hello</i>"
    it "\"<cite>Yay</cite>\"" $ makeTags "cite" "Yay" `shouldBe` "<cite>Yay</cite>"
-   it "\"<i>Yay</i>\"" $ makeTags "i" "Yay" `shouldBe` "<i>Yay</i>"
-   it "\"<i>Hello</i>\"" $ makeTags "i" "Hello" `shouldBe` "<i>Hello</i>"
-   it "\"<cite>Yay</cite>\"" $ makeTags "cite" "Yay" `shouldBe` "<cite>Yay</cite>"
 

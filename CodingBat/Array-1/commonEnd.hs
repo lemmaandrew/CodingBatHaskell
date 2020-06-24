@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ commonEnd [1,2,3] [7,3] `shouldBe` True
    it "False" $ commonEnd [1,2,3] [7,3,2] `shouldBe` False
    it "True" $ commonEnd [1,2,3] [1,3] `shouldBe` True
-   it "True" $ commonEnd [1,2,3] [7,3] `shouldBe` True
-   it "False" $ commonEnd [1,2,3] [7,3,2] `shouldBe` False
-   it "True" $ commonEnd [1,2,3] [1,3] `shouldBe` True
 

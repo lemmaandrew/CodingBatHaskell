@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "1" $ last2 "hixxhi" `shouldBe` 1
    it "1" $ last2 "xaxxaxaxx" `shouldBe` 1
    it "2" $ last2 "axxxaaxx" `shouldBe` 2
-   it "1" $ last2 "hixxhi" `shouldBe` 1
-   it "1" $ last2 "xaxxaxaxx" `shouldBe` 1
-   it "2" $ last2 "axxxaaxx" `shouldBe` 2
 

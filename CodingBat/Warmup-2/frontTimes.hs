@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"ChoCho\"" $ frontTimes "Chocolate" 2 `shouldBe` "ChoCho"
    it "\"ChoChoCho\"" $ frontTimes "Chocolate" 3 `shouldBe` "ChoChoCho"
    it "\"AbcAbcAbc\"" $ frontTimes "Abc" 3 `shouldBe` "AbcAbcAbc"
-   it "\"ChoCho\"" $ frontTimes "Chocolate" 2 `shouldBe` "ChoCho"
-   it "\"ChoChoCho\"" $ frontTimes "Chocolate" 3 `shouldBe` "ChoChoCho"
-   it "\"AbcAbcAbc\"" $ frontTimes "Abc" 3 `shouldBe` "AbcAbcAbc"
 

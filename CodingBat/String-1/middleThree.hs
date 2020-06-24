@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"and\"" $ middleThree "Candy" `shouldBe` "and"
    it "\"and\"" $ middleThree "and" `shouldBe` "and"
    it "\"lvi\"" $ middleThree "solving" `shouldBe` "lvi"
-   it "\"and\"" $ middleThree "Candy" `shouldBe` "and"
-   it "\"and\"" $ middleThree "and" `shouldBe` "and"
-   it "\"lvi\"" $ middleThree "solving" `shouldBe` "lvi"
 

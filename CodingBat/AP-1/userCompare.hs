@@ -18,7 +18,4 @@ main = hspec $ describe "Tests:" $ do
    it "(-1)" $ userCompare "bb" 1 "zz" 2 `shouldBe` (-1)
    it "1" $ userCompare "bb" 1 "aa" 2 `shouldBe` 1
    it "0" $ userCompare "bb" 1 "bb" 1 `shouldBe` 0
-   it "(-1)" $ userCompare "bb" 1 "zz" 2 `shouldBe` (-1)
-   it "1" $ userCompare "bb" 1 "aa" 2 `shouldBe` 1
-   it "0" $ userCompare "bb" 1 "bb" 1 `shouldBe` 0
 

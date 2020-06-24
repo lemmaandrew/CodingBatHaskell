@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "2" $ countClumps [1,2,2,3,4,4] `shouldBe` 2
    it "2" $ countClumps [1,1,2,1,1] `shouldBe` 2
    it "1" $ countClumps [1,1,1,1,1] `shouldBe` 1
-   it "2" $ countClumps [1,2,2,3,4,4] `shouldBe` 2
-   it "2" $ countClumps [1,1,2,1,1] `shouldBe` 2
-   it "1" $ countClumps [1,1,1,1,1] `shouldBe` 1
 

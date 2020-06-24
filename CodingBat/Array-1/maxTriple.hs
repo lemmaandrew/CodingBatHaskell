@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "3" $ maxTriple [1,2,3] `shouldBe` 3
    it "5" $ maxTriple [1,5,3] `shouldBe` 5
    it "5" $ maxTriple [5,2,3] `shouldBe` 5
-   it "3" $ maxTriple [1,2,3] `shouldBe` 3
-   it "5" $ maxTriple [1,5,3] `shouldBe` 5
-   it "5" $ maxTriple [5,2,3] `shouldBe` 5
 

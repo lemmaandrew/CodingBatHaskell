@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"lloHe\"" $ left2 "Hello" `shouldBe` "lloHe"
    it "\"vaja\"" $ left2 "java" `shouldBe` "vaja"
    it "\"Hi\"" $ left2 "Hi" `shouldBe` "Hi"
-   it "\"lloHe\"" $ left2 "Hello" `shouldBe` "lloHe"
-   it "\"vaja\"" $ left2 "java" `shouldBe` "vaja"
-   it "\"Hi\"" $ left2 "Hi" `shouldBe` "Hi"
 

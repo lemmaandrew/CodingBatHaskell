@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "1" $ factorial 1 `shouldBe` 1
    it "2" $ factorial 2 `shouldBe` 2
    it "6" $ factorial 3 `shouldBe` 6
-   it "1" $ factorial 1 `shouldBe` 1
-   it "2" $ factorial 2 `shouldBe` 2
-   it "6" $ factorial 3 `shouldBe` 6
 

@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ love6 6 4 `shouldBe` True
    it "False" $ love6 4 5 `shouldBe` False
    it "True" $ love6 1 5 `shouldBe` True
-   it "True" $ love6 6 4 `shouldBe` True
-   it "False" $ love6 4 5 `shouldBe` False
-   it "True" $ love6 1 5 `shouldBe` True
 

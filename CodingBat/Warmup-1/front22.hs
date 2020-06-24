@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"kikittenki\"" $ front22 "kitten" `shouldBe` "kikittenki"
    it "\"HaHaHa\"" $ front22 "Ha" `shouldBe` "HaHaHa"
    it "\"ababcab\"" $ front22 "abc" `shouldBe` "ababcab"
-   it "\"kikittenki\"" $ front22 "kitten" `shouldBe` "kikittenki"
-   it "\"HaHaHa\"" $ front22 "Ha" `shouldBe` "HaHaHa"
-   it "\"ababcab\"" $ front22 "abc" `shouldBe` "ababcab"
 

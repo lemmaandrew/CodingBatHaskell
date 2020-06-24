@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"llo\"" $ deFront "Hello" `shouldBe` "llo"
    it "\"va\"" $ deFront "java" `shouldBe` "va"
    it "\"aay\"" $ deFront "away" `shouldBe` "aay"
-   it "\"llo\"" $ deFront "Hello" `shouldBe` "llo"
-   it "\"va\"" $ deFront "java" `shouldBe` "va"
-   it "\"aay\"" $ deFront "away" `shouldBe` "aay"
 

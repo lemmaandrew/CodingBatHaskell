@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ sleepIn False False `shouldBe` True
    it "False" $ sleepIn True False `shouldBe` False
    it "True" $ sleepIn False True `shouldBe` True
-   it "True" $ sleepIn False False `shouldBe` True
-   it "False" $ sleepIn True False `shouldBe` False
-   it "True" $ sleepIn False True `shouldBe` True
 

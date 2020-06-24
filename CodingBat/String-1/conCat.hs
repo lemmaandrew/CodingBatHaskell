@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"abcat\"" $ conCat "abc" "cat" `shouldBe` "abcat"
    it "\"dogcat\"" $ conCat "dog" "cat" `shouldBe` "dogcat"
    it "\"abc\"" $ conCat "abc" "" `shouldBe` "abc"
-   it "\"abcat\"" $ conCat "abc" "cat" `shouldBe` "abcat"
-   it "\"dogcat\"" $ conCat "dog" "cat" `shouldBe` "dogcat"
-   it "\"abc\"" $ conCat "abc" "" `shouldBe` "abc"
 

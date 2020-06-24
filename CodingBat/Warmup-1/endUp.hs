@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"HeLLO\"" $ endUp "Hello" `shouldBe` "HeLLO"
    it "\"hithERE\"" $ endUp "hithere" `shouldBe` "hithERE"
    it "\"HI\"" $ endUp "hi" `shouldBe` "HI"
-   it "\"HeLLO\"" $ endUp "Hello" `shouldBe` "HeLLO"
-   it "\"hithERE\"" $ endUp "hithere" `shouldBe` "hithERE"
-   it "\"HI\"" $ endUp "hi" `shouldBe` "HI"
 

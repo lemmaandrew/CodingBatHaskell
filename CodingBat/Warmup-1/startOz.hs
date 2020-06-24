@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"oz\"" $ startOz "ozymandias" `shouldBe` "oz"
    it "\"z\"" $ startOz "bzoo" `shouldBe` "z"
    it "\"o\"" $ startOz "oxx" `shouldBe` "o"
-   it "\"oz\"" $ startOz "ozymandias" `shouldBe` "oz"
-   it "\"z\"" $ startOz "bzoo" `shouldBe` "z"
-   it "\"o\"" $ startOz "oxx" `shouldBe` "o"
 

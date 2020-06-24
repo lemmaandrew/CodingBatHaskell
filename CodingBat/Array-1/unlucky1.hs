@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ unlucky1 [1,3,4,5] `shouldBe` True
    it "True" $ unlucky1 [2,1,3,4,5] `shouldBe` True
    it "False" $ unlucky1 [1,1,1] `shouldBe` False
-   it "True" $ unlucky1 [1,3,4,5] `shouldBe` True
-   it "True" $ unlucky1 [2,1,3,4,5] `shouldBe` True
-   it "False" $ unlucky1 [1,1,1] `shouldBe` False
 

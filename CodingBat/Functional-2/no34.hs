@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "[\"a\",\"bb\"]" $ no34 ["a","bb","ccc"] `shouldBe` ["a","bb"]
    it "[\"a\",\"bb\"]" $ no34 ["a","bb","ccc","dddd"] `shouldBe` ["a","bb"]
    it "[\"apple\"]" $ no34 ["ccc","dddd","apple"] `shouldBe` ["apple"]
-   it "[\"a\",\"bb\"]" $ no34 ["a","bb","ccc"] `shouldBe` ["a","bb"]
-   it "[\"a\",\"bb\"]" $ no34 ["a","bb","ccc","dddd"] `shouldBe` ["a","bb"]
-   it "[\"apple\"]" $ no34 ["ccc","dddd","apple"] `shouldBe` ["apple"]
 

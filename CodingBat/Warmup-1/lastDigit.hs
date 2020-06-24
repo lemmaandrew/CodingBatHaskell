@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ lastDigit 7 17 `shouldBe` True
    it "False" $ lastDigit 6 17 `shouldBe` False
    it "True" $ lastDigit 3 113 `shouldBe` True
-   it "True" $ lastDigit 7 17 `shouldBe` True
-   it "False" $ lastDigit 6 17 `shouldBe` False
-   it "True" $ lastDigit 3 113 `shouldBe` True
 

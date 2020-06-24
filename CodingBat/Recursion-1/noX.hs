@@ -12,7 +12,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"ab\"" $ noX "xaxb" `shouldBe` "ab"
    it "\"abc\"" $ noX "abc" `shouldBe` "abc"
    it "\"\"" $ noX "xx" `shouldBe` ""
-   it "\"ab\"" $ noX "xaxb" `shouldBe` "ab"
-   it "\"abc\"" $ noX "abc" `shouldBe` "abc"
-   it "\"\"" $ noX "xx" `shouldBe` ""
 

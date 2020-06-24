@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"H\"" $ theEnd "Hello" True `shouldBe` "H"
    it "\"o\"" $ theEnd "Hello" False `shouldBe` "o"
    it "\"o\"" $ theEnd "oh" True `shouldBe` "o"
-   it "\"H\"" $ theEnd "Hello" True `shouldBe` "H"
-   it "\"o\"" $ theEnd "Hello" False `shouldBe` "o"
-   it "\"o\"" $ theEnd "oh" True `shouldBe` "o"
 

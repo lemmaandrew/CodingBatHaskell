@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ loneTeen 13 99 `shouldBe` True
    it "True" $ loneTeen 21 19 `shouldBe` True
    it "False" $ loneTeen 13 13 `shouldBe` False
-   it "True" $ loneTeen 13 99 `shouldBe` True
-   it "True" $ loneTeen 21 19 `shouldBe` True
-   it "False" $ loneTeen 13 13 `shouldBe` False
 

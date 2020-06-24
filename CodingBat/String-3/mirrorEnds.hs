@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"ab\"" $ mirrorEnds "abXYZba" `shouldBe` "ab"
    it "\"a\"" $ mirrorEnds "abca" `shouldBe` "a"
    it "\"aba\"" $ mirrorEnds "aba" `shouldBe` "aba"
-   it "\"ab\"" $ mirrorEnds "abXYZba" `shouldBe` "ab"
-   it "\"a\"" $ mirrorEnds "abca" `shouldBe` "a"
-   it "\"aba\"" $ mirrorEnds "aba" `shouldBe` "aba"
 

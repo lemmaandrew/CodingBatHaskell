@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"tcatt\"" $ backAround "cat" `shouldBe` "tcatt"
    it "\"oHelloo\"" $ backAround "Hello" `shouldBe` "oHelloo"
    it "\"aaa\"" $ backAround "a" `shouldBe` "aaa"
-   it "\"tcatt\"" $ backAround "cat" `shouldBe` "tcatt"
-   it "\"oHelloo\"" $ backAround "Hello" `shouldBe` "oHelloo"
-   it "\"aaa\"" $ backAround "a" `shouldBe` "aaa"
 

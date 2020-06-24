@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "4" $ makeChocolate 4 1 9 `shouldBe` 4
    it "(-1)" $ makeChocolate 4 1 10 `shouldBe` (-1)
    it "2" $ makeChocolate 4 1 7 `shouldBe` 2
-   it "4" $ makeChocolate 4 1 9 `shouldBe` 4
-   it "(-1)" $ makeChocolate 4 1 10 `shouldBe` (-1)
-   it "2" $ makeChocolate 4 1 7 `shouldBe` 2
 

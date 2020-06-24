@@ -12,7 +12,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ endsLy "oddly" `shouldBe` True
    it "False" $ endsLy "y" `shouldBe` False
    it "False" $ endsLy "oddy" `shouldBe` False
-   it "True" $ endsLy "oddly" `shouldBe` True
-   it "False" $ endsLy "y" `shouldBe` False
-   it "False" $ endsLy "oddy" `shouldBe` False
 

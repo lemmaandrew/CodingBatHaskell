@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ inOrderEqual 2 5 11 False `shouldBe` True
    it "False" $ inOrderEqual 5 7 6 False `shouldBe` False
    it "True" $ inOrderEqual 5 5 7 True `shouldBe` True
-   it "True" $ inOrderEqual 2 5 11 False `shouldBe` True
-   it "False" $ inOrderEqual 5 7 6 False `shouldBe` False
-   it "True" $ inOrderEqual 5 5 7 True `shouldBe` True
 

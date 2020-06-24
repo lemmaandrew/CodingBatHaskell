@@ -16,7 +16,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"7:00\"" $ alarmClock 1 False `shouldBe` "7:00"
    it "\"7:00\"" $ alarmClock 5 False `shouldBe` "7:00"
    it "\"10:00\"" $ alarmClock 0 False `shouldBe` "10:00"
-   it "\"7:00\"" $ alarmClock 1 False `shouldBe` "7:00"
-   it "\"7:00\"" $ alarmClock 5 False `shouldBe` "7:00"
-   it "\"10:00\"" $ alarmClock 0 False `shouldBe` "10:00"
 

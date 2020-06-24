@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"++xy++\"" $ plusOut "12xy34" "xy" `shouldBe` "++xy++"
    it "\"1+++++\"" $ plusOut "12xy34" "1" `shouldBe` "1+++++"
    it "\"++xy++xy+++xy\"" $ plusOut "12xy34xyabcxy" "xy" `shouldBe` "++xy++xy+++xy"
-   it "\"++xy++\"" $ plusOut "12xy34" "xy" `shouldBe` "++xy++"
-   it "\"1+++++\"" $ plusOut "12xy34" "1" `shouldBe` "1+++++"
-   it "\"++xy++xy+++xy\"" $ plusOut "12xy34xyabcxy" "xy" `shouldBe` "++xy++xy+++xy"
 

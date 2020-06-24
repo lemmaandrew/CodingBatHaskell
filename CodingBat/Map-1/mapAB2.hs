@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "(Map.fromList [(\"c\",\"cake\")])" $ mapAB2 (Map.fromList [("a","aaa"),("b","aaa"),("c","cake")]) `shouldBe` (Map.fromList [("c","cake")])
    it "(Map.fromList [(\"a\",\"aaa\"),(\"b\",\"bbb\")])" $ mapAB2 (Map.fromList [("a","aaa"),("b","bbb")]) `shouldBe` (Map.fromList [("a","aaa"),("b","bbb")])
    it "(Map.fromList [(\"a\",\"aaa\"),(\"b\",\"bbb\"),(\"c\",\"aaa\")])" $ mapAB2 (Map.fromList [("a","aaa"),("b","bbb"),("c","aaa")]) `shouldBe` (Map.fromList [("a","aaa"),("b","bbb"),("c","aaa")])
-   it "(Map.fromList [(\"c\",\"cake\")])" $ mapAB2 (Map.fromList [("a","aaa"),("b","aaa"),("c","cake")]) `shouldBe` (Map.fromList [("c","cake")])
-   it "(Map.fromList [(\"a\",\"aaa\"),(\"b\",\"bbb\")])" $ mapAB2 (Map.fromList [("a","aaa"),("b","bbb")]) `shouldBe` (Map.fromList [("a","aaa"),("b","bbb")])
-   it "(Map.fromList [(\"a\",\"aaa\"),(\"b\",\"bbb\"),(\"c\",\"aaa\")])" $ mapAB2 (Map.fromList [("a","aaa"),("b","bbb"),("c","aaa")]) `shouldBe` (Map.fromList [("a","aaa"),("b","bbb"),("c","aaa")])
 

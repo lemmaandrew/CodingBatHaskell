@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ linearIn [1,2,4,6] [2,4] `shouldBe` True
    it "False" $ linearIn [1,2,4,6] [2,3,4] `shouldBe` False
    it "True" $ linearIn [1,2,4,4,6] [2,4] `shouldBe` True
-   it "True" $ linearIn [1,2,4,6] [2,4] `shouldBe` True
-   it "False" $ linearIn [1,2,4,6] [2,3,4] `shouldBe` False
-   it "True" $ linearIn [1,2,4,4,6] [2,4] `shouldBe` True
 

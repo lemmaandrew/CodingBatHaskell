@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"ja\"" $ twoChar "java" 0 `shouldBe` "ja"
    it "\"va\"" $ twoChar "java" 2 `shouldBe` "va"
    it "\"ja\"" $ twoChar "java" 3 `shouldBe` "ja"
-   it "\"ja\"" $ twoChar "java" 0 `shouldBe` "ja"
-   it "\"va\"" $ twoChar "java" 2 `shouldBe` "va"
-   it "\"ja\"" $ twoChar "java" 3 `shouldBe` "ja"
 

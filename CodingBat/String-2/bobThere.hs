@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ bobThere "abcbob" `shouldBe` True
    it "True" $ bobThere "b9b" `shouldBe` True
    it "False" $ bobThere "bac" `shouldBe` False
-   it "True" $ bobThere "abcbob" `shouldBe` True
-   it "True" $ bobThere "b9b" `shouldBe` True
-   it "False" $ bobThere "bac" `shouldBe` False
 

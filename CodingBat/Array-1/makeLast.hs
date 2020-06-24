@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "[0,0,0,0,0,6]" $ makeLast [4,5,6] `shouldBe` [0,0,0,0,0,6]
    it "[0,0,0,2]" $ makeLast [1,2] `shouldBe` [0,0,0,2]
    it "[0,3]" $ makeLast [3] `shouldBe` [0,3]
-   it "[0,0,0,0,0,6]" $ makeLast [4,5,6] `shouldBe` [0,0,0,0,0,6]
-   it "[0,0,0,2]" $ makeLast [1,2] `shouldBe` [0,0,0,2]
-   it "[0,3]" $ makeLast [3] `shouldBe` [0,3]
 

@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "5" $ sum67 [1,2,2] `shouldBe` 5
    it "5" $ sum67 [1,2,2,6,99,99,7] `shouldBe` 5
    it "4" $ sum67 [1,1,6,7,2] `shouldBe` 4
-   it "5" $ sum67 [1,2,2] `shouldBe` 5
-   it "5" $ sum67 [1,2,2,6,99,99,7] `shouldBe` 5
-   it "4" $ sum67 [1,1,6,7,2] `shouldBe` 4
 

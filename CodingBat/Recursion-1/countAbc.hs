@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "1" $ countAbc "abc" `shouldBe` 1
    it "2" $ countAbc "abcxxabc" `shouldBe` 2
    it "2" $ countAbc "abaxxaba" `shouldBe` 2
-   it "1" $ countAbc "abc" `shouldBe` 1
-   it "2" $ countAbc "abcxxabc" `shouldBe` 2
-   it "2" $ countAbc "abaxxaba" `shouldBe` 2
 

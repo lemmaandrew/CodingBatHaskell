@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "2" $ diff21 19 `shouldBe` 2
    it "11" $ diff21 10 `shouldBe` 11
    it "0" $ diff21 21 `shouldBe` 0
-   it "2" $ diff21 19 `shouldBe` 2
-   it "11" $ diff21 10 `shouldBe` 11
-   it "0" $ diff21 21 `shouldBe` 0
 

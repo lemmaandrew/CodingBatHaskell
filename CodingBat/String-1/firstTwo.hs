@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"He\"" $ firstTwo "Hello" `shouldBe` "He"
    it "\"ab\"" $ firstTwo "abcdefg" `shouldBe` "ab"
    it "\"ab\"" $ firstTwo "ab" `shouldBe` "ab"
-   it "\"He\"" $ firstTwo "Hello" `shouldBe` "He"
-   it "\"ab\"" $ firstTwo "abcdefg" `shouldBe` "ab"
-   it "\"ab\"" $ firstTwo "ab" `shouldBe` "ab"
 

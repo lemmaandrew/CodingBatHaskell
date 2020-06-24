@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ xyzThere "abcxyz" `shouldBe` True
    it "False" $ xyzThere "abc.xyz" `shouldBe` False
    it "True" $ xyzThere "xyz.abc" `shouldBe` True
-   it "True" $ xyzThere "abcxyz" `shouldBe` True
-   it "False" $ xyzThere "abc.xyz" `shouldBe` False
-   it "True" $ xyzThere "xyz.abc" `shouldBe` True
 

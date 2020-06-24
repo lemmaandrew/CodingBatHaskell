@@ -17,7 +17,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"1!\"" $ fizzString2 1 `shouldBe` "1!"
    it "\"2!\"" $ fizzString2 2 `shouldBe` "2!"
    it "\"Fizz!\"" $ fizzString2 3 `shouldBe` "Fizz!"
-   it "\"1!\"" $ fizzString2 1 `shouldBe` "1!"
-   it "\"2!\"" $ fizzString2 2 `shouldBe` "2!"
-   it "\"Fizz!\"" $ fizzString2 3 `shouldBe` "Fizz!"
 

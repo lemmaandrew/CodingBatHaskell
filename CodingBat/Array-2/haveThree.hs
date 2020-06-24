@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ haveThree [3,1,3,1,3] `shouldBe` True
    it "False" $ haveThree [3,1,3,3] `shouldBe` False
    it "False" $ haveThree [3,4,3,3,4] `shouldBe` False
-   it "True" $ haveThree [3,1,3,1,3] `shouldBe` True
-   it "False" $ haveThree [3,1,3,3] `shouldBe` False
-   it "False" $ haveThree [3,4,3,3,4] `shouldBe` False
 

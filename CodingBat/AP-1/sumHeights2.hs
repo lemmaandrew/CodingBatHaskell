@@ -17,7 +17,4 @@ main = hspec $ describe "Tests:" $ do
    it "7" $ sumHeights2 [5,3,6,7,2] 2 4 `shouldBe` 7
    it "2" $ sumHeights2 [5,3,6,7,2] 0 1 `shouldBe` 2
    it "15" $ sumHeights2 [5,3,6,7,2] 0 4 `shouldBe` 15
-   it "7" $ sumHeights2 [5,3,6,7,2] 2 4 `shouldBe` 7
-   it "2" $ sumHeights2 [5,3,6,7,2] 0 1 `shouldBe` 2
-   it "15" $ sumHeights2 [5,3,6,7,2] 0 4 `shouldBe` 15
 

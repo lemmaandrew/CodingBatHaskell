@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "10" $ redTicket 2 2 2 `shouldBe` 10
    it "0" $ redTicket 2 2 1 `shouldBe` 0
    it "5" $ redTicket 0 0 0 `shouldBe` 5
-   it "10" $ redTicket 2 2 2 `shouldBe` 10
-   it "0" $ redTicket 2 2 1 `shouldBe` 0
-   it "5" $ redTicket 0 0 0 `shouldBe` 5
 

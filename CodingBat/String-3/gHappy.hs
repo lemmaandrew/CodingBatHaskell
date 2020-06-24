@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ gHappy "xxggxx" `shouldBe` True
    it "False" $ gHappy "xxgxx" `shouldBe` False
    it "False" $ gHappy "xxggyygxx" `shouldBe` False
-   it "True" $ gHappy "xxggxx" `shouldBe` True
-   it "False" $ gHappy "xxgxx" `shouldBe` False
-   it "False" $ gHappy "xxggyygxx" `shouldBe` False
 

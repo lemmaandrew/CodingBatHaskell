@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"lololo\"" $ extraEnd "Hello" `shouldBe` "lololo"
    it "\"ababab\"" $ extraEnd "ab" `shouldBe` "ababab"
    it "\"HiHiHi\"" $ extraEnd "Hi" `shouldBe` "HiHiHi"
-   it "\"lololo\"" $ extraEnd "Hello" `shouldBe` "lololo"
-   it "\"ababab\"" $ extraEnd "ab" `shouldBe` "ababab"
-   it "\"HiHiHi\"" $ extraEnd "Hi" `shouldBe` "HiHiHi"
 

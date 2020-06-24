@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"HiByeByeHi\"" $ makeAbba "Hi" "Bye" `shouldBe` "HiByeByeHi"
    it "\"YoAliceAliceYo\"" $ makeAbba "Yo" "Alice" `shouldBe` "YoAliceAliceYo"
    it "\"WhatUpUpWhat\"" $ makeAbba "What" "Up" `shouldBe` "WhatUpUpWhat"
-   it "\"HiByeByeHi\"" $ makeAbba "Hi" "Bye" `shouldBe` "HiByeByeHi"
-   it "\"YoAliceAliceYo\"" $ makeAbba "Yo" "Alice" `shouldBe` "YoAliceAliceYo"
-   it "\"WhatUpUpWhat\"" $ makeAbba "What" "Up" `shouldBe` "WhatUpUpWhat"
 

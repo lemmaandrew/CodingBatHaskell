@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"jam\"" $ getSandwich "breadjambread" `shouldBe` "jam"
    it "\"jam\"" $ getSandwich "xxbreadjambreadyy" `shouldBe` "jam"
    it "\"\"" $ getSandwich "xxbreadyy" `shouldBe` ""
-   it "\"jam\"" $ getSandwich "breadjambread" `shouldBe` "jam"
-   it "\"jam\"" $ getSandwich "xxbreadjambreadyy" `shouldBe` "jam"
-   it "\"\"" $ getSandwich "xxbreadyy" `shouldBe` ""
 

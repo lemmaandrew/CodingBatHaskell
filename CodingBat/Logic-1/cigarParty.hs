@@ -15,7 +15,4 @@ main = hspec $ describe "Tests:" $ do
    it "False" $ cigarParty 30 False `shouldBe` False
    it "True" $ cigarParty 50 False `shouldBe` True
    it "True" $ cigarParty 70 True `shouldBe` True
-   it "False" $ cigarParty 30 False `shouldBe` False
-   it "True" $ cigarParty 50 False `shouldBe` True
-   it "True" $ cigarParty 70 True `shouldBe` True
 

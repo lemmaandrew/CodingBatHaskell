@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ answerCell False False False `shouldBe` True
    it "False" $ answerCell False False True `shouldBe` False
    it "False" $ answerCell True False False `shouldBe` False
-   it "True" $ answerCell False False False `shouldBe` True
-   it "False" $ answerCell False False True `shouldBe` False
-   it "False" $ answerCell True False False `shouldBe` False
 

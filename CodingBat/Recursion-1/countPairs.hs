@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "1" $ countPairs "axa" `shouldBe` 1
    it "2" $ countPairs "axax" `shouldBe` 2
    it "1" $ countPairs "axbx" `shouldBe` 1
-   it "1" $ countPairs "axa" `shouldBe` 1
-   it "2" $ countPairs "axax" `shouldBe` 2
-   it "1" $ countPairs "axbx" `shouldBe` 1
 

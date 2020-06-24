@@ -14,7 +14,4 @@ main = hspec $ describe "Tests:" $ do
    it "3" $ stringMatch "xxcaazz" "xxbaaz" `shouldBe` 3
    it "2" $ stringMatch "abc" "abc" `shouldBe` 2
    it "0" $ stringMatch "abc" "axc" `shouldBe` 0
-   it "3" $ stringMatch "xxcaazz" "xxbaaz" `shouldBe` 3
-   it "2" $ stringMatch "abc" "abc" `shouldBe` 2
-   it "0" $ stringMatch "abc" "axc" `shouldBe` 0
 

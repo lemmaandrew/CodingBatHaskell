@@ -13,7 +13,4 @@ main = hspec $ describe "Tests:" $ do
    it "\"codign\"" $ lastTwo "coding" `shouldBe` "codign"
    it "\"cta\"" $ lastTwo "cat" `shouldBe` "cta"
    it "\"ba\"" $ lastTwo "ab" `shouldBe` "ba"
-   it "\"codign\"" $ lastTwo "coding" `shouldBe` "codign"
-   it "\"cta\"" $ lastTwo "cat" `shouldBe` "cta"
-   it "\"ba\"" $ lastTwo "ab" `shouldBe` "ba"
 

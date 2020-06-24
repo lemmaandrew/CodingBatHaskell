@@ -16,7 +16,4 @@ main = hspec $ describe "Tests:" $ do
    it "True" $ dividesSelf 128 `shouldBe` True
    it "True" $ dividesSelf 12 `shouldBe` True
    it "False" $ dividesSelf 120 `shouldBe` False
-   it "True" $ dividesSelf 128 `shouldBe` True
-   it "True" $ dividesSelf 12 `shouldBe` True
-   it "False" $ dividesSelf 120 `shouldBe` False
 
