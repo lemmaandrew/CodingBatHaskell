@@ -4,7 +4,7 @@ cabal-version:       2.4
 -- http://haskell.org/cabal/users-guide/
 
 name:                CodingBatHaskell
-version:             0.1.3.1
+version:             0.1.3.2
 synopsis:            codingbat.com/java problems in Haskell
 -- description:
 homepage:            https://github.com/peterjayandrew/CodingBatHaskell
