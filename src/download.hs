@@ -1,11 +1,5 @@
--- for downloading the problems
-{-
-TODO:
-    implement getCategory
-    MAKE GETCATEGORY NOT UGLY GO TO BED
-    implement getWebsite
-    implement writeProgram
--}
+-- downloads the problems off of https://codingbat.com/java
+
 {-#LANGUAGE OverloadedStrings#-}
 
 module Src.Download ( Check
@@ -24,26 +18,30 @@ module Src.Download ( Check
                     , getSite
                     ) where
 
-import Debug.Trace
 import Data.List (isInfixOf, intercalate, groupBy, nub)
-import Data.List.Split (splitOn)
 import Data.Maybe (catMaybes)
+import Debug.Trace
 import Text.Printf
+import Text.ParserCombinators.ReadP
 
+import Data.List.Split (splitOn)
 import Text.HTML.Scalpel
-import Text.Regex
-import Text.Regex.Base
+import Text.Regex.TDFA
 
-import Src.JavaFuncs
+import Src.JavaParser
 
 
-type Check = (String,String)
+type Check = (MethodCall,String)
 type Description = String
 type Method = String
 type Name = String
 
 data Problem = Problem URL Name Description [Check] Method deriving (Eq,Show)
 
+{-
+-- Returns a single problem
+-- Will return Nothing on failure
+-}
 getProblem :: URL -> IO (Maybe Problem)
 getProblem url = do
         putStrLn $ "Downloading: " ++ url
@@ -52,18 +50,19 @@ getProblem url = do
             Just page' -> return $ Just page'
             Nothing -> trace ("Failed getProblem with url: " ++ url) (return Nothing)
         where
-    getChecks = nub . map ((\[x,y] -> (x,y)) . splitOn " \8594 ") . filter (isInfixOf "\8594")
+    getChecks = nub . map ((\[x,y] -> (javaToMethodCall x, fst $ last $ readP_to_S parseLiteral y)) . splitOn " \8594 ")
+                        . filter (isInfixOf "\8594")
     getPage = do
         names <- texts $ "span" @: [hasClass "h2"]
         desc <- text $ "div" @: [hasClass "minh"]
         checks' <- texts textSelector
         methods <- texts "form"
-        return $ Problem url (names !! 1) desc (getChecks checks') (last methods)        
+        return $ Problem url (names !! 1) desc (getChecks checks') (last methods)
         -- names !! 1 because head names is the category
         -- last methods because head is the login form
 
 compileProblem :: Problem -> (Name,String)
-compileProblem (Problem url name desc checks method) = (name,printf formatString url formatDesc extraImport formatMethod formatChecks) where
+compileProblem (Problem url name desc checks method) = (name, printf formatString url formatDesc extraImport formatMethod formatChecks) where
     formatString = "{-From %s\n\
 \%s\n\
 \-}\n\
@@ -86,21 +85,19 @@ compileProblem (Problem url name desc checks method) = (name,printf formatString
             | otherwise = (' ' : x) ++ go (n + 1 + length x) xs
 
     extraImport :: String
-    extraImport = if ("Map.Map" :: String) `isInfixOf` formatMethod
-        then "import qualified Data.Map.Strict as Map\n"
-    else ""
+    extraImport
+        | "Map.Map" `isInfixOf` formatMethod = "import qualified Data.Map.Strict as Map\n"
+        | otherwise = ""
 
     formatChecks :: String
     formatChecks = unlines
-                 $ map (\(call,res) -> printf "   it %s $ %s `shouldBe` %s"
-                                            (show $ formatArgs res)
-                                            (javaCallToHaskell call)
-                                            (formatArgs res)) checks
+                 $ map (\(call,res) -> printf "   it %s $ %s `shouldBe` %s" res (methodCallToHaskell call) res)
+                       checks
 
     formatMethod :: String
     formatMethod
         | "wordsWithoutList" `isInfixOf` method = "wordsWithoutList :: [String] -> Int -> [String]\nwordsWithoutList words len = undefined"
-        | otherwise = javaToHaskell method
+        | otherwise = javaMToHaskellF method
 
 
 {-
@@ -119,11 +116,7 @@ data Category = Category Name [Problem]
 
 {-
 -- Returns a category page of problems
--- getProblem is Maybe because singular problems failing is something I'd want to inspect
--- on a case by case basis.
--- But an entire category failing is a big enough issue to throw an error.
--- The completed project will likely let this be an IO (Maybe Category),
--- but for now it's safer to just let it fail.
+-- Will return Nothing on failure to download page
 -}
 getCategory :: URL -> IO (Maybe Category)
 getCategory url = do
@@ -136,13 +129,16 @@ getCategory url = do
     page :: Scraper String (IO Category)
     page = do
         name <- text $ "span" @: [hasClass "h2"]
-        hrefs <- attrs "href" $ "a" @: ["href" @=~ (makeRegex ("/prob/" :: String) :: Regex)]
+        hrefs <- attrs "href" $ "a" @: ["href" @=~ (makeRegex "/prob/" :: Regex)]
         let problems = sequence $ map (getProblem . ("https://codingbat.com" ++)) hrefs
         return $ Category name <$> catMaybes <$> problems -- filtering Nothings from problems
 
 
 type Site = [Category]
 
+
+-- throws error on failure to download entire site
+-- because if you fail to download the site might as well restart the program
 getSite :: IO Site
 getSite = do
         site <- scrapeURL "https://codingbat.com/java" homepage
@@ -152,6 +148,6 @@ getSite = do
         where
     homepage :: Scraper String (IO [Category])
     homepage = do
-        hrefs <- attrs "href" $ "a" @: ["href" @=~ (makeRegex ("/java/" :: String) :: Regex)]
+        hrefs <- attrs "href" $ "a" @: ["href" @=~ (makeRegex "/java/" :: Regex)]
         let cats = sequence $ map (getCategory . ("https://codingbat.com" ++)) hrefs
         return $ catMaybes <$> cats

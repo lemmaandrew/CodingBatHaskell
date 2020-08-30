@@ -40,3 +40,13 @@
 ## 0.1.3.2 -- 2020-06-24
 
 * Fixed formatArgs deleting spaces in strings
+
+## 0.2.0.0 -- 2020-08-30
+
+* MAJOR overhaul to the parsing engine (JavaFuncs.hs -> JavaParser.hs)
+
+1. Now implements an actual parser (Text.ParserCombinators.ReadP)
+2. Isn't held together by a hope and a prayer
+3. Is actually readable now
+4. Only uses base packages
+5. Doesn't use 3 different versions of regex???? (uses 0 now)
