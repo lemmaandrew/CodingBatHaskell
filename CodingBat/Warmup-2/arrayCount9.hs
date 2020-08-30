@@ -9,7 +9,7 @@ arrayCount9 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "1" $ arrayCount9 [1,2,9] `shouldBe` 1
-   it "2" $ arrayCount9 [1,9,9] `shouldBe` 2
-   it "3" $ arrayCount9 [1,9,9,3,9] `shouldBe` 3
+   it "1" $ arrayCount9 [1, 2, 9] `shouldBe` 1
+   it "2" $ arrayCount9 [1, 9, 9] `shouldBe` 2
+   it "3" $ arrayCount9 [1, 9, 9, 3, 9] `shouldBe` 3
 

@@ -6,12 +6,12 @@ around to 1 if its value was 6.
 import Test.Hspec
 
 
-withoutDoubles :: Int -> Int -> Bool -> Int
+withoutDoubles :: Int -> Int -> Boolean -> Int
 withoutDoubles die1 die2 noDoubles = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "5" $ withoutDoubles 2 3 True `shouldBe` 5
-   it "7" $ withoutDoubles 3 3 True `shouldBe` 7
-   it "6" $ withoutDoubles 3 3 False `shouldBe` 6
+   it "5" $ withoutDoubles 2 3 true `shouldBe` 5
+   it "7" $ withoutDoubles 3 3 true `shouldBe` 7
+   it "6" $ withoutDoubles 3 3 false `shouldBe` 6
 

@@ -6,12 +6,12 @@ one. This problem is harder than it looks.
 import Test.Hspec
 
 
-xyzMiddle :: String -> Bool
+xyzMiddle :: String -> Boolean
 xyzMiddle str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ xyzMiddle "AAxyzBB" `shouldBe` True
-   it "True" $ xyzMiddle "AxyzBB" `shouldBe` True
-   it "False" $ xyzMiddle "AxyzBBB" `shouldBe` False
+   it "true" $ xyzMiddle "AAxyzBB" `shouldBe` true
+   it "true" $ xyzMiddle "AxyzBB" `shouldBe` true
+   it "false" $ xyzMiddle "AxyzBBB" `shouldBe` false
 

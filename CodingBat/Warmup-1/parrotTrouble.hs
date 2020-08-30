@@ -6,12 +6,12 @@ We have a loud talking parrot. The "hour" parameter is the current hour time in 
 import Test.Hspec
 
 
-parrotTrouble :: Bool -> Int -> Bool
+parrotTrouble :: Boolean -> Int -> Boolean
 parrotTrouble talking hour = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ parrotTrouble True 6 `shouldBe` True
-   it "False" $ parrotTrouble True 7 `shouldBe` False
-   it "False" $ parrotTrouble False 6 `shouldBe` False
+   it "true" $ parrotTrouble true 6 `shouldBe` true
+   it "false" $ parrotTrouble true 7 `shouldBe` false
+   it "false" $ parrotTrouble false 6 `shouldBe` false
 

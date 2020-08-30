@@ -5,12 +5,12 @@ the others.
 import Test.Hspec
 
 
-lessBy10 :: Int -> Int -> Int -> Bool
+lessBy10 :: Int -> Int -> Int -> Boolean
 lessBy10 a b c = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ lessBy10 1 7 11 `shouldBe` True
-   it "False" $ lessBy10 1 7 10 `shouldBe` False
-   it "True" $ lessBy10 11 1 7 `shouldBe` True
+   it "true" $ lessBy10 1 7 11 `shouldBe` true
+   it "false" $ lessBy10 1 7 10 `shouldBe` false
+   it "true" $ lessBy10 11 1 7 `shouldBe` true
 

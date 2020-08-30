@@ -10,12 +10,12 @@ by passing start as 0. No loops are needed -- the recursive calls progress down 
 import Test.Hspec
 
 
-groupSum :: Int -> [Int] -> Int -> Bool
+groupSum :: Int -> [Int] -> Int -> Boolean
 groupSum start nums target = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ groupSum 0 [2,4,8] 10 `shouldBe` True
-   it "True" $ groupSum 0 [2,4,8] 14 `shouldBe` True
-   it "False" $ groupSum 0 [2,4,8] 9 `shouldBe` False
+   it "true" $ groupSum 0 [2, 4, 8] 10 `shouldBe` true
+   it "true" $ groupSum 0 [2, 4, 8] 14 `shouldBe` true
+   it "false" $ groupSum 0 [2, 4, 8] 9 `shouldBe` false
 

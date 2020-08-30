@@ -6,12 +6,12 @@ constraint that all 6's must be chosen. (No loops needed.)
 import Test.Hspec
 
 
-groupSum6 :: Int -> [Int] -> Int -> Bool
+groupSum6 :: Int -> [Int] -> Int -> Boolean
 groupSum6 start nums target = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ groupSum6 0 [5,6,2] 8 `shouldBe` True
-   it "False" $ groupSum6 0 [5,6,2] 9 `shouldBe` False
-   it "False" $ groupSum6 0 [5,6,2] 7 `shouldBe` False
+   it "true" $ groupSum6 0 [5, 6, 2] 8 `shouldBe` true
+   it "false" $ groupSum6 0 [5, 6, 2] 9 `shouldBe` false
+   it "false" $ groupSum6 0 [5, 6, 2] 7 `shouldBe` false
 

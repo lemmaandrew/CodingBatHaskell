@@ -6,12 +6,12 @@ import Test.Hspec
 import qualified Data.Map.Strict as Map
 
 
-wordMultiple :: [String] -> Map.Map String Bool
+wordMultiple :: [String] -> Map.Map String Boolean
 wordMultiple strings = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "(Map.fromList [(\"a\",True),(\"b\",True),(\"c\",False)])" $ wordMultiple ["a","b","a","c","b"] `shouldBe` (Map.fromList [("a",True),("b",True),("c",False)])
-   it "(Map.fromList [(\"a\",False),(\"b\",False),(\"c\",False)])" $ wordMultiple ["c","b","a"] `shouldBe` (Map.fromList [("a",False),("b",False),("c",False)])
-   it "(Map.fromList [(\"c\",True)])" $ wordMultiple ["c","c","c","c"] `shouldBe` (Map.fromList [("c",True)])
+   it "fromList [(\"a\": true, \"b\": true, \"c\", false)]" $ wordMultiple ["a", "b", "a", "c", "b"] `shouldBe` fromList [("a": true, "b": true, "c", false)]
+   it "fromList [(\"a\": false, \"b\": false, \"c\", false)]" $ wordMultiple ["c", "b", "a"] `shouldBe` fromList [("a": false, "b": false, "c", false)]
+   it "fromList [(\"c\", true)]" $ wordMultiple ["c", "c", "c", "c"] `shouldBe` fromList [("c", true)]
 

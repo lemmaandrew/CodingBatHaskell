@@ -12,7 +12,7 @@ topping1 map = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "(Map.fromList [(\"bread\",\"butter\"),(\"ice cream\",\"cherry\")])" $ topping1 (Map.fromList [("ice cream","peanuts")]) `shouldBe` (Map.fromList [("bread","butter"),("ice cream","cherry")])
-   it "(Map.fromList [(\"bread\",\"butter\")])" $ topping1 Map.empty `shouldBe` (Map.fromList [("bread","butter")])
-   it "(Map.fromList [(\"bread\",\"butter\"),(\"pancake\",\"syrup\")])" $ topping1 (Map.fromList [("pancake","syrup")]) `shouldBe` (Map.fromList [("bread","butter"),("pancake","syrup")])
+   it "fromList [(\"bread\": \"butter\", \"ice cream\", \"cherry\")]" $ topping1 fromList [("ice cream", "peanuts")] `shouldBe` fromList [("bread": "butter", "ice cream", "cherry")]
+   it "fromList [(\"bread\", \"butter\")]" $ topping1 fromList [] `shouldBe` fromList [("bread", "butter")]
+   it "fromList [(\"bread\": \"butter\", \"pancake\", \"syrup\")]" $ topping1 fromList [("pancake", "syrup")] `shouldBe` fromList [("bread": "butter", "pancake", "syrup")]
 

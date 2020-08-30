@@ -6,12 +6,12 @@ computes the absolute value of a number.
 import Test.Hspec
 
 
-love6 :: Int -> Int -> Bool
+love6 :: Int -> Int -> Boolean
 love6 a b = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ love6 6 4 `shouldBe` True
-   it "False" $ love6 4 5 `shouldBe` False
-   it "True" $ love6 1 5 `shouldBe` True
+   it "true" $ love6 6 4 `shouldBe` true
+   it "false" $ love6 4 5 `shouldBe` false
+   it "true" $ love6 1 5 `shouldBe` true
 

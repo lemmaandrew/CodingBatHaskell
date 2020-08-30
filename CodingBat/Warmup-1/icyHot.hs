@@ -5,12 +5,12 @@ Given two temperatures, return true if one is less than 0 and the other is great
 import Test.Hspec
 
 
-icyHot :: Int -> Int -> Bool
+icyHot :: Int -> Int -> Boolean
 icyHot temp1 temp2 = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ icyHot 120 (-1) `shouldBe` True
-   it "True" $ icyHot (-1) 120 `shouldBe` True
-   it "False" $ icyHot 2 120 `shouldBe` False
+   it "true" $ icyHot 120 (-1) `shouldBe` true
+   it "true" $ icyHot (-1) 120 `shouldBe` true
+   it "false" $ icyHot 2 120 `shouldBe` false
 

@@ -14,7 +14,7 @@ mergeTwo a b n = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[\"a\",\"b\",\"c\"]" $ mergeTwo ["a","c","z"] ["b","f","z"] 3 `shouldBe` ["a","b","c"]
-   it "[\"a\",\"c\",\"f\"]" $ mergeTwo ["a","c","z"] ["c","f","z"] 3 `shouldBe` ["a","c","f"]
-   it "[\"c\",\"f\",\"g\"]" $ mergeTwo ["f","g","z"] ["c","f","g"] 3 `shouldBe` ["c","f","g"]
+   it "[\"a\", \"b\", \"c\"]" $ mergeTwo ["a", "c", "z"] ["b", "f", "z"] 3 `shouldBe` ["a", "b", "c"]
+   it "[\"a\", \"c\", \"f\"]" $ mergeTwo ["a", "c", "z"] ["c", "f", "z"] 3 `shouldBe` ["a", "c", "f"]
+   it "[\"c\", \"f\", \"g\"]" $ mergeTwo ["f", "g", "z"] ["c", "f", "g"] 3 `shouldBe` ["c", "f", "g"]
 

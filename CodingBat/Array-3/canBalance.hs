@@ -6,12 +6,12 @@ side.
 import Test.Hspec
 
 
-canBalance :: [Int] -> Bool
+canBalance :: [Int] -> Boolean
 canBalance nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ canBalance [1,1,1,2,1] `shouldBe` True
-   it "False" $ canBalance [2,1,1,2,1] `shouldBe` False
-   it "True" $ canBalance [10,10] `shouldBe` True
+   it "true" $ canBalance [1, 1, 1, 2, 1] `shouldBe` true
+   it "false" $ canBalance [2, 1, 1, 2, 1] `shouldBe` false
+   it "true" $ canBalance [10, 10] `shouldBe` true
 

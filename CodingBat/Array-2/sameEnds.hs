@@ -6,12 +6,12 @@ and false for n=1 and n=3. You may assume that n is in the range 0..nums.length 
 import Test.Hspec
 
 
-sameEnds :: [Int] -> Int -> Bool
+sameEnds :: [Int] -> Int -> Boolean
 sameEnds nums len = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "False" $ sameEnds [5,6,45,99,13,5,6] 1 `shouldBe` False
-   it "True" $ sameEnds [5,6,45,99,13,5,6] 2 `shouldBe` True
-   it "False" $ sameEnds [5,6,45,99,13,5,6] 3 `shouldBe` False
+   it "false" $ sameEnds [5, 6, 45, 99, 13, 5, 6] 1 `shouldBe` false
+   it "true" $ sameEnds [5, 6, 45, 99, 13, 5, 6] 2 `shouldBe` true
+   it "false" $ sameEnds [5, 6, 45, 99, 13, 5, 6] 3 `shouldBe` false
 

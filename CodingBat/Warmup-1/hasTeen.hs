@@ -5,12 +5,12 @@ values, return true if 1 or more of them are teen.
 import Test.Hspec
 
 
-hasTeen :: Int -> Int -> Int -> Bool
+hasTeen :: Int -> Int -> Int -> Boolean
 hasTeen a b c = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ hasTeen 13 20 10 `shouldBe` True
-   it "True" $ hasTeen 20 19 10 `shouldBe` True
-   it "True" $ hasTeen 20 10 13 `shouldBe` True
+   it "true" $ hasTeen 13 20 10 `shouldBe` true
+   it "true" $ hasTeen 20 19 10 `shouldBe` true
+   it "true" $ hasTeen 20 10 13 `shouldBe` true
 

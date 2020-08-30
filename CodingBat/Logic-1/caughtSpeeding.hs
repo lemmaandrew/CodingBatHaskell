@@ -8,12 +8,12 @@ day, your speed can be 5 higher in all cases.
 import Test.Hspec
 
 
-caughtSpeeding :: Int -> Bool -> Int
+caughtSpeeding :: Int -> Boolean -> Int
 caughtSpeeding speed isBirthday = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "0" $ caughtSpeeding 60 False `shouldBe` 0
-   it "1" $ caughtSpeeding 65 False `shouldBe` 1
-   it "0" $ caughtSpeeding 65 True `shouldBe` 0
+   it "0" $ caughtSpeeding 60 false `shouldBe` 0
+   it "1" $ caughtSpeeding 65 false `shouldBe` 1
+   it "0" $ caughtSpeeding 65 true `shouldBe` 0
 

@@ -11,7 +11,7 @@ wordsWithoutList words len = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[\"bb\",\"ccc\"]" $ wordsWithoutList ["a","bb","b","ccc"] 1 `shouldBe` ["bb","ccc"]
-   it "[\"a\",\"bb\",\"b\"]" $ wordsWithoutList ["a","bb","b","ccc"] 3 `shouldBe` ["a","bb","b"]
-   it "[\"a\",\"bb\",\"b\",\"ccc\"]" $ wordsWithoutList ["a","bb","b","ccc"] 4 `shouldBe` ["a","bb","b","ccc"]
+   it "[\"bb\", \"ccc\"]" $ wordsWithoutList ["a", "bb", "b", "ccc"] 1 `shouldBe` ["bb", "ccc"]
+   it "[\"a\", \"bb\", \"b\"]" $ wordsWithoutList ["a", "bb", "b", "ccc"] 3 `shouldBe` ["a", "bb", "b"]
+   it "[\"a\", \"bb\", \"b\", \"ccc\"]" $ wordsWithoutList ["a", "bb", "b", "ccc"] 4 `shouldBe` ["a", "bb", "b", "ccc"]
 

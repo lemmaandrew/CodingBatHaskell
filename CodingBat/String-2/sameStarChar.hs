@@ -5,12 +5,12 @@ before and after the star, they are the same.
 import Test.Hspec
 
 
-sameStarChar :: String -> Bool
+sameStarChar :: String -> Boolean
 sameStarChar str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ sameStarChar "xy*yzz" `shouldBe` True
-   it "False" $ sameStarChar "xy*zzz" `shouldBe` False
-   it "True" $ sameStarChar "*xa*az" `shouldBe` True
+   it "true" $ sameStarChar "xy*yzz" `shouldBe` true
+   it "false" $ sameStarChar "xy*zzz" `shouldBe` false
+   it "true" $ sameStarChar "*xa*az" `shouldBe` true
 

@@ -12,7 +12,7 @@ commonTwo a b = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "2" $ commonTwo ["a","c","x"] ["b","c","d","x"] `shouldBe` 2
-   it "3" $ commonTwo ["a","c","x"] ["a","b","c","x","z"] `shouldBe` 3
-   it "3" $ commonTwo ["a","b","c"] ["a","b","c"] `shouldBe` 3
+   it "2" $ commonTwo ["a", "c", "x"] ["b", "c", "d", "x"] `shouldBe` 2
+   it "3" $ commonTwo ["a", "c", "x"] ["a", "b", "c", "x", "z"] `shouldBe` 3
+   it "3" $ commonTwo ["a", "b", "c"] ["a", "b", "c"] `shouldBe` 3
 

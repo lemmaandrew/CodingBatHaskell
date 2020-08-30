@@ -11,7 +11,7 @@ maxSpan nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "4" $ maxSpan [1,2,1,1,3] `shouldBe` 4
-   it "6" $ maxSpan [1,4,2,1,4,1,4] `shouldBe` 6
-   it "6" $ maxSpan [1,4,2,1,4,4,4] `shouldBe` 6
+   it "4" $ maxSpan [1, 2, 1, 1, 3] `shouldBe` 4
+   it "6" $ maxSpan [1, 4, 2, 1, 4, 1, 4] `shouldBe` 6
+   it "6" $ maxSpan [1, 4, 2, 1, 4, 4, 4] `shouldBe` 6
 

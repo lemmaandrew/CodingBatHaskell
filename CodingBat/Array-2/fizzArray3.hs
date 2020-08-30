@@ -12,7 +12,7 @@ fizzArray3 start end = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[5,6,7,8,9]" $ fizzArray3 5 10 `shouldBe` [5,6,7,8,9]
-   it "[11,12,13,14,15,16,17]" $ fizzArray3 11 18 `shouldBe` [11,12,13,14,15,16,17]
-   it "[1,2]" $ fizzArray3 1 3 `shouldBe` [1,2]
+   it "[5, 6, 7, 8, 9]" $ fizzArray3 5 10 `shouldBe` [5, 6, 7, 8, 9]
+   it "[11, 12, 13, 14, 15, 16, 17]" $ fizzArray3 11 18 `shouldBe` [11, 12, 13, 14, 15, 16, 17]
+   it "[1, 2]" $ fizzArray3 1 3 `shouldBe` [1, 2]
 

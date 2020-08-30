@@ -5,12 +5,12 @@ values, return true if one or the other is teen, but not both.
 import Test.Hspec
 
 
-loneTeen :: Int -> Int -> Bool
+loneTeen :: Int -> Int -> Boolean
 loneTeen a b = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ loneTeen 13 99 `shouldBe` True
-   it "True" $ loneTeen 21 19 `shouldBe` True
-   it "False" $ loneTeen 13 13 `shouldBe` False
+   it "true" $ loneTeen 13 99 `shouldBe` true
+   it "true" $ loneTeen 21 19 `shouldBe` true
+   it "false" $ loneTeen 13 13 `shouldBe` false
 

@@ -11,7 +11,7 @@ wordAppend strings = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "\"a\"" $ wordAppend ["a","b","a"] `shouldBe` "a"
-   it "\"aa\"" $ wordAppend ["a","b","a","c","a","d","a"] `shouldBe` "aa"
-   it "\"a\"" $ wordAppend ["a","","a"] `shouldBe` "a"
+   it "\"a\"" $ wordAppend ["a", "b", "a"] `shouldBe` "a"
+   it "\"aa\"" $ wordAppend ["a", "b", "a", "c", "a", "d", "a"] `shouldBe` "aa"
+   it "\"a\"" $ wordAppend ["a", "", "a"] `shouldBe` "a"
 

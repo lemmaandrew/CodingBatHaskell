@@ -6,12 +6,12 @@ not be "case sensitive"). Note:    str.toLowerCase() returns the lowercase versi
 import Test.Hspec
 
 
-endOther :: String -> String -> Bool
+endOther :: String -> String -> Boolean
 endOther a b = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ endOther "Hiabc" "abc" `shouldBe` True
-   it "True" $ endOther "AbC" "HiaBc" `shouldBe` True
-   it "True" $ endOther "abc" "abXabc" `shouldBe` True
+   it "true" $ endOther "Hiabc" "abc" `shouldBe` true
+   it "true" $ endOther "AbC" "HiaBc" `shouldBe` true
+   it "true" $ endOther "abc" "abXabc" `shouldBe` true
 

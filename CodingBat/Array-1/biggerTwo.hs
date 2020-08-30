@@ -10,7 +10,7 @@ biggerTwo a b = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[3,4]" $ biggerTwo [1,2] [3,4] `shouldBe` [3,4]
-   it "[3,4]" $ biggerTwo [3,4] [1,2] `shouldBe` [3,4]
-   it "[1,2]" $ biggerTwo [1,1] [1,2] `shouldBe` [1,2]
+   it "[3, 4]" $ biggerTwo [1, 2] [3, 4] `shouldBe` [3, 4]
+   it "[3, 4]" $ biggerTwo [3, 4] [1, 2] `shouldBe` [3, 4]
+   it "[1, 2]" $ biggerTwo [1, 1] [1, 2] `shouldBe` [1, 2]
 

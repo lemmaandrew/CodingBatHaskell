@@ -13,7 +13,7 @@ sumHeights heights start end = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "6" $ sumHeights [5,3,6,7,2] 2 4 `shouldBe` 6
-   it "2" $ sumHeights [5,3,6,7,2] 0 1 `shouldBe` 2
-   it "11" $ sumHeights [5,3,6,7,2] 0 4 `shouldBe` 11
+   it "6" $ sumHeights [5, 3, 6, 7, 2] 2 4 `shouldBe` 6
+   it "2" $ sumHeights [5, 3, 6, 7, 2] 0 1 `shouldBe` 2
+   it "11" $ sumHeights [5, 3, 6, 7, 2] 0 4 `shouldBe` 11
 

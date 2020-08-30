@@ -9,5 +9,5 @@ makePi  = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[3,1,4]" $ makePi `shouldBe` [3,1,4]
+   it "[3, 1, 4]" $ makePi `shouldBe` [3, 1, 4]
 

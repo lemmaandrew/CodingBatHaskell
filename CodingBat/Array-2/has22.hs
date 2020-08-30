@@ -4,12 +4,12 @@ Given an array of ints, return true if the array contains a 2 next to a 2 somewh
 import Test.Hspec
 
 
-has22 :: [Int] -> Bool
+has22 :: [Int] -> Boolean
 has22 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ has22 [1,2,2] `shouldBe` True
-   it "False" $ has22 [1,2,1,2] `shouldBe` False
-   it "False" $ has22 [2,1,2] `shouldBe` False
+   it "true" $ has22 [1, 2, 2] `shouldBe` true
+   it "false" $ has22 [1, 2, 1, 2] `shouldBe` false
+   it "false" $ has22 [2, 1, 2] `shouldBe` false
 

@@ -6,12 +6,12 @@ what's inside them.
 import Test.Hspec
 
 
-nestParen :: String -> Bool
+nestParen :: String -> Boolean
 nestParen str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ nestParen "(())" `shouldBe` True
-   it "True" $ nestParen "((()))" `shouldBe` True
-   it "False" $ nestParen "(((x))" `shouldBe` False
+   it "true" $ nestParen "(())" `shouldBe` true
+   it "true" $ nestParen "((()))" `shouldBe` true
+   it "false" $ nestParen "(((x))" `shouldBe` false
 

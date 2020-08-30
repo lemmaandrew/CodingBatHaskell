@@ -5,12 +5,12 @@ string.
 import Test.Hspec
 
 
-catDog :: String -> Bool
+catDog :: String -> Boolean
 catDog str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ catDog "catdog" `shouldBe` True
-   it "False" $ catDog "catcat" `shouldBe` False
-   it "True" $ catDog "1cat1cadodog" `shouldBe` True
+   it "true" $ catDog "catdog" `shouldBe` true
+   it "false" $ catDog "catcat" `shouldBe` false
+   it "true" $ catDog "1cat1cadodog" `shouldBe` true
 

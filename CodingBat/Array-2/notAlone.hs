@@ -12,7 +12,7 @@ notAlone nums val = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[1,3,3]" $ notAlone [1,2,3] 2 `shouldBe` [1,3,3]
-   it "[1,3,3,5,5,2]" $ notAlone [1,2,3,2,5,2] 2 `shouldBe` [1,3,3,5,5,2]
-   it "[3,4]" $ notAlone [3,4] 3 `shouldBe` [3,4]
+   it "[1, 3, 3]" $ notAlone [1, 2, 3] 2 `shouldBe` [1, 3, 3]
+   it "[1, 3, 3, 5, 5, 2]" $ notAlone [1, 2, 3, 2, 5, 2] 2 `shouldBe` [1, 3, 3, 5, 5, 2]
+   it "[3, 4]" $ notAlone [3, 4] 3 `shouldBe` [3, 4]
 

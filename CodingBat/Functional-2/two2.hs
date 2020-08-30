@@ -10,7 +10,7 @@ two2 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[4,6]" $ two2 [1,2,3] `shouldBe` [4,6]
-   it "[4]" $ two2 [2,6,11] `shouldBe` [4]
+   it "[4, 6]" $ two2 [1, 2, 3] `shouldBe` [4, 6]
+   it "[4]" $ two2 [2, 6, 11] `shouldBe` [4]
    it "[0]" $ two2 [0] `shouldBe` [0]
 

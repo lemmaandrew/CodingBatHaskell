@@ -10,7 +10,7 @@ square56 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[19,11]" $ square56 [3,1,4] `shouldBe` [19,11]
+   it "[19, 11]" $ square56 [3, 1, 4] `shouldBe` [19, 11]
    it "[11]" $ square56 [1] `shouldBe` [11]
    it "[14]" $ square56 [2] `shouldBe` [14]
 

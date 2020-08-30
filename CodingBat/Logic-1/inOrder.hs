@@ -6,12 +6,12 @@ than a.
 import Test.Hspec
 
 
-inOrder :: Int -> Int -> Int -> Bool -> Bool
+inOrder :: Int -> Int -> Int -> Boolean -> Boolean
 inOrder a b c bOk = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ inOrder 1 2 4 False `shouldBe` True
-   it "False" $ inOrder 1 2 1 False `shouldBe` False
-   it "True" $ inOrder 1 1 2 True `shouldBe` True
+   it "true" $ inOrder 1 2 4 false `shouldBe` true
+   it "false" $ inOrder 1 2 1 false `shouldBe` false
+   it "true" $ inOrder 1 1 2 true `shouldBe` true
 

@@ -7,12 +7,12 @@ pass index+1 to move down the array. The initial call will pass in index as 0.
 import Test.Hspec
 
 
-array220 :: [Int] -> Int -> Bool
+array220 :: [Int] -> Int -> Boolean
 array220 nums index = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ array220 [1,2,20] 0 `shouldBe` True
-   it "True" $ array220 [3,30] 0 `shouldBe` True
-   it "False" $ array220 [3] 0 `shouldBe` False
+   it "true" $ array220 [1, 2, 20] 0 `shouldBe` true
+   it "true" $ array220 [3, 30] 0 `shouldBe` true
+   it "false" $ array220 [3] 0 `shouldBe` false
 

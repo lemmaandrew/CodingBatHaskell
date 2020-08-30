@@ -5,12 +5,12 @@ next to a 4, but not both.
 import Test.Hspec
 
 
-either24 :: [Int] -> Bool
+either24 :: [Int] -> Boolean
 either24 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ either24 [1,2,2] `shouldBe` True
-   it "True" $ either24 [4,4,1] `shouldBe` True
-   it "False" $ either24 [4,4,1,2,2] `shouldBe` False
+   it "true" $ either24 [1, 2, 2] `shouldBe` true
+   it "true" $ either24 [4, 4, 1] `shouldBe` true
+   it "false" $ either24 [4, 4, 1, 2, 2] `shouldBe` false
 

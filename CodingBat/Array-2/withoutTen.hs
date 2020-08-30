@@ -12,7 +12,7 @@ withoutTen nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[1,2,0,0]" $ withoutTen [1,10,10,2] `shouldBe` [1,2,0,0]
-   it "[2,0,0]" $ withoutTen [10,2,10] `shouldBe` [2,0,0]
-   it "[1,99,0]" $ withoutTen [1,99,10] `shouldBe` [1,99,0]
+   it "[1, 2, 0, 0]" $ withoutTen [1, 10, 10, 2] `shouldBe` [1, 2, 0, 0]
+   it "[2, 0, 0]" $ withoutTen [10, 2, 10] `shouldBe` [2, 0, 0]
+   it "[1, 99, 0]" $ withoutTen [1, 99, 10] `shouldBe` [1, 99, 0]
 

@@ -8,12 +8,12 @@ be "off".
 import Test.Hspec
 
 
-alarmClock :: Int -> Bool -> String
+alarmClock :: Int -> Boolean -> String
 alarmClock day vacation = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "\"7:00\"" $ alarmClock 1 False `shouldBe` "7:00"
-   it "\"7:00\"" $ alarmClock 5 False `shouldBe` "7:00"
-   it "\"10:00\"" $ alarmClock 0 False `shouldBe` "10:00"
+   it "\"7:00\"" $ alarmClock 1 false `shouldBe` "7:00"
+   it "\"7:00\"" $ alarmClock 5 false `shouldBe` "7:00"
+   it "\"10:00\"" $ alarmClock 0 false `shouldBe` "10:00"
 

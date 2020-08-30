@@ -8,12 +8,12 @@ arguments you like, and make the initial call to your recursive helper from spli
 import Test.Hspec
 
 
-splitOdd10 :: [Int] -> Bool
+splitOdd10 :: [Int] -> Boolean
 splitOdd10 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ splitOdd10 [5,5,5] `shouldBe` True
-   it "False" $ splitOdd10 [5,5,6] `shouldBe` False
-   it "True" $ splitOdd10 [5,5,6,1] `shouldBe` True
+   it "true" $ splitOdd10 [5, 5, 5] `shouldBe` true
+   it "false" $ splitOdd10 [5, 5, 6] `shouldBe` false
+   it "true" $ splitOdd10 [5, 5, 6, 1] `shouldBe` true
 

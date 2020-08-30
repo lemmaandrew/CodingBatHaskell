@@ -5,12 +5,12 @@ also: Introduction to Mod
 import Test.Hspec
 
 
-more20 :: Int -> Bool
+more20 :: Int -> Boolean
 more20 n = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "False" $ more20 20 `shouldBe` False
-   it "True" $ more20 21 `shouldBe` True
-   it "True" $ more20 22 `shouldBe` True
+   it "false" $ more20 20 `shouldBe` false
+   it "true" $ more20 21 `shouldBe` true
+   it "true" $ more20 22 `shouldBe` true
 

@@ -6,12 +6,12 @@ if the "1" differs by 2 or less from the correct value.
 import Test.Hspec
 
 
-has271 :: [Int] -> Bool
+has271 :: [Int] -> Boolean
 has271 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ has271 [1,2,7,1] `shouldBe` True
-   it "False" $ has271 [1,2,8,1] `shouldBe` False
-   it "True" $ has271 [2,7,1] `shouldBe` True
+   it "true" $ has271 [1, 2, 7, 1] `shouldBe` true
+   it "false" $ has271 [1, 2, 8, 1] `shouldBe` false
+   it "true" $ has271 [2, 7, 1] `shouldBe` true
 

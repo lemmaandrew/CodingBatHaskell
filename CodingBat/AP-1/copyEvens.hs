@@ -11,7 +11,7 @@ copyEvens nums count = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[2,4]" $ copyEvens [3,2,4,5,8] 2 `shouldBe` [2,4]
-   it "[2,4,8]" $ copyEvens [3,2,4,5,8] 3 `shouldBe` [2,4,8]
-   it "[6,2,4]" $ copyEvens [6,1,2,4,5,8] 3 `shouldBe` [6,2,4]
+   it "[2, 4]" $ copyEvens [3, 2, 4, 5, 8] 2 `shouldBe` [2, 4]
+   it "[2, 4, 8]" $ copyEvens [3, 2, 4, 5, 8] 3 `shouldBe` [2, 4, 8]
+   it "[6, 2, 4]" $ copyEvens [6, 1, 2, 4, 5, 8] 3 `shouldBe` [6, 2, 4]
 

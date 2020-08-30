@@ -13,7 +13,7 @@ allSwap strings = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[\"ac\",\"ab\"]" $ allSwap ["ab","ac"] `shouldBe` ["ac","ab"]
-   it "[\"ay\",\"by\",\"cy\",\"cx\",\"bx\",\"ax\",\"azz\",\"aaa\"]" $ allSwap ["ax","bx","cx","cy","by","ay","aaa","azz"] `shouldBe` ["ay","by","cy","cx","bx","ax","azz","aaa"]
-   it "[\"ay\",\"by\",\"ax\",\"bx\",\"aj\",\"ai\",\"by\",\"bx\"]" $ allSwap ["ax","bx","ay","by","ai","aj","bx","by"] `shouldBe` ["ay","by","ax","bx","aj","ai","by","bx"]
+   it "[\"ac\", \"ab\"]" $ allSwap ["ab", "ac"] `shouldBe` ["ac", "ab"]
+   it "[\"ay\", \"by\", \"cy\", \"cx\", \"bx\", \"ax\", \"azz\", \"aaa\"]" $ allSwap ["ax", "bx", "cx", "cy", "by", "ay", "aaa", "azz"] `shouldBe` ["ay", "by", "cy", "cx", "bx", "ax", "azz", "aaa"]
+   it "[\"ay\", \"by\", \"ax\", \"bx\", \"aj\", \"ai\", \"by\", \"bx\"]" $ allSwap ["ax", "bx", "ay", "by", "ai", "aj", "bx", "by"] `shouldBe` ["ay", "by", "ax", "bx", "aj", "ai", "by", "bx"]
 

@@ -7,12 +7,12 @@ multiple of 5 is 1, it must not be chosen. (No loops needed.)
 import Test.Hspec
 
 
-groupSum5 :: Int -> [Int] -> Int -> Bool
+groupSum5 :: Int -> [Int] -> Int -> Boolean
 groupSum5 start nums target = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ groupSum5 0 [2,5,10,4] 19 `shouldBe` True
-   it "True" $ groupSum5 0 [2,5,10,4] 17 `shouldBe` True
-   it "False" $ groupSum5 0 [2,5,10,4] 12 `shouldBe` False
+   it "true" $ groupSum5 0 [2, 5, 10, 4] 19 `shouldBe` true
+   it "true" $ groupSum5 0 [2, 5, 10, 4] 17 `shouldBe` true
+   it "false" $ groupSum5 0 [2, 5, 10, 4] 12 `shouldBe` false
 

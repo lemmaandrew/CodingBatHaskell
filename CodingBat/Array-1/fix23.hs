@@ -10,7 +10,7 @@ fix23 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[1,2,0]" $ fix23 [1,2,3] `shouldBe` [1,2,0]
-   it "[2,0,5]" $ fix23 [2,3,5] `shouldBe` [2,0,5]
-   it "[1,2,1]" $ fix23 [1,2,1] `shouldBe` [1,2,1]
+   it "[1, 2, 0]" $ fix23 [1, 2, 3] `shouldBe` [1, 2, 0]
+   it "[2, 0, 5]" $ fix23 [2, 3, 5] `shouldBe` [2, 0, 5]
+   it "[1, 2, 1]" $ fix23 [1, 2, 1] `shouldBe` [1, 2, 1]
 

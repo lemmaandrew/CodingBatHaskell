@@ -11,7 +11,7 @@ pre4 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[1,2]" $ pre4 [1,2,4,1] `shouldBe` [1,2]
-   it "[3,1]" $ pre4 [3,1,4] `shouldBe` [3,1]
-   it "[1]" $ pre4 [1,4,4] `shouldBe` [1]
+   it "[1, 2]" $ pre4 [1, 2, 4, 1] `shouldBe` [1, 2]
+   it "[3, 1]" $ pre4 [3, 1, 4] `shouldBe` [3, 1]
+   it "[1]" $ pre4 [1, 4, 4] `shouldBe` [1]
 

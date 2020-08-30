@@ -5,12 +5,12 @@ another 2.
 import Test.Hspec
 
 
-twoTwo :: [Int] -> Bool
+twoTwo :: [Int] -> Boolean
 twoTwo nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ twoTwo [4,2,2,3] `shouldBe` True
-   it "True" $ twoTwo [2,2,4] `shouldBe` True
-   it "False" $ twoTwo [2,2,4,2] `shouldBe` False
+   it "true" $ twoTwo [4, 2, 2, 3] `shouldBe` true
+   it "true" $ twoTwo [2, 2, 4] `shouldBe` true
+   it "false" $ twoTwo [2, 2, 4, 2] `shouldBe` false
 

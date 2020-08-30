@@ -6,12 +6,12 @@ such as with "badxxx" or "xbadxx" but not "xxbadxx". The string may be any lengt
 import Test.Hspec
 
 
-hasBad :: String -> Bool
+hasBad :: String -> Boolean
 hasBad str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ hasBad "badxx" `shouldBe` True
-   it "True" $ hasBad "xbadxx" `shouldBe` True
-   it "False" $ hasBad "xxbadxx" `shouldBe` False
+   it "true" $ hasBad "badxx" `shouldBe` true
+   it "true" $ hasBad "xbadxx" `shouldBe` true
+   it "false" $ hasBad "xxbadxx" `shouldBe` false
 

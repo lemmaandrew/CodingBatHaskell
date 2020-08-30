@@ -5,12 +5,12 @@ and no 3's are next to each other.
 import Test.Hspec
 
 
-haveThree :: [Int] -> Bool
+haveThree :: [Int] -> Boolean
 haveThree nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ haveThree [3,1,3,1,3] `shouldBe` True
-   it "False" $ haveThree [3,1,3,3] `shouldBe` False
-   it "False" $ haveThree [3,4,3,3,4] `shouldBe` False
+   it "true" $ haveThree [3, 1, 3, 1, 3] `shouldBe` true
+   it "false" $ haveThree [3, 1, 3, 3] `shouldBe` false
+   it "false" $ haveThree [3, 4, 3, 3, 4] `shouldBe` false
 

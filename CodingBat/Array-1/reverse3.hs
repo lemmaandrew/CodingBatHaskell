@@ -10,7 +10,7 @@ reverse3 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[3,2,1]" $ reverse3 [1,2,3] `shouldBe` [3,2,1]
-   it "[9,11,5]" $ reverse3 [5,11,9] `shouldBe` [9,11,5]
-   it "[0,0,7]" $ reverse3 [7,0,0] `shouldBe` [0,0,7]
+   it "[3, 2, 1]" $ reverse3 [1, 2, 3] `shouldBe` [3, 2, 1]
+   it "[9, 11, 5]" $ reverse3 [5, 11, 9] `shouldBe` [9, 11, 5]
+   it "[0, 0, 7]" $ reverse3 [7, 0, 0] `shouldBe` [0, 0, 7]
 

@@ -18,7 +18,7 @@ fizzBuzz start end = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\"]" $ fizzBuzz 1 6 `shouldBe` ["1","2","Fizz","4","Buzz"]
-   it "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\",\"Fizz\",\"7\"]" $ fizzBuzz 1 8 `shouldBe` ["1","2","Fizz","4","Buzz","Fizz","7"]
-   it "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\",\"Fizz\",\"7\",\"8\",\"Fizz\",\"Buzz\"]" $ fizzBuzz 1 11 `shouldBe` ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz"]
+   it "[\"1\", \"2\", \"Fizz\", \"4\", \"Buzz\"]" $ fizzBuzz 1 6 `shouldBe` ["1", "2", "Fizz", "4", "Buzz"]
+   it "[\"1\", \"2\", \"Fizz\", \"4\", \"Buzz\", \"Fizz\", \"7\"]" $ fizzBuzz 1 8 `shouldBe` ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7"]
+   it "[\"1\", \"2\", \"Fizz\", \"4\", \"Buzz\", \"Fizz\", \"7\", \"8\", \"Fizz\", \"Buzz\"]" $ fizzBuzz 1 11 `shouldBe` ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz"]
 

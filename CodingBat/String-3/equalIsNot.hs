@@ -5,12 +5,12 @@ is equal to the number of appearances of "not" anywhere in the string (case sens
 import Test.Hspec
 
 
-equalIsNot :: String -> Bool
+equalIsNot :: String -> Boolean
 equalIsNot str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "False" $ equalIsNot "This is not" `shouldBe` False
-   it "True" $ equalIsNot "This is notnot" `shouldBe` True
-   it "True" $ equalIsNot "noisxxnotyynotxisi" `shouldBe` True
+   it "false" $ equalIsNot "This is not" `shouldBe` false
+   it "true" $ equalIsNot "This is notnot" `shouldBe` true
+   it "true" $ equalIsNot "noisxxnotyynotxisi" `shouldBe` true
 

@@ -149,7 +149,7 @@ parseMethodCall = do
 -- they do minimal interpret the string fed
 
 parseLiteral :: ReadP String
-parseLiteral = choice [parseNum, parseString, parseChar, parseList, parseMap]
+parseLiteral = choice [parseNum, parseString, parseChar, parseList, parseMap, javaIdentifier]
 
 -- hard one: have to convert to fromList [(key,value)]
 parseMap :: ReadP String

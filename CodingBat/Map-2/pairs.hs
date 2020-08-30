@@ -11,7 +11,7 @@ pairs strings = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "(Map.fromList [(\"b\",\"g\"),(\"c\",\"e\")])" $ pairs ["code","bug"] `shouldBe` (Map.fromList [("b","g"),("c","e")])
-   it "(Map.fromList [(\"m\",\"n\")])" $ pairs ["man","moon","main"] `shouldBe` (Map.fromList [("m","n")])
-   it "(Map.fromList [(\"g\",\"d\"),(\"m\",\"n\"),(\"n\",\"t\")])" $ pairs ["man","moon","good","night"] `shouldBe` (Map.fromList [("g","d"),("m","n"),("n","t")])
+   it "fromList [(\"b\": \"g\", \"c\", \"e\")]" $ pairs ["code", "bug"] `shouldBe` fromList [("b": "g", "c", "e")]
+   it "fromList [(\"m\", \"n\")]" $ pairs ["man", "moon", "main"] `shouldBe` fromList [("m", "n")]
+   it "fromList [(\"g\": \"d\", \"m\": \"n\", \"n\", \"t\")]" $ pairs ["man", "moon", "good", "night"] `shouldBe` fromList [("g": "d", "m": "n", "n", "t")]
 

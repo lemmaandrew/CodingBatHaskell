@@ -5,12 +5,12 @@ followed by another "x".
 import Test.Hspec
 
 
-doubleX :: String -> Bool
+doubleX :: String -> Boolean
 doubleX str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ doubleX "axxbb" `shouldBe` True
-   it "False" $ doubleX "axaxax" `shouldBe` False
-   it "True" $ doubleX "xxxxx" `shouldBe` True
+   it "true" $ doubleX "axxbb" `shouldBe` true
+   it "false" $ doubleX "axaxax" `shouldBe` false
+   it "true" $ doubleX "xxxxx" `shouldBe` true
 

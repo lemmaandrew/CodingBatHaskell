@@ -7,12 +7,12 @@ if the squirrels play and false otherwise.
 import Test.Hspec
 
 
-squirrelPlay :: Int -> Bool -> Bool
+squirrelPlay :: Int -> Boolean -> Boolean
 squirrelPlay temp isSummer = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ squirrelPlay 70 False `shouldBe` True
-   it "False" $ squirrelPlay 95 False `shouldBe` False
-   it "True" $ squirrelPlay 95 True `shouldBe` True
+   it "true" $ squirrelPlay 70 false `shouldBe` true
+   it "false" $ squirrelPlay 95 false `shouldBe` false
+   it "true" $ squirrelPlay 95 true `shouldBe` true
 

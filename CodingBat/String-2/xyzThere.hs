@@ -5,12 +5,12 @@ directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.
 import Test.Hspec
 
 
-xyzThere :: String -> Bool
+xyzThere :: String -> Boolean
 xyzThere str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ xyzThere "abcxyz" `shouldBe` True
-   it "False" $ xyzThere "abc.xyz" `shouldBe` False
-   it "True" $ xyzThere "xyz.abc" `shouldBe` True
+   it "true" $ xyzThere "abcxyz" `shouldBe` true
+   it "false" $ xyzThere "abc.xyz" `shouldBe` false
+   it "true" $ xyzThere "xyz.abc" `shouldBe` true
 

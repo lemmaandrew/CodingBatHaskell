@@ -7,12 +7,12 @@ multiple of 5) must be in the other. (No loops needed.)
 import Test.Hspec
 
 
-split53 :: [Int] -> Bool
+split53 :: [Int] -> Boolean
 split53 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ split53 [1,1] `shouldBe` True
-   it "False" $ split53 [1,1,1] `shouldBe` False
-   it "True" $ split53 [2,4,2] `shouldBe` True
+   it "true" $ split53 [1, 1] `shouldBe` true
+   it "false" $ split53 [1, 1, 1] `shouldBe` false
+   it "true" $ split53 [2, 4, 2] `shouldBe` true
 

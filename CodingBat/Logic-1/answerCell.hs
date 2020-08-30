@@ -6,12 +6,12 @@ asleep, you do not answer.
 import Test.Hspec
 
 
-answerCell :: Bool -> Bool -> Bool -> Bool
+answerCell :: Boolean -> Boolean -> Boolean -> Boolean
 answerCell isMorning isMom isAsleep = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ answerCell False False False `shouldBe` True
-   it "False" $ answerCell False False True `shouldBe` False
-   it "False" $ answerCell True False False `shouldBe` False
+   it "true" $ answerCell false false false `shouldBe` true
+   it "false" $ answerCell false false true `shouldBe` false
+   it "false" $ answerCell true false false `shouldBe` false
 

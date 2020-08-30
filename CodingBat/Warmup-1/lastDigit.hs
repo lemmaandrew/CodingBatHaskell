@@ -6,12 +6,12 @@ as with 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 1
 import Test.Hspec
 
 
-lastDigit :: Int -> Int -> Bool
+lastDigit :: Int -> Int -> Boolean
 lastDigit a b = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ lastDigit 7 17 `shouldBe` True
-   it "False" $ lastDigit 6 17 `shouldBe` False
-   it "True" $ lastDigit 3 113 `shouldBe` True
+   it "true" $ lastDigit 7 17 `shouldBe` true
+   it "false" $ lastDigit 6 17 `shouldBe` false
+   it "true" $ lastDigit 3 113 `shouldBe` true
 

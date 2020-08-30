@@ -9,12 +9,12 @@ used to find the extent of the identical values).
 import Test.Hspec
 
 
-groupSumClump :: Int -> [Int] -> Int -> Bool
+groupSumClump :: Int -> [Int] -> Int -> Boolean
 groupSumClump start nums target = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ groupSumClump 0 [2,4,8] 10 `shouldBe` True
-   it "True" $ groupSumClump 0 [1,2,4,8,1] 14 `shouldBe` True
-   it "False" $ groupSumClump 0 [2,4,4,8] 14 `shouldBe` False
+   it "true" $ groupSumClump 0 [2, 4, 8] 10 `shouldBe` true
+   it "true" $ groupSumClump 0 [1, 2, 4, 8, 1] 14 `shouldBe` true
+   it "false" $ groupSumClump 0 [2, 4, 4, 8] 14 `shouldBe` false
 

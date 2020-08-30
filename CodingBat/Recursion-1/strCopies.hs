@@ -5,12 +5,12 @@ of sub appear in the string somewhere, possibly with overlapping. N will be non-
 import Test.Hspec
 
 
-strCopies :: String -> String -> Int -> Bool
+strCopies :: String -> String -> Int -> Boolean
 strCopies str sub n = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ strCopies "catcowcat" "cat" 2 `shouldBe` True
-   it "False" $ strCopies "catcowcat" "cow" 2 `shouldBe` False
-   it "True" $ strCopies "catcowcat" "cow" 1 `shouldBe` True
+   it "true" $ strCopies "catcowcat" "cat" 2 `shouldBe` true
+   it "false" $ strCopies "catcowcat" "cow" 2 `shouldBe` false
+   it "true" $ strCopies "catcowcat" "cow" 1 `shouldBe` true
 

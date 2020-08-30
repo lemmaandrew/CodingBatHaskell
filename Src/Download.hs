@@ -50,7 +50,7 @@ getProblem url = do
             Just page' -> return $ Just page'
             Nothing -> trace ("Failed getProblem with url: " ++ url) (return Nothing)
         where
-    getChecks = nub . map ((\[x,y] -> (javaToMethodCall x, fst $ last $ readP_to_S parseLiteral y)) . splitOn " \8594 ")
+    getChecks = nub . map ((\[x,y] -> (javaToMethodCall x, fst $ last $ readP_to_S (parseLiteral +++ javaIdentifier) y)) . splitOn " \8594 ")
                         . filter (isInfixOf "\8594")
     getPage = do
         names <- texts $ "span" @: [hasClass "h2"]
@@ -75,14 +75,18 @@ compileProblem (Problem url name desc checks method) = (name, printf formatStrin
 
     -- newline approx. every 100 characters
     -- the groupBy is a better words
+    -- `map (replace '\160' ' ') is replacing nonbreaking spaces which appear at random
     formatDesc :: String
-    formatDesc = go 0 $ groupBy (\x y -> (x == ' ') == (y == ' ')) desc where
+    formatDesc = map (replace '\160' ' ') $ go 0 $ groupBy (\x y -> (x == ' ') == (y == ' ')) desc where
         go _ [] = []
         go 0 (x:xs) = x ++ go (length x) xs
         go n (" ":xs) = go (n + 1) xs
         go n (x:xs)
             | n >= 100 = ('\n' : x) ++ go (length x) xs
             | otherwise = (' ' : x) ++ go (n + 1 + length x) xs
+        replace a b c
+            | c == a    = b
+            | otherwise = c
 
     extraImport :: String
     extraImport
@@ -91,7 +95,7 @@ compileProblem (Problem url name desc checks method) = (name, printf formatStrin
 
     formatChecks :: String
     formatChecks = unlines
-                 $ map (\(call,res) -> printf "   it %s $ %s `shouldBe` %s" res (methodCallToHaskell call) res)
+                 $ map (\(call,res) -> printf "   it %s $ %s `shouldBe` %s" (show res) (methodCallToHaskell call) res)
                        checks
 
     formatMethod :: String
@@ -129,7 +133,7 @@ getCategory url = do
     page :: Scraper String (IO Category)
     page = do
         name <- text $ "span" @: [hasClass "h2"]
-        hrefs <- attrs "href" $ "a" @: ["href" @=~ (makeRegex "/prob/" :: Regex)]
+        hrefs <- attrs "href" $ "a" @: ["href" @=~ (makeRegex ("/prob/" :: String) :: Regex)]
         let problems = sequence $ map (getProblem . ("https://codingbat.com" ++)) hrefs
         return $ Category name <$> catMaybes <$> problems -- filtering Nothings from problems
 
@@ -148,6 +152,6 @@ getSite = do
         where
     homepage :: Scraper String (IO [Category])
     homepage = do
-        hrefs <- attrs "href" $ "a" @: ["href" @=~ (makeRegex "/java/" :: Regex)]
+        hrefs <- attrs "href" $ "a" @: ["href" @=~ (makeRegex ("/java/" :: String) :: Regex)]
         let cats = sequence $ map (getCategory . ("https://codingbat.com" ++)) hrefs
         return $ catMaybes <$> cats

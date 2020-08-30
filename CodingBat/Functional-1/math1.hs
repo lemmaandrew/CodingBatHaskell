@@ -10,7 +10,7 @@ math1 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[20,30,40]" $ math1 [1,2,3] `shouldBe` [20,30,40]
-   it "[70,90,70,90,20]" $ math1 [6,8,6,8,1] `shouldBe` [70,90,70,90,20]
+   it "[20, 30, 40]" $ math1 [1, 2, 3] `shouldBe` [20, 30, 40]
+   it "[70, 90, 70, 90, 20]" $ math1 [6, 8, 6, 8, 1] `shouldBe` [70, 90, 70, 90, 20]
    it "[110]" $ math1 [10] `shouldBe` [110]
 

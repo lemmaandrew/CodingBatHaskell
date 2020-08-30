@@ -5,12 +5,12 @@ all next to each other.
 import Test.Hspec
 
 
-modThree :: [Int] -> Bool
+modThree :: [Int] -> Boolean
 modThree nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ modThree [2,1,3,5] `shouldBe` True
-   it "False" $ modThree [2,1,2,5] `shouldBe` False
-   it "True" $ modThree [2,4,2,5] `shouldBe` True
+   it "true" $ modThree [2, 1, 3, 5] `shouldBe` true
+   it "false" $ modThree [2, 1, 2, 5] `shouldBe` false
+   it "true" $ modThree [2, 4, 2, 5] `shouldBe` true
 

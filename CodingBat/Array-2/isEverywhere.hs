@@ -6,12 +6,12 @@ is everywhere in the array.
 import Test.Hspec
 
 
-isEverywhere :: [Int] -> Int -> Bool
+isEverywhere :: [Int] -> Int -> Boolean
 isEverywhere nums val = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ isEverywhere [1,2,1,3] 1 `shouldBe` True
-   it "False" $ isEverywhere [1,2,1,3] 2 `shouldBe` False
-   it "False" $ isEverywhere [1,2,1,3,4] 1 `shouldBe` False
+   it "true" $ isEverywhere [1, 2, 1, 3] 1 `shouldBe` true
+   it "false" $ isEverywhere [1, 2, 1, 3] 2 `shouldBe` false
+   it "false" $ isEverywhere [1, 2, 1, 3, 4] 1 `shouldBe` false
 

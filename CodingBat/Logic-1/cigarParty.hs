@@ -7,12 +7,12 @@ the party with the given values is successful, or false otherwise.
 import Test.Hspec
 
 
-cigarParty :: Int -> Bool -> Bool
+cigarParty :: Int -> Boolean -> Boolean
 cigarParty cigars isWeekend = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "False" $ cigarParty 30 False `shouldBe` False
-   it "True" $ cigarParty 50 False `shouldBe` True
-   it "True" $ cigarParty 70 True `shouldBe` True
+   it "false" $ cigarParty 30 false `shouldBe` false
+   it "true" $ cigarParty 50 false `shouldBe` true
+   it "true" $ cigarParty 70 true `shouldBe` true
 

@@ -11,7 +11,7 @@ wordLen strings = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "(Map.fromList [(\"bb\",2),(\"a\",1)])" $ wordLen ["a","bb","a","bb"] `shouldBe` (Map.fromList [("bb",2),("a",1)])
-   it "(Map.fromList [(\"that\",4),(\"and\",3),(\"this\",4)])" $ wordLen ["this","and","that","and"] `shouldBe` (Map.fromList [("that",4),("and",3),("this",4)])
-   it "(Map.fromList [(\"code\",4),(\"bug\",3)])" $ wordLen ["code","code","code","bug"] `shouldBe` (Map.fromList [("code",4),("bug",3)])
+   it "fromList [(\"bb\": 2, \"a\", 1)]" $ wordLen ["a", "bb", "a", "bb"] `shouldBe` fromList [("bb": 2, "a", 1)]
+   it "fromList [(\"that\": 4, \"and\": 3, \"this\", 4)]" $ wordLen ["this", "and", "that", "and"] `shouldBe` fromList [("that": 4, "and": 3, "this", 4)]
+   it "fromList [(\"code\": 4, \"bug\", 3)]" $ wordLen ["code", "code", "code", "bug"] `shouldBe` fromList [("code": 4, "bug", 3)]
 

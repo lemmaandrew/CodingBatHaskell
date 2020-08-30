@@ -5,12 +5,12 @@ for example 38 and 39 return true, but 40 returns false. See also: Introduction 
 import Test.Hspec
 
 
-less20 :: Int -> Bool
+less20 :: Int -> Boolean
 less20 n = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ less20 18 `shouldBe` True
-   it "True" $ less20 19 `shouldBe` True
-   it "False" $ less20 20 `shouldBe` False
+   it "true" $ less20 18 `shouldBe` true
+   it "true" $ less20 19 `shouldBe` true
+   it "false" $ less20 20 `shouldBe` false
 

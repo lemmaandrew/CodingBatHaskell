@@ -11,7 +11,7 @@ evenOdd nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[0,0,0,1,1,1,1]" $ evenOdd [1,0,1,0,0,1,1] `shouldBe` [0,0,0,1,1,1,1]
-   it "[2,3,3]" $ evenOdd [3,3,2] `shouldBe` [2,3,3]
-   it "[2,2,2]" $ evenOdd [2,2,2] `shouldBe` [2,2,2]
+   it "[0, 0, 0, 1, 1, 1, 1]" $ evenOdd [1, 0, 1, 0, 0, 1, 1] `shouldBe` [0, 0, 0, 1, 1, 1, 1]
+   it "[2, 3, 3]" $ evenOdd [3, 3, 2] `shouldBe` [2, 3, 3]
+   it "[2, 2, 2]" $ evenOdd [2, 2, 2] `shouldBe` [2, 2, 2]
 

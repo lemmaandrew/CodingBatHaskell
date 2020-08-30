@@ -6,12 +6,12 @@ Note: Math.abs(num) computes the absolute value of a number.
 import Test.Hspec
 
 
-closeFar :: Int -> Int -> Int -> Bool
+closeFar :: Int -> Int -> Int -> Boolean
 closeFar a b c = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ closeFar 1 2 10 `shouldBe` True
-   it "False" $ closeFar 1 2 3 `shouldBe` False
-   it "True" $ closeFar 4 1 3 `shouldBe` True
+   it "true" $ closeFar 1 2 10 `shouldBe` true
+   it "false" $ closeFar 1 2 3 `shouldBe` false
+   it "true" $ closeFar 4 1 3 `shouldBe` true
 

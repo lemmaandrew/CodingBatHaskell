@@ -9,7 +9,7 @@ noX strings = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[\"a\",\"bb\",\"c\"]" $ noX ["ax","bb","cx"] `shouldBe` ["a","bb","c"]
-   it "[\"a\",\"bb\",\"c\"]" $ noX ["xxax","xbxbx","xxcx"] `shouldBe` ["a","bb","c"]
+   it "[\"a\", \"bb\", \"c\"]" $ noX ["ax", "bb", "cx"] `shouldBe` ["a", "bb", "c"]
+   it "[\"a\", \"bb\", \"c\"]" $ noX ["xxax", "xbxbx", "xxcx"] `shouldBe` ["a", "bb", "c"]
    it "[\"\"]" $ noX ["x"] `shouldBe` [""]
 

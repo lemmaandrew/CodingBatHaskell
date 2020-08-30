@@ -7,12 +7,12 @@ will pass in index as 0.
 import Test.Hspec
 
 
-array6 :: [Int] -> Int -> Bool
+array6 :: [Int] -> Int -> Boolean
 array6 nums index = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ array6 [1,6,4] 0 `shouldBe` True
-   it "False" $ array6 [1,4] 0 `shouldBe` False
-   it "True" $ array6 [6] 0 `shouldBe` True
+   it "true" $ array6 [1, 6, 4] 0 `shouldBe` true
+   it "false" $ array6 [1, 4] 0 `shouldBe` false
+   it "true" $ array6 [6] 0 `shouldBe` true
 

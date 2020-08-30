@@ -10,7 +10,7 @@ noTeen nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[12,20]" $ noTeen [12,13,19,20] `shouldBe` [12,20]
-   it "[1,1]" $ noTeen [1,14,1] `shouldBe` [1,1]
+   it "[12, 20]" $ noTeen [12, 13, 19, 20] `shouldBe` [12, 20]
+   it "[1, 1]" $ noTeen [1, 14, 1] `shouldBe` [1, 1]
    it "[]" $ noTeen [15] `shouldBe` []
 

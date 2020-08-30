@@ -12,7 +12,7 @@ mapAB4 map = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "(Map.fromList [(\"a\",\"aaa\"),(\"b\",\"bb\"),(\"c\",\"aaa\")])" $ mapAB4 (Map.fromList [("a","aaa"),("b","bb"),("c","cake")]) `shouldBe` (Map.fromList [("a","aaa"),("b","bb"),("c","aaa")])
-   it "(Map.fromList [(\"a\",\"aa\"),(\"b\",\"bbb\"),(\"c\",\"bbb\")])" $ mapAB4 (Map.fromList [("a","aa"),("b","bbb"),("c","cake")]) `shouldBe` (Map.fromList [("a","aa"),("b","bbb"),("c","bbb")])
-   it "(Map.fromList [(\"a\",\"aa\"),(\"b\",\"bbb\"),(\"c\",\"bbb\")])" $ mapAB4 (Map.fromList [("a","aa"),("b","bbb")]) `shouldBe` (Map.fromList [("a","aa"),("b","bbb"),("c","bbb")])
+   it "fromList [(\"a\": \"aaa\", \"b\": \"bb\", \"c\", \"aaa\")]" $ mapAB4 fromList [("a", "aaa"), ("b", "bb"), ("c", "cake")] `shouldBe` fromList [("a": "aaa", "b": "bb", "c", "aaa")]
+   it "fromList [(\"a\": \"aa\", \"b\": \"bbb\", \"c\", \"bbb\")]" $ mapAB4 fromList [("a", "aa"), ("b", "bbb"), ("c", "cake")] `shouldBe` fromList [("a": "aa", "b": "bbb", "c", "bbb")]
+   it "fromList [(\"a\": \"aa\", \"b\": \"bbb\", \"c\", \"bbb\")]" $ mapAB4 fromList [("a", "aa"), ("b", "bbb")] `shouldBe` fromList [("a": "aa", "b": "bbb", "c", "bbb")]
 

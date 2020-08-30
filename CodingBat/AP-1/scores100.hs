@@ -5,12 +5,12 @@ in the array. The array length will be at least 2.
 import Test.Hspec
 
 
-scores100 :: [Int] -> Bool
+scores100 :: [Int] -> Boolean
 scores100 scores = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ scores100 [1,100,100] `shouldBe` True
-   it "False" $ scores100 [1,100,99,100] `shouldBe` False
-   it "True" $ scores100 [100,1,100,100] `shouldBe` True
+   it "true" $ scores100 [1, 100, 100] `shouldBe` true
+   it "false" $ scores100 [1, 100, 99, 100] `shouldBe` false
+   it "true" $ scores100 [100, 1, 100, 100] `shouldBe` true
 

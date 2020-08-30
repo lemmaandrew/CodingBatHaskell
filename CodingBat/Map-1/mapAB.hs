@@ -12,7 +12,7 @@ mapAB map = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "(Map.fromList [(\"a\",\"Hi\"),(\"ab\",\"HiThere\"),(\"b\",\"There\")])" $ mapAB (Map.fromList [("a","Hi"),("b","There")]) `shouldBe` (Map.fromList [("a","Hi"),("ab","HiThere"),("b","There")])
-   it "(Map.fromList [(\"a\",\"Hi\")])" $ mapAB (Map.fromList [("a","Hi")]) `shouldBe` (Map.fromList [("a","Hi")])
-   it "(Map.fromList [(\"b\",\"There\")])" $ mapAB (Map.fromList [("b","There")]) `shouldBe` (Map.fromList [("b","There")])
+   it "fromList [(\"a\": \"Hi\", \"ab\": \"HiThere\", \"b\", \"There\")]" $ mapAB fromList [("a", "Hi"), ("b", "There")] `shouldBe` fromList [("a": "Hi", "ab": "HiThere", "b", "There")]
+   it "fromList [(\"a\", \"Hi\")]" $ mapAB fromList [("a", "Hi")] `shouldBe` fromList [("a", "Hi")]
+   it "fromList [(\"b\", \"There\")]" $ mapAB fromList [("b", "There")] `shouldBe` fromList [("b", "There")]
 

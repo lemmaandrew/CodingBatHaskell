@@ -5,12 +5,12 @@ Return true if the given string begins with "mix", except the 'm' can be anythin
 import Test.Hspec
 
 
-mixStart :: String -> Bool
+mixStart :: String -> Boolean
 mixStart str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ mixStart "mix snacks" `shouldBe` True
-   it "True" $ mixStart "pix snacks" `shouldBe` True
-   it "False" $ mixStart "piz snacks" `shouldBe` False
+   it "true" $ mixStart "mix snacks" `shouldBe` true
+   it "true" $ mixStart "pix snacks" `shouldBe` true
+   it "false" $ mixStart "piz snacks" `shouldBe` false
 

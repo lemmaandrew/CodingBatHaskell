@@ -6,12 +6,12 @@ true if we sleep in.
 import Test.Hspec
 
 
-sleepIn :: Bool -> Bool -> Bool
+sleepIn :: Boolean -> Boolean -> Boolean
 sleepIn weekday vacation = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ sleepIn False False `shouldBe` True
-   it "False" $ sleepIn True False `shouldBe` False
-   it "True" $ sleepIn False True `shouldBe` True
+   it "true" $ sleepIn false false `shouldBe` true
+   it "false" $ sleepIn true false `shouldBe` false
+   it "true" $ sleepIn false true `shouldBe` true
 

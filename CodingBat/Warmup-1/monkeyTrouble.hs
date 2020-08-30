@@ -6,12 +6,12 @@ Return true if we are in trouble.
 import Test.Hspec
 
 
-monkeyTrouble :: Bool -> Bool -> Bool
+monkeyTrouble :: Boolean -> Boolean -> Boolean
 monkeyTrouble aSmile bSmile = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ monkeyTrouble True True `shouldBe` True
-   it "True" $ monkeyTrouble False False `shouldBe` True
-   it "False" $ monkeyTrouble True False `shouldBe` False
+   it "true" $ monkeyTrouble true true `shouldBe` true
+   it "true" $ monkeyTrouble false false `shouldBe` true
+   it "false" $ monkeyTrouble true false `shouldBe` false
 

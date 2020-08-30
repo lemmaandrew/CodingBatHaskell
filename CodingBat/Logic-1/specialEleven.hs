@@ -6,12 +6,12 @@ a multiple of 11. Return true if the given non-negative number is special. Use t
 import Test.Hspec
 
 
-specialEleven :: Int -> Bool
+specialEleven :: Int -> Boolean
 specialEleven n = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ specialEleven 22 `shouldBe` True
-   it "True" $ specialEleven 23 `shouldBe` True
-   it "False" $ specialEleven 24 `shouldBe` False
+   it "true" $ specialEleven 22 `shouldBe` true
+   it "true" $ specialEleven 23 `shouldBe` true
+   it "false" $ specialEleven 24 `shouldBe` false
 

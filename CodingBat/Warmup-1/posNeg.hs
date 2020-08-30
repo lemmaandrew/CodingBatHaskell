@@ -5,12 +5,12 @@ parameter "negative" is true, then return true only if both are negative.
 import Test.Hspec
 
 
-posNeg :: Int -> Int -> Bool -> Bool
+posNeg :: Int -> Int -> Boolean -> Boolean
 posNeg a b negative = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ posNeg 1 (-1) False `shouldBe` True
-   it "True" $ posNeg (-1) 1 False `shouldBe` True
-   it "True" $ posNeg (-4) (-5) True `shouldBe` True
+   it "true" $ posNeg 1 (-1) false `shouldBe` true
+   it "true" $ posNeg (-1) 1 false `shouldBe` true
+   it "true" $ posNeg (-4) (-5) true `shouldBe` true
 

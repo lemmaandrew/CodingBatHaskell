@@ -50,3 +50,8 @@
 3. Is actually readable now
 4. Only uses base packages
 5. Doesn't use 3 different versions of regex???? (uses 0 now)
+
+## 0.2.0.1 -- 2020-08-30
+
+* Fixed typos in imports
+* Fixed an error with random nonbreaking spaces by replacing them with regular spaces

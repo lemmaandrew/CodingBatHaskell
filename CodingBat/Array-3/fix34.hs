@@ -12,7 +12,7 @@ fix34 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[1,3,4,1]" $ fix34 [1,3,1,4] `shouldBe` [1,3,4,1]
-   it "[1,3,4,1,1,3,4]" $ fix34 [1,3,1,4,4,3,1] `shouldBe` [1,3,4,1,1,3,4]
-   it "[3,4,2,2]" $ fix34 [3,2,2,4] `shouldBe` [3,4,2,2]
+   it "[1, 3, 4, 1]" $ fix34 [1, 3, 1, 4] `shouldBe` [1, 3, 4, 1]
+   it "[1, 3, 4, 1, 1, 3, 4]" $ fix34 [1, 3, 1, 4, 4, 3, 1] `shouldBe` [1, 3, 4, 1, 1, 3, 4]
+   it "[3, 4, 2, 2]" $ fix34 [3, 2, 2, 4] `shouldBe` [3, 4, 2, 2]
 

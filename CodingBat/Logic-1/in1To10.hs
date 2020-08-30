@@ -6,12 +6,12 @@ or equal to 10.
 import Test.Hspec
 
 
-in1To10 :: Int -> Bool -> Bool
+in1To10 :: Int -> Boolean -> Boolean
 in1To10 n outsideMode = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ in1To10 5 False `shouldBe` True
-   it "False" $ in1To10 11 False `shouldBe` False
-   it "True" $ in1To10 11 True `shouldBe` True
+   it "true" $ in1To10 5 false `shouldBe` true
+   it "false" $ in1To10 11 false `shouldBe` false
+   it "true" $ in1To10 11 true `shouldBe` true
 

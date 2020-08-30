@@ -11,7 +11,7 @@ bigDiff nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "7" $ bigDiff [10,3,5,6] `shouldBe` 7
-   it "8" $ bigDiff [7,2,10,9] `shouldBe` 8
-   it "8" $ bigDiff [2,10,7,2] `shouldBe` 8
+   it "7" $ bigDiff [10, 3, 5, 6] `shouldBe` 7
+   it "8" $ bigDiff [7, 2, 10, 9] `shouldBe` 8
+   it "8" $ bigDiff [2, 10, 7, 2] `shouldBe` 8
 

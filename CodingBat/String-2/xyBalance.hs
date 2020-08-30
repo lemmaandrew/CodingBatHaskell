@@ -6,12 +6,12 @@ One 'y' can balance multiple 'x's. Return true if the given string is xy-balance
 import Test.Hspec
 
 
-xyBalance :: String -> Bool
+xyBalance :: String -> Boolean
 xyBalance str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ xyBalance "aaxbby" `shouldBe` True
-   it "False" $ xyBalance "aaxbb" `shouldBe` False
-   it "False" $ xyBalance "yaaxbb" `shouldBe` False
+   it "true" $ xyBalance "aaxbby" `shouldBe` true
+   it "false" $ xyBalance "aaxbb" `shouldBe` false
+   it "false" $ xyBalance "yaaxbb" `shouldBe` false
 

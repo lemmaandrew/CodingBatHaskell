@@ -11,7 +11,7 @@ mapAB3 map = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "(Map.fromList [(\"a\",\"aaa\"),(\"b\",\"aaa\"),(\"c\",\"cake\")])" $ mapAB3 (Map.fromList [("a","aaa"),("c","cake")]) `shouldBe` (Map.fromList [("a","aaa"),("b","aaa"),("c","cake")])
-   it "(Map.fromList [(\"a\",\"bbb\"),(\"b\",\"bbb\"),(\"c\",\"cake\")])" $ mapAB3 (Map.fromList [("b","bbb"),("c","cake")]) `shouldBe` (Map.fromList [("a","bbb"),("b","bbb"),("c","cake")])
-   it "(Map.fromList [(\"a\",\"aaa\"),(\"b\",\"bbb\"),(\"c\",\"cake\")])" $ mapAB3 (Map.fromList [("a","aaa"),("b","bbb"),("c","cake")]) `shouldBe` (Map.fromList [("a","aaa"),("b","bbb"),("c","cake")])
+   it "fromList [(\"a\": \"aaa\", \"b\": \"aaa\", \"c\", \"cake\")]" $ mapAB3 fromList [("a", "aaa"), ("c", "cake")] `shouldBe` fromList [("a": "aaa", "b": "aaa", "c", "cake")]
+   it "fromList [(\"a\": \"bbb\", \"b\": \"bbb\", \"c\", \"cake\")]" $ mapAB3 fromList [("b", "bbb"), ("c", "cake")] `shouldBe` fromList [("a": "bbb", "b": "bbb", "c", "cake")]
+   it "fromList [(\"a\": \"aaa\", \"b\": \"bbb\", \"c\", \"cake\")]" $ mapAB3 fromList [("a", "aaa"), ("b", "bbb"), ("c", "cake")] `shouldBe` fromList [("a": "aaa", "b": "bbb", "c", "cake")]
 

@@ -7,12 +7,12 @@ must not be chosen. (No loops needed.)
 import Test.Hspec
 
 
-groupNoAdj :: Int -> [Int] -> Int -> Bool
+groupNoAdj :: Int -> [Int] -> Int -> Boolean
 groupNoAdj start nums target = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ groupNoAdj 0 [2,5,10,4] 12 `shouldBe` True
-   it "False" $ groupNoAdj 0 [2,5,10,4] 14 `shouldBe` False
-   it "False" $ groupNoAdj 0 [2,5,10,4] 7 `shouldBe` False
+   it "true" $ groupNoAdj 0 [2, 5, 10, 4] 12 `shouldBe` true
+   it "false" $ groupNoAdj 0 [2, 5, 10, 4] 14 `shouldBe` false
+   it "false" $ groupNoAdj 0 [2, 5, 10, 4] 7 `shouldBe` false
 

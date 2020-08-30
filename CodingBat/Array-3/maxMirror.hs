@@ -12,7 +12,7 @@ maxMirror nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "3" $ maxMirror [1,2,3,8,9,3,2,1] `shouldBe` 3
-   it "3" $ maxMirror [1,2,1,4] `shouldBe` 3
-   it "2" $ maxMirror [7,1,2,9,7,2,1] `shouldBe` 2
+   it "3" $ maxMirror [1, 2, 3, 8, 9, 3, 2, 1] `shouldBe` 3
+   it "3" $ maxMirror [1, 2, 1, 4] `shouldBe` 3
+   it "2" $ maxMirror [7, 1, 2, 9, 7, 2, 1] `shouldBe` 2
 

@@ -5,12 +5,12 @@ of the string, such as with "edited".
 import Test.Hspec
 
 
-frontAgain :: String -> Bool
+frontAgain :: String -> Boolean
 frontAgain str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ frontAgain "edited" `shouldBe` True
-   it "False" $ frontAgain "edit" `shouldBe` False
-   it "True" $ frontAgain "ed" `shouldBe` True
+   it "true" $ frontAgain "edited" `shouldBe` true
+   it "false" $ frontAgain "edit" `shouldBe` false
+   it "true" $ frontAgain "ed" `shouldBe` true
 

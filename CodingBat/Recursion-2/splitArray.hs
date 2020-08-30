@@ -7,12 +7,12 @@ call to your recursive helper from splitArray(). (No loops needed.)
 import Test.Hspec
 
 
-splitArray :: [Int] -> Bool
+splitArray :: [Int] -> Boolean
 splitArray nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ splitArray [2,2] `shouldBe` True
-   it "False" $ splitArray [2,3] `shouldBe` False
-   it "True" $ splitArray [5,2,3] `shouldBe` True
+   it "true" $ splitArray [2, 2] `shouldBe` true
+   it "false" $ splitArray [2, 3] `shouldBe` false
+   it "true" $ splitArray [5, 2, 3] `shouldBe` true
 

@@ -10,7 +10,7 @@ frontPiece nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[1,2]" $ frontPiece [1,2,3] `shouldBe` [1,2]
-   it "[1,2]" $ frontPiece [1,2] `shouldBe` [1,2]
+   it "[1, 2]" $ frontPiece [1, 2, 3] `shouldBe` [1, 2]
+   it "[1, 2]" $ frontPiece [1, 2] `shouldBe` [1, 2]
    it "[1]" $ frontPiece [1] `shouldBe` [1]
 

@@ -5,12 +5,12 @@ element and the last element are equal.
 import Test.Hspec
 
 
-sameFirstLast :: [Int] -> Bool
+sameFirstLast :: [Int] -> Boolean
 sameFirstLast nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "False" $ sameFirstLast [1,2,3] `shouldBe` False
-   it "True" $ sameFirstLast [1,2,3,1] `shouldBe` True
-   it "True" $ sameFirstLast [1,2,1] `shouldBe` True
+   it "false" $ sameFirstLast [1, 2, 3] `shouldBe` false
+   it "true" $ sameFirstLast [1, 2, 3, 1] `shouldBe` true
+   it "true" $ sameFirstLast [1, 2, 1] `shouldBe` true
 

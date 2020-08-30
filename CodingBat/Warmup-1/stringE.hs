@@ -4,12 +4,12 @@ Return true if the given string contains between 1 and 3 'e' chars.
 import Test.Hspec
 
 
-stringE :: String -> Bool
+stringE :: String -> Boolean
 stringE str = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ stringE "Hello" `shouldBe` True
-   it "True" $ stringE "Heelle" `shouldBe` True
-   it "False" $ stringE "Heelele" `shouldBe` False
+   it "true" $ stringE "Hello" `shouldBe` true
+   it "true" $ stringE "Heelle" `shouldBe` true
+   it "false" $ stringE "Heelele" `shouldBe` false
 

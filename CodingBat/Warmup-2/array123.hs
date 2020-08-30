@@ -5,12 +5,12 @@ array somewhere.
 import Test.Hspec
 
 
-array123 :: [Int] -> Bool
+array123 :: [Int] -> Boolean
 array123 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ array123 [1,1,2,3,1] `shouldBe` True
-   it "False" $ array123 [1,1,2,4,1] `shouldBe` False
-   it "True" $ array123 [1,1,2,1,2,3] `shouldBe` True
+   it "true" $ array123 [1, 1, 2, 3, 1] `shouldBe` true
+   it "false" $ array123 [1, 1, 2, 4, 1] `shouldBe` false
+   it "true" $ array123 [1, 1, 2, 1, 2, 3] `shouldBe` true
 

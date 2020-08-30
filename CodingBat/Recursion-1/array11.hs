@@ -12,7 +12,7 @@ array11 nums index = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "1" $ array11 [1,2,11] 0 `shouldBe` 1
-   it "2" $ array11 [11,11] 0 `shouldBe` 2
-   it "0" $ array11 [1,2,3,4] 0 `shouldBe` 0
+   it "1" $ array11 [1, 2, 11] 0 `shouldBe` 1
+   it "2" $ array11 [11, 11] 0 `shouldBe` 2
+   it "0" $ array11 [1, 2, 3, 4] 0 `shouldBe` 0
 

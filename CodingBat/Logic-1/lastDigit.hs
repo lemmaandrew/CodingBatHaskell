@@ -6,12 +6,12 @@ digit. The ints are non-negative. Note: the % "mod" operator computes the remain
 import Test.Hspec
 
 
-lastDigit :: Int -> Int -> Int -> Bool
+lastDigit :: Int -> Int -> Int -> Boolean
 lastDigit a b c = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ lastDigit 23 19 13 `shouldBe` True
-   it "False" $ lastDigit 23 19 12 `shouldBe` False
-   it "True" $ lastDigit 23 19 3 `shouldBe` True
+   it "true" $ lastDigit 23 19 13 `shouldBe` true
+   it "false" $ lastDigit 23 19 12 `shouldBe` false
+   it "true" $ lastDigit 23 19 3 `shouldBe` true
 

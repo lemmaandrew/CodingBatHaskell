@@ -4,7 +4,7 @@ cabal-version:       3.2.0.0
 -- http://haskell.org/cabal/users-guide/
 
 name:                CodingBatHaskell
-version:             0.2.0.0
+version:             0.2.0.1
 synopsis:            codingbat.com/java problems in Haskell
 -- description:
 homepage:            https://github.com/peterjayandrew/CodingBatHaskell
@@ -31,7 +31,7 @@ library
 
 executable CodingBatHaskell
   main-is:             Main.hs
-  other-modules:       JavaFuncs, Download
+  other-modules:       Src.JavaFuncs, Src.Download
   -- other-extensions:
   build-depends:       base ^>=4.12.0.0
   hs-source-dirs:      src/

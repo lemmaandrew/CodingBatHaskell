@@ -5,12 +5,12 @@ rightmost digit, and / to discard the rightmost digit.
 import Test.Hspec
 
 
-hasOne :: Int -> Bool
+hasOne :: Int -> Boolean
 hasOne n = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ hasOne 10 `shouldBe` True
-   it "False" $ hasOne 22 `shouldBe` False
-   it "False" $ hasOne 220 `shouldBe` False
+   it "true" $ hasOne 10 `shouldBe` true
+   it "false" $ hasOne 22 `shouldBe` false
+   it "false" $ hasOne 220 `shouldBe` false
 

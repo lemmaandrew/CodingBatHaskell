@@ -13,7 +13,7 @@ scoreUp key answers = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "6" $ scoreUp ["a","a","b","b"] ["a","c","b","c"] `shouldBe` 6
-   it "11" $ scoreUp ["a","a","b","b"] ["a","a","b","c"] `shouldBe` 11
-   it "16" $ scoreUp ["a","a","b","b"] ["a","a","b","b"] `shouldBe` 16
+   it "6" $ scoreUp ["a", "a", "b", "b"] ["a", "c", "b", "c"] `shouldBe` 6
+   it "11" $ scoreUp ["a", "a", "b", "b"] ["a", "a", "b", "c"] `shouldBe` 11
+   it "16" $ scoreUp ["a", "a", "b", "b"] ["a", "a", "b", "b"] `shouldBe` 16
 

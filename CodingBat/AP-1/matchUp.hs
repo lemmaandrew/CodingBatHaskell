@@ -12,7 +12,7 @@ matchUp a b = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "1" $ matchUp ["aa","bb","cc"] ["aaa","xx","bb"] `shouldBe` 1
-   it "2" $ matchUp ["aa","bb","cc"] ["aaa","b","bb"] `shouldBe` 2
-   it "1" $ matchUp ["aa","bb","cc"] ["","","ccc"] `shouldBe` 1
+   it "1" $ matchUp ["aa", "bb", "cc"] ["aaa", "xx", "bb"] `shouldBe` 1
+   it "2" $ matchUp ["aa", "bb", "cc"] ["aaa", "b", "bb"] `shouldBe` 2
+   it "1" $ matchUp ["aa", "bb", "cc"] ["", "", "ccc"] `shouldBe` 1
 

@@ -8,12 +8,12 @@ rightmost digit.
 import Test.Hspec
 
 
-dividesSelf :: Int -> Bool
+dividesSelf :: Int -> Boolean
 dividesSelf n = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ dividesSelf 128 `shouldBe` True
-   it "True" $ dividesSelf 12 `shouldBe` True
-   it "False" $ dividesSelf 120 `shouldBe` False
+   it "true" $ dividesSelf 128 `shouldBe` true
+   it "true" $ dividesSelf 12 `shouldBe` true
+   it "false" $ dividesSelf 120 `shouldBe` false
 

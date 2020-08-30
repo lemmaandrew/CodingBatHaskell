@@ -6,12 +6,12 @@ is true, equality is allowed, such as 5 5 7 or 5 5 5.
 import Test.Hspec
 
 
-inOrderEqual :: Int -> Int -> Int -> Bool -> Bool
+inOrderEqual :: Int -> Int -> Int -> Boolean -> Boolean
 inOrderEqual a b c equalOk = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ inOrderEqual 2 5 11 False `shouldBe` True
-   it "False" $ inOrderEqual 5 7 6 False `shouldBe` False
-   it "True" $ inOrderEqual 5 5 7 True `shouldBe` True
+   it "true" $ inOrderEqual 2 5 11 false `shouldBe` true
+   it "false" $ inOrderEqual 5 7 6 false `shouldBe` false
+   it "true" $ inOrderEqual 5 5 7 true `shouldBe` true
 

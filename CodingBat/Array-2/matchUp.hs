@@ -11,7 +11,7 @@ matchUp nums1 nums2 = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "2" $ matchUp [1,2,3] [2,3,10] `shouldBe` 2
-   it "3" $ matchUp [1,2,3] [2,3,5] `shouldBe` 3
-   it "2" $ matchUp [1,2,3] [2,3,3] `shouldBe` 2
+   it "2" $ matchUp [1, 2, 3] [2, 3, 10] `shouldBe` 2
+   it "3" $ matchUp [1, 2, 3] [2, 3, 5] `shouldBe` 3
+   it "2" $ matchUp [1, 2, 3] [2, 3, 3] `shouldBe` 2
 

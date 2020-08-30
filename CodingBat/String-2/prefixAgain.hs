@@ -6,12 +6,12 @@ empty and that N is in the range 1..str.length().
 import Test.Hspec
 
 
-prefixAgain :: String -> Int -> Bool
+prefixAgain :: String -> Int -> Boolean
 prefixAgain str n = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ prefixAgain "abXYabc" 1 `shouldBe` True
-   it "True" $ prefixAgain "abXYabc" 2 `shouldBe` True
-   it "False" $ prefixAgain "abXYabc" 3 `shouldBe` False
+   it "true" $ prefixAgain "abXYabc" 1 `shouldBe` true
+   it "true" $ prefixAgain "abXYabc" 2 `shouldBe` true
+   it "false" $ prefixAgain "abXYabc" 3 `shouldBe` false
 

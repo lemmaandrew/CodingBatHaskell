@@ -6,12 +6,12 @@ digit while the % "mod" n%10 gives the right digit.)
 import Test.Hspec
 
 
-shareDigit :: Int -> Int -> Bool
+shareDigit :: Int -> Int -> Boolean
 shareDigit a b = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ shareDigit 12 23 `shouldBe` True
-   it "False" $ shareDigit 12 43 `shouldBe` False
-   it "False" $ shareDigit 12 44 `shouldBe` False
+   it "true" $ shareDigit 12 23 `shouldBe` true
+   it "false" $ shareDigit 12 43 `shouldBe` false
+   it "false" $ shareDigit 12 44 `shouldBe` false
 

@@ -10,7 +10,7 @@ makeMiddle nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[2,3]" $ makeMiddle [1,2,3,4] `shouldBe` [2,3]
-   it "[2,3]" $ makeMiddle [7,1,2,3,4,9] `shouldBe` [2,3]
-   it "[1,2]" $ makeMiddle [1,2] `shouldBe` [1,2]
+   it "[2, 3]" $ makeMiddle [1, 2, 3, 4] `shouldBe` [2, 3]
+   it "[2, 3]" $ makeMiddle [7, 1, 2, 3, 4, 9] `shouldBe` [2, 3]
+   it "[1, 2]" $ makeMiddle [1, 2] `shouldBe` [1, 2]
 

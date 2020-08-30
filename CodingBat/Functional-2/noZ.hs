@@ -10,7 +10,7 @@ noZ strings = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[\"aaa\",\"bbb\"]" $ noZ ["aaa","bbb","aza"] `shouldBe` ["aaa","bbb"]
-   it "[\"hi\"]" $ noZ ["hziz","hzello","hi"] `shouldBe` ["hi"]
-   it "[\"hello\",\"are\"]" $ noZ ["hello","howz","are","youz"] `shouldBe` ["hello","are"]
+   it "[\"aaa\", \"bbb\"]" $ noZ ["aaa", "bbb", "aza"] `shouldBe` ["aaa", "bbb"]
+   it "[\"hi\"]" $ noZ ["hziz", "hzello", "hi"] `shouldBe` ["hi"]
+   it "[\"hello\", \"are\"]" $ noZ ["hello", "howz", "are", "youz"] `shouldBe` ["hello", "are"]
 

@@ -5,12 +5,12 @@ Return true if the array contains, somewhere, three increasing adjacent numbers 
 import Test.Hspec
 
 
-tripleUp :: [Int] -> Bool
+tripleUp :: [Int] -> Boolean
 tripleUp nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ tripleUp [1,4,5,6,2] `shouldBe` True
-   it "True" $ tripleUp [1,2,3] `shouldBe` True
-   it "False" $ tripleUp [1,2,4] `shouldBe` False
+   it "true" $ tripleUp [1, 4, 5, 6, 2] `shouldBe` true
+   it "true" $ tripleUp [1, 2, 3] `shouldBe` true
+   it "false" $ tripleUp [1, 2, 4] `shouldBe` false
 

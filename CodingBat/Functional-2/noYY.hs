@@ -10,7 +10,7 @@ noYY strings = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "[\"ay\",\"by\",\"cy\"]" $ noYY ["a","b","c"] `shouldBe` ["ay","by","cy"]
-   it "[\"ay\",\"by\"]" $ noYY ["a","b","cy"] `shouldBe` ["ay","by"]
-   it "[\"xxy\",\"yay\",\"zzy\"]" $ noYY ["xx","ya","zz"] `shouldBe` ["xxy","yay","zzy"]
+   it "[\"ay\", \"by\", \"cy\"]" $ noYY ["a", "b", "c"] `shouldBe` ["ay", "by", "cy"]
+   it "[\"ay\", \"by\"]" $ noYY ["a", "b", "cy"] `shouldBe` ["ay", "by"]
+   it "[\"xxy\", \"yay\", \"zzy\"]" $ noYY ["xx", "ya", "zz"] `shouldBe` ["xxy", "yay", "zzy"]
 

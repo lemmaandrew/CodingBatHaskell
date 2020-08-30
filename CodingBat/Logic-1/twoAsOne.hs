@@ -5,12 +5,12 @@ the third.
 import Test.Hspec
 
 
-twoAsOne :: Int -> Int -> Int -> Bool
+twoAsOne :: Int -> Int -> Int -> Boolean
 twoAsOne a b c = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ twoAsOne 1 2 3 `shouldBe` True
-   it "True" $ twoAsOne 3 1 2 `shouldBe` True
-   it "False" $ twoAsOne 3 2 2 `shouldBe` False
+   it "true" $ twoAsOne 1 2 3 `shouldBe` true
+   it "true" $ twoAsOne 3 1 2 `shouldBe` true
+   it "false" $ twoAsOne 3 2 2 `shouldBe` false
 

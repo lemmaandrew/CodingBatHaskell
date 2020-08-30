@@ -5,12 +5,12 @@ the absolute value of a number.
 import Test.Hspec
 
 
-nearHundred :: Int -> Bool
+nearHundred :: Int -> Boolean
 nearHundred n = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ nearHundred 93 `shouldBe` True
-   it "True" $ nearHundred 90 `shouldBe` True
-   it "False" $ nearHundred 89 `shouldBe` False
+   it "true" $ nearHundred 93 `shouldBe` true
+   it "true" $ nearHundred 90 `shouldBe` true
+   it "false" $ nearHundred 89 `shouldBe` false
 

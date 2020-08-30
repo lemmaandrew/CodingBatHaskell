@@ -7,12 +7,12 @@ and can be done without any loops. See also: Introduction to MakeBricks
 import Test.Hspec
 
 
-makeBricks :: Int -> Int -> Int -> Bool
+makeBricks :: Int -> Int -> Int -> Boolean
 makeBricks small big goal = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ makeBricks 3 1 8 `shouldBe` True
-   it "False" $ makeBricks 3 1 9 `shouldBe` False
-   it "True" $ makeBricks 3 2 10 `shouldBe` True
+   it "true" $ makeBricks 3 1 8 `shouldBe` true
+   it "false" $ makeBricks 3 1 9 `shouldBe` false
+   it "true" $ makeBricks 3 2 10 `shouldBe` true
 

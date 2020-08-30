@@ -6,12 +6,12 @@ is the same as the difference between medium and large.
 import Test.Hspec
 
 
-evenlySpaced :: Int -> Int -> Int -> Bool
+evenlySpaced :: Int -> Int -> Int -> Boolean
 evenlySpaced a b c = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ evenlySpaced 2 4 6 `shouldBe` True
-   it "True" $ evenlySpaced 4 6 2 `shouldBe` True
-   it "False" $ evenlySpaced 4 6 3 `shouldBe` False
+   it "true" $ evenlySpaced 2 4 6 `shouldBe` true
+   it "true" $ evenlySpaced 4 6 2 `shouldBe` true
+   it "false" $ evenlySpaced 4 6 3 `shouldBe` false
 

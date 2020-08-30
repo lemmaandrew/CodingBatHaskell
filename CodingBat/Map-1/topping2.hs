@@ -12,7 +12,7 @@ topping2 map = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "(Map.fromList [(\"yogurt\",\"cherry\"),(\"ice cream\",\"cherry\")])" $ topping2 (Map.fromList [("ice cream","cherry")]) `shouldBe` (Map.fromList [("yogurt","cherry"),("ice cream","cherry")])
-   it "(Map.fromList [(\"yogurt\",\"cherry\"),(\"spinach\",\"nuts\"),(\"ice cream\",\"cherry\")])" $ topping2 (Map.fromList [("spinach","dirt"),("ice cream","cherry")]) `shouldBe` (Map.fromList [("yogurt","cherry"),("spinach","nuts"),("ice cream","cherry")])
-   it "(Map.fromList [(\"yogurt\",\"salt\")])" $ topping2 (Map.fromList [("yogurt","salt")]) `shouldBe` (Map.fromList [("yogurt","salt")])
+   it "fromList [(\"yogurt\": \"cherry\", \"ice cream\", \"cherry\")]" $ topping2 fromList [("ice cream", "cherry")] `shouldBe` fromList [("yogurt": "cherry", "ice cream", "cherry")]
+   it "fromList [(\"yogurt\": \"cherry\", \"spinach\": \"nuts\", \"ice cream\", \"cherry\")]" $ topping2 fromList [("spinach", "dirt"), ("ice cream", "cherry")] `shouldBe` fromList [("yogurt": "cherry", "spinach": "nuts", "ice cream", "cherry")]
+   it "fromList [(\"yogurt\", \"salt\")]" $ topping2 fromList [("yogurt", "salt")] `shouldBe` fromList [("yogurt", "salt")]
 

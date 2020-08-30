@@ -11,7 +11,7 @@ sum13 nums = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "6" $ sum13 [1,2,2,1] `shouldBe` 6
-   it "2" $ sum13 [1,1] `shouldBe` 2
-   it "6" $ sum13 [1,2,2,1,13] `shouldBe` 6
+   it "6" $ sum13 [1, 2, 2, 1] `shouldBe` 6
+   it "2" $ sum13 [1, 1] `shouldBe` 2
+   it "6" $ sum13 [1, 2, 2, 1, 13] `shouldBe` 6
 

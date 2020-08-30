@@ -5,12 +5,12 @@ Use the % "mod" operator -- see Introduction to Mod
 import Test.Hspec
 
 
-or35 :: Int -> Bool
+or35 :: Int -> Boolean
 or35 n = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ or35 3 `shouldBe` True
-   it "True" $ or35 10 `shouldBe` True
-   it "False" $ or35 8 `shouldBe` False
+   it "true" $ or35 3 `shouldBe` true
+   it "true" $ or35 10 `shouldBe` true
+   it "false" $ or35 8 `shouldBe` false
 

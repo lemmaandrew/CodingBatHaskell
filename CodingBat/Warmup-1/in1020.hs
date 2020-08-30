@@ -4,12 +4,12 @@ Given 2 int values, return true if either of them is in the range 10..20 inclusi
 import Test.Hspec
 
 
-in1020 :: Int -> Int -> Bool
+in1020 :: Int -> Int -> Boolean
 in1020 a b = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ in1020 12 99 `shouldBe` True
-   it "True" $ in1020 21 12 `shouldBe` True
-   it "False" $ in1020 8 99 `shouldBe` False
+   it "true" $ in1020 12 99 `shouldBe` true
+   it "true" $ in1020 21 12 `shouldBe` true
+   it "false" $ in1020 8 99 `shouldBe` false
 

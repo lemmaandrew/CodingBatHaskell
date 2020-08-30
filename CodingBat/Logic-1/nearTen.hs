@@ -6,12 +6,12 @@ to Mod
 import Test.Hspec
 
 
-nearTen :: Int -> Bool
+nearTen :: Int -> Boolean
 nearTen num = undefined
 
 main :: IO ()
 main = hspec $ describe "Tests:" $ do
-   it "True" $ nearTen 12 `shouldBe` True
-   it "False" $ nearTen 17 `shouldBe` False
-   it "True" $ nearTen 19 `shouldBe` True
+   it "true" $ nearTen 12 `shouldBe` true
+   it "false" $ nearTen 17 `shouldBe` false
+   it "true" $ nearTen 19 `shouldBe` true
 
