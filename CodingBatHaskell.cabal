@@ -1,0 +1,36 @@
+name:                CodingBatHaskell
+version:             2.0.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/peterjayandrew/CodingBatHaskell#readme
+license:             MIT
+license-file:        LICENSE
+author:              Peter Andrew
+maintainer:          peterjayandrew@gmail.com
+copyright:           2021 Peter Andrew
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+executable CodingBatHaskell
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  other-modules:       Java.Lex
+                     , Java.Parse
+                     , Java.Transpile
+                     , Download.Scrape
+                     , Download.Compile
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , async >= 2.2.2
+                     , bytestring >= 0.10.12.0
+                     , containers >= 0.6.4.1
+                     , directory >= 1.3.6.0
+                     , hspec >= 2.7.8
+                     , http-client >= 0.7.5
+                     , http-client-tls >= 0.3.5.3
+                     , megaparsec >= 9.0.1
+                     , scalpel >= 0.6.2
+                     , tagsoup >= 0.14.8
+ 

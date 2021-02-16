@@ -1,0 +1,19 @@
+cradle:
+  stack:
+    - path: "./src/Main.hs"
+      component: "CodingBatHaskell:exe:CodingBatHaskell"
+
+    - path: "./src/Java/Lex.hs"
+      component: "CodingBatHaskell:exe:CodingBatHaskell"
+
+    - path: "./src/Java/Parse.hs"
+      component: "CodingBatHaskell:exe:CodingBatHaskell"
+
+    - path: "./src/Java/Transpile.hs"
+      component: "CodingBatHaskell:exe:CodingBatHaskell"
+
+    - path: "./src/Download/Scrape.hs"
+      component: "CodingBatHaskell:exe:CodingBatHaskell"
+
+    - path: "./src/Download/Compile.hs"
+      component: "CodingBatHaskell:exe:CodingBatHaskell"
