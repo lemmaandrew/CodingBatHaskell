@@ -23,7 +23,17 @@ import qualified Data.Set as Set
 import Data.Void ( Void )
 import System.Environment ( getArgs )
 import Text.Megaparsec
+    ( (<|>),
+      anySingleBut,
+      parse,
+      between,
+      choice,
+      option,
+      many,
+      Parsec,
+      MonadParsec(try) )
 import Text.Megaparsec.Char
+    ( alphaNumChar, char, letterChar, space, string )
 import qualified Text.Megaparsec.Char.Lexer as L
 
 
